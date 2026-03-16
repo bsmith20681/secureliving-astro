@@ -1,0 +1,98 @@
+---
+import PageLayout from './PageLayout.astro';
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description?: string;
+  category: string;
+  categorySlug: string;
+  author?: string;
+  pubDate: Date;
+  updatedDate?: Date;
+}
+
+const {
+  title,
+  description,
+  category,
+  categorySlug,
+  author: authorSlug,
+  pubDate,
+  updatedDate,
+} = Astro.props;
+
+const authorEntry = authorSlug ? await getEntry('authors', authorSlug) : null;
+const authorName = authorEntry?.data.name;
+const authorImage = authorEntry?.data.image;
+const authorBio = authorEntry?.data.bio;
+
+const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+---
+
+<PageLayout title={title} description={description}>
+  <article class="entry">
+    <div class="entry-header">
+      <div class="container entry-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb__separator">&gt;&gt;</span>
+          <a href={`/${categorySlug}`}>{category}</a>
+          <span class="breadcrumb__separator">&gt;&gt;</span>
+          <span class="breadcrumb__current">{title}</span>
+        </nav>
+        <h1 class="entry__title">{title}</h1>
+        <div class="entry__disclaimer">
+          We might earn a commission based on product recommendations at no extra cost to you. <a class="link-muted" href="/affiliate-disclaimer/">Learn More</a>
+        </div>
+        <div class="post-meta">
+          <div class="post-meta__info">
+            {authorName && (
+              <div class="post-meta__author">
+                {authorImage && (
+                  <div class="post-meta__avatar">
+                    <Image src={authorImage} alt={authorName} width={48} height={48} />
+                  </div>
+                )}
+                <div class="post-meta__text">
+                  <span class="post-meta__label">Written By</span>
+                  <span class="post-meta__value">{authorName}</span>
+                </div>
+              </div>
+            )}
+            <div class="post-meta__date">
+              <span class="post-meta__label">Last Updated:</span>
+              <span class="post-meta__value">{displayDate}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container entry-container">
+      <slot />
+
+      {authorName && (
+        <div class="author-bio">
+          <h3 class="author-bio__heading">About the author</h3>
+          <div class="author-bio__content">
+            {authorImage && (
+              <div class="author-bio__avatar">
+                <Image src={authorImage} alt={authorName} width={80} height={80} />
+              </div>
+            )}
+            <div>
+              <p class="author-bio__name">{authorName}</p>
+              {authorBio && <p class="author-bio__description">{authorBio}</p>}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  </article>
+</PageLayout>

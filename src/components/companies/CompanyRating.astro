@@ -1,0 +1,208 @@
+---
+/**
+ * @component CompanyRating
+ * @description Displays a company's SecureScore™ breakdown with a donut chart
+ *   overall score and category rows with filled progress bars.
+ * @usage Embed in review pages or articles to show rating details at a glance.
+ * @example <CompanyRating company="vivint" />
+ * @props
+ *   company: string — slug matching a companies collection entry (required)
+ */
+import { getEntry } from 'astro:content';
+
+interface Props {
+  company: string;
+}
+
+const { company } = Astro.props;
+const entry = await getEntry('companies', company);
+if (!entry) throw new Error(`Company "${company}" not found in companies collection`);
+const { rating } = entry.data;
+
+const categories = [
+  { label: 'Customer Service', value: rating.customerService },
+  { label: 'Value', value: rating.pricing },
+  { label: 'Equipment', value: rating.equipment },
+  { label: 'Features & Technology', value: rating.features },
+  { label: 'Ease of Use', value: rating.easeOfUse },
+];
+
+const maxScore = 5;
+const overallPercent = (rating.overall / maxScore) * 100;
+---
+
+<div class="company-rating">
+  <!-- Left: Donut chart with overall score -->
+  <div class="company-rating__left">
+    <div class="company-rating__donut">
+      <svg viewBox="0 0 120 120" class="company-rating__svg">
+        <!-- Background track -->
+        <circle
+          cx="60" cy="60" r="50"
+          fill="none"
+          stroke="var(--gray-200, #e5e7eb)"
+          stroke-width="10"
+        />
+        <!-- Score arc -->
+        <circle
+          cx="60" cy="60" r="50"
+          fill="none"
+          stroke="var(--blue-600, #2563eb)"
+          stroke-width="10"
+          stroke-linecap="round"
+          stroke-dasharray={`${overallPercent * 3.14} ${314 - overallPercent * 3.14}`}
+          transform="rotate(-90 60 60)"
+        />
+      </svg>
+      <div class="company-rating__donut-text">
+        <span class="company-rating__score">{rating.overall}</span>
+        <span class="company-rating__label">Overall Score</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Category rows -->
+  <div class="company-rating__categories">
+    {categories.map(({ label, value }) => (
+      <div class="company-rating__row">
+        <div class="company-rating__row-header">
+          <span class="company-rating__category-label">{label}</span>
+          <span class="company-rating__category-score">
+            <span class="company-rating__category-value">{value}</span>
+            <span class="company-rating__category-max">/ {maxScore}</span>
+          </span>
+        </div>
+        <div class="company-rating__bar-wrap">
+          <div
+            class="company-rating__bar"
+            style={`width: ${(value / maxScore) * 100}%`}
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .company-rating {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-8, 2rem);
+    font-family: inherit;
+    max-width: 750px;
+  }
+
+  /* Donut chart — 1/3 of the card */
+  .company-rating__left {
+    flex: 0 0 33.333%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .company-rating__donut {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .company-rating__svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .company-rating__donut-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .company-rating__score {
+    font-size: var(--text-6xl);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--gray-900, #111827);
+  }
+
+  .company-rating__label {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--gray-500, #6b7280);
+    margin-top: 0.25rem;
+  }
+
+  /* Category rows */
+  .company-rating__categories {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4, 0.75rem);
+  }
+
+  .company-rating__row-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.35rem;
+  }
+
+  .company-rating__category-label {
+    flex: 1;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--gray-800, #1f2937);
+  }
+
+  .company-rating__category-score {
+    display: flex;
+    align-items: baseline;
+    gap: 0.15rem;
+  }
+
+  .company-rating__category-value {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--gray-900, #111827);
+  }
+
+  .company-rating__category-max {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--gray-500, #6b7280);
+  }
+
+  .company-rating__bar-wrap {
+    height: 6px;
+    background: var(--gray-200, #e5e7eb);
+    border-radius: var(--radius-xs, 2px);
+    overflow: hidden;
+  }
+
+  .company-rating__bar {
+    height: 100%;
+    background: var(--blue-600, #2563eb);
+    border-radius: var(--radius-xs, 2px);
+    transition: width 0.4s ease;
+  }
+
+  @media (max-width: 600px) {
+    .company-rating {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-4, 1rem);
+    }
+
+    .company-rating__left {
+      flex: none;
+    }
+
+    .company-rating__donut {
+      width: 120px;
+      height: 120px;
+    }
+
+    .company-rating__categories {
+      width: 100%;
+    }
+  }
+</style>

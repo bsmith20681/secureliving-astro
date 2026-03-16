@@ -1,0 +1,33 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getCollection, render } from 'astro:content';
+import CompanyCard from '../../components/companies/CompanyCard.astro';
+import CompanyRating from '../../components/companies/CompanyRating.astro';
+import ProsCons from '../../components/companies/ProsCons.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => {
+    return data.category === 'Home Security Systems';
+  });
+
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<ArticleLayout
+  title={article.data.title}
+  description={article.data.description}
+  category={article.data.category}
+  categorySlug="home-security-systems"
+  author={article.data.author}
+  pubDate={article.data.pubDate}
+  updatedDate={article.data.updatedDate}
+>
+  <Content components={{ CompanyCard, CompanyRating, ProsCons }} />
+</ArticleLayout>

@@ -1,0 +1,127 @@
+---
+/**
+ * @component ProsCons
+ * @description Side-by-side pros and cons list with checkmark and minus icons.
+ * @usage Embed in review pages or articles to highlight key advantages and drawbacks.
+ * @example <ProsCons company="vivint" />
+ * @props
+ *   company: string — slug matching a companies collection entry (required)
+ */
+import { getEntry } from 'astro:content';
+
+interface Props {
+  company: string;
+}
+
+const { company } = Astro.props;
+const entry = await getEntry('companies', company);
+if (!entry) throw new Error(`Company "${company}" not found in companies collection`);
+const { pros, cons } = entry.data;
+---
+
+<div class="pros-cons">
+  <div class="pros-cons__col pros-cons__col--pros">
+    <h4 class="pros-cons__heading">Pros</h4>
+    <ul class="pros-cons__list">
+      {pros.map((pro) => (
+        <li class="pros-cons__item pros-cons__item--pro">
+          <svg class="pros-cons__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span>{pro}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="pros-cons__col pros-cons__col--cons">
+    <h4 class="pros-cons__heading">Cons</h4>
+    <ul class="pros-cons__list">
+      {cons.map((con) => (
+        <li class="pros-cons__item pros-cons__item--con">
+          <svg class="pros-cons__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+          <span>{con}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    font-family: inherit;
+  }
+
+  .pros-cons__col {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .pros-cons__col--pros {
+    background: var(--primary-50);
+    border-right: 1px solid var(--gray-200);
+  }
+
+  .pros-cons__col--cons {
+    background: var(--gray-50);
+  }
+
+  .pros-cons__heading {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--gray-800);
+    margin: 0 0 var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--gray-300);
+  }
+
+  .pros-cons__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .pros-cons__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--gray-700);
+  }
+
+  .pros-cons__icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  .pros-cons__item--pro .pros-cons__icon {
+    color: #16a34a;
+  }
+
+  .pros-cons__item--con .pros-cons__icon {
+    color: #dc2626;
+  }
+
+  @media (max-width: 600px) {
+    .pros-cons {
+      grid-template-columns: 1fr;
+    }
+
+    .pros-cons__col--pros {
+      border-right: none;
+      border-bottom: 1px solid var(--gray-200);
+    }
+  }
+</style>

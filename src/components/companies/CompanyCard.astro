@@ -1,0 +1,102 @@
+---
+/**
+ * @component CompanyCard
+ * @description Displays a security company card with logo, star rating,
+ *   promo banner, pros list, and action buttons.
+ * @example <CompanyCard company="vivint" />
+ * @example <CompanyCard company="vivint" rank={1} />
+ * @props
+ *   company: string — slug matching a companies collection entry (required)
+ *   rank?: number — optional rank number to display in the top bar
+ */
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  company: string;
+  rank?: number;
+}
+
+const { company, rank } = Astro.props;
+const entry = await getEntry('companies', company);
+if (!entry) throw new Error(`Company "${company}" not found in companies collection`);
+const { name, phone, website, rating, logo, pros, promo } = entry.data;
+
+const fullStars = Math.floor(rating.overall);
+const hasHalf = rating.overall % 1 >= 0.5;
+const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
+const telHref = `tel:${phone.replace(/[^0-9+]/g, '')}`;
+---
+
+<a href={website} target="_blank" rel="noopener noreferrer" class="company-card">
+  {(promo || rank) && (
+    <div class="company-card__topbar">
+      {rank && <span class="company-card__rank">#{rank}</span>}
+      {promo && <span class="company-card__banner">{promo}</span>}
+    </div>
+  )}
+
+  <div class="company-card__body">
+    <div class="company-card__logo-col">
+      <div class="company-card__logo">
+        <Image src={logo} alt={`${name} logo`} />
+      </div>
+      <div class="company-card__rating">
+        <div class="company-card__stars">
+          {Array(fullStars).fill(null).map(() => (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="star star--full">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          ))}
+          {hasHalf && (
+            <svg width="16" height="16" viewBox="0 0 24 24" class="star star--half">
+              <defs>
+                <linearGradient id={`half-${company}`}>
+                  <stop offset="50%" stop-color="currentColor"/>
+                  <stop offset="50%" stop-color="#d1d5db"/>
+                </linearGradient>
+              </defs>
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill={`url(#half-${company})`}/>
+            </svg>
+          )}
+          {Array(emptyStars).fill(null).map(() => (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d1d5db" class="star star--empty">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          ))}
+        </div>
+        <span class="company-card__rating-label">{rating.overall}</span>
+      </div>
+    </div>
+
+    <div class="company-card__info">
+      <ul class="company-card__features">
+        {pros.slice(0, 3).map((pro) => (
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>{pro}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="company-card__actions">
+      <span class="company-card__visit-btn">
+        See Packages
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </span>
+      <span class="company-card__phone" onclick={`event.preventDefault(); event.stopPropagation(); window.location.href='${telHref}';`}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        {phone}
+      </span>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,145 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const recentArticles = allArticles
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 5);
+---
+
+<PageLayout title="Secure Living">
+  <main class="homepage">
+
+    <section class="homepage-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="homepage-hero__card">
+              <h1>Find The Best Security System for your Home or Business</h1>
+              <p class="hero-quiz__subheading">Take our 60 second quiz to get a personalized recommendation</p>
+              <div class="hero-quiz">
+                <h3 class="hero-quiz__heading">What are you protecting?</h3>
+                <div class="hero-quiz__options">
+                  <a href="/security-match-quiz/" class="hero-quiz__option">
+                    <span class="hero-quiz__radio"></span>
+                    <span class="hero-quiz__label">House</span>
+                    <svg class="hero-quiz__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#062e4b" viewBox="0 0 256 256">
+                      <path d="M216,116.69V216H152V152H104v64H40V116.69l82.34-82.35a8,8,0,0,1,11.32,0Z" opacity="0.2"></path>
+                      <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"></path>
+                    </svg>
+                  </a>
+                  <a href="/security-match-quiz/" class="hero-quiz__option">
+                    <span class="hero-quiz__radio"></span>
+                    <span class="hero-quiz__label">Apartment</span>
+                    <svg class="hero-quiz__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#062e4b" viewBox="0 0 256 256">
+                      <path d="M224,72V216H144V168H112v48H32V104H80V40h96V72Z" opacity="0.2"></path>
+                      <path d="M248,208h-8V72a8,8,0,0,0,0-16H184V40a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16V96H32a8,8,0,0,0-8,8V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM40,112H80a8,8,0,0,0,8-8V48h80V72a8,8,0,0,0,8,8h40V208H152V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40H40Zm96,96H120V176h16ZM112,72a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H120A8,8,0,0,1,112,72Zm0,32a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H120A8,8,0,0,1,112,104Zm56,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,104ZM88,136a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H80A8,8,0,0,1,88,136Zm0,32a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H80A8,8,0,0,1,88,168Zm24-32a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H120A8,8,0,0,1,112,136Zm56,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,168Z"></path>
+                    </svg>
+                  </a>
+                  <a href="/security-match-quiz/" class="hero-quiz__option">
+                    <span class="hero-quiz__radio"></span>
+                    <span class="hero-quiz__label">Business</span>
+                    <svg class="hero-quiz__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#062e4b" viewBox="0 0 256 256">
+                      <path d="M176,40V216H136V160H88v56H48V40Z" opacity="0.2"></path>
+                      <path d="M248,208H232V96a8,8,0,0,0,0-16H184V48a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16V208H24a8,8,0,0,0,0,16H248a8,8,0,0,0,0-16ZM216,96V208H184V96ZM56,48H168V208H144V160a8,8,0,0,0-8-8H88a8,8,0,0,0-8,8v48H56Zm72,160H96V168h32ZM72,80a8,8,0,0,1,8-8H96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,80Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H128A8,8,0,0,1,120,80ZM72,120a8,8,0,0,1,8-8H96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,120Zm48,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H128A8,8,0,0,1,120,120Z"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="homepage-hero__background-image"></div>
+    </section>
+
+    <section class="homepage-stats">
+      <div class="container">
+        <div class="homepage-stats-content">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#062e4b" viewBox="0 0 256 256">
+              <path d="M168,100a60,60,0,1,1-60-60A60,60,0,0,1,168,100Z" opacity="0.2"></path>
+              <path d="M144,157.68a68,68,0,1,0-71.9,0c-20.65,6.76-39.23,19.39-54.17,37.17a8,8,0,0,0,12.25,10.3C50.25,181.19,77.91,168,108,168s57.75,13.19,77.87,37.15a8,8,0,0,0,12.25-10.3C183.18,177.07,164.6,164.44,144,157.68ZM56,100a52,52,0,1,1,52,52A52.06,52.06,0,0,1,56,100Zm197.66,33.66-32,32a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,11.32-11.32L216,148.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+            </svg>
+            <p class="homepage-stats-text">5+ years of Experience</p>
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#062e4b" viewBox="0 0 256 256">
+              <path d="M216,48V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2"></path>
+              <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z"></path>
+            </svg>
+            <p class="homepage-stats-text">100+ Products Reviewed</p>
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#062e4b" viewBox="0 0 256 256">
+              <path d="M221.66,85.66l-120,120a8,8,0,0,1-11.32,0L52.69,168,184,36.69l37.66,37.65A8,8,0,0,1,221.66,85.66Z" opacity="0.2"></path>
+              <path d="M248,136a8,8,0,0,0-8,8v16H195.31L177,141.66l50.34-50.35a16,16,0,0,0,0-22.62l-56-56a16,16,0,0,0-22.63,0L2.92,158.94A10,10,0,0,0,10,176H49.37l35.32,35.31a16,16,0,0,0,22.62,0L165.66,153,184,171.31A15.86,15.86,0,0,0,195.31,176H240v16a8,8,0,0,0,16,0V144A8,8,0,0,0,248,136ZM160,24l12.69,12.69L49.37,160H24.46ZM96,200,64,168,184,48l32,32Z"></path>
+            </svg>
+            <p class="homepage-stats-text">50+ Products Recommended</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-posts">
+      <div class="container">
+        <h2>Recent Articles</h2>
+        {recentArticles.length > 0 && (
+          <div class="featured-grid">
+            {recentArticles.map((article, index) => {
+              const isMain = index === 0;
+              const displayDate = (article.data.updatedDate || article.data.pubDate)
+                .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
+
+              return (
+                <a href={`/${article.data.category.toLowerCase().replace(/\s+/g, '-')}/${article.id}`} class={`post-card ${isMain ? 'featured-grid__main' : ''}`}>
+                  {article.data.image ? (
+                    <div class="post-card__image">
+                      <img src={article.data.image} alt={article.data.title} />
+                    </div>
+                  ) : (
+                    <div class="post-card__image post-card__image--placeholder">
+                      <span>No Image</span>
+                    </div>
+                  )}
+                  <div class={`post-card__content ${isMain ? '' : 'justify-between'}`}>
+                    <h2 class="post-card__title">{article.data.title}</h2>
+                    <div class="post-card__meta">
+                      {article.data.author && (
+                        <>
+                          <span class="post-card__author">{article.data.author}</span>
+                          <span class="post-card__separator">|</span>
+                        </>
+                      )}
+                      <span class="post-card__date">{displayDate}</span>
+                    </div>
+                    {isMain && article.data.excerpt && (
+                      <div class="post-card__excerpt">{article.data.excerpt}</div>
+                    )}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <section class="my-10">
+      <div class="container">
+        <h2>Meet The Expert</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Ben Smith</h3>
+            <p class="meet-expert__text">Ben is the owner of SecureLiving.com. With more than five years of experience in the home security space, he's passionate about helping people feel safer at home. Through in-depth reviews and practical advice, Ben makes it easier for homeowners to choose reliable security systems that actually work.</p>
+          </div>
+          <div class="col-md-6 meet-expert__image-wrap">
+            <img class="meet-expert__image" src="https://secureliving.com/wp-content/uploads/2026/02/profile-pic-1.jpg" alt="profile pic" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</PageLayout>

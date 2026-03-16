@@ -1,0 +1,54 @@
+---
+import '../styles/style.css';
+import '../styles/flexboxgrid.css';
+import '../styles/spacing-utilities.css';
+import logo from '../assets/secureliving-logo-md-300x54.png';
+---
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <img src={logo.src} width={logo.width} height={logo.height} alt="Secure Living" />
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/home-security-systems">Home Security Systems</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu-overlay"></div>
+
+<script>
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('.primary-nav');
+  const overlay = document.querySelector('.mobile-menu-overlay');
+
+  if (toggle && nav && overlay) {
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      nav.classList.toggle('is-open');
+      overlay.classList.toggle('is-visible');
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+
+    overlay.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('is-open');
+      overlay.classList.remove('is-visible');
+      document.body.style.overflow = '';
+    });
+  }
+</script>
