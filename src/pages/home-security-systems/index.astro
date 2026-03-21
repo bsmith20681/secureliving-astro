@@ -1,5 +1,5 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import ArchiveLayout from '../../layouts/ArchiveLayout.astro';
 import { getCollection } from 'astro:content';
 
 const articles = await getCollection('articles', ({ data }) => {
@@ -7,16 +7,9 @@ const articles = await getCollection('articles', ({ data }) => {
 });
 ---
 
-<PageLayout title="Home Security Systems">
-  <h1>Home Security Systems</h1>
-  <ul>
-    {articles.map((article) => (
-      <li>
-        <a href={`/home-security-systems/${article.id}`}>
-          {article.data.title}
-        </a>
-        <p>{article.data.description}</p>
-      </li>
-    ))}
-  </ul>
-</PageLayout>
+<ArchiveLayout
+  title="Home Security Systems"
+  category="Home Security Systems"
+  categorySlug="home-security-systems"
+  articles={articles}
+/>

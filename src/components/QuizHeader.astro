@@ -2,9 +2,14 @@
 import '../styles/style.css';
 import '../styles/flexboxgrid.css';
 import '../styles/spacing-utilities.css';
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
 import logo from '../assets/secureliving-logo-md-300x54.png';
 import adtLogo from '../assets/logos/adt-logo.png';
 import vivintLogo from '../assets/logos/vivint-logo.png';
+
+const adt = await getEntry('companies', 'adt');
+const vivint = await getEntry('companies', 'vivint');
 ---
 
 <div class="affiliate-banner">
@@ -14,8 +19,7 @@ import vivintLogo from '../assets/logos/vivint-logo.png';
 </div>
 
 <!-- Affiliate Disclaimer Modal -->
-<div class="affiliate-modal" id="affiliate-modal" aria-hidden="true">
-  <div class="affiliate-modal__overlay"></div>
+<dialog class="affiliate-modal" id="affiliate-modal">
   <div class="affiliate-modal__content">
     <button class="affiliate-modal__close" aria-label="Close">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#363636" viewBox="0 0 256 256">
@@ -31,7 +35,7 @@ import vivintLogo from '../assets/logos/vivint-logo.png';
       <p>Your support through these purchases helps us maintain and grow SecureLiving.com, and we sincerely appreciate it.</p>
     </div>
   </div>
-</div>
+</dialog>
 
 <header class="site-header">
   <div class="container">
@@ -42,9 +46,9 @@ import vivintLogo from '../assets/logos/vivint-logo.png';
         </svg>
         <span>Secure Form</span>
       </div>
-      <a href="/" class="site-logo quiz-header-logo">
-        <img src={logo.src} width={logo.width} height={logo.height} alt="Secure Living" />
-      </a>
+      <span class="site-logo quiz-header-logo">
+        <Image src={logo} alt="Secure Living" />
+      </span>
       <div class="call-specialist" id="call-specialist">
         <button class="call-specialist__btn" aria-expanded="false" aria-haspopup="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fafafa" viewBox="0 0 256 256">
@@ -71,9 +75,9 @@ import vivintLogo from '../assets/logos/vivint-logo.png';
             </div>
           </div>
           <div class="call-specialist__list">
-            <a href="tel:18333227030" class="call-specialist__company">
+            <a href={`tel:${adt?.data.phoneUnformatted}`} class="call-specialist__company">
               <div class="call-specialist__logo">
-                <img src={adtLogo.src} alt="ADT logo" />
+                <Image src={adtLogo} alt="ADT logo" />
               </div>
               <div class="call-specialist__info">
                 <strong>ADT</strong>
@@ -83,12 +87,12 @@ import vivintLogo from '../assets/logos/vivint-logo.png';
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>
-                (833) 322-7030
+                {adt?.data.phone}
               </div>
             </a>
-            <a href="tel:18334367355" class="call-specialist__company">
+            <a href={`tel:${vivint?.data.phoneUnformatted}`} class="call-specialist__company">
               <div class="call-specialist__logo">
-                <img src={vivintLogo.src} alt="Vivint logo" />
+                <Image src={vivintLogo} alt="Vivint logo" />
               </div>
               <div class="call-specialist__info">
                 <strong>Vivint</strong>
@@ -98,7 +102,7 @@ import vivintLogo from '../assets/logos/vivint-logo.png';
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>
-                (833) 436-7355
+                {vivint?.data.phone}
               </div>
             </a>
           </div>
@@ -112,27 +116,22 @@ import vivintLogo from '../assets/logos/vivint-logo.png';
 <script>
   // Affiliate modal
   const affiliateLink = document.getElementById('affiliate-link');
-  const affiliateModal = document.getElementById('affiliate-modal');
+  const affiliateModal = document.getElementById('affiliate-modal') as HTMLDialogElement;
 
   if (affiliateLink && affiliateModal) {
-    const overlay = affiliateModal.querySelector('.affiliate-modal__overlay');
     const closeBtn = affiliateModal.querySelector('.affiliate-modal__close');
 
     affiliateLink.addEventListener('click', (e) => {
       e.preventDefault();
-      affiliateModal.classList.add('is-open');
-      affiliateModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+      affiliateModal.showModal();
     });
 
-    const closeModal = () => {
-      affiliateModal.classList.remove('is-open');
-      affiliateModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    };
+    closeBtn?.addEventListener('click', () => affiliateModal.close());
 
-    closeBtn?.addEventListener('click', closeModal);
-    overlay?.addEventListener('click', closeModal);
+    // Close on backdrop click
+    affiliateModal.addEventListener('click', (e) => {
+      if (e.target === affiliateModal) affiliateModal.close();
+    });
   }
 
   // Call specialist dropdown
