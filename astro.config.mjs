@@ -7,5 +7,30 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.secureliving.com',
-  integrations: [mdx(), sitemap()]
+  integrations: [
+    mdx(),
+    sitemap({
+      serialize(item) {
+        const url = item.url;
+
+        if (url === 'https://www.secureliving.com/') {
+          item.changefreq = 'weekly';
+          item.priority = 1.0;
+        } else if (url.includes('/home-security-systems/') && url !== 'https://www.secureliving.com/home-security-systems/') {
+          item.changefreq = 'monthly';
+          item.priority = 0.8;
+        } else if (url === 'https://www.secureliving.com/home-security-systems/') {
+          item.changefreq = 'weekly';
+          item.priority = 0.9;
+        } else {
+          item.changefreq = 'yearly';
+          item.priority = 0.3;
+        }
+
+        item.lastmod = new Date().toISOString();
+
+        return item;
+      },
+    }),
+  ],
 });

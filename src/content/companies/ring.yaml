@@ -1,8 +1,7 @@
-name: "Vivint"
-slug: "vivint"
-phone: "(833) 606-2573"
-phoneUnformatted: "18336062573"
-website: "http://t.vivint.com/?c=1829&lp=4"
+name: "Ring"
+slug: "ring"
+phone: ""
+website: "https://ring.com/"
 rating:
   overall: 4.5
   equipment: 5
@@ -10,11 +9,11 @@ rating:
   pricing: 3.5
   easeOfUse: 5
   customerService: 4
-logo: "../../assets/logos/vivint-logo.png"
-promo: "$0 Activation with Professional Installation"
+logo: "../../assets/logos/ring-logo.png"
+promo: "Save $150 on Whole Home Enhanced Kit"
 
 # ── Overview ──────────────────────────────────────────────
-installType: "professional" # options: professional | diy | both
+installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
 bestFor: "Those who want a fully managed smart home security system without any DIY setup"

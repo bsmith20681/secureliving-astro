@@ -23,6 +23,7 @@ const companies = defineCollection({
     name: z.string(),
     slug: z.string(),
     phone: z.string(),
+    phoneUnformatted: z.string().optional(),
     website: z.string().url(),
     rating: z.object({
       overall: z.number().min(0).max(5),

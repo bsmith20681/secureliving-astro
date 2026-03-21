@@ -1,0 +1,177 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const allCompanies = await getCollection('companies');
+
+const order = ['vivint', 'adt', 'cove', 'adt-diy', 'simplisafe', 'ring'];
+const companies = order
+  .map((slug) => allCompanies.find((c) => c.data.slug === slug))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+const today = new Date().toLocaleDateString('en-US', {
+  month: '2-digit',
+  day: '2-digit',
+  year: 'numeric',
+});
+---
+
+<PageLayout title="Home Security Deals" description="Compare the best home security deals and promotions from top providers.">
+  <div class="container-fluid">
+    <div class="container mb-2">
+      <h1>Home Security Deals</h1>
+      <p>Last Updated {today}</p>
+    </div>
+
+    <div class="deals-table-wrap">
+      <table class="deals-table">
+        <thead>
+          <tr>
+            <th class="deals-table__label">Company</th>
+            {companies.map((company) => (
+              <td class="deals-table__company">
+                <div class="deals-table__logo">
+                  <Image src={company.data.logo} alt={company.data.name} />
+                </div>
+                {company.data.name !== company.data.slug && (
+                  <span class="deals-table__subname">{company.data.name}</span>
+                )}
+              </td>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="deals-table__row--deal">
+            <th class="deals-table__label">Deal</th>
+            {companies.map((company) => (
+              <td class="deals-table__cell">
+                <div class="deals-table__promo">
+                  {company.data.promo && <p class="deals-table__promo-text">{company.data.promo}</p>}
+                  <a href={company.data.website} class="btn w-100" target="_blank" rel="noopener noreferrer">View Sale</a>
+                  {company.data.phoneUnformatted && (
+                    <a href={`tel:${company.data.phoneUnformatted}`} class="btn btn-secondary w-100">Call {company.data.phone}</a>
+                  )}
+                </div>
+              </td>
+            ))}
+          </tr>
+          <tr>
+            <th class="deals-table__label">Score</th>
+            {companies.map((company) => (
+              <td class="deals-table__cell">
+                <span class="deals-table__score">{(company.data.rating.overall * 2).toFixed(1)}</span>
+              </td>
+            ))}
+          </tr>
+          <tr>
+            <th class="deals-table__label">Contract Length</th>
+            {companies.map((company) => (
+              <td class="deals-table__cell">
+                {company.data.monthToMonth ? 'Month-to-Month' : company.data.pricing.contractLength}
+              </td>
+            ))}
+          </tr>
+          <tr>
+            <th class="deals-table__label">Installation</th>
+            {companies.map((company) => (
+              <td class="deals-table__cell">
+                {company.data.installType === 'professional' ? 'Professional' : company.data.installType === 'diy' ? 'DIY' : 'Professional & DIY'}
+              </td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .deals-table-wrap {
+    overflow-x: auto;
+    padding-bottom: var(--space-10);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .deals-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .deals-table th,
+  .deals-table td {
+    padding: var(--space-4);
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid var(--gray-100);
+  }
+
+  .deals-table__label {
+    background: var(--primary-700);
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+    width: 130px;
+    min-width: 130px;
+  }
+
+  .deals-table__company {
+    padding: var(--space-5) var(--space-4);
+    background: var(--white);
+  }
+
+  .deals-table__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .deals-table__logo img {
+    max-width: 160px;
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  .deals-table__subname {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--gray-600);
+    font-weight: 600;
+  }
+
+  .deals-table__row--deal td {
+    background: var(--white);
+  }
+
+  .deals-table__promo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .deals-table__promo-text {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .deals-table__cell {
+    background: var(--white);
+    font-weight: 500;
+  }
+
+  .deals-table__score {
+    font-weight: 700;
+    font-size: var(--text-base);
+  }
+
+  .deals-table td {
+    min-width: 192px;
+  }
+</style>

@@ -1012,6 +1012,10 @@
 .ml-36 {
   margin-left: var(--space-36);
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Gap */
 .gap-1 {
   gap: var(--space-1);

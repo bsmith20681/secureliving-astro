@@ -1,8 +1,8 @@
-name: "Vivint"
-slug: "vivint"
-phone: "(833) 606-2573"
-phoneUnformatted: "18336062573"
-website: "http://t.vivint.com/?c=1829&lp=4"
+name: "ADT Pro Install System"
+slug: "adt"
+phone: "(833) 224-7221"
+phoneUnformatted: "18332247221"
+website: "https://s24alarms.com/YHSE"
 rating:
   overall: 4.5
   equipment: 5
@@ -10,13 +10,13 @@ rating:
   pricing: 3.5
   easeOfUse: 5
   customerService: 4
-logo: "../../assets/logos/vivint-logo.png"
-promo: "$0 Activation with Professional Installation"
+logo: "../../assets/logos/adt-logo.png"
+promo: "Nest Doorbell + Nest Camera — FREE"
 
 # ── Overview ──────────────────────────────────────────────
 installType: "professional" # options: professional | diy | both
-contractRequired: false
-monthToMonth: true
+contractRequired: true
+monthToMonth: false
 bestFor: "Those who want a fully managed smart home security system without any DIY setup"
 notesAboutContract: >
   "Vivint's service is month to month if you pay for the equipment upfront. 
@@ -48,7 +48,7 @@ pricing:
     min: 599
     max: null
     notes: "Financing available; cost rolled into monthly bill"
-  contractLength: "60 months"
+  contractLength: "12 months"
   activationFee: null
   cancelFee: null
 

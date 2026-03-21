@@ -163,6 +163,7 @@ button {
   box-shadow: var(--shadow-m);
   transition: all 0.25s ease-in-out;
   outline: 0;
+  text-decoration: none;
 }
 
 .btn:hover,
@@ -171,6 +172,19 @@ button:hover {
   background: var(--primary-800);
   border-color: var(--primary-800);
   cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gray-700) !important;
+  border-color: var(--gray-300);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+  color: var(--gray-800) !important;
 }
 
 img {
@@ -185,6 +199,14 @@ figcaption {
 /*********UTILITY STYLES**********/
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 /*********HEADER STYLES**********/
@@ -2069,4 +2091,99 @@ input.sl-radio-btn:checked + label {
 
 .quiz-qa h2 {
   font-size: var(--text-2xl);
+}
+
+/* ========== Form Pages ========== */
+
+.form-group {
+  margin-bottom: var(--space-5);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--gray-800);
+}
+
+.form-label.required::after {
+  content: " *";
+  color: #e53e3e;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-base);
+  font-family: inherit;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--gray-900);
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 3px rgba(0, 132, 206, 0.15);
+}
+
+.form-input:invalid:not(:placeholder-shown),
+.form-textarea:invalid:not(:placeholder-shown) {
+  border-color: #e53e3e;
+}
+
+.form-textarea {
+  min-height: 15rem;
+  resize: vertical;
+}
+
+.form-checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: var(--space-3);
+}
+
+.form-checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.form-container {
+  max-width: 700px;
+}
+
+.form-row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.form-row > .form-group {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.form-page .btn[type="submit"] {
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.form-honeypot {
+  display: none;
 }
