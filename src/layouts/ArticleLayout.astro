@@ -11,7 +11,7 @@ interface Props {
   author?: string;
   pubDate: Date;
   updatedDate?: Date;
-  image?: string;
+  image?: ImageMetadata;
 }
 
 const {
@@ -43,7 +43,7 @@ const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
   openGraph={{
     title,
     description,
-    image: image ?? '',
+    image: image?.src ?? '',
     type: 'article',
   }}
 >

@@ -99,7 +99,7 @@ const authorMap = Object.fromEntries(authors.map((a) => [a.id, a.data.name]));
                 <a href={`/${article.data.category.toLowerCase().replace(/\s+/g, '-')}/${article.id}`} class={`post-card ${isMain ? 'featured-grid__main' : ''}`}>
                   {article.data.image ? (
                     <div class="post-card__image">
-                      <img src={article.data.image} alt={article.data.title} />
+                      <img src={article.data.image.src} alt={article.data.title} />
                     </div>
                   ) : (
                     <div class="post-card__image post-card__image--placeholder">

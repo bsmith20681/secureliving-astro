@@ -3,14 +3,14 @@ import { file, glob } from 'astro/loaders';
 
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/articles' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     category: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().optional(),
-    image: z.string().optional(),
+    image: image().optional(),
     excerpt: z.string().optional(),
     authorImage: z.string().optional(),
     authorBio: z.string().optional(),

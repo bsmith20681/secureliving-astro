@@ -17,38 +17,39 @@ promo: "Nest Doorbell + Nest Camera — FREE"
 installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
-bestFor: "Those who want a fully managed smart home security system without any DIY setup"
+bestFor: "Those who want strong home automation and ADT's monitoring legacy at a slightly higher monthly price"
 notesAboutContract: >
-  "Vivint's service is month to month if you pay for the equipment upfront. 
-  This means that there is no contract and you can cancel at anytime without penalty.
-  However, you can choose to finance the equipment at 0% APR for either 42 months or 60 months. 
-  If you finance, you are obligated to have the service as long as there is a balance on the equipment."
+  Since the system is DIY and you pay for everything upfront, there is no contract.
+  Service is month to month — cancel whenever you want with no penalty.
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Professional installation included"
-  - "Best-in-class smart home automation"
-  - "24/7 professional monitoring"
-  - "Excellent mobile app"
-  - "Touchscreen keypad"
+  - "Super easy DIY installation — only about 2 hours"
+  - "Backed by ADT with 6 monitoring stations — the largest and longest-running provider"
+  - "Robust home automation with Z-Wave support (locks, thermostats, lights, garage doors)"
+  - "Nest cameras still work via the Nest app even if you cancel ADT"
+  - "Excellent mobile app — snappy, well-designed, everything in a single app"
+  - "Can add more cameras without increasing the monthly bill"
 
 cons:
-  - "Higher monthly cost"
-  - "Financing locks you into a service agreement"
-  - "Equipment can be expensive upfront"
-  - "Cameras are proprietary and stop working if you cancel"
+  - "Push-button keypad instead of touchscreen — must tap to light up before entering code"
+  - "No on-site tech support since it's DIY — phone support only"
+  - "Cameras don't record without Wi-Fi (only up to 1 hour)"
+  - "No power over Ethernet option for cameras"
+  - "Can't download video clips from the ADT Plus app — must use Google Home app"
+  - "Monthly cost is a few dollars more than competitors like Cove or SimpliSafe"
 
 # ── Pricing ───────────────────────────────────────────────
 pricing:
   monthly:
-    min: 29.99
-    max: 49.99
-    notes: "$29.99 covers basic monitoring to police, fire, and medical. It also covers the app"
+    min: 24.99
+    max: 39.99
+    notes: "$24.99 for basic security without cameras. $39.99 with cameras — includes Nest Aware subscription and ADT monitoring. 24/7 continuous recording is an extra $10/month."
   equipment:
-    min: 599
+    min: 350
     max: null
-    notes: "Financing available; cost rolled into monthly bill"
-  contractLength: "60 months"
+    notes: "Paid $350 for base station, sensors, motion sensor, glass break sensor, plus 2 free Nest cameras. Cost varies based on equipment needs."
+  contractLength: "None"
   activationFee: null
   cancelFee: null
 
@@ -64,14 +65,14 @@ monitoring:
     cellular: true # cellular backup
     landline: false
   backupBattery: true
-  monitoringStations: null
-  twoWayTalk: true
+  monitoringStations: 6
+  twoWayTalk: false # no two-way talk through the panel mentioned
 
 # ── Equipment ─────────────────────────────────────────────
 equipment:
   panel:
-    touchscreen: true
-    type: "Smart Hub"
+    touchscreen: false # push-button keypad built into base station
+    type: "Base Station with Built-in Keypad"
   sensors:
     doorWindow: true
     motion: true
@@ -83,7 +84,7 @@ equipment:
 cameras:
   doorbell: true
   outdoor: true
-  indoor: true
+  indoor: false
   powerOptions:
     - wired
     - battery
@@ -92,14 +93,14 @@ cameras:
     nightVision: true
     twoWayTalk: true
     liveView: true
-    continuousRecording: false
+    continuousRecording: true # available for extra $10/month
     aiSearch: false
   videoStorage:
     days: 30
     local: false
     cloud: true
-  recordsWithoutWifi: false
-  proprietaryToService: true # cameras stop working if you cancel
+  recordsWithoutWifi: false # records up to 1 hour then stops
+  proprietaryToService: false # cameras still work via Nest app if you cancel ADT
 
 # ── Home Automation ───────────────────────────────────────
 homeAutomation:
@@ -110,15 +111,15 @@ homeAutomation:
     - garageDoor
     - lights
   nestCompatible: true
-  automations: true # trigger-based rules (e.g. arm = lock door)
-  scenes: true # one-tap preset configurations
+  automations: true # trigger-based rules with scheduling (e.g. arm = lock door, M-F 8am-9pm)
+  scenes: true
   thirdPartyApp: false # no need for IFTTT etc.
-  rating: "best" # best | good | limited | none
+  rating: "good" # best | good | limited | none — almost on par with Vivint
 
 # ── Mobile App ────────────────────────────────────────────
 mobileApp:
   rating: "excellent" # excellent | good | fair | poor
-  singleApp: true
+  singleApp: true # ADT Plus app contains everything (except video download — need Google Home for that)
   remoteArmDisarm: true
   multiProperty: false
   remoteUserManagement: true
@@ -126,12 +127,15 @@ mobileApp:
 
 # ── Thoughts ────────────────────────────────────────────────
 review: >
-  Vivint is one of the top professional home security providers,
-  offering a fully integrated smart home security system with
-  professional installation and monitoring. Their equipment is
-  high quality, the touchscreen panel is intuitive, and the mobile
-  app is among the best in the industry. Home automation is more
-  robust than nearly every competitor, rivaled only by ADT's pro
-  install system. The main drawbacks are the long 60-month contract
-  and higher price point — and like SimpliSafe, cameras are
-  proprietary and stop working if you cancel service.
+  The ADT DIY system delivers a really solid home security experience
+  with high-quality equipment that's easy to install in about 2 hours.
+  The Nest cameras are a major plus — they're high definition with night
+  vision and two-way talk, and they continue working via the Nest app even
+  if you cancel ADT. Home automation is robust with Z-Wave support for locks,
+  thermostats, lights, and garage doors, nearly matching Vivint. The ADT Plus
+  app is snappy and well-designed. Being backed by ADT's 6 monitoring stations
+  — the largest and longest-running provider — adds real value. The main
+  drawbacks are the push-button keypad (no touchscreen), cameras not recording
+  without Wi-Fi, and the monthly cost being a few dollars more than Cove or
+  SimpliSafe. But when you factor in the free cameras deal, the upfront cost
+  is practically a no-brainer.

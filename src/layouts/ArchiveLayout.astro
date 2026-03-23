@@ -42,7 +42,7 @@ const sortedArticles = [...articles].sort(
               <a href={`/${categorySlug}/${article.id}`} class="post-card">
                 {article.data.image ? (
                   <div class="post-card__image">
-                    <img src={article.data.image} alt={article.data.title} />
+                    <img src={article.data.image.src} alt={article.data.title} />
                   </div>
                 ) : (
                   <div class="post-card__image post-card__image--placeholder">
