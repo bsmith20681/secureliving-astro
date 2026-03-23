@@ -14,6 +14,7 @@ const articles = defineCollection({
     excerpt: z.string().optional(),
     authorImage: z.string().optional(),
     authorBio: z.string().optional(),
+    company: z.string().optional(),
   }),
 });
 

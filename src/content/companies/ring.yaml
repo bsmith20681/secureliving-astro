@@ -16,38 +16,40 @@ promo: "Save $150 on Whole Home Enhanced Kit"
 installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
-bestFor: "Those who want a fully managed smart home security system without any DIY setup"
+bestFor: "Those already in the Ring ecosystem who want affordable monthly monitoring added to their cameras"
 notesAboutContract: >
-  "Vivint's service is month to month if you pay for the equipment upfront. 
-  This means that there is no contract and you can cancel at anytime without penalty.
-  However, you can choose to finance the equipment at 0% APR for either 42 months or 60 months. 
-  If you finance, you are obligated to have the service as long as there is a balance on the equipment."
+  Since the system is DIY and you pay for everything upfront, there is no contract.
+  Service is month to month — cancel whenever you want with no penalty.
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Professional installation included"
-  - "Best-in-class smart home automation"
-  - "24/7 professional monitoring"
-  - "Excellent mobile app"
-  - "Touchscreen keypad"
+  - "Lowest monthly monitoring cost — $20/month for AI Pro plan"
+  - "Super easy DIY installation — only about 1.5 hours"
+  - "Excellent camera quality with night vision and two-way talk"
+  - "Video storage up to 180 days"
+  - "Local recording option for privacy (stored on the panel)"
+  - "AI-powered notifications with descriptions (e.g. 'Amazon driver delivering a package')"
+  - "Great mobile app — smooth, responsive, easy to use"
 
 cons:
-  - "Higher monthly cost"
-  - "Financing locks you into a service agreement"
-  - "Equipment can be expensive upfront"
-  - "Cameras are proprietary and stop working if you cancel"
+  - "No touchscreen keypad — limited to app control only"
+  - "No two-way talk through the panel — agents can't communicate to you during a break-in"
+  - "Cameras don't record without Wi-Fi"
+  - "Equipment is more expensive upfront than Cove (~$100 more for comparable system)"
+  - "Home automation is limited — needs third-party apps like IFTTT for schedules and routines"
+  - "Not compatible with Nest thermostat"
 
 # ── Pricing ───────────────────────────────────────────────
 pricing:
   monthly:
-    min: 29.99
-    max: 49.99
-    notes: "$29.99 covers basic monitoring to police, fire, and medical. It also covers the app"
+    min: 20
+    max: 99
+    notes: "$20/mo for AI Pro plan — covers 24/7 monitoring plus camera storage. $99/mo for Virtual Guard plan — agents actively monitor cameras and dispatch police for suspicious activity. Optional 24/7 continuous recording is $3/mo per camera."
   equipment:
-    min: 599
-    max: null
-    notes: "Financing available; cost rolled into monthly bill"
-  contractLength: "60 months"
+    min: 376
+    max: 500
+    notes: "Whole Home Enhanced Package normally costs $500. Got it on sale for $376 — includes hub, panel, 4 door/window sensors, motion sensor, doorbell camera, and outdoor camera."
+  contractLength: "None"
   activationFee: null
   cancelFee: null
 
@@ -64,17 +66,17 @@ monitoring:
     landline: false
   backupBattery: true
   monitoringStations: null
-  twoWayTalk: true
+  twoWayTalk: false # no two-way talk through the panel — a major con
 
 # ── Equipment ─────────────────────────────────────────────
 equipment:
   panel:
-    touchscreen: true
-    type: "Smart Hub"
+    touchscreen: false # no touchscreen — app-only or basic keypad
+    type: "Keypad (no touchscreen)"
   sensors:
     doorWindow: true
     motion: true
-    glassBreak: true
+    glassBreak: false # not included in the system reviewed
   keyfob: false
   siren: true
 
@@ -82,7 +84,7 @@ equipment:
 cameras:
   doorbell: true
   outdoor: true
-  indoor: true
+  indoor: false # not included in the Whole Home Enhanced Package
   powerOptions:
     - wired
     - battery
@@ -91,14 +93,14 @@ cameras:
     nightVision: true
     twoWayTalk: true
     liveView: true
-    continuousRecording: false
-    aiSearch: false
+    continuousRecording: true # available for extra $3/month per camera
+    aiSearch: true # AI search and AI descriptions for notifications
   videoStorage:
-    days: 30
-    local: false
+    days: 180
+    local: true # can record locally on the panel for privacy
     cloud: true
-  recordsWithoutWifi: false
-  proprietaryToService: true # cameras stop working if you cancel
+  recordsWithoutWifi: false # cameras are completely dependent on Wi-Fi to record
+  proprietaryToService: false
 
 # ── Home Automation ───────────────────────────────────────
 homeAutomation:
@@ -106,17 +108,15 @@ homeAutomation:
   compatibleDevices:
     - doorLock
     - thermostat
-    - garageDoor
-    - lights
-  nestCompatible: true
-  automations: true # trigger-based rules (e.g. arm = lock door)
-  scenes: true # one-tap preset configurations
-  thirdPartyApp: false # no need for IFTTT etc.
-  rating: "best" # best | good | limited | none
+  nestCompatible: false # not compatible with Nest thermostat
+  automations: false # no built-in schedules or routines — need third-party apps
+  scenes: false
+  thirdPartyApp: true # requires IFTTT or similar for automation routines
+  rating: "limited" # best | good | limited | none — Z-Wave support exists but limited functionality
 
 # ── Mobile App ────────────────────────────────────────────
 mobileApp:
-  rating: "excellent" # excellent | good | fair | poor
+  rating: "excellent" # excellent | good | fair | poor — really good, smooth UX, no issues
   singleApp: true
   remoteArmDisarm: true
   multiProperty: false
@@ -125,12 +125,17 @@ mobileApp:
 
 # ── Thoughts ────────────────────────────────────────────────
 review: >
-  Vivint is one of the top professional home security providers,
-  offering a fully integrated smart home security system with
-  professional installation and monitoring. Their equipment is
-  high quality, the touchscreen panel is intuitive, and the mobile
-  app is among the best in the industry. Home automation is more
-  robust than nearly every competitor, rivaled only by ADT's pro
-  install system. The main drawbacks are the long 60-month contract
-  and higher price point — and like SimpliSafe, cameras are
-  proprietary and stop working if you cancel service.
+  Ring offers a really solid DIY home security system with one of the
+  lowest monthly monitoring costs on the market at just $20/month. The
+  cameras are impressive with HD quality, night vision, 180-day video
+  storage, and AI-powered smart notifications. Installation is a breeze
+  at only about 1.5 hours, and the mobile app is smooth and responsive.
+  The main drawbacks are the lack of a touchscreen keypad (you're stuck
+  using the app), no two-way talk through the panel for emergencies, and
+  cameras that won't record without Wi-Fi. Home automation is limited
+  compared to ADT or Vivint — you'll need third-party apps like IFTTT
+  for scheduling and routines. Equipment is about $100 more than Cove for
+  a comparable setup, but the monthly savings make up for it over time.
+  If you're already in the Ring ecosystem with their cameras and doorbell,
+  adding the alarm system is a great way to flesh out your home security
+  without breaking the bank.

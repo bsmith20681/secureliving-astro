@@ -2,6 +2,7 @@
 import PageLayout from './PageLayout.astro';
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import ArticlePromoBox from '../components/companies/ArticlePromoBox.astro';
 
 interface Props {
   title: string;
@@ -12,6 +13,7 @@ interface Props {
   pubDate: Date;
   updatedDate?: Date;
   image?: ImageMetadata;
+  company?: string;
 }
 
 const {
@@ -23,12 +25,15 @@ const {
   pubDate,
   updatedDate,
   image,
+  company: companySlug,
 } = Astro.props;
 
 const authorEntry = authorSlug ? await getEntry('authors', authorSlug) : null;
 const authorName = authorEntry?.data.name;
 const authorImage = authorEntry?.data.image;
 const authorBio = authorEntry?.data.bio;
+
+const companyEntry = companySlug ? await getEntry('companies', companySlug) : null;
 
 const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
   month: 'long',
@@ -49,61 +54,75 @@ const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
 >
   <article class="entry">
     <div class="entry-header">
-      <div class="container entry-container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span class="breadcrumb__separator">&gt;&gt;</span>
-          <a href={`/${categorySlug}`}>{category}</a>
-          <span class="breadcrumb__separator">&gt;&gt;</span>
-          <span class="breadcrumb__current">{title}</span>
-        </nav>
-        <h1 class="entry__title">{title}</h1>
-        <div class="entry__disclaimer">
-          We might earn a commission based on product recommendations at no extra cost to you. <a class="link-muted" href="/affiliate-disclaimer/">Learn More</a>
-        </div>
-        <div class="post-meta">
-          <div class="post-meta__info">
-            {authorName && (
-              <div class="post-meta__author">
-                {authorImage && (
-                  <div class="post-meta__avatar">
-                    <Image src={authorImage} alt={authorName} width={48} height={48} />
+      <div class="container">
+        <div class="row">
+          <div class={companyEntry ? 'col-xs-12 col-md-8' : 'col-xs-12 col-md-8 col-md-offset-2'}>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span class="breadcrumb__separator">&gt;&gt;</span>
+              <a href={`/${categorySlug}`}>{category}</a>
+              <span class="breadcrumb__separator">&gt;&gt;</span>
+              <span class="breadcrumb__current">{title}</span>
+            </nav>
+            <h1 class="entry__title">{title}</h1>
+            <div class="entry__disclaimer">
+              We might earn a commission based on product recommendations at no extra cost to you. <a class="link-muted" href="/affiliate-disclaimer/">Learn More</a>
+            </div>
+            <div class="post-meta">
+              <div class="post-meta__info">
+                {authorName && (
+                  <div class="post-meta__author">
+                    {authorImage && (
+                      <div class="post-meta__avatar">
+                        <Image src={authorImage} alt={authorName} width={48} height={48} />
+                      </div>
+                    )}
+                    <div class="post-meta__text">
+                      <span class="post-meta__label">Written By</span>
+                      <span class="post-meta__value">{authorName}</span>
+                    </div>
                   </div>
                 )}
-                <div class="post-meta__text">
-                  <span class="post-meta__label">Written By</span>
-                  <span class="post-meta__value">{authorName}</span>
+                <div class="post-meta__date">
+                  <span class="post-meta__label">Last Updated:</span>
+                  <span class="post-meta__value">{displayDate}</span>
                 </div>
               </div>
-            )}
-            <div class="post-meta__date">
-              <span class="post-meta__label">Last Updated:</span>
-              <span class="post-meta__value">{displayDate}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container entry-container">
-      <slot />
+    <div class="container">
+      <div class="row article-row">
+        <div class={companyEntry ? 'col-xs-12 col-md-8 article-content' : 'col-xs-12 col-md-8 col-md-offset-2 article-content'}>
+          <slot />
 
-      {authorName && (
-        <div class="author-bio">
-          <h3 class="author-bio__heading">About the author</h3>
-          <div class="author-bio__content">
-            {authorImage && (
-              <div class="author-bio__avatar">
-                <Image src={authorImage} alt={authorName} width={80} height={80} />
+          {authorName && (
+            <div class="author-bio">
+              <h3 class="author-bio__heading">About the author</h3>
+              <div class="author-bio__content">
+                {authorImage && (
+                  <div class="author-bio__avatar">
+                    <Image src={authorImage} alt={authorName} width={80} height={80} />
+                  </div>
+                )}
+                <div>
+                  <p class="author-bio__name">{authorName}</p>
+                  {authorBio && <p class="author-bio__description">{authorBio}</p>}
+                </div>
               </div>
-            )}
-            <div>
-              <p class="author-bio__name">{authorName}</p>
-              {authorBio && <p class="author-bio__description">{authorBio}</p>}
             </div>
-          </div>
+          )}
         </div>
-      )}
+
+        {companyEntry && (
+          <aside class="col-xs-12 col-md-4 article-sidebar">
+            <ArticlePromoBox company={companyEntry.data} />
+          </aside>
+        )}
+      </div>
     </div>
   </article>
 </PageLayout>

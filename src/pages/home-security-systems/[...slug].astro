@@ -29,6 +29,7 @@ const { Content } = await render(article);
   pubDate={article.data.pubDate}
   updatedDate={article.data.updatedDate}
   image={article.data.image}
+  company={article.data.company}
 >
   <Content components={{ CompanyCard, CompanyRating, ProsCons }} />
 </ArticleLayout>
