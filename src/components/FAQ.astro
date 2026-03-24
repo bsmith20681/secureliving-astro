@@ -1,0 +1,83 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="faq">
+  {items.map((item) => (
+    <details class="faq__item">
+      <summary class="faq__question">
+        {item.question}
+        <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </summary>
+      <div class="faq__answer">
+        <p>{item.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .faq__item {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .faq__question {
+    padding: var(--space-3) var(--space-4);
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--gray-50);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__icon {
+    flex-shrink: 0;
+    color: var(--gray-400);
+    transition: transform 0.2s ease;
+  }
+
+  .faq__item[open] .faq__icon {
+    transform: rotate(180deg);
+    color: var(--primary-600);
+  }
+
+  .faq__item[open] .faq__question {
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .faq__answer {
+    padding: var(--space-3) var(--space-4);
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  .faq__answer p {
+    margin: 0;
+  }
+</style>

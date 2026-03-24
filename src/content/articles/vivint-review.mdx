@@ -9,6 +9,7 @@ company: "vivint"
 ---
 
 import { Image } from "astro:assets";
+import FAQ from "../../components/FAQ.astro";
 import panelSettings from "../../assets/vivint/updating-settings-vivint-panel.png";
 import usingApp from "../../assets/vivint/using-vivint-app.png";
 import lockingDoor from "../../assets/vivint/vivint-locking-door-from-app.png";
@@ -32,12 +33,55 @@ import glassBreak from "../../assets/vivint/vivint-glass-break.png";
 import talkingThroughCamera from "../../assets/vivint/vivint-mobile-app-talking-through-camera.png";
 import cameraZoneSettings from "../../assets/vivint/vivint-camera-zone-settings.png";
 import panelRecordings from "../../assets/vivint/smartpanel-viewing-recordings.png";
+import Admonition from "../../components/Admonition.astro";
+
+<Admonition>
+  **Verdict: 4.5/5:** Vivint delivers a premium smart home security experience
+  with professional installation, reliable monitoring, and one of the best apps
+  in the industry. The main downside is cost — you'll pay more than most
+  competitors.
+</Admonition>
 
 I've been a Vivint customer for over three years now. My wife and I got the system installed the week we moved in, mostly because we travel a lot and wanted something watching the house while we're gone.
 
 This review is based entirely on my own experience with equipment I paid for out of pocket. Vivint didn't sponsor this. I do have a referral link, though. If you use it, you'll get a small discount and I'll earn a small commission at no extra cost to you.
 
 Here's the full breakdown of what works, what doesn't, and whether I think Vivint is actually worth the money in 2026.
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Monthly cost</td>
+      <td>$29–$49/mo</td>
+    </tr>
+    <tr>
+      <td>Equipment cost</td>
+      <td>$1,200–$1,300 upfront</td>
+    </tr>
+    <tr>
+      <td>Contract required</td>
+      <td>No (if paid upfront)</td>
+    </tr>
+    <tr>
+      <td>Monitoring type</td>
+      <td>Professional (cellular)</td>
+    </tr>
+    <tr>
+      <td>Mobile app</td>
+      <td>Yes (iOS & Android)</td>
+    </tr>
+    <tr>
+      <td>Smart home integration</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
 
 <CompanyCard company="vivint" />
 
@@ -51,10 +95,15 @@ We gave Vivint a 4.5 out of 5. The equipment and features are as good as anythin
 
 Vivint's system runs through a touchscreen panel called the Smart Hub. If you've ever used an older alarm system with those tiny push buttons, this is a completely different experience. Changing a PIN code, bypassing a sensor, adjusting settings... it's all right there on the screen and pretty self-explanatory.
 
-<Image
-  src={panelSettings}
-  alt="Adjusting settings on the Vivint smart hub touchscreen panel"
-/>
+<figure>
+  <Image
+    src={panelSettings}
+    alt="Adjusting settings on the Vivint smart hub touchscreen panel"
+  />
+  <figcaption>
+    Updating settings directly on the Vivint Smart Hub touchscreen panel
+  </figcaption>
+</figure>
 
 From the panel you can arm and disarm the system, lock your doors, change the thermostat, and control anything else connected to the system. The monitoring team can also communicate with you through the panel during an emergency, which could be useful if you can't get to your phone during a break-in.
 
@@ -72,30 +121,45 @@ This is where the system really earns its price tag. From my phone I can:
 - Adjust the thermostat
 - Control Z-Wave devices like smart light switches
 
-<Image src={usingApp} alt="The Vivint mobile app home screen" />
+<figure>
+  <Image src={usingApp} alt="The Vivint mobile app home screen" />
+  <figcaption>
+    The Vivint app home screen with quick access to cameras, locks, and the
+    alarm
+  </figcaption>
+</figure>
 
 I barely touch the panel anymore. There have been so many times where I've left the house and caught myself wondering if I locked the front door. Now I just check the app and lock it remotely if I forgot. Sounds minor, but you end up relying on it more than you'd think.
 
-<Image
-  src={lockingDoor}
-  alt="Locking the front door remotely from the Vivint app"
-/>
+<figure>
+  <Image
+    src={lockingDoor}
+    alt="Locking the front door remotely from the Vivint app"
+  />
+  <figcaption>Locking the front door remotely from the Vivint app</figcaption>
+</figure>
 
 I know you can stitch together smart home devices from different brands and get similar functionality. Ring for cameras, August for the door lock, Nest for the thermostat, and then some separate security app on top of all that. But there's something genuinely nice about having everything consolidated under one app. No juggling. No compatibility headaches.
 
-<Image
-  src={armingRemotely}
-  alt="Arming the Vivint system remotely from the mobile app"
-/>
+<figure>
+  <Image
+    src={armingRemotely}
+    alt="Arming the Vivint system remotely from the mobile app"
+  />
+  <figcaption>Arming the Vivint system remotely from the mobile app</figcaption>
+</figure>
 
 ### Shortcuts and automations
 
 Vivint's app has a feature called shortcuts that lets you set up automations for the system. You pick a trigger (time of day, an event like arming the system or ringing the doorbell) and then choose what actions fire off when that trigger is met.
 
-<Image
-  src={shortcutsApp}
-  alt="Setting up automation shortcuts in the Vivint app"
-/>
+<figure>
+  <Image
+    src={shortcutsApp}
+    alt="Setting up automation shortcuts in the Vivint app"
+  />
+  <figcaption>Setting up automation shortcuts in the Vivint app</figcaption>
+</figure>
 
 A few examples of what you can do:
 
@@ -109,39 +173,62 @@ I personally don't use this feature much, but if you're the type who wants to go
 
 The cameras are my favorite part of the system, and where I spend the most time in the app. I have the doorbell camera and the outdoor camera. I upgraded the outdoor camera with the floodlight add-on about a year after installation.
 
-<Image
-  src={doorbellCamera}
-  alt="Vivint doorbell camera installed at the front door"
-/>
+<figure>
+  <Image
+    src={doorbellCamera}
+    alt="Vivint doorbell camera installed at the front door"
+  />
+  <figcaption>The Vivint doorbell camera installed at my front door</figcaption>
+</figure>
 
 Both cameras produce really clear video. HD quality, solid night vision that picks up detail even in total darkness, and two-way talk so you can have a conversation with someone at the door from your phone or the panel. Audio records along with the video too.
 
-<Image src={outsideCamera} alt="Vivint outdoor camera pro mounted outside" />
+<figure>
+  <Image src={outsideCamera} alt="Vivint outdoor camera pro mounted outside" />
+  <figcaption>
+    The Vivint Outdoor Camera Pro mounted on the side of the house
+  </figcaption>
+</figure>
 
 The cameras connect wirelessly to the Smart Hub panel, which acts as your DVR. Even without Wi-Fi, the cameras will still record. You just won't be able to view footage remotely from your phone until the connection is back.
 
 Now, I should clarify what "wireless" means here. The cameras still need to be plugged into a power outlet for power. The doorbell camera is the exception since it can use your existing doorbell wiring. My original doorbell wasn't working when I bought the house, so the tech drilled a small hole and ran wiring to a nearby outlet. I tucked the cable behind the baseboard so you can't see it at all. Really clean install.
 
-<Image
-  src={cameraPluggedIn}
-  alt="Vivint camera power cable plugged into an outlet"
-/>
+<figure>
+  <Image
+    src={cameraPluggedIn}
+    alt="Vivint camera power cable plugged into an outlet"
+  />
+  <figcaption>
+    The cameras are wireless for data but still need to be plugged in for power
+  </figcaption>
+</figure>
 
 ### Motion detection and recordings
 
 Each camera has a built-in motion sensor. When activity is detected, you get a push notification and the camera starts recording. I had to tweak the detection zones and sensitivity settings when I first got the system because I was getting too many alerts. After some adjustments, it pretty much only triggers now when there's an actual person there.
 
-<Image
-  src={cameraZoneSettings}
-  alt="Adjusting camera detection zone settings in the Vivint app"
-/>
+<figure>
+  <Image
+    src={cameraZoneSettings}
+    alt="Adjusting camera detection zone settings in the Vivint app"
+  />
+  <figcaption>
+    Adjusting the motion detection zones to reduce false alerts
+  </figcaption>
+</figure>
 
 All recorded clips show up in the events tab of the app. You can watch them or download them to your phone. As new footage comes in, the oldest clips get auto-deleted. You'll get roughly 14 days of storage, though that fluctuates based on how much activity your cameras detect.
 
-<Image
-  src={appRecordings}
-  alt="Viewing recorded camera clips in the Vivint app"
-/>
+<figure>
+  <Image
+    src={appRecordings}
+    alt="Viewing recorded camera clips in the Vivint app"
+  />
+  <figcaption>
+    Recorded clips show up in the events tab with roughly 14 days of storage
+  </figcaption>
+</figure>
 
 There's also an option for full 24/7 continuous recording at $7 per month per camera. That bumps you up to 10 days of non-stop footage with a timeline view that flags where events occurred. It's a nice option to have, but at $7 per camera on top of what you're already paying, it adds up.
 
@@ -149,36 +236,60 @@ There's also an option for full 24/7 continuous recording at $7 per month per ca
 
 When you activate deter mode on a camera and it detects motion, the lens lights up with a red ring and the camera plays a loud whistle. It's designed to let whoever is out there know they're being watched and recorded.
 
-<Image
-  src={deterNight}
-  alt="Vivint outdoor camera deter mode activated at night with red ring"
-/>
+<figure>
+  <Image
+    src={deterNight}
+    alt="Vivint outdoor camera deter mode activated at night with red ring"
+  />
+  <figcaption>
+    Deter mode lights up the camera's red ring and plays a loud whistle when
+    motion is detected
+  </figcaption>
+</figure>
 
 The outdoor camera with the floodlight takes this further. In deter mode, the floodlight kicks on, the whistle sounds, and the red ring lights up. All of that commotion grabs attention and makes the person look straight at the camera, giving you a clear shot of their face. It's actually a pretty clever approach to home security. Instead of just passively recording, the system is actively trying to prevent the incident from happening in the first place.
 
-<Image
-  src={floodlightNight}
-  alt="Vivint outdoor camera floodlight activated at night in deter mode"
-/>
+<figure>
+  <Image
+    src={floodlightNight}
+    alt="Vivint outdoor camera floodlight activated at night in deter mode"
+  />
+  <figcaption>
+    The floodlight add-on kicks on alongside the deter whistle and red ring
+  </figcaption>
+</figure>
 
 ### Two-way talk
 
 Both cameras support two-way audio. You can talk to someone through the camera from your phone or the panel. This works well for telling a delivery driver where to leave a package or communicating with someone at your door when you're not home.
 
-<Image
-  src={talkingThroughCamera}
-  alt="Talking through the Vivint camera using the mobile app"
-/>
+<figure>
+  <Image
+    src={talkingThroughCamera}
+    alt="Talking through the Vivint camera using the mobile app"
+  />
+  <figcaption>
+    Using two-way talk to communicate through the camera from the app
+  </figcaption>
+</figure>
 
 ## Sensors
 
-<Image src={wirelessSensor} alt="Vivint wireless door and window sensor" />
+<figure>
+  <Image src={wirelessSensor} alt="Vivint wireless door and window sensor" />
+  <figcaption>Vivint's wireless door and window sensor</figcaption>
+</figure>
 
 My house had an old hardwired security system when I moved in. Vivint was able to take over most of those existing sensors, which saved me money. The few that weren't working anymore got replaced with Vivint's standard wireless sensors.
 
 I have sensors on every door and window, plus two glass break sensors. They've all worked without any issues over the past three years.
 
-<Image src={glassBreak} alt="Vivint glass break sensor" />
+<figure>
+  <Image src={glassBreak} alt="Vivint glass break sensor" />
+  <figcaption>
+    The glass break sensor detects the sound of breaking glass nearby
+  </figcaption>
+</figure>
 
 When the tech comes to your house, they'll walk through and customize the sensor layout based on your home's specific entry points. That's one of the benefits of professional installation. They'll spot things you might miss.
 
@@ -186,7 +297,10 @@ When the tech comes to your house, they'll walk through and customize the sensor
 
 ### Door lock
 
-<Image src={smartLock} alt="Vivint smart lock installed on front door" />
+<figure>
+  <Image src={smartLock} alt="Vivint smart lock installed on front door" />
+  <figcaption>The Vivint smart lock installed on my front door</figcaption>
+</figure>
 
 The smart lock can be controlled from the app, the panel, or the keypad on the lock itself. Each person in the house gets their own PIN code, and you can change PINs remotely from the app. That's especially handy if you're renting your place out on Airbnb or having guests. Just swap the code between stays without being there.
 
@@ -196,17 +310,23 @@ I should be upfront about this, though. My door lock slowly stopped working arou
 
 ### Thermostat
 
-<Image
-  src={nestThermostat}
-  alt="Nest thermostat connected to the Vivint system"
-/>
+<figure>
+  <Image
+    src={nestThermostat}
+    alt="Nest thermostat connected to the Vivint system"
+  />
+  <figcaption>The Nest thermostat integrated with the Vivint system</figcaption>
+</figure>
 
 We went with the Nest thermostat, which has a built-in motion sensor that tries to figure out if you're home and adjusts the temperature accordingly. Since it's connected to Vivint, it also knows when you arm or disarm the system, giving it a better read on whether you're actually home or away.
 
-<Image
-  src={controllingTemp}
-  alt="Controlling the thermostat from the Vivint mobile app"
-/>
+<figure>
+  <Image
+    src={controllingTemp}
+    alt="Controlling the thermostat from the Vivint mobile app"
+  />
+  <figcaption>Adjusting the thermostat remotely from the Vivint app</figcaption>
+</figure>
 
 Vivint claims the Nest can save 10 to 15% on your electric bill. I honestly can't verify that. I work from home most days and got the thermostat right when I moved in, so I don't have any baseline to compare against.
 
@@ -216,10 +336,13 @@ The thermostat also died on me around the three-year mark. Just stopped working 
 
 Vivint's monitoring covers police, fire, and medical dispatch. Everything runs over a cellular connection, so you don't need a landline. If your power or Wi-Fi goes out, the system keeps working thanks to the cellular backup and the panel's built-in battery.
 
-<Image
-  src={armingSystem}
-  alt="Arming the Vivint security system from the panel"
-/>
+<figure>
+  <Image
+    src={armingSystem}
+    alt="Arming the Vivint security system from the panel"
+  />
+  <figcaption>Arming the system directly from the Smart Hub panel</figcaption>
+</figure>
 
 I've never had a real break-in (thankfully), but I've accidentally set the alarm off a handful of times. The response was fast. Within seconds, the monitoring team was calling my phone. They can also communicate through the panel, which would be useful during an actual emergency.
 
@@ -291,30 +414,42 @@ Use the link below to get a free quote from Vivint and see what pricing looks li
 
 ## Vivint FAQ
 
-### How much does Vivint cost per month?
-
-Monthly plans range from $29 to $49 depending on your features. Basic monitoring (police, fire, medical plus the app) starts at $29. Adding smart home features bumps it to $39. Each camera is an additional $5 per month.
-
-### Does Vivint require a contract?
-
-Not if you pay for the equipment upfront. That puts you on month-to-month service with no commitment. If you finance the equipment, you're locked into a service agreement for either 42 or 60 months depending on the financing term.
-
-### Can Vivint use my existing sensors?
-
-Yes. When the tech comes out, they'll check your existing hardwired sensors. If they're still working, Vivint can take them over. Any that are dead get swapped with Vivint's wireless sensors.
-
-### Do Vivint cameras work without Wi-Fi?
-
-The cameras will still record locally through the panel even without Wi-Fi. But you won't be able to view live feeds or pull up recordings from the app until your internet connection is back.
-
-### Can I use Vivint cameras without the monitoring plan?
-
-Technically the cameras still record to the panel locally. But without the monitoring plan, you lose access to the app, remote viewing, cloud storage, and all the smart features. At that point, the cameras become pretty limited.
-
-### Does Vivint work with Alexa and Google Assistant?
-
-Yes, Vivint works with both Amazon Alexa and Google Assistant. You can use voice commands to arm the system, control smart home devices, and view camera feeds on compatible smart displays.
-
-### Is Vivint better than ADT?
-
-They're in the same tier. ADT has been around longer and offers more monitoring options (landline and cellular). Vivint wins on smart home features, app quality, and camera technology. It really comes down to what you prioritize.
+<FAQ
+  items={[
+    {
+      question: "How much does Vivint cost per month?",
+      answer:
+        "Monthly plans range from $29 to $49 depending on your features. Basic monitoring (police, fire, medical plus the app) starts at $29. Adding smart home features bumps it to $39. Each camera is an additional $5 per month.",
+    },
+    {
+      question: "Does Vivint require a contract?",
+      answer:
+        "Not if you pay for the equipment upfront. That puts you on month-to-month service with no commitment. If you finance the equipment, you're locked into a service agreement for either 42 or 60 months depending on the financing term.",
+    },
+    {
+      question: "Can Vivint use my existing sensors?",
+      answer:
+        "Yes. When the tech comes out, they'll check your existing hardwired sensors. If they're still working, Vivint can take them over. Any that are dead get swapped with Vivint's wireless sensors.",
+    },
+    {
+      question: "Do Vivint cameras work without Wi-Fi?",
+      answer:
+        "The cameras will still record locally through the panel even without Wi-Fi. But you won't be able to view live feeds or pull up recordings from the app until your internet connection is back.",
+    },
+    {
+      question: "Can I use Vivint cameras without the monitoring plan?",
+      answer:
+        "Technically the cameras still record to the panel locally. But without the monitoring plan, you lose access to the app, remote viewing, cloud storage, and all the smart features. At that point, the cameras become pretty limited.",
+    },
+    {
+      question: "Does Vivint work with Alexa and Google Assistant?",
+      answer:
+        "Yes, Vivint works with both Amazon Alexa and Google Assistant. You can use voice commands to arm the system, control smart home devices, and view camera feeds on compatible smart displays.",
+    },
+    {
+      question: "Is Vivint better than ADT?",
+      answer:
+        "They're in the same tier. ADT has been around longer and offers more monitoring options (landline and cellular). Vivint wins on smart home features, app quality, and camera technology. It really comes down to what you prioritize.",
+    },
+  ]}
+/>

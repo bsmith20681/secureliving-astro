@@ -11,6 +11,8 @@
  */
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import PromoTag from '../PromoTag.astro';
+import StarRating from '../StarRating.astro';
 
 interface Props {
   company: string;
@@ -22,9 +24,6 @@ const entry = await getEntry('companies', company);
 if (!entry) throw new Error(`Company "${company}" not found in companies collection`);
 const { name, phone, phoneUnformatted, website, rating, logo, pros, promo } = entry.data;
 
-const fullStars = Math.floor(rating.overall);
-const hasHalf = rating.overall % 1 >= 0.5;
-const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
 const telHref = `tel:${phoneUnformatted || phone.replace(/[^0-9+]/g, '')}`;
 ---
 
@@ -42,34 +41,14 @@ const telHref = `tel:${phoneUnformatted || phone.replace(/[^0-9+]/g, '')}`;
         <Image src={logo} alt={`${name} logo`} />
       </div>
       <div class="company-card__rating">
-        <div class="company-card__stars">
-          {Array(fullStars).fill(null).map(() => (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="star star--full">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          ))}
-          {hasHalf && (
-            <svg width="16" height="16" viewBox="0 0 24 24" class="star star--half">
-              <defs>
-                <linearGradient id={`half-${company}`}>
-                  <stop offset="50%" stop-color="currentColor"/>
-                  <stop offset="50%" stop-color="#d1d5db"/>
-                </linearGradient>
-              </defs>
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill={`url(#half-${company})`}/>
-            </svg>
-          )}
-          {Array(emptyStars).fill(null).map(() => (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#d1d5db" class="star star--empty">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          ))}
-        </div>
-        <span class="company-card__rating-label">{rating.overall}</span>
+        <StarRating rating={rating.overall} id={`card-${company}`} />
       </div>
     </div>
 
     <div class="company-card__info">
+      <div class="mb-3">
+       {promo && <PromoTag text={promo} />}
+      </div>
       <ul class="company-card__features">
         {pros.slice(0, 3).map((pro) => (
           <li>

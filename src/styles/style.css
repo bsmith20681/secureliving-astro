@@ -130,6 +130,30 @@ h6 {
   font-size: var(--text-base);
 }
 
+li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+th {
+  background-color: var(--primary-900);
+  color: var(--white);
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--gray-300);
+  padding: var(--space-2);
+}
+
 a {
   color: var(--primary-700);
   transition: 0.2s ease-in-out;
@@ -194,6 +218,8 @@ img {
 
 figcaption {
   text-align: center;
+  font-size: var(--text-sm);
+  font-style: italic;
 }
 
 /*********UTILITY STYLES**********/
@@ -1749,10 +1775,9 @@ input.sl-radio-btn:checked + label {
 }
 
 .company-card__body {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: var(--space-5) var(--space-6);
   gap: var(--space-6);
 }
@@ -1921,8 +1946,8 @@ input.sl-radio-btn:checked + label {
 
 @media only screen and (max-width: 768px) {
   .company-card__body {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   .company-card__actions {

@@ -1,0 +1,58 @@
+---
+interface Props {
+  rating: number;
+  id: string;
+}
+
+const { rating, id } = Astro.props;
+const full = Math.floor(rating);
+const half = rating % 1 >= 0.5;
+const empty = 5 - full - (half ? 1 : 0);
+const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z";
+---
+
+<div class="star-rating">
+  <div class="star-rating__stars">
+    {Array(full).fill(null).map(() => (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f59e0b">
+        <path d={starPath}/>
+      </svg>
+    ))}
+    {half && (
+      <svg width="18" height="18" viewBox="0 0 24 24">
+        <defs>
+          <linearGradient id={`half-star-${id}`}>
+            <stop offset="50%" stop-color="#f59e0b"/>
+            <stop offset="50%" stop-color="#d1d5db"/>
+          </linearGradient>
+        </defs>
+        <path d={starPath} fill={`url(#half-star-${id})`}/>
+      </svg>
+    )}
+    {Array(empty).fill(null).map(() => (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#d1d5db">
+        <path d={starPath}/>
+      </svg>
+    ))}
+  </div>
+  <span class="star-rating__score">{rating}</span>
+</div>
+
+<style>
+  .star-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .star-rating__stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .star-rating__score {
+    font-weight: 700;
+    margin-left: var(--space-1);
+  }
+</style>
