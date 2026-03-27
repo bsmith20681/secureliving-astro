@@ -3,12 +3,12 @@ slug: "ring"
 phone: ""
 website: "https://ring.com/"
 rating:
-  overall: 4.5
-  equipment: 5
-  features: 5
+  overall: 3.5
+  equipment: 4
+  features: 4
   pricing: 3.5
-  easeOfUse: 5
-  customerService: 4
+  easeOfUse: 4.5
+  customerService: 3.5
 logo: "../../assets/logos/ring-logo.png"
 promo: "Save $150 on Whole Home Enhanced Kit"
 
@@ -16,27 +16,26 @@ promo: "Save $150 on Whole Home Enhanced Kit"
 installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
-bestFor: "Those already in the Ring ecosystem who want affordable monthly monitoring added to their cameras"
+bestFor: "Those already in the Ring ecosystem and want to add basic security"
 notesAboutContract: >
-  Since the system is DIY and you pay for everything upfront, there is no contract.
-  Service is month to month — cancel whenever you want with no penalty.
+  The service is month-to-month. You can cancel whenever you want with no penalty.
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Lowest monthly monitoring cost — $20/month for AI Pro plan"
-  - "Super easy DIY installation — only about 1.5 hours"
+  - "Lowest Monthly Price"
+  - "Easy DIY Installation"
   - "Excellent camera quality with night vision and two-way talk"
   - "Video storage up to 180 days"
-  - "Local recording option for privacy (stored on the panel)"
-  - "AI-powered notifications with descriptions (e.g. 'Amazon driver delivering a package')"
+  - "AI-powered notifications with descriptions"
   - "Great mobile app — smooth, responsive, easy to use"
 
 cons:
-  - "No touchscreen keypad — limited to app control only"
-  - "No two-way talk through the panel — agents can't communicate to you during a break-in"
+  - "Camera Privacy Concerns Amongst Customers"
+  - "No touchscreen keypad"
+  - "No two-way talk through the panel"
   - "Cameras don't record without Wi-Fi"
-  - "Equipment is more expensive upfront than Cove (~$100 more for comparable system)"
-  - "Home automation is limited — needs third-party apps like IFTTT for schedules and routines"
+  - "High equipment cost"
+  - "Limited Home Automation Features"
   - "Not compatible with Nest thermostat"
 
 # ── Pricing ───────────────────────────────────────────────
@@ -44,7 +43,7 @@ pricing:
   monthly:
     min: 20
     max: 99
-    notes: "$20/mo for AI Pro plan — covers 24/7 monitoring plus camera storage. $99/mo for Virtual Guard plan — agents actively monitor cameras and dispatch police for suspicious activity. Optional 24/7 continuous recording is $3/mo per camera."
+    notes: "$20/mo for basic security monitoring. $99/mo for Virtual Guard plan, agents actively monitor cameras and dispatch police for suspicious activity. Optional 24/7 continuous recording is $3/mo per camera."
   equipment:
     min: 376
     max: 500
@@ -72,11 +71,11 @@ monitoring:
 equipment:
   panel:
     touchscreen: false # no touchscreen — app-only or basic keypad
-    type: "Keypad (no touchscreen)"
+    type: "Basic Keypad"
   sensors:
     doorWindow: true
     motion: true
-    glassBreak: false # not included in the system reviewed
+    glassBreak: true
   keyfob: false
   siren: true
 
@@ -84,7 +83,7 @@ equipment:
 cameras:
   doorbell: true
   outdoor: true
-  indoor: false # not included in the Whole Home Enhanced Package
+  indoor: true
   powerOptions:
     - wired
     - battery
@@ -125,17 +124,6 @@ mobileApp:
 
 # ── Thoughts ────────────────────────────────────────────────
 review: >
-  Ring offers a really solid DIY home security system with one of the
-  lowest monthly monitoring costs on the market at just $20/month. The
-  cameras are impressive with HD quality, night vision, 180-day video
-  storage, and AI-powered smart notifications. Installation is a breeze
-  at only about 1.5 hours, and the mobile app is smooth and responsive.
-  The main drawbacks are the lack of a touchscreen keypad (you're stuck
-  using the app), no two-way talk through the panel for emergencies, and
-  cameras that won't record without Wi-Fi. Home automation is limited
-  compared to ADT or Vivint — you'll need third-party apps like IFTTT
-  for scheduling and routines. Equipment is about $100 more than Cove for
-  a comparable setup, but the monthly savings make up for it over time.
-  If you're already in the Ring ecosystem with their cameras and doorbell,
-  adding the alarm system is a great way to flesh out your home security
-  without breaking the bank.
+  Ring offers the lowest priced security system at just $19.99 per month. As we have seen with other companies like Simplisafe, I wouldn't be surprised if that price rises
+  over the next few years. The security features and equipment are very basic. So this setup would be best for those who already have the Ring cameras and want to add a little more security
+  to their setup. The cameras are great and easy to install. I also enjoyed the descriptive ai notifications that come through the app. The upfront cost for Ring is more than other companies. 

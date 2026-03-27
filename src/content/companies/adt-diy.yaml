@@ -1,14 +1,14 @@
-name: "ADT DIY System"
+name: "ADT DIY"
 slug: "adt-diy"
 phone: "(833) 224-7221"
 phoneUnformatted: "18332247221"
 website: "https://s24alarms.com/YHSE"
 rating:
-  overall: 4.5
-  equipment: 5
-  features: 5
+  overall: 4
+  equipment: 4
+  features: 4.5
   pricing: 3.5
-  easeOfUse: 5
+  easeOfUse: 4.5
   customerService: 4
 logo: "../../assets/logos/adt-logo.png"
 promo: "Nest Doorbell + Nest Camera — FREE"
@@ -17,38 +17,37 @@ promo: "Nest Doorbell + Nest Camera — FREE"
 installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
-bestFor: "Those who want strong home automation and ADT's monitoring legacy at a slightly higher monthly price"
+bestFor: "Those who want affordable pricing, but still want robust home automation"
 notesAboutContract: >
-  Since the system is DIY and you pay for everything upfront, there is no contract.
-  Service is month to month — cancel whenever you want with no penalty.
+  No contract. You simply pay up front for the equipment and can cancel the service whenever you want with no penalty. 
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Super easy DIY installation — only about 2 hours"
-  - "Backed by ADT with 6 monitoring stations — the largest and longest-running provider"
-  - "Robust home automation with Z-Wave support (locks, thermostats, lights, garage doors)"
-  - "Nest cameras still work via the Nest app even if you cancel ADT"
-  - "Excellent mobile app — snappy, well-designed, everything in a single app"
+  - "Easy DIY Installation. Takes less than 2 hours."
+  - "Backed by ADT's 6 Monitoring stations."
+  - "Most robust home automation for DIY system"
+  - "Cameras still work even if you cancel the service"
+  - "Easy to use app"
   - "Can add more cameras without increasing the monthly bill"
 
 cons:
-  - "Push-button keypad instead of touchscreen — must tap to light up before entering code"
-  - "No on-site tech support since it's DIY — phone support only"
-  - "Cameras don't record without Wi-Fi (only up to 1 hour)"
+  - "Very basic panel"
+  - "Phone support only. Will not send a tech"
+  - "Cameras only record for one hour without wifi
   - "No power over Ethernet option for cameras"
-  - "Can't download video clips from the ADT Plus app — must use Google Home app"
-  - "Monthly cost is a few dollars more than competitors like Cove or SimpliSafe"
+  - "You have to use two apps to download videos"
+  - "More expensive than other DIY systems"
 
 # ── Pricing ───────────────────────────────────────────────
 pricing:
   monthly:
     min: 24.99
     max: 39.99
-    notes: "$24.99 for basic security without cameras. $39.99 with cameras — includes Nest Aware subscription and ADT monitoring. 24/7 continuous recording is an extra $10/month."
+    notes: "$24.99 for basic security without cameras. $39.99 with cameras, this includes Nest Aware subscription and ADT monitoring. 24/7 continuous recording is an extra $10/month."
   equipment:
-    min: 350
+    min: 169
     max: null
-    notes: "Paid $350 for base station, sensors, motion sensor, glass break sensor, plus 2 free Nest cameras. Cost varies based on equipment needs."
+    notes: "I Paid $350 for base station, sensors, motion sensor, glass break sensor, plus 2 free Nest cameras. Cost varies based on equipment needs."
   contractLength: "None"
   activationFee: null
   cancelFee: null
@@ -66,7 +65,7 @@ monitoring:
     landline: false
   backupBattery: true
   monitoringStations: 6
-  twoWayTalk: false # no two-way talk through the panel mentioned
+  twoWayTalk: true # no two-way talk through the panel mentioned
 
 # ── Equipment ─────────────────────────────────────────────
 equipment:
@@ -77,14 +76,14 @@ equipment:
     doorWindow: true
     motion: true
     glassBreak: true
-  keyfob: false
+  keyfob: true
   siren: true
 
 # ── Cameras ───────────────────────────────────────────────
 cameras:
   doorbell: true
   outdoor: true
-  indoor: false
+  indoor: true
   powerOptions:
     - wired
     - battery
@@ -110,6 +109,7 @@ homeAutomation:
     - thermostat
     - garageDoor
     - lights
+    - any other z-wave compatible device
   nestCompatible: true
   automations: true # trigger-based rules with scheduling (e.g. arm = lock door, M-F 8am-9pm)
   scenes: true
@@ -129,13 +129,9 @@ mobileApp:
 review: >
   The ADT DIY system delivers a really solid home security experience
   with high-quality equipment that's easy to install in about 2 hours.
-  The Nest cameras are a major plus — they're high definition with night
-  vision and two-way talk, and they continue working via the Nest app even
-  if you cancel ADT. Home automation is robust with Z-Wave support for locks,
-  thermostats, lights, and garage doors, nearly matching Vivint. The ADT Plus
-  app is snappy and well-designed. Being backed by ADT's 6 monitoring stations
-  — the largest and longest-running provider — adds real value. The main
+  The Nest cameras are a major plus since they are high quality and you can still use them even if you cancel the service.
+  ADT's DIY system has the most robust home automation out of all the DIY systems on the market. The ADT Plus
+  app is snappy and well-designed. The main
   drawbacks are the push-button keypad (no touchscreen), cameras not recording
   without Wi-Fi, and the monthly cost being a few dollars more than Cove or
-  SimpliSafe. But when you factor in the free cameras deal, the upfront cost
-  is practically a no-brainer.
+  SimpliSafe. It's cheaper than a professionally installed system, but it's one of the more expensive systems for DIY.

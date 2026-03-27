@@ -3,11 +3,11 @@ slug: "simplisafe"
 phone: ""
 website: "https://simplisafe.com/"
 rating:
-  overall: 4.5
-  equipment: 5
-  features: 5
+  overall: 3.5
+  equipment: 3
+  features: 3
   pricing: 3.5
-  easeOfUse: 5
+  easeOfUse: 4
   customerService: 4
 logo: "../../assets/logos/simplisafe-logo.png"
 promo: "50% OFF Equipment + Free Camera"
@@ -16,12 +16,9 @@ promo: "50% OFF Equipment + Free Camera"
 installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
-bestFor: "Those who want a fully managed smart home security system without any DIY setup"
+bestFor: "Those who want security camera montioring"
 notesAboutContract: >
-  "Vivint's service is month to month if you pay for the equipment upfront. 
-  This means that there is no contract and you can cancel at anytime without penalty.
-  However, you can choose to finance the equipment at 0% APR for either 42 months or 60 months. 
-  If you finance, you are obligated to have the service as long as there is a balance on the equipment."
+  "The service is month to month. "
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
@@ -105,9 +102,6 @@ homeAutomation:
   zWaveSupport: true
   compatibleDevices:
     - doorLock
-    - thermostat
-    - garageDoor
-    - lights
   nestCompatible: true
   automations: true # trigger-based rules (e.g. arm = lock door)
   scenes: true # one-tap preset configurations

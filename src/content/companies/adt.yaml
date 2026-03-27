@@ -1,4 +1,4 @@
-name: "ADT Pro Install System"
+name: "ADT"
 slug: "adt"
 phone: "(833) 224-7221"
 phoneUnformatted: "18332247221"
@@ -8,7 +8,7 @@ rating:
   equipment: 5
   features: 5
   pricing: 3.5
-  easeOfUse: 5
+  easeOfUse: 4.5
   customerService: 4
 logo: "../../assets/logos/adt-logo.png"
 promo: "Nest Doorbell + Nest Camera — FREE"
@@ -17,35 +17,32 @@ promo: "Nest Doorbell + Nest Camera — FREE"
 installType: "professional" # options: professional | diy | both
 contractRequired: true
 monthToMonth: false
-bestFor: "Those who want a fully managed smart home security system without any DIY setup"
+bestFor: "Those who want top-of-line security, lot of cameras, professional installation"
 notesAboutContract: >
-  "Vivint's service is month to month if you pay for the equipment upfront. 
-  This means that there is no contract and you can cancel at anytime without penalty.
-  However, you can choose to finance the equipment at 0% APR for either 42 months or 60 months. 
-  If you finance, you are obligated to have the service as long as there is a balance on the equipment."
+  "ADT has a minimum of a 12 month agreement if you purchase the equipment upfront. You can choose to finance the equipment up to 
+  36 months. If you finance the equipment then you are required to keep the service as long as you have balance on the equipment."
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Professional installation included"
-  - "Best-in-class smart home automation"
-  - "24/7 professional monitoring"
+  - "Top-of-line equipment"
+  - "Largest and longest running security company"
+  - "Cameras still work if you cancel service"
   - "Excellent mobile app"
   - "Touchscreen keypad"
 
 cons:
   - "Higher monthly cost"
-  - "Financing locks you into a service agreement"
+  - "Minimum 12 month agreement"
   - "Equipment can be expensive upfront"
-  - "Cameras are proprietary and stop working if you cancel"
 
 # ── Pricing ───────────────────────────────────────────────
 pricing:
   monthly:
-    min: 29.99
-    max: 49.99
-    notes: "$29.99 covers basic monitoring to police, fire, and medical. It also covers the app"
+    min: 42.99
+    max: 48.99
+    notes: "$42.99 per month for monitoring and access to the app. Then goes up to $48.99 when you add cameras."
   equipment:
-    min: 599
+    min: 369
     max: null
     notes: "Financing available; cost rolled into monthly bill"
   contractLength: "12 months"
@@ -71,12 +68,12 @@ monitoring:
 equipment:
   panel:
     touchscreen: true
-    type: "Smart Hub"
+    type: "Command Panel"
   sensors:
     doorWindow: true
     motion: true
     glassBreak: true
-  keyfob: false
+  keyfob: true
   siren: true
 
 # ── Cameras ───────────────────────────────────────────────
@@ -117,7 +114,7 @@ homeAutomation:
 
 # ── Mobile App ────────────────────────────────────────────
 mobileApp:
-  rating: "excellent" # excellent | good | fair | poor
+  rating: "good" # excellent | good | fair | poor
   singleApp: true
   remoteArmDisarm: true
   multiProperty: false
@@ -126,12 +123,6 @@ mobileApp:
 
 # ── Thoughts ────────────────────────────────────────────────
 review: >
-  Vivint is one of the top professional home security providers,
-  offering a fully integrated smart home security system with
-  professional installation and monitoring. Their equipment is
-  high quality, the touchscreen panel is intuitive, and the mobile
-  app is among the best in the industry. Home automation is more
-  robust than nearly every competitor, rivaled only by ADT's pro
-  install system. The main drawbacks are the long 60-month contract
-  and higher price point — and like SimpliSafe, cameras are
-  proprietary and stop working if you cancel service.
+  ADT is a rock solid option with a long proven track record in home security. 
+  It's a more affordable option to Vivint without sacrifcing on quality. They offer robust security monitoring,
+  smart home features to automate the whole house, and high quality cameras to catch everything going on around the home.

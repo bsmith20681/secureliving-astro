@@ -4,10 +4,10 @@ phone: ""
 website: "https://www.covetrack.com/2714DHQ/9ZBW6W/"
 rating:
   overall: 4.5
-  equipment: 5
-  features: 5
-  pricing: 3.5
-  easeOfUse: 5
+  equipment: 4.5
+  features: 4
+  pricing: 4.5
+  easeOfUse: 4.5
   customerService: 4
 logo: "../../assets/logos/cove-logo.png"
 promo: "70% OFF + Free Indoor Camera"
@@ -16,29 +16,28 @@ promo: "70% OFF + Free Indoor Camera"
 installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
-bestFor: "Budget-conscious homeowners who want solid home security without smart home features"
+bestFor: "Those who are not afraid to install a system on their own, want to save money, and don't care about home automation"
 notesAboutContract: >
   Since the system is DIY and you pay for everything upfront, there is no contract.
-  Service is month to month — cancel whenever you want with no penalty.
+  Service is month to month. You can cancel whenever you want with no penalty.
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Most affordable home security system — best value/bang for the buck"
-  - "Touchscreen keypad panel with easy navigation"
-  - "Super easy DIY installation — sensors took only 30 minutes"
+  - "Best Value. High Quality Equipment for the Price"
+  - "Touchscreen keypad panel"
+  - "Super easy DIY installation"
   - "Two-way voice built into the panel for emergency communication"
   - "Cameras record locally via SD card even without Wi-Fi"
-  - "Cameras are not proprietary — can resync to eufy app if you cancel Cove"
+  - "Cameras can still be used if you cancel the service"
   - "Add unlimited cameras without increasing monthly bill"
-  - "Renter-friendly — wireless sensors remove cleanly with no residue"
+  - "Renter-friendly, wireless sensors remove cleanly with no residue"
 
 cons:
-  - "No home automation (no smart locks, thermostats, lights, etc.)"
-  - "Camera initial setup is frustrating — must be 100% charged and on 2.4 GHz Wi-Fi"
-  - "No 24/7 continuous recording — only records clips"
+  - "No home automation"
+  - "Connecting the cameras on install is frustrating"
+  - "No 24/7 video recording recording"
   - "No power over Ethernet option for cameras"
-  - "Mobile app not quite as polished as Vivint or ADT"
-  - "Glass break sensor may peel off a small amount of drywall when removed"
+  - "Mobile app not quite as polished"
 
 # ── Pricing ───────────────────────────────────────────────
 pricing:
@@ -47,9 +46,9 @@ pricing:
     max: 33
     notes: "$23/mo for security only (no cameras). $33/mo with cameras — includes monitoring, warranty, app, and cameras. $5 of the $33 goes toward an equipment credit on your account."
   equipment:
-    min: 250
+    min: 130
     max: null
-    notes: "Paid $250.48 with 70% off + free indoor camera for full system including 3 cameras, panel, sensors, motion sensor, and glass break sensor."
+    notes: "I Paid $250.48 with 70% off + free indoor camera for full system including 3 cameras, panel, sensors, motion sensor, and glass break sensor."
   contractLength: "None"
   activationFee: null
   cancelFee: null
@@ -125,17 +124,8 @@ mobileApp:
 
 # ── Thoughts ────────────────────────────────────────────────
 review: >
-  Cove is the most affordable and best-value home security system on the
-  market right now. For about $250 upfront (with the 70% off deal) and $33/month,
-  you get a touchscreen panel, door/window sensors, motion and glass break
-  sensors, and three cameras (indoor, doorbell, and outdoor). The equipment
-  is rock solid for the price, installation is super simple (sensors took
-  only 30 minutes), and the cameras record locally via SD card even without
-  Wi-Fi. The biggest caveat is there's no smart home automation — no door
-  locks, thermostats, or lights. If you just want straightforward home
-  security monitoring to police, fire, and medical without breaking the bank,
-  Cove is the way to go. The mobile app gets the job done but isn't quite
-  as polished as Vivint or ADT. Camera setup can be frustrating initially
-  (must be fully charged and on 2.4 GHz Wi-Fi), but once connected
-  everything works great. It's also renter-friendly since everything is
-  wireless and removes cleanly.
+  Cove offers the best value on the market right now. This system is best for Those
+  who want to protect their home without breaking the bank. It comes with all the security features
+  you would expect out of a higher end security system. Touch screen keypad, HD cameras, video recording without wifi, mobile app etc.
+  It's limitation though is there is no home automation for this system. If you are looking for an all in one system, then this wouldn't be a goood fit. 
+  However, if you want rock solid security with a low monthly price and a low upfront cost then is is a great system to own.
