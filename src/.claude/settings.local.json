@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm run build)",
       "Skill(anthropic-skills:keyword-organizer)",
-      "Skill(anthropic-skills:keyword-organizer:*)"
+      "Skill(anthropic-skills:keyword-organizer:*)",
+      "Read(//c/Coding Projects/secure-living-astro/**)",
+      "Bash(npx astro:*)"
     ]
   }
 }
