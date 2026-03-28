@@ -917,6 +917,7 @@ figcaption {
   background: var(--gray-100);
   padding: var(--space-3);
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .post-meta {
@@ -1939,6 +1940,7 @@ input.sl-radio-btn:checked + label {
 .company-card__phone:hover {
   background: var(--primary-50);
   color: var(--primary-700) !important;
+  cursor: pointer;
 }
 
 .company-card__phone svg {

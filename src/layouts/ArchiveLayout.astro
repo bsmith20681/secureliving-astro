@@ -34,7 +34,7 @@ const sortedArticles = [...articles].sort(
           const displayDate = (article.data.updatedDate || article.data.pubDate)
             .toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
-          const excerpt = article.data.excerpt || article.data.description;
+          const excerpt = article.data.excerpt || article.data.subtitle;
           const truncatedExcerpt = excerpt.split(/\s+/).slice(0, 25).join(' ') + '...';
 
           return (
