@@ -1,10 +1,21 @@
 ---
+/**
+ * @component ArticlePromoBox
+ * @description Sidebar promotional card for a security company featuring logo, star rating,
+ *   CTA button, phone link, promo tag, and top pros list.
+ * @usage Embed in article sidebars or review pages to promote a specific company.
+ * @example <ArticlePromoBox company="vivint" />
+ * @props
+ *   company: string — slug matching a companies collection entry (required)
+ *     OR object — company data with name, slug, logo, rating, website, promo, pros, phone, and phoneUnformatted
+ */
 import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
 import PromoTag from '../PromoTag.astro';
 import StarRating from '../StarRating.astro';
 
 interface Props {
-  company: {
+  company: string | {
     name: string;
     slug: string;
     logo: ImageMetadata;
@@ -13,16 +24,26 @@ interface Props {
     promo?: string;
     pros: string[];
     category?: string;
-    phone: string,
-    phoneUnformatted: string,
+    phone: string;
+    phoneUnformatted: string;
   };
 }
 
-const { company } = Astro.props;
-const { name, logo, rating, website, promo, pros, phone, phoneUnformatted } = company;
+const { company: companyProp } = Astro.props;
+
+let companyData;
+if (typeof companyProp === 'string') {
+  const entry = await getEntry('companies', companyProp);
+  if (!entry) throw new Error(`Company "${companyProp}" not found in companies collection`);
+  companyData = entry.data;
+} else {
+  companyData = companyProp;
+}
+
+const { name, logo, rating, website, promo, pros, phone, phoneUnformatted } = companyData;
 const telHref = `tel:${phoneUnformatted}`;
 
-const slug = company.slug;
+const slug = companyData.slug;
 ---
 
 <div class="promo-box">

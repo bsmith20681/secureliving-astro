@@ -1,4 +1,13 @@
 ---
+/**
+ * @component StarRating
+ * @description Renders a 5-star visual rating with support for full, half, and empty stars alongside a numeric score.
+ * @usage Embed wherever a star-based score display is needed.
+ * @example <StarRating rating={4.5} id="vivint-card" />
+ * @props
+ *   rating: number — numeric score from 0 to 5 (required)
+ *   id: string — unique identifier used for the half-star SVG gradient (required)
+ */
 interface Props {
   rating: number;
   id: string;

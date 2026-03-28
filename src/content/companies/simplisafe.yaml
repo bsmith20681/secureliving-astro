@@ -10,41 +10,39 @@ rating:
   easeOfUse: 4
   customerService: 4
 logo: "../../assets/logos/simplisafe-logo.png"
-promo: "50% OFF Equipment + Free Camera"
+promo: "20% OFF Equipment + Free Indoor Camera"
 
 # ── Overview ──────────────────────────────────────────────
 installType: "diy" # options: professional | diy | both
 contractRequired: false
 monthToMonth: true
-bestFor: "Those who want security camera montioring"
+bestFor: "Those who want live video security monitoring."
 notesAboutContract: >
-  "The service is month to month. "
+  "The service is month to month. No penalty to cancel the service."
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Professional installation included"
+  - "Live Video Monitoring"
   - "Best-in-class smart home automation"
-  - "24/7 professional monitoring"
-  - "Excellent mobile app"
-  - "Touchscreen keypad"
+  - "Easy to Install"
 
 cons:
-  - "Higher monthly cost"
-  - "Financing locks you into a service agreement"
-  - "Equipment can be expensive upfront"
-  - "Cameras are proprietary and stop working if you cancel"
+  - "High Monthly Costs"
+  - "Cameras are proprietary"
+  - "Standard Equipment"
+  - "No 24/7 Continous Recording"
 
 # ── Pricing ───────────────────────────────────────────────
 pricing:
   monthly:
     min: 29.99
-    max: 49.99
-    notes: "$29.99 covers basic monitoring to police, fire, and medical. It also covers the app"
+    max: 79.99
+    notes: "$29.99 covers basic monitoring to police, fire, medical, and access to the app on the phone. $49 per month covers monitoring and live video security monioring between 8PM-6AM. $79 per month covers monitoring and 24/7 live video security monitoring."
   equipment:
-    min: 599
+    min: 280
     max: null
-    notes: "Financing available; cost rolled into monthly bill"
-  contractLength: "60 months"
+    notes: ""
+  contractLength: "None"
   activationFee: null
   cancelFee: null
 
@@ -67,12 +65,12 @@ monitoring:
 equipment:
   panel:
     touchscreen: true
-    type: "Smart Hub"
+    type: "Basic Keypad"
   sensors:
     doorWindow: true
     motion: true
     glassBreak: true
-  keyfob: false
+  keyfob: true
   siren: true
 
 # ── Cameras ───────────────────────────────────────────────
@@ -99,18 +97,18 @@ cameras:
 
 # ── Home Automation ───────────────────────────────────────
 homeAutomation:
-  zWaveSupport: true
+  zWaveSupport: false
   compatibleDevices:
     - doorLock
-  nestCompatible: true
-  automations: true # trigger-based rules (e.g. arm = lock door)
-  scenes: true # one-tap preset configurations
-  thirdPartyApp: false # no need for IFTTT etc.
-  rating: "best" # best | good | limited | none
+  nestCompatible: false
+  automations: true # only for the alarm and doorlock
+  scenes: false # one-tap preset configurations
+  thirdPartyApp: false
+  rating: "limited" # best | good | limited | none
 
 # ── Mobile App ────────────────────────────────────────────
 mobileApp:
-  rating: "excellent" # excellent | good | fair | poor
+  rating: "fair" # excellent | good | fair | poor
   singleApp: true
   remoteArmDisarm: true
   multiProperty: false
@@ -119,12 +117,4 @@ mobileApp:
 
 # ── Thoughts ────────────────────────────────────────────────
 review: >
-  Vivint is one of the top professional home security providers,
-  offering a fully integrated smart home security system with
-  professional installation and monitoring. Their equipment is
-  high quality, the touchscreen panel is intuitive, and the mobile
-  app is among the best in the industry. Home automation is more
-  robust than nearly every competitor, rivaled only by ADT's pro
-  install system. The main drawbacks are the long 60-month contract
-  and higher price point — and like SimpliSafe, cameras are
-  proprietary and stop working if you cancel service.
+  "test test"

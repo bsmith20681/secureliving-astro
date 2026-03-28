@@ -1,4 +1,12 @@
 ---
+/**
+ * @component FAQ
+ * @description Accordion-style FAQ section using native <details> elements with animated chevron icons.
+ * @usage Embed on any page to display a list of questions and answers.
+ * @example <FAQ items={[{ question: "How does it work?", answer: "It works great." }]} />
+ * @props
+ *   items: FAQItem[] — array of { question: string, answer: string } objects (required)
+ */
 interface FAQItem {
   question: string;
   answer: string;
