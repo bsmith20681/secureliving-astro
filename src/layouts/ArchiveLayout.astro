@@ -2,6 +2,7 @@
 import PageLayout from './PageLayout.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
@@ -42,7 +43,7 @@ const sortedArticles = [...articles].sort(
               <a href={`/${categorySlug}/${article.id}`} class="post-card">
                 {article.data.image ? (
                   <div class="post-card__image">
-                    <img src={article.data.image.src} alt={article.data.title} />
+                    <Image src={article.data.image} alt={article.data.title} width={400} />
                   </div>
                 ) : (
                   <div class="post-card__image post-card__image--placeholder">
