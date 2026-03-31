@@ -32,7 +32,11 @@ const states = [
 
   <section class="form-page my-8">
     <div class="container form-container">
-      <form name="do-not-sell" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you/">
+      <div id="form-success" style="display:none; background:#d4edda; border:1px solid #c3e6cb; color:#155724; padding:1rem 1.25rem; border-radius:6px; margin-bottom:1.5rem;">
+        Your request has been received. We will process it within 45 days of verification.
+      </div>
+
+      <form id="do-not-sell-form" name="do-not-sell" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="do-not-sell" />
         <p class="form-honeypot" aria-hidden="true">
           <label>Don't fill this out: <input name="bot-field" /></label>
@@ -90,3 +94,17 @@ const states = [
     </div>
   </section>
 </PageLayout>
+
+<script>
+  const form = document.getElementById('do-not-sell-form') as HTMLFormElement;
+  const successMsg = document.getElementById('form-success') as HTMLElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    await fetch('/', { method: 'POST', body: data });
+    successMsg.style.display = 'block';
+    form.reset();
+    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
