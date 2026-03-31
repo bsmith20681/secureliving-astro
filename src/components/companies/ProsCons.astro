@@ -4,19 +4,34 @@
  * @description Side-by-side pros and cons list with checkmark and minus icons.
  * @usage Embed in review pages or articles to highlight key advantages and drawbacks.
  * @example <ProsCons company="vivint" />
+ * @example <ProsCons pros={["Great cameras"]} cons={["No Wi-Fi recording"]} />
  * @props
- *   company: string — slug matching a companies collection entry (required)
+ *   company: string — slug matching a companies collection entry
+ *   pros: string[] — custom pros list (used instead of company data when provided)
+ *   cons: string[] — custom cons list (used instead of company data when provided)
  */
 import { getEntry } from 'astro:content';
 
 interface Props {
-  company: string;
+  company?: string;
+  pros?: string[];
+  cons?: string[];
 }
 
-const { company } = Astro.props;
-const entry = await getEntry('companies', company);
-if (!entry) throw new Error(`Company "${company}" not found in companies collection`);
-const { pros, cons } = entry.data;
+const { company, pros: propsPros, cons: propsCons } = Astro.props;
+
+let pros: string[];
+let cons: string[];
+
+if (propsPros !== undefined || propsCons !== undefined) {
+  pros = propsPros ?? [];
+  cons = propsCons ?? [];
+} else {
+  const entry = await getEntry('companies', company!);
+  if (!entry) throw new Error(`Company "${company}" not found in companies collection`);
+  pros = entry.data.pros;
+  cons = entry.data.cons;
+}
 ---
 
 <div class="pros-cons">
