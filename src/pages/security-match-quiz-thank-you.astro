@@ -2,118 +2,16 @@
 import { SEO } from 'astro-seo';
 import QuizHeader from '../components/QuizHeader.astro';
 import Footer from '../components/Footer.astro';
-import { Image } from 'astro:assets';
-import vivintLogo from '../assets/logos/vivint-logo.png';
-import adtLogo from '../assets/logos/adt-logo.png';
-import simplisafeLogo from '../assets/logos/simplisafe-logo.png';
-import brinksLogo from '../assets/logos/brinks-logo.png';
-import coveLogo from '../assets/logos/cove-logo.png';
+import CompanyCard from '../components/companies/CompanyCard.astro';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const companies = [
-  {
-    slug: 'vivint',
-    name: 'Vivint',
-    logo: vivintLogo,
-    score: 5,
-    ratingLabel: 'Excellent',
-    stars: 5,
-    features: [
-      '4k Outside Cameras',
-      'Best smart home',
-      'No contract options',
-      'Professionally installed',
-      '24/7 professional monitoring',
-    ],
-    visitUrl: 'http://t.vivint.com/?c=1829&lp=4',
-    phone: '(833) 436-7355',
-    phoneRaw: '18334367355',
-    banner: 'Best Outside Cameras',
-    disclaimer: null,
-  },
-  {
-    slug: 'adt',
-    name: 'ADT',
-    logo: adtLogo,
-    score: 5,
-    ratingLabel: 'Excellent',
-    stars: 5,
-    features: [
-      '145+ years of experience',
-      '24/7 professional monitoring',
-      'Smart home compatible',
-      'Affordable camera systems',
-    ],
-    visitUrl: 'https://s24alarms.com/YHSE',
-    phone: '(833) 322-7030',
-    phoneRaw: '18333227030',
-    banner: 'Great for New Home Owners',
-    disclaimer: '*Req. system purchase with min. of $349 for DIY or $599 for pro install & pro monitoring plan starting at $24.99/mo. w/ 1 mo. min. w/DIY or $34.99 for 36 mo. w/pro install (early cancel fees). Not available for online orders. Terms & pricing below.',
-  },
-  {
-    slug: 'simplisafe',
-    name: 'SimpliSafe',
-    logo: simplisafeLogo,
-    score: 3.5,
-    ratingLabel: 'Fair',
-    stars: 3.5,
-    features: [
-      'No contracts required',
-      'Easy DIY installation',
-      'AI auto detect cameras',
-    ],
-    visitUrl: 'https://simplisafe.com/',
-    phone: '',
-    phoneRaw: '',
-    banner: '',
-    disclaimer: null,
-  },
-  {
-    slug: 'brinks',
-    name: 'Brinks Home',
-    logo: brinksLogo,
-    score: 4,
-    ratingLabel: 'Good',
-    stars: 4,
-    features: [
-      '24/7 professional monitoring',
-      'Inside & Outside Cameras',
-      'Real-time alerts',
-    ],
-    visitUrl: 'https://brinkshome.com/',
-    phone: '',
-    phoneRaw: '',
-    banner: '',
-    disclaimer: null,
-  },
-  {
-    slug: 'cove',
-    name: 'Cove',
-    logo: coveLogo,
-    score: 4.5,
-    ratingLabel: 'Very Good',
-    stars: 4.5,
-    features: [
-      'Most Affordable Equipment',
-      'No contracts required',
-      'Easy DIY installation',
-      'Low monthly price',
-    ],
-    visitUrl: 'https://www.covetrack.com/2714DHQ/9ZBW6W/',
-    phone: '',
-    phoneRaw: '',
-    banner: 'Best DIY Option',
-    disclaimer: null,
-  },
+  { slug: 'vivint', banner: 'Best Outside Cameras' },
+  { slug: 'adt', banner: 'Great for New Home Owners' },
+  { slug: 'simplisafe', banner: '' },
+  { slug: 'cove', banner: 'Best DIY Option' },
 ];
-
-function getStarData(score: number) {
-  const full = Math.floor(score);
-  const half = score % 1 >= 0.5;
-  const empty = 5 - full - (half ? 1 : 0);
-  return { full, half, empty };
-}
 ---
 
 <html lang="en">
@@ -159,90 +57,14 @@ function getStarData(score: number) {
 
       <div class="container">
         <div class="company-profiles" id="company-profiles">
-          {companies.map((company, i) => {
-            const { full, half, empty } = getStarData(company.stars);
-            return (
-              <a
-                href={company.visitUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="company-card"
-                data-slug={company.slug}
-                data-banner={company.banner}
-              >
-                <div class="company-card__topbar">
-                  <span class="company-card__rank">#{i + 1}</span>
-                  <span class="company-card__banner">{i === 0 ? 'Our Top Recommendation for You' : company.banner}</span>
-                </div>
 
-                <div class="company-card__body">
-                  <div class="company-card__logo-col">
-                    <div class="company-card__logo">
-                      <Image src={company.logo} alt={`${company.name} logo`} />
-                    </div>
-                    <div class="company-card__rating">
-                      <div class="company-card__stars">
-                        {Array(full).fill(null).map(() => (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="star star--full">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                          </svg>
-                        ))}
-                        {half && (
-                          <svg width="16" height="16" viewBox="0 0 24 24" class="star star--half">
-                            <defs>
-                              <linearGradient id={`half-${company.slug}`}>
-                                <stop offset="50%" stop-color="currentColor"/>
-                                <stop offset="50%" stop-color="#d1d5db"/>
-                              </linearGradient>
-                            </defs>
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill={`url(#half-${company.slug})`}/>
-                          </svg>
-                        )}
-                        {Array(empty).fill(null).map(() => (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="#d1d5db" class="star star--empty">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                          </svg>
-                        ))}
-                      </div>
-                      <span class="company-card__rating-label">{company.score}</span>
-                    </div>
-                  </div>
+          
 
-                  <div class="company-card__info">
-                    <ul class="company-card__features">
-                      {company.features.slice(0, 4).map((feature) => (
-                        <li>
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                          </svg>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div class="company-card__actions">
-                    <span class="company-card__visit-btn">
-                      See Packages
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                        <polyline points="12 5 19 12 12 19"/>
-                      </svg>
-                    </span>
-                    {company.phone && (
-                      <span class="company-card__phone" onclick={`event.preventDefault(); event.stopPropagation(); window.location.href='tel:${company.phoneRaw}';`}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        {company.phone}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </a>
-            );
-          })}
+          {companies.map((company, i) => (
+            <div data-slug={company.slug} data-banner={company.banner}>
+              <CompanyCard company={company.slug} rank={i + 1} />
+            </div>
+          ))}
 
           <div class="container">
             <i style="font-size: var(--text-xs);">** ADT Disclaimer Up to 15 sensors free for pre-wired homes or 6 sensors for non-wired homes. No substitutions allowed. Labor charges may apply. $99.00 customer installation charge. Basic plan requires phone line. 36-Month Monitoring Agreement required $45.99 per month ($1,655.64), 24-Month Monitoring Agreement required at $45.99 ($1,103.76) for California, including Quality Service Plan (QSP). Form of payment must be by credit card or electronic charge to your checking or savings account. Offer applies to homeowners only. Local permit fees may be required. Satisfactory credit history required. Certain restrictions apply. Offer valid for new Secure24 ADT Authorized Dealer customers only and not on purchases from ADT LLC. Other rate plans available. Cannot be combined with any other offer.</i>
@@ -261,10 +83,10 @@ function getStarData(score: number) {
       if (profiles) {
         // Determine order based on quiz answers
         const order = cameras === 'Yes'
-          ? ['vivint', 'adt', 'cove', 'brinks', 'simplisafe']
-          : ['adt', 'vivint', 'cove', 'brinks', 'simplisafe'];
+          ? ['vivint', 'adt', 'cove', 'simplisafe']
+          : ['adt', 'vivint', 'cove', 'simplisafe'];
 
-        const cards = Array.from(profiles.querySelectorAll('.company-card')) as HTMLElement[];
+        const cards = Array.from(profiles.querySelectorAll('[data-slug]')) as HTMLElement[];
         const disclaimer = profiles.querySelector('.container'); // ADT disclaimer at bottom
 
         // Sort cards by the determined order
@@ -281,12 +103,9 @@ function getStarData(score: number) {
 
           // First card always gets "Our Top Recommendation"
           if (banner) {
-            if (i === 0) {
-              banner.textContent = 'Our Top Recommendation for You';
-            } else {
-              // Restore original banner from data attribute
-              banner.textContent = card.dataset.banner || '';
-            }
+            const text = i === 0 ? 'Our Top Recommendation for You' : (card.dataset.banner || '');
+            banner.textContent = text;
+            (banner as HTMLElement).style.display = text ? '' : 'none';
           }
 
           profiles.insertBefore(card, disclaimer);
