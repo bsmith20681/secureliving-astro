@@ -7,7 +7,7 @@ import yaml from '@rollup/plugin-yaml';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.secureliving.com',
+  site: 'https://secureliving.com',
   vite: {
     plugins: [yaml()],
   },
@@ -17,13 +17,13 @@ export default defineConfig({
       serialize(item) {
         const url = item.url;
 
-        if (url === 'https://www.secureliving.com/') {
+        if (url === 'https://secureliving.com/') {
           item.changefreq = 'weekly';
           item.priority = 1.0;
-        } else if (url.includes('/home-security-systems/') && url !== 'https://www.secureliving.com/home-security-systems/') {
+        } else if (url.includes('/home-security-systems/') && url !== 'https://secureliving.com/home-security-systems/') {
           item.changefreq = 'monthly';
           item.priority = 0.8;
-        } else if (url === 'https://www.secureliving.com/home-security-systems/') {
+        } else if (url === 'https://secureliving.com/home-security-systems/') {
           item.changefreq = 'weekly';
           item.priority = 0.9;
         } else {

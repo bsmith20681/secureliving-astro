@@ -98,7 +98,7 @@ const authorMap = Object.fromEntries(authors.map((a) => [a.id, a.data.name]));
                 .toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
 
               return (
-                <a href={`/${article.data.category.toLowerCase().replace(/\s+/g, '-')}/${article.id}`} class={`post-card ${isMain ? 'featured-grid__main' : ''}`}>
+                <a href={`/${article.data.category.toLowerCase().replace(/\s+/g, '-')}/${article.id}/`} class={`post-card ${isMain ? 'featured-grid__main' : ''}`}>
                   {article.data.image ? (
                     <div class="post-card__image">
                       <Image src={article.data.image} alt={article.data.title} width={isMain ? 800 : 400} />

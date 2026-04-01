@@ -40,7 +40,7 @@ const sortedArticles = [...articles].sort(
 
           return (
             <div class="col-xs-12 col-sm-6 col-md-4">
-              <a href={`/${categorySlug}/${article.id}`} class="post-card">
+              <a href={`/${categorySlug}/${article.id}/`} class="post-card">
                 {article.data.image ? (
                   <div class="post-card__image">
                     <Image src={article.data.image} alt={article.data.title} width={400} />

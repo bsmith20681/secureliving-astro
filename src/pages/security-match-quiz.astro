@@ -8,6 +8,7 @@ import adtLogo from '../assets/logos/adt-logo.png';
 import coveLogo from '../assets/logos/cove-logo.png';
 import brinksLogo from '../assets/logos/brinks-logo.png';
 import simplisafeLogo from '../assets/logos/simplisafe-logo.png';
+import mockup from '../assets/mockup.png';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -249,7 +250,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               </div>
             </div>
             <div class="col-md-6 how-it-works-mockup">
-              <img src="/images/mockup.png" alt="Security Match quiz mockup" />
+              <Image src={mockup} alt="Security Match quiz mockup" />
             </div>
           </div>
         </div>
