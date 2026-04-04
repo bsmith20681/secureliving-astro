@@ -5,8 +5,8 @@ website: "https://simplisafe.com/"
 rating:
   overall: 3.5
   equipment: 3
-  features: 3
-  pricing: 3.5
+  features: 3.5
+  pricing: 3
   easeOfUse: 4
   customerService: 4
 logo: "../../assets/logos/simplisafe-logo.png"
@@ -22,26 +22,30 @@ notesAboutContract: >
 
 # ── Pros & Cons ───────────────────────────────────────────
 pros:
-  - "Live Video Monitoring"
-  - "Best-in-class smart home automation"
-  - "Easy to Install"
+  - "Active Guard live video monitoring is unique in the industry"
+  - "Easy DIY installation with refined setup process"
+  - "No contract, month-to-month service"
+  - "Free monitoring plan available with basic app control"
+  - "Cellular backup keeps monitoring active when Wi-Fi is down"
 
 cons:
-  - "High Monthly Costs"
-  - "Cameras are proprietary"
-  - "Standard Equipment"
-  - "No 24/7 Continous Recording"
+  - "No touchscreen keypad (basic push-button style)"
+  - "Cameras are proprietary (stop working if you cancel)"
+  - "Limited smart home and home automation features"
+  - "No 24/7 continuous recording (clips only)"
+  - "Monthly cost has increased significantly (no longer the budget option)"
+  - "Can't use existing hardwired sensors"
 
 # ── Pricing ───────────────────────────────────────────────
 pricing:
   monthly:
-    min: 29.99
+    min: 32.99
     max: 79.99
-    notes: "$29.99 covers basic monitoring to police, fire, medical, and access to the app on the phone. $49 per month covers monitoring and live video security monioring between 8PM-6AM. $79 per month covers monitoring and 24/7 live video security monitoring."
+    notes: "$32.99 covers basic monitoring to police, fire, medical, and access to the app on the phone. $49 per month covers monitoring and live video security monioring between 8PM-6AM. $79 per month covers monitoring and 24/7 live video security monitoring."
   equipment:
     min: 280
     max: null
-    notes: ""
+    notes: "My system cost $965.89, but I was able to get 50% off so I only paid $519.10."
   contractLength: "None"
   activationFee: null
   cancelFee: null
@@ -64,7 +68,7 @@ monitoring:
 # ── Equipment ─────────────────────────────────────────────
 equipment:
   panel:
-    touchscreen: true
+    touchscreen: false
     type: "Basic Keypad"
   sensors:
     doorWindow: true
@@ -117,4 +121,4 @@ mobileApp:
 
 # ── Thoughts ────────────────────────────────────────────────
 review: >
-  "test test"
+  "SimpliSafe is a solid DIY home security system with one standout feature: Active Guard live video monitoring. The equipment is easy to install, the monitoring is month-to-month with no contract, and the cellular backup keeps things running when Wi-Fi goes down. The biggest drawbacks are the basic push-button keypad, proprietary cameras, and limited smart home integration. If you want Active Guard, SimpliSafe is the pick. If you just want standard monitoring, Cove offers better value at the same price."
