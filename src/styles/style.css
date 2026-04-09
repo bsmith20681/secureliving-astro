@@ -1139,9 +1139,8 @@ figcaption {
   right: 0;
   width: 45%;
   height: 100%;
-  background: url("/images/famil-pic-3.jpg")
-    center/cover no-repeat;
-  background-position: 70% 80%;
+  background: url("/images/home-page.jpg") center/cover no-repeat;
+  background-position: 0% 80%;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
   z-index: 1;
 }
