@@ -5,7 +5,9 @@
       "Skill(anthropic-skills:keyword-organizer)",
       "Skill(anthropic-skills:keyword-organizer:*)",
       "Read(//c/Coding Projects/secure-living-astro/**)",
-      "Bash(npx astro:*)"
+      "Bash(npx astro:*)",
+      "Bash(find 'C:\\\\Coding Projects\\\\secure-living-astro/src/content' -type f -name *.ts -o -name config.*)",
+      "Bash(find 'C:\\\\Coding Projects\\\\secure-living-astro' -maxdepth 3 -name *.ts -type f)"
     ]
   }
 }
