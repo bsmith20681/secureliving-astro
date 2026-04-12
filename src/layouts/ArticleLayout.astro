@@ -37,6 +37,42 @@ const authorBio = authorEntry?.data.bio;
 
 const companyEntry = companySlug ? await getEntry('companies', companySlug) : null;
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const imageURL = image ? new URL(image.src, Astro.site).href : null;
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": canonicalURL,
+  "url": canonicalURL,
+  "name": title,
+  "description": metaDescription,
+  "datePublished": pubDate.toISOString(),
+  "dateModified": (updatedDate || pubDate).toISOString(),
+  "breadcrumb": { "@id": `${canonicalURL}#breadcrumb` },
+  ...(imageURL ? { "primaryImageOfPage": { "@id": `${canonicalURL}#primaryimage` } } : {}),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${canonicalURL}#breadcrumb`,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secureliving.com" },
+    { "@type": "ListItem", "position": 2, "name": category, "item": `https://secureliving.com/${Astro.props.categorySlug ?? 'home-security-systems'}` },
+    { "@type": "ListItem", "position": 3, "name": title },
+  ],
+};
+
+const imageSchema = imageURL ? {
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "@id": `${canonicalURL}#primaryimage`,
+  "url": imageURL,
+  "width": image!.width,
+  "height": image!.height,
+} : null;
+
 const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
@@ -54,6 +90,12 @@ const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
     type: 'article',
   }}
 >
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    {imageSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(imageSchema)} />}
+  </Fragment>
+
   <article class="entry">
     <div class="entry-header">
       <div class="container">

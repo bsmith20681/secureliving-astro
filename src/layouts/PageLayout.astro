@@ -49,7 +49,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         image: openGraph?.image ?? '',
       }}
     />
-    <script type="text/javascript">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Secure Living",
+      "url": "https://secureliving.com"
+    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Secure Living",
+      "url": "https://secureliving.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://secureliving.com/images/cropped-favicon-sm-32x32.png"
+      }
+    })} />
+    <slot name="head" />
+    <script is:inline type="text/javascript">
     (function(c, l, a, r, i, t, y) {
         c[a] = c[a] || function() {
             (c[a].q = c[a].q || []).push(arguments)
