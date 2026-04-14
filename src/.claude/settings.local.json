@@ -7,7 +7,14 @@
       "Read(//c/Coding Projects/secure-living-astro/**)",
       "Bash(npx astro:*)",
       "Bash(find 'C:\\\\Coding Projects\\\\secure-living-astro/src/content' -type f -name *.ts -o -name config.*)",
-      "Bash(find 'C:\\\\Coding Projects\\\\secure-living-astro' -maxdepth 3 -name *.ts -type f)"
+      "Bash(find 'C:\\\\Coding Projects\\\\secure-living-astro' -maxdepth 3 -name *.ts -type f)",
+      "Read(//c/Users/bsmit/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/9cc43f40-4283-4cc2-8069-f34fcf06c8e8/30c50733-4aba-4a16-a329-028a7b691e6b/skills/xlsx/**)",
+      "Bash(python -c ':*)",
+      "Bash(pip install:*)",
+      "Bash(where python3:*)",
+      "Bash(where python:*)",
+      "Bash(python3 -m pip install pandas openpyxl -q)",
+      "Bash(python3 -c ':*)"
     ]
   }
 }
