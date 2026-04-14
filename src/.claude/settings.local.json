@@ -14,7 +14,9 @@
       "Bash(where python3:*)",
       "Bash(where python:*)",
       "Bash(python3 -m pip install pandas openpyxl -q)",
-      "Bash(python3 -c ':*)"
+      "Bash(python3 -c ':*)",
+      "Read(//c/Users/bsmit/.claude/**)",
+      "Read(//c/Users/bsmit/**)"
     ]
   }
 }
