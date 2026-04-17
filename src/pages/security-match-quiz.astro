@@ -65,12 +65,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           </div>
 
           <form id="security-quiz" name="security-quiz" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/security-match-quiz-thank-you/">
-            <input type="hidden" name="form-name" value="security-quiz" />
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="fbclid" id="fbclid" value="" />
-            <input type="hidden" name="xxTrustedFormCertUrl" />
-            <input type="hidden" name="xxTrustedFormToken" />
-            <input type="hidden" name="xxTrustedFormPingUrl" />
 
             <!-- Step 1: Property Type -->
             <div class="quiz-step quiz-step--active" data-step="1">
@@ -208,6 +202,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               </div>
             </div>
 
+            <input type="hidden" name="form-name" value="security-quiz" />
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="fbclid" id="fbclid" value="" />
+            <input type="hidden" name="xxTrustedFormCertUrl" />
+            <input type="hidden" name="xxTrustedFormToken" />
+            <input type="hidden" name="xxTrustedFormPingUrl" />
           </form>
         </div>
       </div>
