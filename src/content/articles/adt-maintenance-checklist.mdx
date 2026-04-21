@@ -1,0 +1,272 @@
+---
+title: "ADT Maintenance Checklist for Homeowners (Monthly, Quarterly, and Annual Tasks)"
+subtitle: "Most people install their ADT system and never touch it again. Here's everything you should actually be doing to keep it working when it matters."
+metaDescription: "A complete ADT maintenance checklist for homeowners covering monthly sensor tests, quarterly camera checks, annual battery replacements, and what to do after severe weather."
+category: "Home Security Systems"
+pubDate: 2026-04-20
+updatedDate: 2026-04-20
+author: "ben-smith"
+image: "../../assets/adt/adt-command-panel-home-screen.jpg"
+company: "adt"
+---
+
+import { Image } from "astro:assets";
+import adtPanel from "../../assets/adt/adt-command-panel-home-screen.jpg";
+import adtPanelTable from "../../assets/adt/adt-command-panel-table.jpg";
+import adtPanelZones from "../../assets/adt/adt-command-panel-zones-screen.jpg";
+import adtPanelHandheld from "../../assets/adt/adt-command-panel-handheld.jpg";
+import adtDoorSensor from "../../assets/adt/adt-door-sensor-installed.jpg";
+import adtDoorWindowSensor from "../../assets/adt/adt-door-window-sensor.jpg";
+import nestDoorbell from "../../assets/adt/nest-doorbell-installed.jpg";
+import nestDoorbellNight from "../../assets/adt/nest-doorbell-night-vision.jpg";
+import nestCamOutdoor from "../../assets/adt/nest-cam-outdoor-footage.jpg";
+import nestCamApp from "../../assets/adt/nest-cam-app-live-view.jpg";
+import adtApp from "../../assets/adt/adt-app-armed-notification.jpg";
+import adtSmartLock from "../../assets/adt/adt-smart-lock-with-app.jpg";
+import companyData from "../../content/companies/adt.yaml";
+import FAQ from "../../components/FAQ.astro";
+import Admonition from "../../components/Admonition.astro";
+
+<figure>
+  <Image src={adtPanel} alt="ADT Command Panel home screen showing system status" />
+  <figcaption>The ADT Command Panel. It does more than arm and disarm — it also tells you when something needs attention.</figcaption>
+</figure>
+
+Most people set up their ADT system, arm it when they leave, disarm it when they get home, and basically never think about it again. That's actually fine for day-to-day use — ADT is designed to run in the background. But "running in the background" isn't the same as "always ready to work."
+
+Sensors lose adhesion. Backup batteries drain. Camera lenses get covered in spider webs. Emergency contact lists go stale. None of these things cause an obvious problem until you actually need the system to perform, and then you find out the hard way that something wasn't working right.
+
+This checklist covers everything you should be doing on a monthly, quarterly, and annual basis to keep your ADT system in good shape. I own an ADT professionally installed system myself (touchscreen Command Panel, five door sensors, two glass break sensors, two motion sensors, Nest Doorbell, and Nest outdoor camera) and this is the routine I follow.
+
+If you just moved into a home with an existing ADT system and aren't sure where to start, read through my guide on [what to do when you buy a house with ADT](/home-security-systems/bought-a-house-with-adt) first. This checklist assumes your system is already active and working.
+
+## The full ADT maintenance checklist at a glance
+
+| Task | Monthly | Quarterly | Annually |
+|---|---|---|---|
+| Test alarm and all sensors | Yes | | |
+| Test smoke and CO detectors | Yes | | |
+| Check cellular signal on panel | Yes | | |
+| Check the ADT app | Yes | | |
+| Clean camera lenses | | Yes | |
+| Inspect sensor adhesion | | Yes | |
+| Test smart home automations | | Yes | |
+| Check yard signs and window stickers | | Yes | |
+| Replace sensor batteries (as needed) | | | Yes |
+| Replace panel backup battery (3-5 yr) | | | Yes |
+| Review emergency contacts | | | Yes |
+| Audit PIN codes and user access | | | Yes |
+| Replace CO detectors (every 5-7 yr) | | | Yes |
+| Schedule professional inspection | | | Yes |
+
+---
+
+## Monthly tasks
+
+### How to test your ADT alarm
+
+ADT recommends testing your system at least once a month. The process is straightforward, but there's one step most people skip: you need to put your system into test mode before tripping sensors, or ADT's monitoring center will dispatch police to your house.
+
+You have two options. Call ADT at <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a> and ask them to put your account into test mode. Or open the ADT app, go to Alarm.com settings, and enable test mode from there. Either way, give yourself at least 30 minutes to run through everything.
+
+<figure>
+  <Image src={adtPanelZones} alt="ADT Command Panel showing security zones screen" />
+  <figcaption>The zones screen on the Command Panel shows the status of each sensor. This is what you're watching during a test.</figcaption>
+</figure>
+
+Once you're in test mode, go through every sensor:
+
+- Open each door and window with a sensor attached. The panel should register the zone as open.
+- Walk through the coverage area of each motion sensor slowly. Give it a few seconds to pick you up.
+- For glass break sensors, slap a metal key against your palm near the sensor. Normal hand clapping often isn't enough to trigger it. ADT sells an official glass break simulator if you want to test properly.
+
+Watch the zones screen on the Command Panel as you go. Each triggered sensor should show up there. If a zone doesn't register, either the sensor has a dead battery, lost adhesion and moved out of position, or there's a pairing issue worth calling ADT about.
+
+When you're done, take the system out of test mode the same way you put it in.
+
+<Admonition>
+  Always call ADT or use the app to enable test mode before testing sensors. If you skip this step and trip your alarm, the monitoring center will attempt to reach you and may dispatch police if they can't confirm it's a false alarm.
+</Admonition>
+
+### Testing smoke and CO detectors
+
+Press and hold the test button on each smoke detector for about 5 seconds until you hear the alarm sound. Same process for carbon monoxide detectors. If it doesn't sound or sounds weak, the battery needs to be replaced.
+
+<figure>
+  <Image src={adtPanelTable} alt="ADT Command Panel sitting on a table" />
+  <figcaption>Life safety alerts for smoke, CO, and flood sensors show up on the Command Panel alongside your security zones.</figcaption>
+</figure>
+
+If a detector fails the test even after a fresh battery, replace the detector. Smoke detectors should be replaced every 10 years. CO detectors need to be replaced every 5 to 7 years regardless of whether they're working — the chemical sensor inside degrades over time, and a CO detector that's past its service life may not alert you even when it should.
+
+### Checking the app and cellular signal
+
+Open the ADT app once a month and make sure everything looks right. Arm and disarm the system remotely to confirm the app is communicating with the panel. Check that your camera feeds are loading. Make sure you're still getting push notifications.
+
+<figure>
+  <Image src={adtApp} alt="ADT app showing system armed notification on phone" />
+  <figcaption>The ADT app should show your system status in real time. If notifications stop coming through, check your phone's notification settings first.</figcaption>
+</figure>
+
+On the Command Panel itself, look for any status indicators showing weak cellular signal. ADT's alarm system uses cellular backup to communicate with the monitoring center, so a weak signal means slower response times. If you notice a persistent signal issue, call ADT — they can send a cellular signal booster for the base station.
+
+---
+
+## Quarterly tasks
+
+### Clean camera lenses
+
+Outdoor cameras get dirty. Spider webs are the main culprit in most climates, and they're genuinely terrible for image quality — they catch the IR light from night vision and create a glowing blur across the whole frame. Dust and pollen build up too.
+
+<figure>
+  <Image src={nestDoorbell} alt="Nest Doorbell camera installed at the front door" />
+  <figcaption>The Nest Doorbell picks up everything at the front door — but not if the lens is covered in webs.</figcaption>
+</figure>
+
+Wipe each lens with a clean, soft cloth every three months. Don't use anything abrasive. While you're at it, check that the camera's field of view hasn't changed. A bush that was small when the system was installed might now be blocking half the frame. Trees drop branches. People rearrange furniture near indoor cameras.
+
+<figure>
+  <Image src={nestCamOutdoor} alt="Nest outdoor camera daytime footage showing clear view" />
+  <figcaption>A clean lens and unobstructed view. This is what you want every camera to look like.</figcaption>
+</figure>
+
+Check the night vision too. Pull up the camera feed at night or in a dark room and make sure the image is clear. If it looks hazy or washed out, the lens needs a wipe.
+
+### Inspect sensor adhesion
+
+Door and window sensors stick on with adhesive tape. That adhesive holds up well in most conditions, but in humid climates or on doors that get slammed frequently, it can start to peel. A sensor that's shifted even slightly out of alignment with its magnet won't trigger properly.
+
+<figure>
+  <Image src={adtDoorSensor} alt="ADT door sensor installed on a door frame" />
+  <figcaption>The sensor and magnet need to stay aligned. If the gap gets too wide, the zone won't register correctly.</figcaption>
+</figure>
+
+Go around to each door sensor every three months and press firmly on both pieces to re-seat the adhesive. If one has pulled away from the surface, clean the area and apply fresh 3M mounting tape before it falls off entirely. ADT techs use standard 3M double-sided tape that you can buy at any hardware store.
+
+<figure>
+  <Image src={adtDoorWindowSensor} alt="ADT door and window sensor close-up" />
+  <figcaption>The two-piece design means both the sensor and the magnet need to stay in place.</figcaption>
+</figure>
+
+### Review smart home automations
+
+If you use ADT's scene or automation features — things like locking the front door when you arm the system, or turning off the lights on a schedule — test them quarterly to make sure they're still firing correctly.
+
+<figure>
+  <Image src={adtSmartLock} alt="ADT smart lock shown on a phone app" />
+  <figcaption>Smart lock automations are useful, but worth testing periodically to make sure the Z-Wave connection is still solid.</figcaption>
+</figure>
+
+Z-Wave devices can occasionally drop off the network after firmware updates or power outages. Arm the system and watch whether the door locks. Trigger a scheduled automation and verify it runs. It takes five minutes and can save you from an unpleasant surprise.
+
+### Check yard signs and window stickers
+
+Faded or damaged ADT yard signs and window stickers are worth replacing. A visible deterrent only works if it's actually visible. ADT will send you replacement materials if you call customer service or request them through the app.
+
+---
+
+## Annual tasks
+
+### Panel backup battery
+
+The ADT Command Panel runs on household power, but it has a 12V sealed lead-acid backup battery inside that keeps the system going during power outages. ADT says these batteries last 3 to 5 years. The panel will display a "low battery" alert on screen when the backup battery needs to be replaced — don't ignore that warning.
+
+<figure>
+  <Image src={adtPanelHandheld} alt="ADT Command Panel held in hand" />
+  <figcaption>A low battery indicator on the panel means the backup battery needs attention. The panel won't protect you during a power outage once it's dead.</figcaption>
+</figure>
+
+Replacement batteries are standard 12V sealed lead-acid units available online. If you're not comfortable replacing it yourself, ADT can send a technician to do it.
+
+### Sensor batteries
+
+The Command Panel tracks battery status for every sensor. Go into the device list once a year and check whether any zones are showing low battery warnings. Door and window sensors typically use CR123 lithium batteries. Motion sensors use a similar format. The panel will tell you which specific sensor needs attention, so you're not guessing.
+
+<Admonition>
+  Buy replacement CR123 batteries in bulk. They're inexpensive, they have a long shelf life, and having them on hand means you can swap them immediately when the panel flags a sensor.
+</Admonition>
+
+### Emergency contacts and PIN codes
+
+ADT's monitoring center will try to reach your emergency contacts before dispatching police. Once a year, go through your contact list in the ADT app and make sure every phone number is current. People change numbers more often than they realize, and an unreachable emergency contact slows down the response.
+
+Do the same review with your PIN codes. Think about who has a code: family members, housekeepers, dog walkers, adult children who moved out. Remove codes for anyone who no longer needs access. Adding and removing PIN codes takes about two minutes in the ADT app.
+
+### Replace CO detectors past their service life
+
+This one gets skipped a lot because CO detectors usually look fine even when they're past their useful life. The electrochemical sensor inside degrades over time. A detector that's more than 7 years old may not reliably detect carbon monoxide even if the indicator light looks normal.
+
+Check the manufacture date on the back of each CO detector. If it's within 1 to 2 years of the 7-year mark, replace it. This is one case where "it seems to be working" isn't enough reassurance.
+
+### Schedule a professional ADT inspection
+
+ADT offers professional system inspections where a technician comes out to verify that all sensors are working correctly, test the cellular and panel connections, and recalibrate anything that needs it. I'd recommend doing this every year or two, especially if you've added devices, moved sensors, or made any changes to the system.
+
+It's also worth doing if you bought a house with an older ADT setup already installed. A tech can confirm which sensors are still functional, identify any dead zones in coverage, and recommend upgrades if the equipment is outdated.
+
+---
+
+## After severe weather
+
+Heavy storms can cause problems that don't show up immediately. After any significant weather event, run through this quick check:
+
+Look at your outdoor cameras. Check the footage from the storm and make sure the video quality looks normal. Inspect the physical housing for cracks or water intrusion. Strong winds can shift a camera's angle enough to create coverage gaps.
+
+Check outdoor sensors. Wind-driven debris can knock door sensors out of alignment on garage doors or gate entries. Run through your zone test to confirm everything registers.
+
+Power fluctuations during storms can sometimes knock Z-Wave devices offline or cause the panel to reboot. Open the app and confirm the system shows armed/disarmed status correctly. If something looks off, restart the panel by unplugging it and letting it run on backup battery for 30 seconds before reconnecting.
+
+---
+
+## A note on DIY maintenance vs. calling ADT
+
+Most of this checklist is stuff you can handle yourself in a few minutes. But some things are better handled by ADT directly: cellular signal issues, panel hardware problems, sensor recalibration after a layout change, and anything involving the monitoring connection. ADT's customer service is available 24/7 at <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a>.
+
+If you're on a 12-month agreement and the system isn't performing well, call them. Most issues can be resolved remotely or with a scheduled tech visit, and they want the system working correctly as much as you do.
+
+<a href={companyData.website}>See current ADT offers and equipment packages.</a>
+
+<FAQ
+  items={[
+    {
+      question: "How often should I test my ADT system?",
+      answer:
+        "ADT recommends testing at least once a month. That means putting the system into test mode through the app or by calling (833) 224-7221, then tripping each sensor to verify it registers on the panel. Monthly testing is the only way to catch a dead battery or loose sensor before you actually need the system.",
+    },
+    {
+      question: "How do I put my ADT system in test mode?",
+      answer:
+        "You can enable test mode through the ADT app (under Alarm.com settings) or by calling ADT at (833) 224-7221 and asking them to place your account in test mode. Always do this before triggering any sensors, or the monitoring center may dispatch police.",
+    },
+    {
+      question: "How long does the ADT panel backup battery last?",
+      answer:
+        "ADT panel backup batteries typically last 3 to 5 years. The Command Panel will display a low battery warning when it needs to be replaced. The replacement is a standard 12V sealed lead-acid battery available at most hardware stores.",
+    },
+    {
+      question: "How do I test ADT door sensors?",
+      answer:
+        "Put your system in test mode first, then simply open the door or window the sensor is attached to. Watch the zones screen on the Command Panel — the corresponding zone should show as open within a few seconds. If it doesn't register, check the battery and make sure the sensor and magnet haven't shifted out of alignment.",
+    },
+    {
+      question: "How do I test the ADT motion sensor?",
+      answer:
+        "With the system in test mode and the panel showing the zones screen, walk slowly through the motion sensor's coverage area. It should trigger within a few seconds of detecting movement. If it doesn't, check the battery first. Motion sensors are typically the most battery-hungry devices in the system.",
+    },
+    {
+      question: "How do I test ADT smoke detectors?",
+      answer:
+        "Press and hold the test button on the smoke detector for about 5 seconds until the alarm sounds. If it doesn't sound or sounds weak, replace the battery. Smoke detectors should be replaced entirely every 10 years.",
+    },
+    {
+      question: "When should CO detectors be replaced?",
+      answer:
+        "CO detectors need to be replaced every 5 to 7 years, even if they appear to be functioning. The electrochemical sensor inside degrades over time and may not reliably detect carbon monoxide after that point. Check the manufacture date on the back of the unit.",
+    },
+    {
+      question: "Does ADT offer professional system inspections?",
+      answer:
+        "Yes. ADT can send a technician to inspect your system, test all sensors, verify the cellular connection, and recalibrate devices. It's worth scheduling every year or two, especially if you have an older system or recently moved into a home with an existing ADT setup.",
+    },
+  ]}
+/>

@@ -1,8 +1,8 @@
 name: "ADT"
 slug: "adt"
-phone: "(833) 224-7221"
-phoneUnformatted: "18332247221"
-website: "https://s24alarms.com/YHSE"
+phone: "(866) 968-7164"
+phoneUnformatted: "18669687164"
+website: "https://www.getsafestreets.com/secureliving"
 rating:
   overall: 4.5
   equipment: 5
@@ -11,7 +11,7 @@ rating:
   easeOfUse: 4.5
   customerService: 4
 logo: "../../assets/logos/adt-logo.png"
-promo: "Nest Doorbell + Nest Camera — FREE"
+promo: "Nest Doorbell Camera + Full Security at No Cost"
 
 # ── Overview ──────────────────────────────────────────────
 installType: "professional" # options: professional | diy | both
