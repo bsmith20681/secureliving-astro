@@ -81,7 +81,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             <div class="quiz-progress__fill" style="width: 16.66%;"></div>
           </div>
 
-          <form id="security-quiz" name="security-quiz" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/security-match-quiz-thank-you/">
+          <form id="security-quiz" name="security-quiz" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/security-match-quiz-thank-you/?submitted=true">
 
             <!-- Step 1: Property Type -->
             <div class="quiz-step quiz-step--active" data-step="1">
