@@ -16,7 +16,8 @@
       "Bash(python3 -m pip install pandas openpyxl -q)",
       "Bash(python3 -c ':*)",
       "Read(//c/Users/bsmit/.claude/**)",
-      "Read(//c/Users/bsmit/**)"
+      "Read(//c/Users/bsmit/**)",
+      "Bash(python -c ' *)"
     ]
   }
 }

@@ -2,7 +2,7 @@
 Theme Name: Secure Living Theme
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 
 :root {
   --min-screen-width: 320px;
@@ -97,7 +97,7 @@ Theme Name: Secure Living Theme
 
 html {
   font-size: 62.5%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Mona Sans", sans-serif;
 }
 
 body {
@@ -849,6 +849,15 @@ figcaption {
   margin-bottom: var(--space-14);
   line-height: 1.6;
 }
+
+.entry h2,
+.entry h3,
+.entry h4,
+.entry h5,
+.entry h6 {
+  text-transform: capitalize;
+}
+
 .entry-header {
   padding: var(--space-8) 0;
   background-color: var(--primary-900);
