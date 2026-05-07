@@ -1,16 +1,20 @@
 ---
-title: "ADT Alarm System Battery Replacement"
-subtitle: "ADT panel beeping about a low battery? Here's how to replace the batteries in every ADT sensor and the panel backup battery."
+title: "How to Replace Your ADT Alarm System Batteries"
+subtitle: "ADT panel beeping about a low battery? Here's how to replace the batteries in every ADT sensor."
 metaDescription: "Step-by-step battery replacement instructions for ADT sensors and panel. Learn what batteries ADT devices use and how to swap them without triggering an alarm."
 category: "Home Security Systems"
 pubDate: 2026-05-07
 updatedDate: 2026-05-07
 author: "ben-smith"
-image: "../../assets/adt/adt-door-window-sensor.jpg"
+image: "../../assets/adt/adt-motion-detector-cr123a-battery.jpg"
 ---
 
 import { Image } from "astro:assets";
-import adtDoorSensor from "../../assets/adt/adt-door-sensor-installed.jpg";
+import adtPanelWithSensors from "../../assets/adt/adt-panel-with-sensors-on-table.jpg";
+import adtPanelBypass from "../../assets/adt/adt-panel-selecting-zone-to-bypass.jpg";
+import adtDoorSensorBattery from "../../assets/adt/adt-door-sensor-cr123a-battery-replacement.jpg";
+import adtMotionDetectorBattery from "../../assets/adt/adt-motion-detector-cr123a-battery.jpg";
+import adtGlassBreakBattery from "../../assets/adt/adt-glass-break-battery-compartment.jpg";
 import Admonition from "../../components/Admonition.astro";
 import companyData from "../../content/companies/adt.yaml";
 
@@ -22,11 +26,22 @@ I've done this on my own system and it's about as straightforward as home securi
 
 Every ADT sensor, whether it's a door/window sensor, motion sensor, or glass break sensor, uses a **CR123A** lithium battery. You can grab these at most hardware stores or order a multi-pack online for cheaper. They typically run about **$3 to $5 per battery**.
 
-One battery per sensor. That's it. If you're planning to do all the sensors in the house at once, count how many devices you have and buy a pack accordingly. Doing them all at the same time saves you from dealing with alerts every few months as they die off one by one.
+One battery per sensor. That's it. If you're planning to do all the sensors in the house at once, count how many devices you have and buy a pack accordingly. Doing them all at the same time saves you from dealing with alerts and helps prevent [ADT false alarms](/home-security-systems/adt-false-alarm-prevention-tips/).
+
+<figure>
+  <Image
+    src={adtPanelWithSensors}
+    alt="ADT panel and sensors laid out on a table for battery replacement"
+  />
+  <figcaption>
+    Every ADT sensor uses the same CR123A battery, making it easy to swap them
+    all at once
+  </figcaption>
+</figure>
 
 ## Bypass the Sensors Before You Start
 
-This is the step most people skip, and then they get a tamper alert blaring through the house. Before you open any sensor to swap the battery, you need to [bypass those zones on your ADT panel](/home-security-systems/how-to-permanently-bypass-an-adt-zone/). If you don't, the system thinks someone is tampering with the sensor and it triggers the alarm.
+This is the step most people skip, and then they get a tamper alert blaring through the house. Before you open any sensor to swap the battery, you need to bypass those zones on your ADT panel. If you don't, the system thinks someone is tampering with the sensor and it triggers the alarm.
 
 Here's the quick version:
 
@@ -37,32 +52,71 @@ Here's the quick version:
 
 You'll see a **Do Not Enter** icon next to each bypassed sensor on the zones list. That's your green light to start opening them up.
 
+<figure>
+  <Image
+    src={adtPanelBypass}
+    alt="ADT panel zones screen selecting a sensor to bypass"
+  />
+  <figcaption>
+    Select the sensor you want to bypass before opening it up
+  </figcaption>
+</figure>
+
 <Admonition>
-If you enter the wrong PIN when trying to bypass, the panel won't show an error. Nothing happens at all. The only way to tell it didn't work is that the Do Not Enter icon won't appear. If everything looks the same, try your PIN again.
+  If you enter the wrong PIN when trying to bypass, the panel won't show an
+  error. Nothing happens at all. The only way to tell it didn't work is that the
+  Do Not Enter icon won't appear. If everything looks the same, try your PIN
+  again.
 </Admonition>
 
-## Replacing the Door Sensor
+## Replacing the ADT Door Sensor Battery
 
 The door sensor is the easiest one. Rotate the cover and push down to slide it off. The **CR123A** battery sits right inside. Pop the old one out and snap the new one in.
 
 <figure>
-  <Image src={adtDoorSensor} alt="ADT door sensor installed on a door frame" />
-  <figcaption>ADT door sensors are mounted on the door frame and open by rotating and pushing down</figcaption>
+  <Image
+    src={adtDoorSensorBattery}
+    alt="ADT door sensor opened showing CR123A battery inside"
+  />
+  <figcaption>
+    The CR123A battery sits right inside the door sensor housing
+  </figcaption>
 </figure>
 
 Sometimes the cover doesn't want to go back on smoothly. Just line up the tabs and give it a firm push. Don't force it sideways or you'll crack the plastic housing.
 
-## Replacing the Glass Break Sensor
+## Replacing the ADT Glass Break Sensor Battery
+
+<figure>
+  <Image
+    src={adtGlassBreakBattery}
+    alt="Twist the bottom part to remove the cover."
+  />
+  <figcaption>
+    Every ADT sensor uses the same CR123A battery, making it easy to swap them
+    all at once
+  </figcaption>
+</figure>
 
 For the glass break sensor, twist the cover counterclockwise to pop it off. The battery is right there. Swap it out and twist the cover back on clockwise until it's snug.
 
 These are usually mounted higher up on walls near windows, so grab a step stool or ladder if yours is above a doorframe. Same **CR123A** battery as everything else.
 
-## Replacing the Motion Sensor
+## Replacing the ADT Motion Sensor Battery
 
 The motion sensor opens by pushing up on the front cover. It slides right off and the battery is exposed. Swap the CR123A and push the cover back down until it clicks into place.
 
 Same deal as the other sensors. Takes about 30 seconds if you're not fumbling with the packaging on the new battery.
+
+<figure>
+  <Image
+    src={adtMotionDetectorBattery}
+    alt="ADT motion detector opened showing CR123A battery"
+  />
+  <figcaption>
+    Push up on the motion sensor cover to access the CR123A battery
+  </figcaption>
+</figure>
 
 ## Clear the Bypass After the Battery Change
 
@@ -90,7 +144,7 @@ When a sensor battery gets low, the panel will alert you. That's your cue to rep
 
 ## Does ADT Replace Batteries for Free?
 
-It depends on your service plan. Some ADT home security monitoring plans include free battery replacement as part of the service agreement. If your plan covers it, you can call ADT at <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a> and they'll either ship batteries to you or send a tech out.
+It depends on your service plan. Some ADT home security monitoring plans include free battery replacement as part of the service agreement. If your plan covers it, you can call ADT at (800) 238-2727 and they'll either ship batteries to you or send a tech out.
 
 If your plan doesn't include it, you're looking at buying CR123A batteries yourself or paying for a tech to come out. Either way, this is something you can handle yourself in under 15 minutes with no tools required. I'd save the service call for the panel backup battery if you're not comfortable pulling the panel apart.
 
@@ -100,4 +154,4 @@ If you swapped the battery and the warning won't clear, give it some time. The s
 
 If it still shows the alert after 24 hours, try pulling the battery out and reinserting it. Make sure the contacts are clean and the battery is seated firmly. You can also try clearing the alert from the ADT keypad by entering your master code.
 
-If nothing works, call ADT support at <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a> and they can reset the alert on their end or walk you through additional troubleshooting instructions over the phone.
+If nothing works, call ADT support at (800) 238-2727 and they can reset the alert on their end or walk you through additional troubleshooting instructions over the phone.

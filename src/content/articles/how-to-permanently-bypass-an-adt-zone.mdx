@@ -10,11 +10,14 @@ image: "../../assets/adt/adt-command-panel-zones-screen.jpg"
 ---
 
 import { Image } from "astro:assets";
-import adtZonesScreen from "../../assets/adt/adt-command-panel-zones-screen.jpg";
+import adtZoneList from "../../assets/adt/adt-panel-zone-list-bypass-options.jpg";
+import adtSelectingZone from "../../assets/adt/adt-panel-selecting-zone-to-bypass.jpg";
+import adtBypassConfirmation from "../../assets/adt/adt-panel-bypass-zone-confirmation.jpg";
+import adtTamperAlert from "../../assets/adt/adt-panel-tamper-alert-home-screen.jpg";
 import Admonition from "../../components/Admonition.astro";
 import companyData from "../../content/companies/adt.yaml";
 
-If you have an ADT home security system and a sensor keeps faulting, you'll need to bypass that zone before the system will let you arm. Maybe you [bought a house with ADT already installed](/home-security-systems/bought-a-house-with-adt/) and one of the sensors is on a door that doesn't shut right. Or a window sensor lost its magnet and the panel beeps every time you try to set it. I get this question a lot, so I put together a quick walkthrough.
+If you have an ADT home security system and a sensor keeps faulting, you'll need to bypass that zone before the system will let you arm. Maybe your [new house has ADT already installed](/home-security-systems/bought-a-house-with-adt/) and one of the sensors is on a door that doesn't shut right. Or a window sensor lost its magnet and the panel beeps every time you try to set it. I get this question a lot, so I put together a quick walkthrough.
 
 Here's how to bypass a zone on the ADT Command system, how to clear it, and what to do if you want that zone gone for good.
 
@@ -29,19 +32,51 @@ This is useful when a sensor is faulted or broken and you still want the rest of
 From the command panel, here's how to do it:
 
 1. Go to the **Zones** page
+   <figure>
+     <Image
+       src={adtTamperAlert}
+       alt="ADT panel home screen showing a tamper alert notification"
+     />
+     <figcaption>Press the button in the bottom right corner.</figcaption>
+   </figure>
 2. Select the sensor you want to bypass
+   <figure>
+     <Image
+       src={adtZoneList}
+       alt="ADT panel showing the zone list with bypass options for each sensor"
+     />
+     <figcaption>
+       Simply tap the sensor. You can select more than one.
+     </figcaption>
+   </figure>
 3. Tap **Bypass**
+   <figure>
+     <Image
+       src={adtSelectingZone}
+       alt="ADT panel selecting a specific zone to bypass"
+     />
+     <figcaption>Select the bypass button in the bottom right.</figcaption>
+   </figure>
 4. Enter your **PIN**
 
 You'll know it worked when a **Do Not Enter** icon appears next to the sensor emblem. That icon means the zone is bypassed and won't trigger an alarm when you arm the system.
 
 <figure>
-  <Image src={adtZonesScreen} alt="ADT Command panel zones screen showing sensor list and bypass options" />
-  <figcaption>The Zones page on the ADT Command panel where you can bypass individual sensors</figcaption>
+  <Image
+    src={adtBypassConfirmation}
+    alt="ADT panel showing bypass confirmation with Do Not Enter icon next to sensor"
+  />
+  <figcaption>
+    The Do Not Enter icon confirms the zone has been successfully bypassed
+  </figcaption>
 </figure>
 
 <Admonition>
-Something that can be misleading: if you enter the wrong PIN, the panel won't display an error code or give you any indication that something went wrong. Nothing happens. No message, no beep. The only way to tell your PIN didn't work is that the Do Not Enter icon won't show up. If everything looks the same after tapping Bypass, try entering your PIN again.
+  Something that can be misleading: if you enter the wrong PIN, the panel won't
+  display an error code or give you any indication that something went wrong.
+  The only way to tell your PIN didn't work is that the Do Not Enter icon won't
+  show up. If everything looks the same after tapping Bypass, try entering your
+  PIN again.
 </Admonition>
 
 ## How to Clear a Bypassed Zone
@@ -60,7 +95,7 @@ A few common situations where bypassing makes sense:
 
 - A sensor is faulted and the system won't let you arm until it's resolved
 - You're doing work on the house and a door or window needs to stay open for a while
-- A sensor keeps causing false alarms every time you arm
+- A sensor keeps [triggering false alarms](/home-security-systems/adt-false-alarm-prevention-tips/) every time you arm
 - The sensor is on an entry point you no longer use
 
 Bypassing keeps everything else fully protected. It's a targeted fix, not a system-wide change. I usually recommend it as a first step when troubleshooting a problem sensor.
@@ -73,6 +108,6 @@ If the app gives you trouble or you can't get it to go through, do it directly f
 
 ## When to Call ADT Support
 
-If you're bypassing the same zone every single day just to avoid unnecessary alerts, the sensor probably needs to be replaced or removed from the system entirely. Call ADT security support at <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a> and they can troubleshoot the issue, check for problems on their end, or send a tech out to replace it. Have your panel's model number ready before you call so they can pull up your system info.
+If you're bypassing the same zone every single day just to avoid unnecessary alerts, the sensor probably needs to be replaced or removed from the system entirely. Call ADT security support at (800) 238-2727 and they can troubleshoot the issue, check for problems on their end, or send a tech out to replace it. Have your panel's model number ready before you call so they can pull up your system info.
 
 For a truly permanent fix, their support team can remove the zone from your panel's programming so you never have to deal with it again. Bypassing works well as a short-term solution, but if the sensor itself is broken, get it taken care of so your security system is fully protected.

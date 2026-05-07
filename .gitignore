@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Claude Code worktrees (temporary agent isolation directories)
+src/.claude/worktrees/
