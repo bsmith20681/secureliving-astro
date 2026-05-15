@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /top-5-home-security-systems/
+
+Sitemap: https://secureliving.com/sitemap-index.xml

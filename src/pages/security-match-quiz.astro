@@ -222,6 +222,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             <input type="hidden" name="form-name" value="security-quiz" />
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="fbclid" id="fbclid" value="" />
+            <input type="hidden" name="utm_source" id="utm_source" value="" />
             <input type="hidden" name="xxTrustedFormCertUrl" />
             <input type="hidden" name="xxTrustedFormToken" />
             <input type="hidden" name="xxTrustedFormPingUrl" />
@@ -340,6 +341,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         if (fbclid) {
           const fbclidInput = document.getElementById('fbclid') as HTMLInputElement;
           if (fbclidInput) fbclidInput.value = fbclid;
+        }
+
+        const utmSource = urlParams.get('utm_source');
+        if (utmSource) {
+          const utmSourceInput = document.getElementById('utm_source') as HTMLInputElement;
+          if (utmSourceInput) utmSourceInput.value = utmSource;
         }
 
         function showStep(step: number) {
