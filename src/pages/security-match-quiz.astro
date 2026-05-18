@@ -69,6 +69,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     src="https://www.facebook.com/tr?id=1627957708345474&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17536426164" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17536426164');
+    </script>
   </head>
   <body>
     <QuizHeader />

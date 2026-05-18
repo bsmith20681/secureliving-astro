@@ -60,22 +60,22 @@ const companies = [
     src="https://www.facebook.com/tr?id=1627957708345474&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <!-- Google Ads Conversion -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17536426164" is:inline></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17536426164');
-      if (new URLSearchParams(window.location.search).get('submitted') === 'true') {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17536426164/NR68CM6v1a0cELTBgqpB',
-          'value': 6.0,
-          'currency': 'USD'
-        });
-      }
     </script>
-    <!-- End Google Ads Conversion -->
+    <!-- Event snippet for Submit lead form conversion page -->
+    <script is:inline>
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17536426164/NR68CM6v1a0cELTBgqpB',
+        'value': 6.0,
+        'currency': 'USD'
+      });
+    </script>
   </head>
   <body>
     <QuizHeader />
