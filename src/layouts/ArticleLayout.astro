@@ -73,6 +73,30 @@ const imageSchema = imageURL ? {
   "height": image!.height,
 } : null;
 
+const reviewSchema = companyEntry ? {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": companyEntry.data.name,
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": companyEntry.data.rating.overall,
+    "bestRating": 5,
+  },
+  "author": {
+    "@type": "Person",
+    "name": authorName ?? "Secure Living",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Secure Living",
+  },
+  "datePublished": pubDate.toISOString(),
+  "url": canonicalURL,
+} : null;
+
 const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
@@ -94,6 +118,7 @@ const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
     <script is:inline type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     {imageSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(imageSchema)} />}
+    {reviewSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />}
   </Fragment>
 
   <article class="entry">
