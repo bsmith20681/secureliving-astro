@@ -15,6 +15,7 @@ interface Props {
   updatedDate?: Date;
   image?: ImageMetadata;
   company?: string;
+  review?: boolean;
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   updatedDate,
   image,
   company: companySlug,
+  review,
 } = Astro.props;
 
 const authorEntry = authorSlug ? await getEntry('authors', authorSlug) : null;
@@ -73,7 +75,7 @@ const imageSchema = imageURL ? {
   "height": image!.height,
 } : null;
 
-const reviewSchema = companyEntry ? {
+const reviewSchema = (review && companyEntry) ? {
   "@context": "https://schema.org",
   "@type": "Review",
   "itemReviewed": {
