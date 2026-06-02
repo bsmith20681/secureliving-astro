@@ -17,7 +17,11 @@
       "Bash(python3 -c ':*)",
       "Read(//c/Users/bsmit/.claude/**)",
       "Read(//c/Users/bsmit/**)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(node -e ' *)",
+      "Bash(node -e *)",
+      "Bash(dir \"D:\\\\06 - Secure Living Blog Posts\\\\vivint-review\\\\which cameras and equipment are compatible with vivint\" /B)",
+      "Bash(ls -la \"C:\\\\Coding Projects\\\\secure-living-astro\\\\src\\\\assets\\\\vivint\\\\\" | grep -E '\\\\.\\(png|jpg|jpeg\\)$')"
     ]
   }
 }
