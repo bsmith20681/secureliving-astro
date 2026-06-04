@@ -21,7 +21,10 @@
       "Bash(node -e ' *)",
       "Bash(node -e *)",
       "Bash(dir \"D:\\\\06 - Secure Living Blog Posts\\\\vivint-review\\\\which cameras and equipment are compatible with vivint\" /B)",
-      "Bash(ls -la \"C:\\\\Coding Projects\\\\secure-living-astro\\\\src\\\\assets\\\\vivint\\\\\" | grep -E '\\\\.\\(png|jpg|jpeg\\)$')"
+      "Bash(ls -la \"C:\\\\Coding Projects\\\\secure-living-astro\\\\src\\\\assets\\\\vivint\\\\\" | grep -E '\\\\.\\(png|jpg|jpeg\\)$')",
+      "Bash(Start-Sleep -Seconds 8)",
+      "Bash(Get-Content \"C:\\\\Users\\\\bsmit\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Coding-Projects-secure-living-astro-src\\\\43c382d8-7e45-4863-a6a3-1be10f0c1dbc\\\\tasks\\\\bn45jm1di.output\" -Tail 20)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
     ]
   }
 }
