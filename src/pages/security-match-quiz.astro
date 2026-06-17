@@ -1,5 +1,5 @@
 ---
-import { SEO } from 'astro-seo';
+import Seo from '@jdevalk/astro-seo-graph/Seo.astro';
 import QuizHeader from '../components/QuizHeader.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
@@ -19,26 +19,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/png" sizes="32x32" href="/images/cropped-favicon-sm-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <SEO
+    <Seo
       title="Security Match Quiz"
       description="Find the right home security company in under 60 seconds. Answer a few quick questions and get personalized recommendations."
       canonical={canonicalURL.href}
-      openGraph={{
-        basic: {
-          title: 'Security Match Quiz',
-          type: 'website',
-          image: '',
-        },
-        optional: {
-          description: 'Find the right home security company in under 60 seconds.',
-          siteName: 'Secure Living',
-        },
-      }}
-      twitter={{
-        card: 'summary_large_image',
-        title: 'Security Match Quiz',
-        description: 'Find the right home security company in under 60 seconds.',
-      }}
+      siteName="Secure Living"
+      twitter={{ card: 'summary_large_image' }}
     />
     <script type="text/javascript">
     (function(c, l, a, r, i, t, y) {

@@ -1,5 +1,6 @@
 ---
-import { SEO } from 'astro-seo';
+import Seo from '@jdevalk/astro-seo-graph/Seo.astro';
+import { makeIds, buildWebSite, buildPiece, assembleGraph } from '@jdevalk/seo-graph-core';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -13,10 +14,31 @@ interface Props {
     image?: string;
     type?: string;
   };
+  graph?: Record<string, unknown> | null;
 }
 
-const { title, description, noindex, openGraph } = Astro.props;
+const { title, description, noindex, openGraph, graph: graphProp } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const siteUrl = 'https://secureliving.com';
+const ids = makeIds({ siteUrl });
+const orgId = ids.organization('secureliving');
+
+const baseGraph = assembleGraph([
+  buildPiece({
+    '@type': 'Organization',
+    '@id': orgId,
+    name: 'Secure Living',
+    url: siteUrl,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/images/cropped-favicon-sm-32x32.png`,
+    },
+  }),
+  buildWebSite({ url: `${siteUrl}/`, name: 'Secure Living', publisher: { '@id': orgId } }, ids),
+]);
+
+const resolvedGraph = graphProp !== undefined ? graphProp : baseGraph;
 ---
 
 <html lang="en">
@@ -25,46 +47,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/png" sizes="32x32" href="/images/cropped-favicon-sm-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <SEO
+    <Seo
       title={title}
       description={description}
       canonical={canonicalURL.href}
       noindex={noindex ?? false}
       nofollow={noindex ?? false}
-      openGraph={{
-        basic: {
-          title: openGraph?.title ?? title,
-          type: openGraph?.type ?? 'website',
-          image: openGraph?.image ?? '',
-        },
-        optional: {
-          description: openGraph?.description ?? description,
-          siteName: 'Secure Living',
-        },
-      }}
-      twitter={{
-        card: 'summary_large_image',
-        title: openGraph?.title ?? title,
-        description: openGraph?.description ?? description,
-        image: openGraph?.image ?? '',
-      }}
+      ogType={openGraph?.type === 'article' ? 'article' : 'website'}
+      ogImage={openGraph?.image}
+      siteName="Secure Living"
+      twitter={{ card: 'summary_large_image' }}
+      graph={resolvedGraph}
     />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Secure Living",
-      "url": "https://secureliving.com"
-    })} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Secure Living",
-      "url": "https://secureliving.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://secureliving.com/images/cropped-favicon-sm-32x32.png"
-      }
-    })} />
     <slot name="head" />
     <script is:inline type="text/javascript">
     (function(c, l, a, r, i, t, y) {

@@ -24,7 +24,22 @@
       "Bash(ls -la \"C:\\\\Coding Projects\\\\secure-living-astro\\\\src\\\\assets\\\\vivint\\\\\" | grep -E '\\\\.\\(png|jpg|jpeg\\)$')",
       "Bash(Start-Sleep -Seconds 8)",
       "Bash(Get-Content \"C:\\\\Users\\\\bsmit\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Coding-Projects-secure-living-astro-src\\\\43c382d8-7e45-4863-a6a3-1be10f0c1dbc\\\\tasks\\\\bn45jm1di.output\" -Tail 20)",
-      "mcp__Claude_in_Chrome__tabs_context_mcp"
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__1aeaf4ff-0e3a-41d1-b6bf-9a0f23300e20__doc",
+      "mcp__1aeaf4ff-0e3a-41d1-b6bf-9a0f23300e20__keywords-explorer-overview",
+      "mcp__1aeaf4ff-0e3a-41d1-b6bf-9a0f23300e20__keywords-explorer-related-terms",
+      "mcp__1aeaf4ff-0e3a-41d1-b6bf-9a0f23300e20__keywords-explorer-matching-terms",
+      "mcp__Claude_in_Chrome__select_browser",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__computer",
+      "PowerShell($content = Get-Content \"C:\\\\Users\\\\bsmit\\\\Downloads\\\\vivint vs cove.html\" -Raw -Encoding UTF8; $text = $content -replace '<[^>]+>', ' ' -replace '&nbsp;', ' ' -replace '&amp;', '&' -replace '&lt;', '<' -replace '&gt;', '>' -replace '\\\\s+', ' '; $text.Substring\\(0, 15000\\))",
+      "mcp__Claude_in_Chrome__tabs_close_mcp",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "PowerShell(Get-Command python3, python, py -ErrorAction SilentlyContinue)",
+      "Bash(py -c ' *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(Get-ChildItem -Path \"C:\\\\Coding Projects\\\\secure-living-astro\" -Force)",
+      "Bash(Select-Object Name, FullName)"
     ]
   }
 }

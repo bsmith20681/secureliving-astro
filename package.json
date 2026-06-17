@@ -14,8 +14,9 @@
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
     "@astrojs/sitemap": "^3.7.2",
+    "@jdevalk/astro-seo-graph": "^2.0.0",
+    "@jdevalk/seo-graph-core": "^0.6.2",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^6.1.5",
-    "astro-seo": "^1.1.0"
+    "astro": "^6.1.5"
   }
 }

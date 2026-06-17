@@ -1,5 +1,5 @@
 ---
-import { SEO } from 'astro-seo';
+import Seo from '@jdevalk/astro-seo-graph/Seo.astro';
 import QuizHeader from '../components/QuizHeader.astro';
 import Footer from '../components/Footer.astro';
 import CompanyCard from '../components/companies/CompanyCard.astro';
@@ -19,9 +19,8 @@ const companies = [
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/cropped-favicon-sm-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
     <meta name="generator" content={Astro.generator} />
-    <SEO
+    <Seo
       title="Your Security Recommendations - Secure Living"
       description="Your personalized home security recommendations based on your quiz answers."
       canonical={canonicalURL.href}

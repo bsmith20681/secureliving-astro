@@ -3,6 +3,7 @@ import PageLayout from './PageLayout.astro';
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import ArticlePromoBox from '../components/companies/ArticlePromoBox.astro';
+import { buildPiece, assembleGraph } from '@jdevalk/seo-graph-core';
 
 interface Props {
   title: string;
@@ -42,62 +43,54 @@ const companyEntry = companySlug ? await getEntry('companies', companySlug) : nu
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const imageURL = image ? new URL(image.src, Astro.site).href : null;
 
-const webPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": canonicalURL,
-  "url": canonicalURL,
-  "name": title,
-  "description": metaDescription,
-  "datePublished": pubDate.toISOString(),
-  "dateModified": (updatedDate || pubDate).toISOString(),
-  "breadcrumb": { "@id": `${canonicalURL}#breadcrumb` },
-  ...(imageURL ? { "primaryImageOfPage": { "@id": `${canonicalURL}#primaryimage` } } : {}),
-};
+const articlePiece = buildPiece({
+  '@type': 'Article',
+  '@id': `${canonicalURL}#article`,
+  headline: title,
+  description: metaDescription,
+  url: canonicalURL,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate || pubDate).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: authorName ?? 'Secure Living',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Secure Living',
+  },
+  ...(imageURL ? { image: imageURL } : {}),
+  ...(category ? { articleSection: category } : {}),
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "@id": `${canonicalURL}#breadcrumb`,
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secureliving.com" },
-    { "@type": "ListItem", "position": 2, "name": category, "item": `https://secureliving.com/${Astro.props.categorySlug ?? 'home-security-systems'}` },
-    { "@type": "ListItem", "position": 3, "name": title },
-  ],
-};
+const reviewPiece = (review && companyEntry) ? buildPiece({
+  '@type': 'Review',
+  '@id': `${canonicalURL}#review`,
+  itemReviewed: {
+    '@type': 'Product',
+    name: companyEntry.data.name,
+  },
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: companyEntry.data.rating.overall,
+    bestRating: 5,
+  },
+  author: {
+    '@type': 'Person',
+    name: authorName ?? 'Secure Living',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Secure Living',
+  },
+  datePublished: pubDate.toISOString(),
+  url: canonicalURL,
+}) : null;
 
-const imageSchema = imageURL ? {
-  "@context": "https://schema.org",
-  "@type": "ImageObject",
-  "@id": `${canonicalURL}#primaryimage`,
-  "url": imageURL,
-  "width": image!.width,
-  "height": image!.height,
-} : null;
-
-const reviewSchema = (review && companyEntry) ? {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Product",
-    "name": companyEntry.data.name,
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": companyEntry.data.rating.overall,
-    "bestRating": 5,
-  },
-  "author": {
-    "@type": "Person",
-    "name": authorName ?? "Secure Living",
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Secure Living",
-  },
-  "datePublished": pubDate.toISOString(),
-  "url": canonicalURL,
-} : null;
+const articleGraph = assembleGraph([
+  articlePiece,
+  ...(reviewPiece ? [reviewPiece] : []),
+]);
 
 const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
   month: 'long',
@@ -112,16 +105,11 @@ const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
   openGraph={{
     title,
     description: metaDescription,
-    image: image?.src ?? '',
+    image: imageURL ?? undefined,
     type: 'article',
   }}
+  graph={articleGraph}
 >
-  <Fragment slot="head">
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    {imageSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(imageSchema)} />}
-    {reviewSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />}
-  </Fragment>
 
   <article class="entry">
     <div class="entry-header">
