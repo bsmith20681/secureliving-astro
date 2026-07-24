@@ -5,12 +5,16 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import yaml from '@rollup/plugin-yaml';
 import seoGraph from '@jdevalk/astro-seo-graph/integration';
+import remarkGfm from 'remark-gfm';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://secureliving.com',
   vite: {
     plugins: [yaml()],
+  },
+  markdown: {
+    remarkPlugins: [remarkGfm],
   },
   integrations: [
     mdx(),
