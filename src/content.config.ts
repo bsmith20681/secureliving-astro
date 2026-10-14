@@ -17,6 +17,7 @@ const articles = defineCollection({
     authorBio: z.string().optional(),
     company: z.string().optional(),
     review: z.boolean().optional(),
+    pageType: z.enum(['topLevel', 'supporting']),
   }),
 });
 
