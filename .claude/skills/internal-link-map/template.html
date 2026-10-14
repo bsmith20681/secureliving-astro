@@ -1,0 +1,338 @@
+<title>Secure Living Link Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: header + stats, then one hub-and-spoke diagram per brand cluster (supporting pages above/below, top-level review in the middle), then a gaps list */
+:root {
+  --bg: #f3f5f8; --card: #ffffff; --card-line: #dfe3ea; --fg: #1c2330; --muted: #5f6b7c;
+  --bar: #d5dbe4; --bar-strong: #aeb7c4; --accent: #1f7ae0; --pill-dark: #222b38; --pill-dark-fg: #ffffff;
+  --warn: #c2462a; --warn-soft: #fbe9e4; --shadow: rgba(28, 35, 48, 0.08);
+  --display: "Plus Jakarta Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161d; --card: #1b212b; --card-line: #2d3542; --fg: #e5e9ef; --muted: #98a3b3;
+  --bar: #2f3846; --bar-strong: #46526380; --accent: #5aa2f2; --pill-dark: #e5e9ef; --pill-dark-fg: #12161d;
+  --warn: #f08a6a; --warn-soft: #3a211b; --shadow: rgba(0, 0, 0, 0.35); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161d; --card: #1b212b; --card-line: #2d3542; --fg: #e5e9ef; --muted: #98a3b3;
+  --bar: #2f3846; --bar-strong: #46526380; --accent: #5aa2f2; --pill-dark: #e5e9ef; --pill-dark-fg: #12161d;
+  --warn: #f08a6a; --warn-soft: #3a211b; --shadow: rgba(0, 0, 0, 0.35); color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--display); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 56px; display: grid; gap: 40px; }
+h1 { font-size: clamp(28px, 4vw, 38px); font-weight: 800; margin: 0; letter-spacing: -0.02em; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 70ch; margin: 8px 0 0; }
+code { font-family: var(--mono); font-size: 0.88em; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 40px; font-variant-numeric: tabular-nums; }
+.stat b { display: block; font-family: var(--mono); font-size: 26px; font-weight: 500; }
+.stat span { color: var(--muted); font-size: 13px; }
+.stat.warn b { color: var(--warn); }
+.key { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--muted); align-items: center; }
+.key svg { vertical-align: middle; margin-right: 6px; }
+.cluster { display: grid; gap: 12px; }
+.cluster h2 { font-size: 22px; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+.cluster p { margin: 0; color: var(--muted); max-width: 72ch; }
+.cluster p strong { color: var(--fg); font-weight: 600; }
+.diagram { overflow-x: auto; }
+.diagram svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.cardbox { fill: var(--card); stroke: var(--card-line); stroke-width: 1.2; filter: drop-shadow(0 4px 10px var(--shadow)); }
+.cardbox.gap { stroke: var(--warn); stroke-dasharray: 5 4; stroke-width: 1.5; }
+.bar { fill: var(--bar); }
+.bar.strong { fill: var(--bar-strong); }
+.title { font-weight: 700; font-size: 13px; fill: var(--fg); }
+.ptitle { font-weight: 800; font-size: 17px; fill: var(--fg); }
+.slug { font-family: var(--mono); font-size: 10.5px; fill: var(--muted); }
+.meta { font-size: 12px; fill: var(--muted); }
+.tag { font-size: 10.5px; font-weight: 700; fill: var(--warn); letter-spacing: 0.02em; }
+.tagbg { fill: var(--warn-soft); }
+.pill-dark rect { fill: var(--pill-dark); } .pill-dark text { fill: var(--pill-dark-fg); }
+.pill-blue rect { fill: var(--accent); } .pill-blue text { fill: #ffffff; }
+.pill text { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; }
+.bracket { fill: none; stroke: var(--pill-dark); stroke-width: 1.5; }
+.imgph { fill: var(--bar); }
+.arrow { fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-dasharray: 6 5; }
+.arrow.broken { stroke: var(--warn); }
+.elabel { font-size: 11px; font-weight: 700; fill: var(--warn); }
+ul.gaps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--card-line); }
+ul.gaps li { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--card-line); font-size: 14px; }
+ul.gaps li span:first-child { font-family: var(--mono); font-size: 13px; overflow-wrap: anywhere; min-width: 0; }
+ul.gaps li span:last-child { color: var(--muted); text-align: right; }
+.silo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 6px; }
+.silo { background: var(--card); border: 1px solid var(--card-line); border-radius: 12px; padding: 16px; display: grid; gap: 6px; align-content: start; box-shadow: 0 4px 10px var(--shadow); min-width: 0; }
+.silo b { font-size: 15px; font-weight: 800; }
+.silo code { font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+.silo small { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.silo-slot { border: 1.5px dashed var(--warn); color: var(--warn); border-radius: 8px; padding: 10px; text-align: center; font-size: 12px; font-weight: 700; margin-block: 4px; }
+.pill-mini { justify-self: start; background: var(--accent); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; padding: 2px 9px; border-radius: 99px; }
+.bad { color: var(--warn); font-weight: 700; }
+.plink text { font-family: var(--mono); font-size: 10px; fill: var(--accent); }
+.plink:hover text { text-decoration: underline; }
+.plink:hover text, .plink:focus-visible text { fill: var(--fg); }
+.hlinks { display: grid; gap: 6px; font-family: var(--mono); font-size: 11px; margin-top: 2px; }
+.hlinks a { overflow-wrap: anywhere; text-decoration: none; }
+.hlinks a:hover { text-decoration: underline; }
+.hlinks a { color: var(--accent); text-underline-offset: 2px; }
+.hlinks a:hover { color: var(--fg); }
+h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 10px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Secure Living internal link map</h1>
+    <p class="lede">Each article marked <code>pageType: topLevel</code> is its own silo, with the <code>supporting</code> articles that belong under it. Arrows are real in-body links from the <span id="count"></span> articles in <code>src/content/articles</code>, scanned <span id="date"></span>.</p>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="key">
+    <span><svg width="34" height="10"><line x1="2" y1="5" x2="30" y2="5" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="6 5"/></svg>Internal link</span>
+    <span><svg width="34" height="10"><line x1="2" y1="5" x2="30" y2="5" stroke="var(--warn)" stroke-width="1.8" stroke-dasharray="6 5"/></svg>Broken link</span>
+    <span><svg width="22" height="16"><rect x="1" y="1" width="20" height="14" rx="3" fill="none" stroke="var(--warn)" stroke-dasharray="4 3"/></svg>Doesn't link to its top-level page</span>
+  </div>
+
+  <div id="clusters" style="display:grid;gap:52px"></div>
+
+  <section>
+    <h3>Gaps to fix</h3>
+    <ul class="gaps" id="gaps"></ul>
+  </section>
+</div>
+
+<script>
+// Filled in by build.mjs: { scanDate, articleCount, links: [{s, t, broken}], clusters: [{pillar, top, bottom}], unclustered: [slug] }
+const DATA = /*__DATA__*/;
+const { links, clusters, unclustered } = DATA;
+const clusterOf = {};
+clusters.forEach(c => [c.pillar, ...c.top, ...c.bottom].forEach(s => clusterOf[s] = c));
+
+const SMALL = new Set(["a", "an", "and", "the", "with", "without", "to", "on", "is", "your", "vs", "of"]);
+const UPPER = { adt: "ADT", diy: "DIY", wifi: "WiFi", visa: "Visa", simplisafe: "SimpliSafe" };
+const human = s => s.split("-").map((w, i) => UPPER[w] || (i && SMALL.has(w) ? w : w[0].toUpperCase() + w.slice(1))).join(" ").replace(" vs ", " vs. ");
+function wrap(text, max) {
+  const lines = []; let cur = "";
+  text.split(" ").forEach(w => { if ((cur + " " + w).trim().length > max) { lines.push(cur); cur = w; } else cur = (cur + " " + w).trim(); });
+  lines.push(cur); return lines;
+}
+
+const NS = "http://www.w3.org/2000/svg";
+function el(parent, tag, attrs = {}, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  parent.appendChild(e); return e;
+}
+function pill(svg, cx, cy, label, cls) {
+  const g = el(svg, "g", { class: "pill " + cls });
+  const w = label.length * 8.4 + 30;
+  el(g, "rect", { x: cx - w / 2, y: cy - 13, width: w, height: 26, rx: 13 });
+  el(g, "text", { x: cx, y: cy + 4.5, "text-anchor": "middle" }, label);
+}
+
+const urlFor = (host, slug) => `${host}/home-security-systems/${slug}/`;
+const LOCAL = "http://localhost:4321", LIVE = "https://secureliving.com";
+// Break a URL into lines of at most `max` characters, preferring to break after "/" or "-".
+function wrapUrl(u, max) {
+  const out = [];
+  while (u.length > max) {
+    let cut = Math.max(u.lastIndexOf("/", max - 1), u.lastIndexOf("-", max - 1));
+    if (cut < max * 0.5) cut = max - 1;
+    out.push(u.slice(0, cut + 1)); u = u.slice(cut + 1);
+  }
+  out.push(u); return out;
+}
+const URL_LH = 13, URL_GAP = 7, CHAR_W = 6.05;
+const urlLines = (slug, max) => [LOCAL, LIVE].map(h => wrapUrl(urlFor(h, slug), max));
+const urlBlockH = (slug, max) => urlLines(slug, max).reduce((n, ls) => n + ls.length * URL_LH, 0) + URL_GAP;
+// Draws the localhost URL above the live URL; returns the height used.
+function linkPair(g, slug, x, y, max) {
+  let cy = y;
+  [LOCAL, LIVE].forEach((host, i) => {
+    const href = urlFor(host, slug);
+    const a = el(g, "a", { href, target: "_blank", rel: "noopener", class: "plink" });
+    const t = el(a, "text", {});
+    wrapUrl(href, max).forEach(ln => { el(t, "tspan", { x, y: cy + 10 }, ln); cy += URL_LH; });
+    if (!i) cy += URL_GAP;
+  });
+  return cy - y;
+}
+let W = 1000; const CW = 214, GAP = 34, PW = 470;
+const CARD_CHARS = Math.floor((CW - 28) / CHAR_W), PILLAR_CHARS = Math.floor((PW - 24 - 112 - 16) / CHAR_W);
+let CH = 124, PH = 128;
+let markerId = 0;
+const gapsList = [];
+
+function renderCluster(c) {
+  const sec = document.createElement("section"); sec.className = "cluster";
+  const supporting = [...c.top, ...c.bottom];
+  const toPillar = supporting.filter(s => links.some(l => l.s === s && l.t === c.pillar && !l.broken));
+  const fromPillar = supporting.filter(s => links.some(l => l.s === c.pillar && l.t === s));
+  const cross = links.filter(l => (clusterOf[l.s] === c) !== (clusterOf[l.t] === c));
+  const where = s => clusterOf[s] ? `${clusterOf[s].pillar} silo` : "unassigned";
+  const crossText = cross.length ? " " + cross.map(l => clusterOf[l.s] === c
+      ? `<code>${l.s}</code> also links out to <code>${l.t}</code> (${where(l.t)}${l.broken ? ", broken URL" : ""}).`
+      : `<code>${l.t}</code> is also linked from <code>${l.s}</code> (${where(l.s)}${l.broken ? ", broken URL" : ""}).`).join(" ") : "";
+  sec.innerHTML = `<h2>${c.name}</h2><p><code>${c.pillar}</code> · <strong>${toPillar.length} of ${supporting.length}</strong> supporting pages link up to it, and it links down to <strong>${fromPillar.length}</strong>.${crossText}</p>`;
+
+  CH = Math.max(...supporting.map(s => {
+    const linksUp = links.some(l => l.s === s && l.t === c.pillar && !l.broken);
+    return 26 + Math.min(3, wrap(human(s), 26).length) * 16 + 4 + urlBlockH(s, CARD_CHARS) + (linksUp ? 14 : 38);
+  }));
+  PH = Math.max(128, 56 + urlBlockH(c.pillar, PILLAR_CHARS) + 30);
+  W = Math.max(1000, Math.max(c.top.length, c.bottom.length) * (CW + GAP) - GAP + 60);
+  const hasBottom = c.bottom.length > 0;
+  const topY = 64, pillarY = topY + CH + 100, botY = pillarY + PH + 100;
+  const bottomArcs = links.filter(l => c.bottom.includes(l.s) && c.bottom.includes(l.t) && Math.abs(c.bottom.indexOf(l.s) - c.bottom.indexOf(l.t)) > 1).length;
+  const H = hasBottom ? botY + CH + (bottomArcs ? 70 : 0) + 56 : pillarY + PH + 30;
+  const root = document.createElementNS(NS, "svg");
+  root.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  root.setAttribute("role", "img");
+  root.setAttribute("aria-label", `${c.name} cluster: ${supporting.length} supporting pages around ${c.pillar}`);
+
+  const mid = "m" + (++markerId);
+  const defs = el(root, "defs");
+  [["a", "var(--accent)"], ["w", "var(--warn)"]].forEach(([k, col]) => {
+    const m = el(defs, "marker", { id: mid + k, viewBox: "0 -5 10 10", refX: 9, markerWidth: 8, markerHeight: 8, orient: "auto", markerUnits: "userSpaceOnUse" });
+    el(m, "path", { d: "M0,-4.5L9,0L0,4.5", fill: col });
+  });
+  const edgesG = el(root, "g"), cardsG = el(root, "g");
+
+  // Positions
+  const pos = {};
+  const placeRow = (row, y) => {
+    const tw = row.length * CW + (row.length - 1) * GAP, x0 = (W - tw) / 2;
+    row.forEach((s, i) => pos[s] = { x: x0 + i * (CW + GAP), y, row: y === topY ? "top" : "bottom", i });
+  };
+  placeRow(c.top, topY); if (hasBottom) placeRow(c.bottom, botY);
+  const px = (W - PW) / 2; pos[c.pillar] = { x: px, y: pillarY, pillar: true };
+
+  // Brackets + labels
+  const bracket = (row, y, up) => {
+    const xs = row.map(s => pos[s].x), x1 = Math.min(...xs) - 14, x2 = Math.max(...xs) + CW + 14;
+    const d = up ? `M${x1},${y + 10} V${y} H${x2} V${y + 10}` : `M${x1},${y - 10} V${y} H${x2} V${y - 10}`;
+    el(root, "path", { d, class: "bracket" });
+    pill(root, W / 2, y, "SUPPORTING PAGES", "pill-dark");
+  };
+  bracket(c.top, topY - 30, true);
+  if (hasBottom) bracket(c.bottom, H - 28, false);
+
+  // Edges
+  const has = (s, t) => links.find(l => l.s === s && l.t === t);
+  const line = (x1, y1, x2, y2, broken) => el(edgesG, "path", { d: `M${x1},${y1}L${x2},${y2}`, class: "arrow" + (broken ? " broken" : ""), "marker-end": `url(#${mid}${broken ? "w" : "a"})` });
+  const pillarX = s => Math.max(px + 40, Math.min(px + PW - 40, px + PW / 2 + (pos[s].x + CW / 2 - W / 2) * 0.55));
+
+  supporting.forEach(s => {
+    const p = pos[s], cx = p.x + CW / 2, up = has(s, c.pillar), down = has(c.pillar, s);
+    const tx = pillarX(s), off = up && down ? 7 : 0;
+    const cardEdge = p.row === "top" ? p.y + CH + 6 : p.y - 6;
+    const pEdge = p.row === "top" ? pillarY - 6 : pillarY + PH + 6;
+    if (up) {
+      const e = line(cx - off, cardEdge, tx - off, pEdge, up.broken);
+      if (up.broken) el(edgesG, "text", { x: (cx + tx) / 2 + 10, y: (cardEdge + pEdge) / 2, class: "elabel" }, "broken URL");
+    }
+    if (down) line(tx + off, pEdge, cx + off, cardEdge);
+  });
+
+  [["top", c.top], ["bottom", c.bottom]].forEach(([rowName, row]) => {
+    const arcsInto = {};
+    row.forEach(s => row.forEach(t => {
+      const l = has(s, t); if (!l || s === t) return;
+      const a = pos[s], b = pos[t], dist = b.i - a.i;
+      if (Math.abs(dist) === 1) {
+        const both = has(t, s), cy = a.y + CH / 2;
+        // two-way pairs: upper arrow points left, lower points right
+        const y = both ? cy + (dist > 0 ? 9 : -9) : cy;
+        const x1 = dist > 0 ? a.x + CW + 6 : a.x - 6, x2 = dist > 0 ? b.x - 6 : b.x + CW + 6;
+        line(x1, y, x2, y, l.broken);
+      } else {
+        const k = arcsInto[t] = (arcsInto[t] || 0) + 1;
+        const sx = a.x + CW / 2 + 22, ex = b.x + CW / 2 - 18 - (k - 1) * 18;
+        const yb = rowName === "top" ? a.y - 6 : a.y + CH + 6, bulge = rowName === "top" ? -40 - k * 14 : 40 + k * 14;
+        el(edgesG, "path", { d: `M${sx},${yb} Q${(sx + ex) / 2},${yb + bulge * 1.4} ${ex},${yb}`, class: "arrow", "marker-end": `url(#${mid}a)` });
+      }
+    }));
+  });
+
+  // Supporting cards
+  supporting.forEach(s => {
+    const p = pos[s], g = el(cardsG, "g");
+    const linksUp = toPillar.includes(s);
+    const isolated = !links.some(l => l.s === s || l.t === s);
+    el(g, "rect", { x: p.x, y: p.y, width: CW, height: CH, rx: 12, class: "cardbox" + (linksUp ? "" : " gap") });
+    el(g, "title", {}, s);
+    const lines = wrap(human(s), 26).slice(0, 3);
+    lines.forEach((ln, i) => el(g, "text", { x: p.x + 16, y: p.y + 26 + i * 16, class: "title" }, ln));
+    const by = p.y + 30 + lines.length * 16;
+    linkPair(g, s, p.x + 14, by - 4, CARD_CHARS);
+    if (!linksUp) {
+      const label = isolated ? "NO INTERNAL LINKS" : "NO LINK TO TOP PAGE";
+      el(g, "rect", { x: p.x + 10, y: p.y + CH - 26, width: label.length * 6.6 + 14, height: 18, rx: 9, class: "tagbg" });
+      el(g, "text", { x: p.x + 17, y: p.y + CH - 13, class: "tag" }, label);
+      gapsList.push([s, isolated ? "No internal links in or out" : `Doesn't link to ${c.pillar}`]);
+    }
+  });
+
+  // Pillar card
+  const g = el(cardsG, "g");
+  el(g, "rect", { x: px, y: pillarY, width: PW, height: PH, rx: 14, class: "cardbox" });
+  el(g, "rect", { x: px + PW - 128, y: pillarY + 26, width: 104, height: 76, rx: 10, class: "imgph" });
+  el(g, "text", { x: px + 24, y: pillarY + 44, class: "ptitle" }, human(c.pillar));
+  const used = linkPair(g, c.pillar, px + 24, pillarY + 56, PILLAR_CHARS);
+  const inAll = links.filter(l => l.t === c.pillar && !l.broken).length, outAll = links.filter(l => l.s === c.pillar).length;
+  el(g, "text", { x: px + 24, y: pillarY + 56 + used + 16, class: "meta" }, `${inAll} inbound · ${outAll} outbound`);
+  pill(root, W / 2, pillarY, "TOP LEVEL PAGE", "pill-blue");
+
+  const box = document.createElement("div"); box.className = "diagram"; box.appendChild(root);
+  sec.appendChild(box);
+  return sec;
+}
+
+document.getElementById("count").textContent = DATA.articleCount;
+document.getElementById("date").textContent = DATA.scanDate;
+// Suggest a silo for an unassigned page: top-level pages it links to, else ones sharing a word in the slug.
+function suggestFor(s) {
+  const linked = links.filter(l => l.s === s && clusters.some(c => c.pillar === l.t)).map(l => l.t);
+  if (linked.length) return linked.join(" or ");
+  const words = s.split("-").filter(w => w.length > 3 && !["review", "with", "without"].includes(w));
+  const hits = clusters.filter(c => words.some(w => c.pillar.split("-").includes(w))).map(c => c.pillar);
+  return hits.length ? hits.slice(0, 3).join(", ") : "no clear fit";
+}
+clusters.forEach(c => c.name = human(c.pillar));
+const host = document.getElementById("clusters");
+clusters.filter(c => c.top.length).forEach(c => host.appendChild(renderCluster(c)));
+
+const empty = clusters.filter(c => !c.top.length);
+const emptySec = document.createElement("section"); emptySec.className = "cluster";
+emptySec.innerHTML = `<h2>Silos with no supporting pages</h2><p>These ${empty.length} top-level pages have no supporting articles yet, and none of them link to another article.</p>
+<div class="silo-grid">${empty.map(c => {
+  const ins = links.filter(l => l.t === c.pillar), outs = links.filter(l => l.s === c.pillar);
+  const outTxt = outs.map(l => `links to <code>${l.t}</code>${l.broken ? ' <span class="bad">broken URL</span>' : ""}`).join(", ");
+  return `<div class="silo"><span class="pill-mini">TOP LEVEL</span><b>${c.name}</b>
+    <span class="hlinks">${[LOCAL, LIVE].map(h => `<a href="${urlFor(h, c.pillar)}" target="_blank" rel="noopener">${urlFor(h, c.pillar)}</a>`).join("")}</span>
+    <div class="silo-slot">0 supporting pages</div>
+    <small>${ins.length} inbound · ${outs.length} outbound${outTxt ? " · " + outTxt : ""}</small></div>`;
+}).join("")}</div>`;
+host.appendChild(emptySec);
+
+const unSec = document.createElement("section"); unSec.className = "cluster";
+unSec.innerHTML = `<h2>Supporting pages not in a silo</h2><p>These are marked <code>supporting</code> but don't clearly belong under one top-level page.</p>
+<ul class="gaps">${unclustered.map(s => {
+  const o = links.filter(l => l.s === s).map(l => l.t);
+  return `<li><span>${s}</span><span>${o.length ? "Links to " + o.join(", ") + ". " : "No internal links. "}Possible silo: ${suggestFor(s)}</span></li>`;
+}).join("")}</ul>`;
+host.appendChild(unSec);
+
+empty.forEach(c => gapsList.push([c.pillar, "Top-level page with no supporting pages"]));
+unclustered.forEach(s => gapsList.push([s, "Supporting page not assigned to a silo"]));
+const broken = links.filter(l => l.broken);
+broken.forEach(l => gapsList.unshift([l.s, `Links to /articles/${l.t}, which 404s. Use /home-security-systems/${l.t}`]));
+document.getElementById("gaps").innerHTML = gapsList.map(([a, b]) => `<li><span>${a}</span><span>${b}</span></li>`).join("");
+
+const all = [...clusters.flatMap(c => [c.pillar, ...c.top, ...c.bottom]), ...unclustered];
+const noIn = all.filter(s => !links.some(l => l.t === s)).length;
+const supportTotal = clusters.reduce((n, c) => n + c.top.length + c.bottom.length, 0);
+const supportUp = clusters.reduce((n, c) => n + [...c.top, ...c.bottom].filter(s => links.some(l => l.s === s && l.t === c.pillar && !l.broken)).length, 0);
+document.getElementById("stats").innerHTML = [
+  [clusters.length, "silos"], [empty.length, "silos with no supporting pages", "warn"],
+  [`${supportUp}/${supportTotal}`, "siloed pages link to their top page", "warn"],
+  [noIn, "pages with no inbound links", "warn"], [broken.length, "broken link", "warn"]
+].map(([v, l, c]) => `<div class="stat ${c || ""}"><b>${v}</b><span>${l}</span></div>`).join("");
+</script>
