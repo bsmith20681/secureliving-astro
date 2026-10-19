@@ -1,0 +1,22 @@
+{
+  "name": "Renters & Apartments",
+  "topLevel": {
+    "keyword": "best home security system for renters & apartments",
+    "slug": "best-home-security-system-for-renters",
+    "secondary": ["apartment security system", "best security system for apartment", "best home security system for renters"],
+    "volume": 1600, "kd": 11,
+    "intent": "Commercial roundup: which system fits a renter (no drilling, no contract, takes it when they move). Volume and KD are from \"apartment security system\"; Ahrefs has no data for the exact phrase."
+  },
+  "supporting": [
+    {
+      "keyword": "can you get a security system in an apartment",
+      "slug": "can-you-get-a-security-system-in-an-apartment",
+      "volume": 70, "kd": 0,
+      "intent": "Informational yes/no: landlord permission, lease rules, wireless vs. hardwired, then send readers to the roundup"
+    }
+  ],
+  "links": [
+    { "from": "can-you-get-a-security-system-in-an-apartment", "to": "best-home-security-system-for-renters", "anchor": "best home security systems for renters and apartments" },
+    { "from": "best-home-security-system-for-renters", "to": "can-you-get-a-security-system-in-an-apartment", "anchor": "can you get a security system in an apartment" }
+  ]
+}

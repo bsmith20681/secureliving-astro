@@ -7,6 +7,12 @@ import yaml from '@rollup/plugin-yaml';
 import seoGraph from '@jdevalk/astro-seo-graph/integration';
 import remarkGfm from 'remark-gfm';
 
+// Edit articles in place on the rendered page. Loaded only for `astro dev`,
+// so it never touches the production build.
+const devIntegrations = process.argv.includes('dev')
+  ? [(await import('./tools/live-editor/integration.mjs')).default()]
+  : [];
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://secureliving.com',
@@ -17,6 +23,7 @@ export default defineConfig({
     remarkPlugins: [remarkGfm],
   },
   integrations: [
+    ...devIntegrations,
     mdx(),
     seoGraph({
       validateInternalLinks: {

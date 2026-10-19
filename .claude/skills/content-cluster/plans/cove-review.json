@@ -1,0 +1,8 @@
+{
+  "name": "Cove",
+  "topLevel": { "keyword": "cove security review", "slug": "cove-review" },
+  "supporting": [
+    { "keyword": "cancel cove security", "slug": "cancel-cove-security" },
+    { "keyword": "cove self-monitoring security system", "slug": "cove-self-monitoring-security-system" }
+  ]
+}

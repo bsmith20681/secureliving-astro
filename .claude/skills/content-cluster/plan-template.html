@@ -1,0 +1,258 @@
+<title>Content Cluster Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: header + stats, one hub-and-spoke diagram of the planned cluster, then page, link and warning tables */
+:root {
+  --bg: #f3f5f8; --card: #ffffff; --card-line: #dfe3ea; --fg: #1c2330; --muted: #5f6b7c;
+  --accent: #1f7ae0; --accent-soft: #e3effc; --pill-dark: #222b38; --pill-dark-fg: #ffffff;
+  --live: #1f9d6b; --live-soft: #e2f5ec; --warn: #c2462a; --warn-soft: #fbe9e4; --shadow: rgba(28, 35, 48, 0.08);
+  --display: "Plus Jakarta Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161d; --card: #1b212b; --card-line: #2d3542; --fg: #e5e9ef; --muted: #98a3b3;
+  --accent: #5aa2f2; --accent-soft: #1d2e44; --pill-dark: #e5e9ef; --pill-dark-fg: #12161d;
+  --live: #4fcf98; --live-soft: #17322a; --warn: #f08a6a; --warn-soft: #3a211b; --shadow: rgba(0, 0, 0, 0.35); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161d; --card: #1b212b; --card-line: #2d3542; --fg: #e5e9ef; --muted: #98a3b3;
+  --accent: #5aa2f2; --accent-soft: #1d2e44; --pill-dark: #e5e9ef; --pill-dark-fg: #12161d;
+  --live: #4fcf98; --live-soft: #17322a; --warn: #f08a6a; --warn-soft: #3a211b; --shadow: rgba(0, 0, 0, 0.35); color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--display); font-size: 15px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 16px; padding-block: 36px 56px; display: grid; gap: 36px; }
+h1 { font-size: clamp(28px, 4vw, 38px); font-weight: 800; margin: 0; letter-spacing: -0.02em; text-wrap: balance; }
+h2 { font-size: 20px; font-weight: 800; margin: 0 0 12px; letter-spacing: -0.01em; }
+.lede { color: var(--muted); max-width: 70ch; margin: 8px 0 0; }
+code { font-family: var(--mono); font-size: 0.88em; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 40px; font-variant-numeric: tabular-nums; }
+.stat b { display: block; font-family: var(--mono); font-size: 26px; font-weight: 500; }
+.stat span { color: var(--muted); font-size: 13px; }
+.key { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--muted); align-items: center; }
+.key svg { vertical-align: middle; margin-right: 6px; }
+.diagram { overflow-x: auto; }
+.diagram svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.cardbox { fill: var(--card); stroke: var(--card-line); stroke-width: 1.2; filter: drop-shadow(0 4px 10px var(--shadow)); }
+.cardbox.new { stroke: var(--accent); stroke-dasharray: 5 4; stroke-width: 1.5; }
+.title { font-weight: 700; font-size: 13px; fill: var(--fg); }
+.ptitle { font-weight: 800; font-size: 17px; fill: var(--fg); }
+.slug { font-family: var(--mono); font-size: 10.5px; fill: var(--muted); }
+.meta { font-size: 12px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; }
+.tag-new rect { fill: var(--accent-soft); } .tag-new text { fill: var(--accent); }
+.tag-live rect { fill: var(--live-soft); } .tag-live text { fill: var(--live); }
+.pill-dark rect { fill: var(--pill-dark); } .pill-dark text { fill: var(--pill-dark-fg); }
+.pill-blue rect { fill: var(--accent); } .pill-blue text { fill: #ffffff; }
+.pill text { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; }
+.bracket { fill: none; stroke: var(--pill-dark); stroke-width: 1.5; }
+.arrow { fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-dasharray: 6 5; }
+.arrow.live { stroke: var(--live); stroke-dasharray: none; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--card-line); border-radius: 12px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--card-line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; white-space: nowrap; }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td small { display: block; color: var(--muted); font-family: var(--mono); font-size: 11.5px; overflow-wrap: anywhere; }
+.chip { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+.chip.new { background: var(--accent-soft); color: var(--accent); }
+.chip.live { background: var(--live-soft); color: var(--live); }
+.chip.top { background: var(--accent); color: #fff; }
+.muted { color: var(--muted); }
+ul.warn { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+ul.warn li { background: var(--warn-soft); color: var(--warn); border-radius: 10px; padding: 10px 14px; font-weight: 600; font-size: 14px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1 id="h1"></h1>
+    <p class="lede" id="lede"></p>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="key">
+    <span><svg width="34" height="10"><line x1="2" y1="5" x2="30" y2="5" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="6 5"/></svg>Planned link</span>
+    <span><svg width="34" height="10"><line x1="2" y1="5" x2="30" y2="5" stroke="var(--live)" stroke-width="1.8"/></svg>Link already in the article</span>
+    <span><svg width="22" height="16"><rect x="1" y="1" width="20" height="14" rx="3" fill="none" stroke="var(--accent)" stroke-dasharray="4 3"/></svg>New page to write</span>
+  </div>
+
+  <div class="diagram" id="diagram"></div>
+
+  <section id="warnSec" hidden><h2>Check before writing</h2><ul class="warn" id="warnings"></ul></section>
+  <section><h2>Pages</h2><div class="tablewrap"><table id="pages"></table></div></section>
+  <section><h2>Links</h2><div class="tablewrap"><table id="links"></table></div></section>
+</div>
+
+<script>
+(() => { // scoped: a global `const top` would clash with window.top and stop the script
+// Filled in by plan.mjs: { name, date, pages: [{slug, role, keyword, secondary, volume, kd, intent, exists, title}], links: [{s, t, anchor, live}], pillar, top, bottom, warnings }
+const DATA = /*__DATA__*/;
+const { pages, links, pillar, top, bottom, warnings } = DATA;
+const P = Object.fromEntries(pages.map(p => [p.slug, p]));
+const supporting = [...top, ...bottom];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const cap = s => s.replace(/\b\w/g, c => c.toUpperCase());
+const fmtVol = v => v == null ? "no data" : v >= 1000 ? (v / 1000).toFixed(v >= 10000 ? 0 : 1).replace(/\.0$/, "") + "K" : String(v);
+const hasMetrics = pages.some(p => p.volume != null || p.kd != null);
+const metrics = p => hasMetrics ? `${fmtVol(p.volume)} vol · KD ${p.kd ?? "n/a"}` : "";
+function wrap(text, max) {
+  const lines = []; let cur = "";
+  text.split(" ").forEach(w => { if ((cur + " " + w).trim().length > max) { lines.push(cur); cur = w; } else cur = (cur + " " + w).trim(); });
+  lines.push(cur); return lines;
+}
+function wrapSlug(u, max) {
+  const out = [];
+  while (u.length > max) {
+    let cut = u.lastIndexOf("-", max - 1);
+    if (cut < max * 0.5) cut = max - 1;
+    out.push(u.slice(0, cut + 1)); u = u.slice(cut + 1);
+  }
+  out.push(u); return out;
+}
+
+const NS = "http://www.w3.org/2000/svg";
+function el(parent, tag, attrs = {}, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  parent.appendChild(e); return e;
+}
+function pill(svg, cx, cy, label, cls) {
+  const g = el(svg, "g", { class: "pill " + cls });
+  const w = label.length * 8.4 + 30;
+  el(g, "rect", { x: cx - w / 2, y: cy - 13, width: w, height: 26, rx: 13 });
+  el(g, "text", { x: cx, y: cy + 4.5, "text-anchor": "middle" }, label);
+}
+function tag(g, x, y, p) {
+  const label = p.exists ? "EXISTING" : "NEW PAGE", cls = p.exists ? "tag-live" : "tag-new";
+  const t = el(g, "g", { class: cls });
+  el(t, "rect", { x, y, width: label.length * 7 + 14, height: 18, rx: 9 });
+  el(t, "text", { x: x + 7, y: y + 13, class: "tag" }, label);
+}
+
+// Diagram
+const CW = 214, GAP = 34, PW = 470, LH = 16, SLH = 13;
+const CARD_TITLE = 24, CARD_SLUG = Math.floor((CW - 28) / 6.4), P_TITLE = 42, P_SLUG = Math.floor((PW - 48) / 6.4);
+const cardLines = s => ({ t: wrap(cap(P[s].keyword), CARD_TITLE).slice(0, 3), u: wrapSlug("/" + s + "/", CARD_SLUG) });
+const CH = Math.max(110, ...supporting.map(s => { const l = cardLines(s); return 22 + l.t.length * LH + 6 + l.u.length * SLH + 16 + 34; }));
+const pl = { t: wrap(cap(P[pillar].keyword), P_TITLE).slice(0, 2), u: wrapSlug("/home-security-systems/" + pillar + "/", P_SLUG) };
+const PH = Math.max(130, 30 + pl.t.length * 22 + 6 + pl.u.length * SLH + 18 + 40);
+const W = Math.max(1000, Math.max(top.length, bottom.length) * (CW + GAP) - GAP + 60);
+const hasBottom = bottom.length > 0;
+const topY = 64, pillarY = topY + CH + 100, botY = pillarY + PH + 100;
+const has = (s, t) => links.find(l => l.s === s && l.t === t);
+const bottomArcs = links.filter(l => bottom.includes(l.s) && bottom.includes(l.t) && Math.abs(bottom.indexOf(l.s) - bottom.indexOf(l.t)) > 1).length;
+const H = hasBottom ? botY + CH + (bottomArcs ? 70 : 0) + 56 : pillarY + PH + 30;
+
+const root = document.createElementNS(NS, "svg");
+root.setAttribute("viewBox", `0 0 ${W} ${H}`);
+root.setAttribute("role", "img");
+root.setAttribute("aria-label", `${DATA.name} cluster plan: ${supporting.length} supporting pages around ${pillar}`);
+const defs = el(root, "defs");
+[["a", "var(--accent)"], ["l", "var(--live)"]].forEach(([k, col]) => {
+  const m = el(defs, "marker", { id: "m" + k, viewBox: "0 -5 10 10", refX: 9, markerWidth: 8, markerHeight: 8, orient: "auto", markerUnits: "userSpaceOnUse" });
+  el(m, "path", { d: "M0,-4.5L9,0L0,4.5", fill: col });
+});
+const edgesG = el(root, "g"), cardsG = el(root, "g");
+
+const pos = {};
+const placeRow = (row, y, name) => {
+  const tw = row.length * CW + (row.length - 1) * GAP, x0 = (W - tw) / 2;
+  row.forEach((s, i) => pos[s] = { x: x0 + i * (CW + GAP), y, row: name, i });
+};
+placeRow(top, topY, "top"); if (hasBottom) placeRow(bottom, botY, "bottom");
+const px = (W - PW) / 2;
+
+const bracket = (row, y, up) => {
+  if (!row.length) return;
+  const xs = row.map(s => pos[s].x), x1 = Math.min(...xs) - 14, x2 = Math.max(...xs) + CW + 14;
+  el(root, "path", { d: up ? `M${x1},${y + 10} V${y} H${x2} V${y + 10}` : `M${x1},${y - 10} V${y} H${x2} V${y - 10}`, class: "bracket" });
+  pill(root, W / 2, y, "SUPPORTING PAGES", "pill-dark");
+};
+bracket(top, topY - 30, true);
+if (hasBottom) bracket(bottom, H - 28, false);
+
+const arrowAttrs = l => ({ class: "arrow" + (l.live ? " live" : ""), "marker-end": `url(#m${l.live ? "l" : "a"})` });
+const line = (x1, y1, x2, y2, l) => el(edgesG, "path", { d: `M${x1},${y1}L${x2},${y2}`, ...arrowAttrs(l) });
+const pillarX = s => Math.max(px + 40, Math.min(px + PW - 40, px + PW / 2 + (pos[s].x + CW / 2 - W / 2) * 0.55));
+supporting.forEach(s => {
+  const p = pos[s], cx = p.x + CW / 2, up = has(s, pillar), down = has(pillar, s);
+  const tx = pillarX(s), off = up && down ? 7 : 0;
+  const cardEdge = p.row === "top" ? p.y + CH + 6 : p.y - 6;
+  const pEdge = p.row === "top" ? pillarY - 6 : pillarY + PH + 6;
+  if (up) line(cx - off, cardEdge, tx - off, pEdge, up);
+  if (down) line(tx + off, pEdge, cx + off, cardEdge, down);
+});
+[["top", top], ["bottom", bottom]].forEach(([rowName, row]) => {
+  const arcsInto = {};
+  row.forEach(s => row.forEach(t => {
+    const l = has(s, t); if (!l || s === t) return;
+    const a = pos[s], b = pos[t], dist = b.i - a.i;
+    if (Math.abs(dist) === 1) {
+      const both = has(t, s), cy = a.y + CH / 2;
+      const y = both ? cy + (dist > 0 ? 9 : -9) : cy;
+      const x1 = dist > 0 ? a.x + CW + 6 : a.x - 6, x2 = dist > 0 ? b.x - 6 : b.x + CW + 6;
+      line(x1, y, x2, y, l);
+    } else {
+      const k = arcsInto[t] = (arcsInto[t] || 0) + 1;
+      const sx = a.x + CW / 2 + 22, ex = b.x + CW / 2 - 18 - (k - 1) * 18;
+      const yb = rowName === "top" ? a.y - 6 : a.y + CH + 6, bulge = rowName === "top" ? -40 - k * 14 : 40 + k * 14;
+      el(edgesG, "path", { d: `M${sx},${yb} Q${(sx + ex) / 2},${yb + bulge * 1.4} ${ex},${yb}`, ...arrowAttrs(l) });
+    }
+  }));
+});
+
+supporting.forEach(s => {
+  const p = pos[s], pg = P[s], g = el(cardsG, "g"), l = cardLines(s);
+  el(g, "rect", { x: p.x, y: p.y, width: CW, height: CH, rx: 12, class: "cardbox" + (pg.exists ? "" : " new") });
+  el(g, "title", {}, `${pg.keyword}\n/${s}/`);
+  let y = p.y + 26;
+  l.t.forEach(ln => { el(g, "text", { x: p.x + 16, y, class: "title" }, ln); y += LH; });
+  y += 2;
+  l.u.forEach(ln => { el(g, "text", { x: p.x + 16, y, class: "slug" }, ln); y += SLH; });
+  el(g, "text", { x: p.x + 16, y: y + 6, class: "meta" }, metrics(pg));
+  tag(g, p.x + 12, p.y + CH - 28, pg);
+});
+
+const pg = P[pillar], g = el(cardsG, "g");
+el(g, "rect", { x: px, y: pillarY, width: PW, height: PH, rx: 14, class: "cardbox" + (pg.exists ? "" : " new") });
+let y = pillarY + 44;
+pl.t.forEach(ln => { el(g, "text", { x: px + 24, y, class: "ptitle" }, ln); y += 22; });
+pl.u.forEach(ln => { el(g, "text", { x: px + 24, y, class: "slug" }, ln); y += SLH; });
+const ins = links.filter(l => l.t === pillar).length, outs = links.filter(l => l.s === pillar).length;
+el(g, "text", { x: px + 24, y: y + 8, class: "meta" }, `${hasMetrics ? metrics(pg) + " · " : ""}${ins} inbound · ${outs} outbound`);
+tag(g, px + 22, pillarY + PH - 32, pg);
+pill(root, W / 2, pillarY, "TOP LEVEL PAGE", "pill-blue");
+document.getElementById("diagram").appendChild(root);
+
+// Header and stats
+document.getElementById("h1").textContent = `${cap(DATA.name)} content cluster`;
+document.getElementById("lede").innerHTML = `Planned cluster around <strong>${esc(pg.keyword)}</strong>: one top-level page and ${supporting.length} supporting page${supporting.length === 1 ? "" : "s"}. Existing articles were checked against <code>src/content/articles</code> on ${esc(DATA.date)}.`;
+const totalVol = pages.reduce((n, p) => n + (p.volume || 0), 0);
+document.getElementById("stats").innerHTML = [
+  [supporting.length, "supporting pages"], [pages.filter(p => !p.exists).length, "new pages to write"],
+  [pages.filter(p => p.exists).length, "existing pages"], hasMetrics && [fmtVol(totalVol), "combined monthly volume"],
+  [`${links.filter(l => l.live).length}/${links.length}`, "links already live"],
+].filter(Boolean).map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
+
+// Tables
+const order = [pillar, ...supporting];
+document.getElementById("pages").innerHTML = `<tr><th>Page</th><th>Main keyword</th><th>Secondary keywords</th>${hasMetrics ? "<th>Volume</th><th>KD</th>" : ""}<th>Angle</th><th>Status</th></tr>` +
+  order.map(s => { const p = P[s]; return `<tr>
+    <td>${p.role === "topLevel" ? '<span class="chip top">TOP LEVEL</span>' : "Supporting"}<small>/${esc(s)}/</small></td>
+    <td><strong>${esc(p.keyword)}</strong>${p.title ? `<small>${esc(p.title)}</small>` : ""}</td>
+    <td>${p.secondary.length ? p.secondary.map(esc).join(", ") : '<span class="muted">none yet</span>'}</td>
+    ${hasMetrics ? `<td class="num">${fmtVol(p.volume)}</td><td class="num">${p.kd ?? "n/a"}</td>` : ""}
+    <td>${p.intent ? esc(p.intent) : '<span class="muted">none</span>'}</td>
+    <td>${p.exists ? '<span class="chip live">EXISTING</span>' : '<span class="chip new">NEW</span>'}</td></tr>`; }).join("");
+const rank = l => (l.s === pillar ? 0 : l.t === pillar ? 1 : 2);
+document.getElementById("links").innerHTML = `<tr><th>From</th><th>To</th><th>Anchor text</th><th>Status</th></tr>` +
+  [...links].sort((a, b) => rank(a) - rank(b) || order.indexOf(a.s) - order.indexOf(b.s)).map(l => `<tr>
+    <td><code>${esc(l.s)}</code></td><td><code>${esc(l.t)}</code></td>
+    <td>${l.anchor ? esc(l.anchor) : '<span class="muted">choose while writing</span>'}</td>
+    <td>${l.live ? '<span class="chip live">LIVE</span>' : '<span class="chip new">PLANNED</span>'}</td></tr>`).join("");
+if (warnings.length) {
+  document.getElementById("warnSec").hidden = false;
+  document.getElementById("warnings").innerHTML = warnings.map(w => `<li>${esc(w)}</li>`).join("");
+}
+})();
+</script>
