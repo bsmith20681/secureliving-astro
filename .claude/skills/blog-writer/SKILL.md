@@ -7,7 +7,7 @@ description: |
   affiliate sales pitch. Use for new articles from transcripts, notes, or keywords, and for
   rewriting or cleaning up articles in src/content/articles.
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
 # Blog Writer
@@ -27,6 +27,34 @@ When asked to write a blog post:
 7. **Humanize the draft** - Before handing the article over, run the "How to work" process under Writing rules on the full draft and fix every AI pattern you find. Write only the final article to the file.
 
 When asked to humanize, rewrite, or clean up an existing article, skip steps 1-6. Run the Writing rules process on that article in file mode.
+
+## Headlines
+
+The `title` in the frontmatter is the headline Google shows in search results. For product reviews, comparisons, and "best of" articles, model it on these headlines I like:
+
+- Best Mattress for Side Sleepers - We Test 470+ Mattresses (NapLab)
+- The 5 Best Outdoor Security Cameras of 2026 (The New York Times)
+- 2026's Best Outdoor Cameras: Vetted by Security Experts (Security.org)
+- Best Home Security Systems of 2026, Expert Tested & Reviewed (Security.org)
+
+What they have in common:
+
+1. **The main keyword comes first.** The searcher sees their query at the start of the headline ("Best Outdoor Cameras", "Cove vs ADT").
+2. **The year reads as part of the sentence.** Write "of 2026" or "2026's" or put it at the end of the keyword phrase ("Cove Security Review 2026"). Never write the year in parentheses or follow it with a colon. "Cove vs ADT (2026): Which Is Better?" and "Cove vs SimpliSafe 2026: A Comparison" are both banned.
+3. **There's a reason to trust the article.** Each headline says how the products were tested: "We Test 470+ Mattresses", "Expert Tested", "Vetted by Security Experts". Mine should say I tested the products myself, for example "I Tested Both", "Hands-On Review", or "I Tested 5 Systems". Use only claims the source material backs up. Don't invent a number of systems, a length of time, or a credential.
+4. **Numbers when they're real.** A count ("The 5 Best...", "470+") makes a headline concrete. Use one only when the article backs it up.
+5. **Short.** Keep it to about 60 characters so Google doesn't cut it off. The fourth example above gets truncated.
+6. **Use a hyphen, colon, or comma to separate the keyword from the hook.** A spaced hyphen (" - ") is fine in titles even though §8 bans dashes in body text.
+
+Templates:
+
+- Review: `[Brand] Review 2026 - I Tested It in My Home` or `[Brand] Home Security Review: Hands-On Tested`
+- Comparison: `[Brand A] vs [Brand B]: I Tested Both Systems` or `[Brand A] vs [Brand B] 2026 - Hands-On Comparison`
+- Best of: `The [N] Best [Product] of 2026, Tested at Home`
+
+Don't reuse one template across articles. Before writing a title, read the titles of the other articles of the same type in src/content/articles (for example every `-vs-` comparison) and make the new one clearly different in its structure and hook. Take the angle from what this article actually says, such as its verdict, the price difference, how long I used the systems, or the kind of buyer each system suits. Keep the brand names first ("Cove vs ADT"), but vary the rest. Some titles can ask a question, some can state the verdict, and some can leave the year out.
+
+When rewriting or humanizing an existing article, fix a title that breaks rule 2 even in file mode. Leave the rest of the frontmatter alone.
 
 ## PERSONALITY AND SOUL
 
