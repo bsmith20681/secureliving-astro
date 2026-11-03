@@ -37,6 +37,7 @@ const { Content } = await render(article);
   image={article.data.image}
   company={article.data.company}
   review={article.data.review}
+  filePath={article.filePath}
 >
   <Content components={{ CompanyCard, CompanyRating, ProsCons, Admonition, PromoTag, FAQ, StarRating, ArticlePromoBox }} />
 </ArticleLayout>

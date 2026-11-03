@@ -7,7 +7,7 @@ description: |
   affiliate sales pitch. Use for new articles from transcripts, notes, or keywords, and for
   rewriting or cleaning up articles in src/content/articles.
 metadata:
-  version: 2.1.0
+  version: 2.2.0
 ---
 
 # Blog Writer
@@ -21,12 +21,35 @@ When asked to write a blog post:
 1. **Ask what is the main keyword + main keyword variations** - The main keyword should be used in the h1 and the main keyword variations can be used through article including other h2 (but not all).
 2. **Ask me what are the secondary keywords + secondary keyword variations** - These keywords should be used in the other h2 and throughout the body content. These are keywords that we would also like to rank for and support the primary keyword.
 3. **Upload source material** - This will often be a transcript from a video or me brain dumping about this topic. Extract facts, opinions, pricing, pros/cons, and personal experiences. Do NOT follow the transcript's structure or order. Also check the knowledge-base directory at the project root. It holds transcripts of my YouTube videos, sorted into knowledge-base/youtube-transcripts/reviews, comparisons, and guides, and named by topic (for example cove-vs-ring-youtube-transcript-2026.txt). Read every transcript that matches the article's topic or the brands it covers. If I don't upload source material, use the matching transcripts as the source. If I do, use them alongside it, and where they disagree, trust what I uploaded.
-4. **Upload competitor material** - I will upload several markdown files from articles that are ranking on the first page of Google. I want to imitate the structure, word count, and writing style of those articles. Do not let the opinions or experience the writers of those articles had influence mine. Use the source material to influence the thoughts and opinions.
+4. **Upload competitor material** - I will upload several markdown files from articles that are ranking on the first page of Google. Also check knowledge-base/competitor-articles for a folder named after the main keyword (for example knowledge-base/competitor-articles/adt-alternatives). The article-to-markdown skill saves competitor articles there. I want to imitate the structure, word count, and writing style of those articles. Do not let the opinions or experience the writers of those articles had influence mine. Use the source material to influence the thoughts and opinions.
 5. **Examine existing content** - Now read through the .yaml files inside of the companies directory and the articles directory inside of the content folder. This information can also be used to write articles. Especially the information inside of the .yaml files in companies.
-6. **Write the content** - Write the article based on all the information following the writing style below. Insert images from the assets directory with captions where appropriate. Also insert components into the article where appropriate. Examine the components directory first to see which components would be a good fit for the article. You don't need to include very component. Never put the ArticlePromoBox component in the article content. Don't import it and don't use it in the MDX body. The article layout already adds a promo box on its own. Also, be sure to capitalize the first letter of each word in a heading tag. 
+6. **Write the content** - Write the article based on all the information following the writing style below. Insert images from the assets directory with captions where appropriate. Also insert components into the article where appropriate. Examine the components directory first to see which components would be a good fit for the article. You don't need to include very component. Never put the ArticlePromoBox component in the article content. Don't import it and don't use it in the MDX body. The article layout already adds a promo box on its own. Also, be sure to capitalize the first letter of each word in a heading tag. Don't add an "On this page" section or any other list of quick links to the article's own headings, even when a POP brief recommends a table of contents. For the featured image (the `image` field in the frontmatter), pick an image that no other article uses as its featured image. Check the `image` field of every article in src/content/articles first. The same image can still appear inside other articles' body content. If every fitting image is already taken, tell me so I can add a new one.
 7. **Humanize the draft** - Before handing the article over, run the "How to work" process under Writing rules on the full draft and fix every AI pattern you find. Write only the final article to the file.
+8. **Open the article in Chrome** - Once the article is finished, open it on the local dev server so I can review it. The URL is `http://localhost:4321/<route>/<file-name-without-.mdx>/`, where the route is `home-security-systems` for the "Home Security Systems" category and `guides` for "Guides". First check that the dev server is running (for example with `curl` on that URL). If it isn't, start it with `npm run dev` in the background and wait until the page responds. Then open it with `cmd //c start chrome "<url>"`.
 
 When asked to humanize, rewrite, or clean up an existing article, skip steps 1-6. Run the Writing rules process on that article in file mode.
+
+## Page Optimizer Pro Content Briefs
+
+If I provide a PDF content brief from Page Optimizer Pro (POP), write the article according to its recommendations. Take the main keyword from the brief instead of asking for it in step 1, and use its important terms and related keywords as the secondary keywords in step 2. Still ask for source material and competitor articles if I haven't provided them.
+
+Use the brief like this:
+
+1. **Word count and sections.** Aim for the target word count, within about 10%, and roughly the recommended number of sections (H2s and H3s).
+2. **Search engine title and page title.** Make the frontmatter `title` and the H1 as close to identical as possible. Keep every term inside its target range (for example, use "adt" exactly once when the range is 1 - 1), while still following the Headlines rules below.
+3. **Subheadings.** Spread the listed terms across the H2s and H3s until the section total lands in its target range. Don't put a term in every heading.
+4. **Main content.** Get as many of the important terms as you can inside their target ranges, and get the section total inside its range. Write the article first, then edit for the terms. When a term would only fit by forcing it into a sentence, leave it below its range. Readable writing comes before the score.
+5. **Page structure.** Include an FAQ section, at least one comparison table, and the recommended number of lists. For bold and italic counts, bold or italicize terms that deserve emphasis, such as a price, a contract length, or a verdict. §19 still applies, so don't add bold labels to list items to reach the count.
+6. **Related keywords.** Work them into headings or body text where they read naturally.
+7. **Related questions.** Answer each one, usually as an FAQ entry. If a question doesn't fit the article, tell me so it can go in another article.
+
+Treat these recommendations as guides, not targets:
+
+- **Links and images.** POP counts every link and image on competitor pages, including navigation, footers, and ads, so ranges like 128 - 304 links aren't realistic. Add the internal links, affiliate links, and images the article needs.
+- **Forms.** Skip the form recommendation unless the article already has a component that provides one.
+- **Competitor brand names in the term list** (for example "frontpoint"). Treat these as a sign that ranking pages cover that brand. Cover the brand only when it fits the article and the source material supports what you say about it.
+
+The secret key and content editor URL in the brief aren't article content. Never put them in the article or anywhere else in the repo.
 
 ## Headlines
 

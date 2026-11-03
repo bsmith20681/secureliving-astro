@@ -14,6 +14,9 @@
 // Each tag carries a hash of the whole file as it was rendered; a change is
 // refused if the file has changed since, because the offsets would be stale.
 //
+// The article layout tags the title and subtitle with data-field/data-file;
+// saving one rewrites only that frontmatter value.
+//
 // Loaded from astro.config.mjs only during `astro dev`.
 import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
@@ -26,6 +29,7 @@ const TAGGED = new Set(['paragraph', 'heading', 'listItem', 'blockquote', 'table
 const UNMOVABLE = new Set(['mdxjsEsm', 'yaml', 'toml']);
 const API = '/_live-edit/block';
 const MOVE_API = '/_live-edit/move';
+const FIELD_API = '/_live-edit/field';
 
 const hashOf = (text) => createHash('sha1').update(text).digest('hex').slice(0, 12);
 
@@ -162,6 +166,79 @@ async function handleMove(req, res) {
   return send(res, 200, { ok: true });
 }
 
+// Frontmatter fields the page lets you edit (the title and subtitle the layout
+// renders). Only single-line values are supported; block scalars are refused.
+const FIELDS = new Set(['title', 'subtitle']);
+
+// Finds `field: value` inside the file's frontmatter. Returns the value's range
+// in the file, its decoded text, and its quote style, or null.
+function findField(source, field) {
+  const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(source);
+  if (!fm) return null;
+  const line = new RegExp(`^${field}:[ \\t]*(.*?)[ \\t]*\\r?$`, 'm').exec(fm[1]);
+  if (!line) return null;
+  const raw = line[1];
+  const start = fm.index + fm[0].indexOf(fm[1]) + line.index + line[0].indexOf(raw, field.length + 1);
+  let value = raw;
+  let quote = '';
+  if (/^".*"$/.test(raw)) {
+    quote = '"';
+    try {
+      value = JSON.parse(raw);
+    } catch {
+      value = raw.slice(1, -1);
+    }
+  } else if (/^'.*'$/.test(raw)) {
+    quote = "'";
+    value = raw.slice(1, -1).replace(/''/g, "'");
+  } else if (/^[>|]/.test(raw)) {
+    return null;
+  }
+  return { start, end: start + raw.length, value, quote };
+}
+
+// Writes a value back in the field's existing quote style, adding double quotes
+// when a plain value would no longer parse as the same YAML string.
+function encodeField(value, quote) {
+  if (quote === "'") return `'${value.replace(/'/g, "''")}'`;
+  if (quote === '"' || /^[\s"'&*!|>%@`#?:,\[\]{}-]|:\s|\s#|\s$/.test(value)) return JSON.stringify(value);
+  return value;
+}
+
+function parseFieldTarget(fileParam, field) {
+  if (!FIELDS.has(field) || !/\.mdx?$/.test(fileParam ?? '')) return null;
+  const file = path.resolve(ROOT, fileParam);
+  return file.startsWith(CONTENT_DIR + path.sep) ? file : null;
+}
+
+async function handleField(req, res) {
+  const url = new URL(req.url, 'http://localhost');
+
+  if (req.method === 'GET') {
+    const field = url.searchParams.get('field');
+    const file = parseFieldTarget(url.searchParams.get('file'), field);
+    if (!file) return send(res, 400, { error: 'Invalid field reference' });
+    const found = findField(await fs.readFile(file, 'utf8'), field);
+    if (!found) return send(res, 400, { error: `Can't edit ${field}: it's missing or spans several lines.` });
+    return send(res, 200, { text: found.value });
+  }
+
+  if (req.method === 'PUT') {
+    const { file: fileParam, field, original, text } = await readJson(req);
+    const file = parseFieldTarget(fileParam, field);
+    if (!file || typeof text !== 'string') return send(res, 400, { error: 'Invalid request' });
+    const source = await fs.readFile(file, 'utf8');
+    const found = findField(source, field);
+    if (!found || found.value !== original) return send(res, 409, { error: STALE });
+    const value = text.replace(/\s*\r?\n\s*/g, ' ').trim();
+    if (!value) return send(res, 400, { error: `The ${field} can't be empty.` });
+    await fs.writeFile(file, source.slice(0, found.start) + encodeField(value, found.quote) + source.slice(found.end), 'utf8');
+    return send(res, 200, { ok: true });
+  }
+
+  send(res, 405, { error: 'Method not allowed' });
+}
+
 const route = (handler) => (req, res) => {
   handler(req, res).catch((err) => send(res, 500, { error: String(err?.message ?? err) }));
 };
@@ -178,6 +255,7 @@ export default function liveEditor() {
       'astro:server:setup': ({ server }) => {
         server.middlewares.use(API, route(handle));
         server.middlewares.use(MOVE_API, route(handleMove));
+        server.middlewares.use(FIELD_API, route(handleField));
       },
     },
   };

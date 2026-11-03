@@ -17,6 +17,8 @@ interface Props {
   image?: ImageMetadata;
   company?: string;
   review?: boolean;
+  /** Source file of the article; lets the dev-only live editor edit the title and subtitle. */
+  filePath?: string;
 }
 
 const {
@@ -31,7 +33,12 @@ const {
   image,
   company: companySlug,
   review,
+  filePath,
 } = Astro.props;
+
+// Tags the title and subtitle for tools/live-editor during `astro dev` only.
+const editable = (field: string) =>
+  import.meta.env.DEV && filePath ? { 'data-field': field, 'data-file': filePath } : {};
 
 const authorEntry = authorSlug ? await getEntry('authors', authorSlug) : null;
 const authorName = authorEntry?.data.name;
@@ -123,8 +130,8 @@ const displayDate = (updatedDate || pubDate).toLocaleDateString('en-US', {
               <span class="breadcrumb__separator">&gt;&gt;</span>
               <span class="breadcrumb__current">{title}</span>
             </nav>
-            <h1 class="entry__title">{title}</h1>
-            {subtitle && <p class="entry__subtitle">{subtitle}</p>}
+            <h1 class="entry__title" {...editable('title')}>{title}</h1>
+            {subtitle && <p class="entry__subtitle" {...editable('subtitle')}>{subtitle}</p>}
             <div class="post-meta">
               <div class="post-meta__info">
                 {authorName && (

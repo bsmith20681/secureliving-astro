@@ -1,6 +1,9 @@
 // Injected into every page during `astro dev` by integration.mjs.
 const API = '/_live-edit/block';
 const MOVE_API = '/_live-edit/move';
+const FIELD_API = '/_live-edit/field';
+// Body blocks carry data-src; the title and subtitle carry data-field.
+const EDITABLE = '[data-src], [data-field]';
 const STORAGE_KEY = 'live-edit-on';
 
 const style = document.createElement('style');
@@ -9,7 +12,7 @@ style.textContent = `
     border: 0; border-radius: 999px; background: #1d4ed8; color: #fff; font: 600 14px system-ui, sans-serif;
     box-shadow: 0 4px 14px rgba(0,0,0,.25); cursor: pointer; }
   body.le-on .le-toggle { background: #15803d; }
-  body.le-on [data-src]:hover { outline: 2px dashed #1d4ed8; outline-offset: 3px; cursor: text; }
+  body.le-on [data-src]:hover, body.le-on [data-field]:hover { outline: 2px dashed #1d4ed8; outline-offset: 3px; cursor: text; }
   body.le-on [data-src]:has([data-src]:hover) { outline: none; }
   .le-box { list-style: none; }
   .le-box textarea { display: block; width: 100%; padding: 0; margin: 0; border: 0; outline: 0; background: none;
@@ -39,7 +42,7 @@ style.textContent = `
 document.head.append(style);
 
 // Only article content is tagged, so pages without tags get no editor.
-const hasEditable = document.querySelector('[data-src]') !== null;
+const hasEditable = document.querySelector(EDITABLE) !== null;
 
 let enabled = false;
 try {
@@ -67,8 +70,12 @@ function fitHeight(textarea) {
 }
 
 async function openEditor(el) {
-  const src = el.dataset.src;
-  const res = await fetch(`${API}?src=${encodeURIComponent(src)}`);
+  const { src, field, file } = el.dataset;
+  const res = await fetch(
+    field
+      ? `${FIELD_API}?file=${encodeURIComponent(file)}&field=${encodeURIComponent(field)}`
+      : `${API}?src=${encodeURIComponent(src)}`,
+  );
   const { text, error } = await res.json();
   if (!res.ok) return alert(error);
 
@@ -106,10 +113,12 @@ async function openEditor(el) {
     if (textarea.value === text) return close();
     msg.className = 'le-msg';
     msg.textContent = 'Saving…';
-    const put = await fetch(API, {
+    const put = await fetch(field ? FIELD_API : API, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ src, original: text, text: textarea.value }),
+      body: JSON.stringify(
+        field ? { file, field, original: text, text: textarea.value } : { src, original: text, text: textarea.value },
+      ),
     });
     const result = await put.json();
     if (!put.ok) {
@@ -124,7 +133,11 @@ async function openEditor(el) {
 
   textarea.addEventListener('input', () => fitHeight(textarea));
   textarea.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) save();
+    // A title or subtitle is one line, so plain Enter saves it.
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey || field)) {
+      e.preventDefault();
+      save();
+    }
     if (e.key === 'Escape') close();
   });
   box.querySelector('.le-save').addEventListener('click', save);
@@ -135,7 +148,7 @@ document.addEventListener(
   'click',
   (e) => {
     if (!enabled || e.target.closest('.le-box, .le-toggle, .le-handle')) return;
-    const el = e.target.closest('[data-src]');
+    const el = e.target.closest(EDITABLE);
     if (!el) return;
     e.preventDefault();
     e.stopPropagation();
@@ -277,7 +290,7 @@ handle.addEventListener('pointerup', async () => {
 // Double-click edits a block even when edit mode is off.
 document.addEventListener('dblclick', (e) => {
   if (enabled || e.target.closest('.le-box, .le-toggle')) return;
-  const el = e.target.closest('[data-src]');
+  const el = e.target.closest(EDITABLE);
   if (!el) return;
   e.preventDefault();
   window.getSelection()?.removeAllRanges();
