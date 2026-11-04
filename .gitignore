@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Claude Code worktrees (temporary agent isolation directories)
 src/.claude/worktrees/
+
+# POP content briefs contain a secret key; keep them local
+packets/**/*.pdf

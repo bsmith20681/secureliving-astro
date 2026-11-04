@@ -8,7 +8,7 @@ description: |
   FAQ, sections, POP terms), and turns it into a finished MDX article. Use when the user asks to write
   an article "with Hemmingway", "using the Hemmingway writer", or to have Hemmingway draft a post.
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Hemmingway Writer
@@ -30,7 +30,7 @@ The API key lives in `.env` at the project root as `HEMMINGWAY_API_KEY=hemmingwa
 
 ## Workspace
 
-Use one folder per article: `knowledge-base/hemmingway-briefs/<slug>/`, where `<slug>` is the main keyword in kebab case (for example `adt-alternatives`). It holds:
+Keep the working files in a `hemmingway/` folder inside the article's packet: `packets/<slug>/hemmingway/`, where `<slug>` is the packet's name (the main keyword in kebab case, for example `adt-alternatives`). See "Packets" in the blog-writer skill. The folder holds:
 
 - `system.md`: the system prompt you send
 - `user.md`: the user prompt you send
@@ -42,9 +42,9 @@ If the folder already has a draft from an earlier run, don't overwrite it. Save 
 
 ## Step 1: Gather the inputs
 
-Follow blog-writer steps 1 to 5:
+Follow blog-writer steps 1 to 5. Find the packet, tell the user which of its four pieces are there and which are missing, and read every file in it except the `hemmingway/` folder:
 
-1. **Keyword and POP brief.** If the user gives a POP PDF, read it and take the keyword, target word count, section count, term ranges for the title, headings, and main content, page structure counts, related keywords, and related questions. Write the ranges to `terms.json` in this shape:
+1. **Keyword and POP brief.** If the packet has a POP PDF (or the user uploads one), read it and take the keyword, target word count (the custom word count if the brief has one, otherwise POP's recommended count), section count, term ranges for the title, headings, and main content, page structure counts, related keywords, and related questions. Write the ranges to `terms.json` in this shape:
 
    ```json
    { "wordCount": 3152, "sections": 14,
@@ -55,8 +55,8 @@ Follow blog-writer steps 1 to 5:
 
    The brief's secret key and content editor URL never go into `terms.json`, the prompts, or anywhere else in the repo. Without a brief, ask for the main and secondary keywords as blog-writer describes.
 
-2. **Transcripts.** Use the transcript the user uploads, plus every transcript in `knowledge-base/youtube-transcripts/` that matches the topic or the brands it covers.
-3. **Competitor articles.** Use the markdown files in `knowledge-base/competitor-articles/<keyword>/` and any the user uploads.
+2. **Transcript and notes.** Use the packet's YouTube transcript and additional notes, plus anything the user uploads. Send the notes to Hemmingway in their own `## Ben's Notes` section after the transcripts, and say that where the notes and a transcript disagree, the notes win.
+3. **Competitor articles.** Use the competitor `.md` files in the packet and any the user uploads. Tell Hemmingway never to link to or name them as sources.
 4. **Company data.** Read the `.yaml` files in `src/content/companies/` for every brand the article covers.
 
 ## Step 2: Build the prompts
@@ -121,9 +121,9 @@ Show the user a one-line summary of what you're sending (keyword, sources, appro
 
 ```bash
 node tools/hemmingway/write.mjs \
-  --system knowledge-base/hemmingway-briefs/<slug>/system.md \
-  --user knowledge-base/hemmingway-briefs/<slug>/user.md \
-  --out knowledge-base/hemmingway-briefs/<slug>/draft.md
+  --system packets/<slug>/hemmingway/system.md \
+  --user packets/<slug>/hemmingway/user.md \
+  --out packets/<slug>/hemmingway/draft.md
 ```
 
 Run it in the background and wait for it to finish. Thinking at `xhigh` can take several minutes. The script streams the reply, retries twice on a busy server or a 502, saves the draft, and prints the token count and cost.
@@ -168,7 +168,7 @@ Write the article to `src/content/articles/<file-name>.mdx`. The point of using 
 3. **Components.** Add `CompanyCard` near the top for the recommended brands, `ProsCons` in each brand's section, `Admonition` for a real caveat, and convert the FAQ headings into the `FAQ` component. Never use ArticlePromoBox.
 4. **Links.** Add internal links to existing articles where the text names them (reviews, comparisons, guides), using routes that exist. Use `<a href={companyData.website}>` for affiliate links, as existing articles do.
 5. **Headings.** Title case every H2 and H3.
-6. **POP check.** Run `node tools/hemmingway/pop-count.mjs <article.mdx> knowledge-base/hemmingway-briefs/<slug>/terms.json`. Bring terms into range with the smallest edits that work: swap a word for a brief term ("system" for "setup"), or add a term to a sentence that's already about that thing. Bold or italicize terms that deserve emphasis to reach the brief's counts. Rerun until the sections are in range or the remaining gaps would need forced sentences. Make these edits in your own paragraphs first, and touch Hemmingway's only when yours can't get a term into range. Hemmingway overuses "the [brand] system", "per month", and "month-to-month", so those are usually the terms you'll trim in its text.
+6. **POP check.** Run `node tools/hemmingway/pop-count.mjs <article.mdx> packets/<slug>/hemmingway/terms.json`. Bring terms into range with the smallest edits that work: swap a word for a brief term ("system" for "setup"), or add a term to a sentence that's already about that thing. Bold or italicize terms that deserve emphasis to reach the brief's counts. Rerun until the sections are in range or the remaining gaps would need forced sentences. Make these edits in your own paragraphs first, and touch Hemmingway's only when yours can't get a term into range. Hemmingway overuses "the [brand] system", "per month", and "month-to-month", so those are usually the terms you'll trim in its text.
 7. **Fact check.** Compare every price, number, date, promotion, coupon code, and product claim, in Hemmingway's text and yours, with the transcripts and company data. Remove anything unsupported, or rewrite the sentence so it says only what the source does.
 
 ### Allowed edits to Hemmingway's prose

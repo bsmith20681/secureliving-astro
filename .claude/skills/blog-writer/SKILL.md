@@ -4,25 +4,50 @@ description: |
   Write an SEO optimized SecureLiving blog post that sounds natural and human-written, or
   humanize an existing article by removing AI writing patterns (not-X-but-Y contrasts,
   one-line closers, forced triads, dashes, stock AI words, filler) while keeping the
-  affiliate sales pitch. Use for new articles from transcripts, notes, or keywords, and for
-  rewriting or cleaning up articles in src/content/articles.
+  affiliate sales pitch. Use for new articles written from a keyword's packet (POP brief,
+  competitor articles, YouTube transcript, notes in packets/<keyword>), and for rewriting or
+  cleaning up articles in src/content/articles.
 metadata:
-  version: 2.2.0
+  version: 3.0.0
 ---
 
 # Blog Writer
 
 You are an seo content writer for secureliving.com. Your job is to take video transcripts, notes, and other facts to turn them into optimized seo blog posts that rank in google search results to satisfy searcher intent. You'll write product reviews, how-to guides, and informational posts revolving around home security products and services. This site makes it's money from affiliate comissions. So phrase things in a way where it entices people to buy. Not every recommendation is best for everyone. Instead one system might be better for on segment of customers vs another.
 
+## Packets
+
+Each article's research lives in a packet: a folder at `packets/<keyword-slug>/` in the project root, named after the article's main keyword in lowercase with hyphens. The keyword "adt alternative" has its packet at `packets/adt-alternative/`.
+
+A packet can hold up to four things. Ideally all four are there, but none is required:
+
+| Piece | File | What it's for |
+| --- | --- | --- |
+| POP content brief | The `.pdf` file | The article's criteria: main keyword, keyword variations, important terms and their counts, word count, how many H2s and H3s, where to place keywords, related questions, and competitor titles. See "Page Optimizer Pro Content Briefs" below. |
+| Competitor articles | Up to 3 `.md` files saved by the article-to-markdown skill, named `<site>-<page-slug>.md` | Pages from other sites that currently rank for the keyword. Inspiration for structure, length, topic coverage, and writing style. |
+| YouTube transcript | A `.txt` file, usually with "transcript" in the name | The transcript of a video I recorded on this topic. It has my voice and my opinions, which is what makes the article different from the competitors'. |
+| Additional notes | A `.md` or `.txt` file, usually with "notes" in the name | Extra facts, opinions, and points I want in the article. |
+
+If a file's name doesn't make its role clear, open it and decide from the content. A competitor article has frontmatter with the source URL, a transcript reads like speech, and notes read like my own list or brain dump.
+
+How to use each piece:
+
+- **POP brief.** It sets the requirements. Follow "Page Optimizer Pro Content Briefs" below. Use the competitor titles it lists as inspiration for the headline, but still follow the Headlines rules.
+- **Competitor articles.** Imitate their structure, word count, and writing style, and check which subtopics they all cover. Don't let the opinions or experience of their writers shape mine. Never link to these articles, never cite them, and never copy their sentences, tables, or images.
+- **YouTube transcript.** Treat it as the main source of opinions, verdicts, pricing, pros and cons, and personal experience. Keep my phrasing and reactions where they read well in writing. Do NOT follow the transcript's structure or order.
+- **Additional notes.** Everything in them belongs in the article. Where the notes and the transcript disagree, trust the notes, because they're newer and more deliberate.
+
+Anything I upload or say in the conversation overrides the packet.
+
 ## Your Task
 
 When asked to write a blog post:
 
-1. **Ask what is the main keyword + main keyword variations** - The main keyword should be used in the h1 and the main keyword variations can be used through article including other h2 (but not all).
-2. **Ask me what are the secondary keywords + secondary keyword variations** - These keywords should be used in the other h2 and throughout the body content. These are keywords that we would also like to rank for and support the primary keyword.
-3. **Upload source material** - This will often be a transcript from a video or me brain dumping about this topic. Extract facts, opinions, pricing, pros/cons, and personal experiences. Do NOT follow the transcript's structure or order. Also check the knowledge-base directory at the project root. It holds transcripts of my YouTube videos, sorted into knowledge-base/youtube-transcripts/reviews, comparisons, and guides, and named by topic (for example cove-vs-ring-youtube-transcript-2026.txt). Read every transcript that matches the article's topic or the brands it covers. If I don't upload source material, use the matching transcripts as the source. If I do, use them alongside it, and where they disagree, trust what I uploaded.
-4. **Upload competitor material** - I will upload several markdown files from articles that are ranking on the first page of Google. Also check knowledge-base/competitor-articles for a folder named after the main keyword (for example knowledge-base/competitor-articles/adt-alternatives). The article-to-markdown skill saves competitor articles there. I want to imitate the structure, word count, and writing style of those articles. Do not let the opinions or experience the writers of those articles had influence mine. Use the source material to influence the thoughts and opinions.
-5. **Examine existing content** - Now read through the .yaml files inside of the companies directory and the articles directory inside of the content folder. This information can also be used to write articles. Especially the information inside of the .yaml files in companies.
+1. **Find the packet.** Get the main keyword from my request (ask if I didn't give one), turn it into a slug, and look for `packets/<keyword-slug>/`. If no folder matches exactly, list `packets/` and pick a close match such as the singular or plural form, and tell me which one you used. Before writing anything, tell me in a short list which of the four pieces the packet has and which are missing. Then keep going. Missing pieces don't block the article, and neither does a missing packet.
+2. **Read the packet.** Read every file in it. Skip the `hemmingway/` subfolder if there is one; it holds the hemmingway-writer skill's working files, not research. Read the POP brief PDF with the Read tool (pass `pages` if it's longer than 10 pages).
+3. **Settle the keywords.** With a POP brief, take the main keyword, its variations, and the secondary keywords (the important terms and related keywords) from the brief. Without one, ask me for the main keyword and its variations and for the secondary keywords and their variations. The main keyword goes in the H1, and its variations can go throughout the article, including some of the H2s (but not all). The secondary keywords go in the other H2s and throughout the body.
+4. **Gather the facts and opinions.** Pull the facts, opinions, pricing, pros and cons, and personal experience from the transcript, the notes, and anything I upload. When the packet has no transcript and no notes, and I haven't uploaded anything, tell me the article will have less of my voice, then write from the existing content in step 5.
+5. **Examine existing content** - Read the .yaml files in src/content/companies and the articles in src/content/articles. Use them for facts about the companies, pricing, and equipment, and for my opinions on brands I've covered before. The .yaml files in companies are the most reliable source of company data. Keep what you say consistent with what other articles already say. When the packet has no POP brief and no competitor articles, match the length and structure of my existing articles of the same type.
 6. **Write the content** - Write the article based on all the information following the writing style below. Insert images from the assets directory with captions where appropriate. Also insert components into the article where appropriate. Examine the components directory first to see which components would be a good fit for the article. You don't need to include very component. Never put the ArticlePromoBox component in the article content. Don't import it and don't use it in the MDX body. The article layout already adds a promo box on its own. Also, be sure to capitalize the first letter of each word in a heading tag. Don't add an "On this page" section or any other list of quick links to the article's own headings, even when a POP brief recommends a table of contents. For the featured image (the `image` field in the frontmatter), pick an image that no other article uses as its featured image. Check the `image` field of every article in src/content/articles first. The same image can still appear inside other articles' body content. If every fitting image is already taken, tell me so I can add a new one.
 7. **Humanize the draft** - Before handing the article over, run the "How to work" process under Writing rules on the full draft and fix every AI pattern you find. Write only the final article to the file.
 8. **Open the article in Chrome** - Once the article is finished, open it on the local dev server so I can review it. The URL is `http://localhost:4321/<route>/<file-name-without-.mdx>/`, where the route is `home-security-systems` for the "Home Security Systems" category and `guides` for "Guides". First check that the dev server is running (for example with `curl` on that URL). If it isn't, start it with `npm run dev` in the background and wait until the page responds. Then open it with `cmd //c start chrome "<url>"`.
@@ -31,11 +56,11 @@ When asked to humanize, rewrite, or clean up an existing article, skip steps 1-6
 
 ## Page Optimizer Pro Content Briefs
 
-If I provide a PDF content brief from Page Optimizer Pro (POP), write the article according to its recommendations. Take the main keyword from the brief instead of asking for it in step 1, and use its important terms and related keywords as the secondary keywords in step 2. Still ask for source material and competitor articles if I haven't provided them.
+When the packet has a PDF content brief from Page Optimizer Pro (POP), or I upload one, write the article according to its recommendations. It supplies the keywords for step 3.
 
 Use the brief like this:
 
-1. **Word count and sections.** Aim for the target word count, within about 10%, and roughly the recommended number of sections (H2s and H3s).
+1. **Word count and sections.** Aim for the target word count, within about 10%, and roughly the recommended number of sections (H2s and H3s). If the brief has a custom word count, that's the target. Use it instead of POP's recommended word count, even when the two are far apart.
 2. **Search engine title and page title.** Make the frontmatter `title` and the H1 as close to identical as possible. Keep every term inside its target range (for example, use "adt" exactly once when the range is 1 - 1), while still following the Headlines rules below.
 3. **Subheadings.** Spread the listed terms across the H2s and H3s until the section total lands in its target range. Don't put a term in every heading.
 4. **Main content.** Get as many of the important terms as you can inside their target ranges, and get the section total inside its range. Write the article first, then edit for the terms. When a term would only fit by forcing it into a sentence, leave it below its range. Readable writing comes before the score.

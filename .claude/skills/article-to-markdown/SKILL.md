@@ -2,30 +2,32 @@
 name: article-to-markdown
 description: |
   Fetch one or more competitor article URLs and save each article's content as a markdown
-  file in knowledge-base/competitor-articles, so blog-writer can use it as competitor
+  file in that keyword's packet (packets/<keyword-slug>), so blog-writer can use it as competitor
   material. Use when the user gives a URL (or several) and asks to grab, scrape, save, pull,
   or convert the article to markdown, or to save competitor articles for a keyword.
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Article to Markdown
 
-Turns a ranking competitor article into a markdown file that blog-writer reads in step 4 ("Upload competitor material"). The file keeps the article's headings, lists, tables, images, and links so its structure and word count can be studied, and the frontmatter records the page's SEO title, meta description, dates, and counts.
+Turns a ranking competitor article into a markdown file that blog-writer reads from the packet. The file keeps the article's headings, lists, tables, images, and links so its structure and word count can be studied, and the frontmatter records the page's SEO title, meta description, dates, and counts.
 
 ## Where Files Go
 
 Save each article to:
 
 ```
-knowledge-base/competitor-articles/<keyword-slug>/<site>-<page-slug>.md
+packets/<keyword-slug>/<site>-<page-slug>.md
 ```
 
 - `<keyword-slug>` is the keyword the article ranks for, lowercase with hyphens (`adt-alternatives`). Use the keyword I give you. If I don't give one, use the main keyword of the article being written in this conversation, or the topic of the page itself. Ask me only if the URLs cover different topics.
 - `<site>` is the domain without `www.` or the TLD (`security`, `safewise`, `cnet`).
 - `<page-slug>` is the last meaningful part of the URL path (`adt-alternatives`).
 
-For example, `https://www.security.org/home-security-systems/adt/alternatives/` saved for "adt alternatives" becomes `knowledge-base/competitor-articles/adt-alternatives/security-adt-alternatives.md`.
+For example, `https://www.security.org/home-security-systems/adt/alternatives/` saved for "adt alternatives" becomes `packets/adt-alternatives/security-adt-alternatives.md`.
+
+A packet holds at most 3 competitor articles. If saving would push it past 3, tell me and ask which ones to keep.
 
 If the file already exists, overwrite it. A new fetch is the newer version of that page.
 
@@ -51,4 +53,4 @@ If the file already exists, overwrite it. A new fetch is the newer version of th
 
 ## Using the Files
 
-These files are reference material for structure, length, and topic coverage only. blog-writer step 4 already says not to let competitor opinions shape mine. Never copy sentences, tables, or images from these files into a SecureLiving article.
+These files are reference material for structure, length, and topic coverage only. blog-writer already says not to let competitor opinions shape mine and never to link to these articles. Never copy sentences, tables, or images from these files into a SecureLiving article.

@@ -33,8 +33,9 @@ Ask the user for anything they haven't given:
 - **Supporting keywords**, if they already have them. If not, you'll propose them in step 2.
 - **How many supporting pages** (1-10). If they don't say, propose a number based on how many
   distinct subtopics the keyword research supports. Never pad the cluster to hit a number.
-- **Source and competitor material**, as described in blog-writer steps 3-4. The
-  `knowledge-base/youtube-transcripts/` folder is the default source.
+- **A packet for each page.** Each article reads its source and competitor material from
+  `packets/<keyword-slug>/`, as described under "Packets" in blog-writer. Once the keywords are
+  set, tell the user which pages have a packet and which pieces each one is missing.
 
 ### 2. Check what already exists
 
