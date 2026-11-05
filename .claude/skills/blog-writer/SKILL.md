@@ -8,7 +8,7 @@ description: |
   competitor articles, YouTube transcript, notes in packets/<keyword>), and for rewriting or
   cleaning up articles in src/content/articles.
 metadata:
-  version: 3.0.0
+  version: 3.1.0
 ---
 
 # Blog Writer
@@ -49,10 +49,34 @@ When asked to write a blog post:
 4. **Gather the facts and opinions.** Pull the facts, opinions, pricing, pros and cons, and personal experience from the transcript, the notes, and anything I upload. When the packet has no transcript and no notes, and I haven't uploaded anything, tell me the article will have less of my voice, then write from the existing content in step 5.
 5. **Examine existing content** - Read the .yaml files in src/content/companies and the articles in src/content/articles. Use them for facts about the companies, pricing, and equipment, and for my opinions on brands I've covered before. The .yaml files in companies are the most reliable source of company data. Keep what you say consistent with what other articles already say. When the packet has no POP brief and no competitor articles, match the length and structure of my existing articles of the same type.
 6. **Write the content** - Write the article based on all the information following the writing style below. Insert images from the assets directory with captions where appropriate. Also insert components into the article where appropriate. Examine the components directory first to see which components would be a good fit for the article. You don't need to include very component. Never put the ArticlePromoBox component in the article content. Don't import it and don't use it in the MDX body. The article layout already adds a promo box on its own. Also, be sure to capitalize the first letter of each word in a heading tag. Don't add an "On this page" section or any other list of quick links to the article's own headings, even when a POP brief recommends a table of contents. For the featured image (the `image` field in the frontmatter), pick an image that no other article uses as its featured image. Check the `image` field of every article in src/content/articles first. The same image can still appear inside other articles' body content. If every fitting image is already taken, tell me so I can add a new one.
+
+   **Links in the first draft:** add affiliate links but no internal links. For each recommended brand, import its company data (`import coveCompanyData from "../../content/companies/cove.yaml";`) and link to it with `<a href={coveCompanyData.website}>...</a>` where the article tells readers to buy or check a deal, as existing articles do. Don't link to other SecureLiving articles, even where the text names a review or comparison. Internal links are added in a later pass. Mentioning that a review exists is fine; just leave it as plain text.
 7. **Humanize the draft** - Before handing the article over, run the "How to work" process under Writing rules on the full draft and fix every AI pattern you find. Write only the final article to the file.
 8. **Open the article in Chrome** - Once the article is finished, open it on the local dev server so I can review it. The URL is `http://localhost:4321/<route>/<file-name-without-.mdx>/`, where the route is `home-security-systems` for the "Home Security Systems" category and `guides` for "Guides". First check that the dev server is running (for example with `curl` on that URL). If it isn't, start it with `npm run dev` in the background and wait until the page responds. Then open it with `cmd //c start chrome "<url>"`.
 
 When asked to humanize, rewrite, or clean up an existing article, skip steps 1-6. Run the Writing rules process on that article in file mode.
+
+## Three Versions (only when I ask)
+
+Write one article by default. Produce three versions only when I ask for them, for example "give me three versions", "write v1, v2 and v3", or "do the three-version comparison". Never do it on your own initiative.
+
+| Version | File | Who writes it |
+| --- | --- | --- |
+| v1 | `<file-name>.mdx` | Hemmingway writes the first draft through the hemmingway-writer skill, then the Fable model fills the gaps and optimizes it. |
+| v2 | `<file-name>-v2.mdx` | The Opus model alone, following this skill. No Hemmingway. |
+| v3 | `<file-name>-v3.mdx` | The Fable model alone, following this skill. No Hemmingway. |
+
+`<file-name>` is the name v1 would get on its own, for example `adt-alternatives`, which gives `adt-alternatives-v2.mdx` and `adt-alternatives-v3.mdx`.
+
+How to run it:
+
+1. **Prepare in the main session.** Do step 1 (find the packet and tell me what it has). Settle `<file-name>` and tell me the three file names. Pick three different featured images that no existing article uses, one per version, so the versions don't collide. My request for three versions counts as the go-ahead for the Hemmingway run.
+2. **Launch all three at once** with the Agent tool, one subagent per version, all in the same message so none can see another's output. Set the model on each call: `fable` for v1, `opus` for v2, `fable` for v3. Give each one the keyword, the packet path, its file name, its featured image, and these instructions:
+   - **v1:** Follow the hemmingway-writer skill (`.claude/skills/hemmingway-writer/SKILL.md`) in its default mode, with gap-filling on. Save Hemmingway's reply as the next free `draft-N.md` in the packet's `hemmingway/` folder. Follow this skill's link rule from step 6 (affiliate links only, no internal links) instead of hemmingway-writer's step for adding internal links. Skip opening the article in Chrome.
+   - **v2 and v3:** Follow this skill's steps 2 to 7 and skip step 8. Read every research file in the packet (POP brief, competitor articles, transcript, notes), plus the company `.yaml` files and existing articles as steps 2 to 5 describe. The only things off limits are the other versions' writing: the other versions' `.mdx` files and the packet's `hemmingway/` folder, which holds v1's drafts. Don't open them, even if they appear while you work.
+   - **All three:** Report back the file path, the word count and section count against the brief, any POP terms still out of range, and any fact you left out because the sources didn't support it. v1 also reports Hemmingway's token count and cost.
+3. **Check and open all three.** When every subagent has finished, make sure each file exists. Then open all three in Chrome as step 8 describes, one `cmd //c start chrome "<url>"` per version. A file created while the dev server was running can return a 500 (UnknownContentCollectionError) until the server restarts. If any of the three pages does that, restart `npm run dev` and check again before opening them.
+4. **Hand over** a short comparison table: version, model, word count, sections, and POP terms out of range. Add Hemmingway's cost for v1. Don't merge or edit the versions yourself; I compare them and pick.
 
 ## Page Optimizer Pro Content Briefs
 
@@ -70,7 +94,7 @@ Use the brief like this:
 
 Treat these recommendations as guides, not targets:
 
-- **Links and images.** POP counts every link and image on competitor pages, including navigation, footers, and ads, so ranges like 128 - 304 links aren't realistic. Add the internal links, affiliate links, and images the article needs.
+- **Links and images.** POP counts every link and image on competitor pages, including navigation, footers, and ads, so ranges like 128 - 304 links aren't realistic. Add the affiliate links and images the article needs. Internal links stay out of the first draft (see step 6).
 - **Forms.** Skip the form recommendation unless the article already has a component that provides one.
 - **Competitor brand names in the term list** (for example "frontpoint"). Treat these as a sign that ranking pages cover that brand. Cover the brand only when it fits the article and the source material supports what you say about it.
 

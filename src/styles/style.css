@@ -1762,6 +1762,7 @@ input.sl-radio-btn:checked + label {
   text-decoration: none;
   color: inherit;
   transition: box-shadow 0.2s ease;
+  margin-bottom: var(--space-3_5);
 }
 
 .company-card:hover {

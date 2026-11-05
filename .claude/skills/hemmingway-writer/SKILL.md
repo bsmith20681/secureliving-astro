@@ -8,7 +8,7 @@ description: |
   FAQ, sections, POP terms), and turns it into a finished MDX article. Use when the user asks to write
   an article "with Hemmingway", "using the Hemmingway writer", or to have Hemmingway draft a post.
 metadata:
-  version: 1.2.0
+  version: 1.4.0
 ---
 
 # Hemmingway Writer
@@ -82,9 +82,8 @@ These are not suggestions. Check each one before you finish.
 
 ## Brief
 
-- Title terms: <terms and ranges from the brief>
-- Use these terms in the headings, spread across them, not one per heading: <terms>
-- Work these terms into the body where they read naturally: <terms with ranges>. Readable writing comes first; leave a term out rather than force it.
+- Put "<main keyword>" at the start of the title and in one heading.
+- Use these terms in the body where they read naturally: <3 to 5 core terms, no ranges>. Readable writing comes first; leave a term out rather than force it.
 - Include at least <N> comparison table(s), <N> lists, and an FAQ.
 - Answer these questions in the FAQ: <related questions>. If the sources don't support an answer, leave the question out.
 - Related keywords to work in where they fit: <related keywords>
@@ -112,6 +111,10 @@ These are not suggestions. Check each one before you finish.
 ### <site name>, <word count> words
 <full article>
 ```
+
+**Keep the POP term list out of the prompt.** `terms.json` holds the full ranges, but Hemmingway sees only the main keyword and 3 to 5 core terms. When it got the full list of about 30 terms with ranges, it spent most of its reasoning working out how often to use each term, then returned 765 words against a 1,350-word brief. Step 6 brings the terms into range after the draft is in.
+
+Pick the core terms from the brief's body terms. Choose multi-word topic phrases that name what the article covers and that Hemmingway might not use on its own (for example "professional monitoring", "security cameras", "smart home"). Skip single generic words like "home", "security", and "systems", which show up naturally, and skip the title and heading term lists. Don't send counts or ranges.
 
 For the outline, use blog-writer's POP guidance: the brief's section count, its title and heading terms, one or more comparison tables, an FAQ, and no table of contents.
 
@@ -168,14 +171,16 @@ Write the article to `src/content/articles/<file-name>.mdx`. The point of using 
 3. **Components.** Add `CompanyCard` near the top for the recommended brands, `ProsCons` in each brand's section, `Admonition` for a real caveat, and convert the FAQ headings into the `FAQ` component. Never use ArticlePromoBox.
 4. **Links.** Add internal links to existing articles where the text names them (reviews, comparisons, guides), using routes that exist. Use `<a href={companyData.website}>` for affiliate links, as existing articles do.
 5. **Headings.** Title case every H2 and H3.
-6. **POP check.** Run `node tools/hemmingway/pop-count.mjs <article.mdx> packets/<slug>/hemmingway/terms.json`. Bring terms into range with the smallest edits that work: swap a word for a brief term ("system" for "setup"), or add a term to a sentence that's already about that thing. Bold or italicize terms that deserve emphasis to reach the brief's counts. Rerun until the sections are in range or the remaining gaps would need forced sentences. Make these edits in your own paragraphs first, and touch Hemmingway's only when yours can't get a term into range. Hemmingway overuses "the [brand] system", "per month", and "month-to-month", so those are usually the terms you'll trim in its text.
-7. **Fact check.** Compare every price, number, date, promotion, coupon code, and product claim, in Hemmingway's text and yours, with the transcripts and company data. Remove anything unsupported, or rewrite the sentence so it says only what the source does.
+6. **POP check.** Run `node tools/hemmingway/pop-count.mjs <article.mdx> packets/<slug>/hemmingway/terms.json`. Bring terms into range with the smallest edits that work: swap a word for a brief term ("system" for "setup"), or add a term to a sentence that's already about that thing. Bold or italicize terms that deserve emphasis to reach the brief's counts. Rerun until the sections are in range or the remaining gaps would need forced sentences. Make these edits in your own paragraphs first, and touch Hemmingway's only when yours can't get a term into range. Hemmingway overuses "the [brand] system", "per month", and "month-to-month", so those are usually the terms you'll trim in its text. Hemmingway never saw most of the brief's terms (step 2), so expect more of them to start out of range than in a draft written against the full list. In Hemmingway-only mode, every one of these edits goes into its text, so stick to word swaps and short additions.
+7. **Parentheses.** The `pop-count.mjs` output ends with a parenthetical count and a target of about one for every 300 words. If it says HIGH, cut the extras as "Allowed edits to Hemmingway's prose" describes. Do this in Hemmingway-only mode too, and rerun the counter to confirm.
+8. **Fact check.** Compare every price, number, date, promotion, coupon code, and product claim, in Hemmingway's text and yours, with the transcripts and company data. Remove anything unsupported, or rewrite the sentence so it says only what the source does.
 
 ### Allowed edits to Hemmingway's prose
 
-- Removing or correcting an unsupported fact (step 7)
+- Removing or correcting an unsupported fact (step 6, item 8)
 - Small edits to reach POP ranges (step 6)
-- Replacing any em dash or en dash with a period, comma, colon, or parentheses
+- Replacing any em dash or en dash with a period, comma, or colon (not parentheses)
+- Cutting parentheticals down to about one for every 300 words: turn the aside into its own sentence, work it into the sentence with a comma, or delete it if it adds nothing. Keep short ones that only hold an abbreviation, a unit, or a model name
 - Changing words in all caps for emphasis (ONLY, DON'T) to italics
 - Removing leftover video phrases ("in this video", "link in the description")
 - Fixing a typo or a sentence that no longer reads after another edit

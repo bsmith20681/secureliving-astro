@@ -71,3 +71,8 @@ console.log(`Italic: ${(body.match(/(?<!\*)\*[^*\n]+\*(?!\*)/g) ?? []).length}`)
 console.log(`Tables: ${(body.match(/^\|\s*-{3}/gm) ?? []).length}`);
 console.log(`List items: ${(body.match(/^(?:\d+\.|-) /gm) ?? []).length}`);
 console.log(`Dashes (em/en): ${(body.match(/[—–]| -- /g) ?? []).length}`);
+
+// Link targets are already stripped from allText, so this counts only prose asides.
+const parens = (allText.match(/\([^()\n]*\)/g) ?? []).length;
+const parensMax = Math.max(1, Math.round(words.length / 300));
+console.log(`Parentheticals: ${parens} (aim for ${parensMax} or fewer)${parens > parensMax ? '  HIGH' : ''}`);

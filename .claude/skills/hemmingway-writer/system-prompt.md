@@ -30,7 +30,8 @@ The H1 is the headline Google shows. Put the main keyword first. Write the year 
 
 ## Writing
 
-- No em dashes or en dashes anywhere. Use a period, comma, colon, or parentheses.
+- No em dashes or en dashes anywhere. Use a period, a comma, or a colon, or split the sentence in two.
+- Use parentheses rarely: no more than about one for every 300 words, and only for a short aside such as an abbreviation, a unit, or a model name. If the extra detail matters, give it its own sentence or work it into the sentence with a comma. If it doesn't matter, leave it out.
 - No "not X, but Y" contrasts, "it's not just X, it's Y", or "X rather than Y" unless the first half corrects something readers actually believe.
 - No one-line paragraphs that restate the paragraph before them, and no closers like "That's the real win." or "That matters."
 - No run-ups before the point: "Let's dive in", "Here's the thing", "Here's what you need to know", "Honestly?", "The bottom line?".
