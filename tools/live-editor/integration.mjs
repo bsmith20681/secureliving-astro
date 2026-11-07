@@ -9,13 +9,20 @@
 // Every top-level block (including figures and components) is also preceded
 // by a hidden <template data-block> marker. The client groups the elements
 // between markers so a whole block can be dragged; moving cuts its source
-// text and pastes it before or after another block.
+// text and pastes it before or after another block. A trash button under the
+// drag handle deletes the block's source text instead.
 //
 // Each tag carries a hash of the whole file as it was rendered; a change is
 // refused if the file has changed since, because the offsets would be stale.
 //
 // The article layout tags the title and subtitle with data-field/data-file;
 // saving one rewrites only that frontmatter value.
+//
+// Every change is recorded, and Ctrl+Z in edit mode restores the file to how
+// it was before the latest one, up to 50 steps back.
+//
+// A "Comment" toggle saves feedback on a block (like, dislike, or fix this
+// article) to feedback/comments.jsonl without changing the article.
 //
 // Loaded from astro.config.mjs only during `astro dev`.
 import { createHash } from 'node:crypto';
@@ -30,6 +37,9 @@ const UNMOVABLE = new Set(['mdxjsEsm', 'yaml', 'toml']);
 const API = '/_live-edit/block';
 const MOVE_API = '/_live-edit/move';
 const FIELD_API = '/_live-edit/field';
+const DELETE_API = '/_live-edit/delete';
+const UNDO_API = '/_live-edit/undo';
+const COMMENT_API = '/_live-edit/comment';
 
 const hashOf = (text) => createHash('sha1').update(text).digest('hex').slice(0, 12);
 
@@ -101,6 +111,41 @@ function send(res, status, payload) {
 const STALE = 'The file changed since this page loaded. Reload and try again.';
 const eolOf = (source) => (source.includes('\r\n') ? '\r\n' : '\n');
 
+// Undo history, newest last, per file. Kept in memory, so it lasts until the
+// dev server restarts.
+const UNDO_LIMIT = 50;
+const history = new Map();
+
+// Every edit goes through here so it can be undone.
+async function write(file, before, after) {
+  await fs.writeFile(file, after, 'utf8');
+  const stack = history.get(file) ?? [];
+  stack.push({ before, after });
+  if (stack.length > UNDO_LIMIT) stack.shift();
+  history.set(file, stack);
+}
+
+// Restore the file to how it was before its latest edit.
+async function handleUndo(req, res) {
+  if (req.method !== 'POST') return send(res, 405, { error: 'Method not allowed' });
+  const { file: fileParam } = await readJson(req);
+  if (!/\.mdx?$/.test(fileParam ?? '')) return send(res, 400, { error: 'Invalid request' });
+  const file = path.resolve(ROOT, fileParam);
+  if (!file.startsWith(CONTENT_DIR + path.sep)) return send(res, 400, { error: 'Invalid request' });
+  const stack = history.get(file);
+  const last = stack?.at(-1);
+  if (!last) return send(res, 404, { error: 'Nothing to undo.' });
+  const source = await fs.readFile(file, 'utf8');
+  if (source !== last.after) {
+    // Edited outside the live editor since, so the history no longer applies.
+    history.delete(file);
+    return send(res, 409, { error: "Can't undo: the file was changed outside the editor." });
+  }
+  stack.pop();
+  await fs.writeFile(file, last.before, 'utf8');
+  return send(res, 200, { ok: true, remaining: stack.length });
+}
+
 async function handle(req, res) {
   const url = new URL(req.url, 'http://localhost');
 
@@ -122,11 +167,32 @@ async function handle(req, res) {
     }
     // Browsers normalize textarea newlines to \n; keep the file's own style.
     const replacement = text.replace(/\r?\n/g, eolOf(source));
-    await fs.writeFile(target.file, source.slice(0, target.start) + replacement + source.slice(target.end), 'utf8');
+    await write(target.file, source, source.slice(0, target.start) + replacement + source.slice(target.end));
     return send(res, 200, { ok: true });
   }
 
   send(res, 405, { error: 'Method not allowed' });
+}
+
+// The range to cut when removing a block: the block plus the blank lines after
+// it, or before it if it is last.
+function cutRange(source, block) {
+  const after = block.end + /^\s*/.exec(source.slice(block.end))[0].length;
+  if (after < source.length) return [block.start, after];
+  return [block.start - /\s*$/.exec(source.slice(0, block.start))[0].length, block.end];
+}
+
+// Delete one top-level block.
+async function handleDelete(req, res) {
+  if (req.method !== 'POST') return send(res, 405, { error: 'Method not allowed' });
+  const { src } = await readJson(req);
+  const block = parseSrc(src);
+  if (!block) return send(res, 400, { error: 'Invalid request' });
+  const source = await fs.readFile(block.file, 'utf8');
+  if (hashOf(source) !== block.version) return send(res, 409, { error: STALE });
+  const [cutStart, cutEnd] = cutRange(source, block);
+  await write(block.file, source, source.slice(0, cutStart) + source.slice(cutEnd));
+  return send(res, 200, { ok: true });
 }
 
 // Move one top-level block before or after another in the same file.
@@ -145,14 +211,7 @@ async function handleMove(req, res) {
 
   const text = source.slice(block.start, block.end);
   const gap = eolOf(source).repeat(2);
-
-  // Cut the block plus the blank lines after it, or before it if it is last.
-  let cutStart = block.start;
-  let cutEnd = block.end + /^\s*/.exec(source.slice(block.end))[0].length;
-  if (cutEnd === source.length) {
-    cutEnd = block.end;
-    cutStart = block.start - /\s*$/.exec(source.slice(0, block.start))[0].length;
-  }
+  const [cutStart, cutEnd] = cutRange(source, block);
 
   const at = position === 'before' ? target.start : target.end;
   const insert = position === 'before' ? text + gap : gap + text;
@@ -162,7 +221,7 @@ async function handleMove(req, res) {
   const cut = (s) => s.slice(0, cutStart) + s.slice(cutEnd);
   const paste = (s) => s.slice(0, at) + insert + s.slice(at);
   const updated = at >= cutEnd ? cut(paste(source)) : paste(cut(source));
-  await fs.writeFile(block.file, updated, 'utf8');
+  await write(block.file, source, updated);
   return send(res, 200, { ok: true });
 }
 
@@ -232,7 +291,97 @@ async function handleField(req, res) {
     if (!found || found.value !== original) return send(res, 409, { error: STALE });
     const value = text.replace(/\s*\r?\n\s*/g, ' ').trim();
     if (!value) return send(res, 400, { error: `The ${field} can't be empty.` });
-    await fs.writeFile(file, source.slice(0, found.start) + encodeField(value, found.quote) + source.slice(found.end), 'utf8');
+    await write(file, source, source.slice(0, found.start) + encodeField(value, found.quote) + source.slice(found.end));
+    return send(res, 200, { ok: true });
+  }
+
+  send(res, 405, { error: 'Method not allowed' });
+}
+
+// --- Comments ----------------------------------------------------------------
+// Comment mode saves feedback on a block to feedback/comments.jsonl, one JSON
+// object per line. The article file is never touched. The learn-feedback skill
+// reads the open comments and turns them into skill rules or article fixes.
+const FEEDBACK_FILE = path.join(ROOT, 'feedback', 'comments.jsonl');
+const KINDS = new Set(['like', 'dislike', 'fix']);
+
+async function readComments() {
+  try {
+    const text = await fs.readFile(FEEDBACK_FILE, 'utf8');
+    return text.split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l));
+  } catch (err) {
+    if (err.code === 'ENOENT') return [];
+    throw err;
+  }
+}
+
+async function handleComment(req, res) {
+  const url = new URL(req.url, 'http://localhost');
+
+  // The page's open comments, each located in the file as it is now, so the
+  // client can mark the blocks they belong to even after edits.
+  if (req.method === 'GET') {
+    const fileParam = url.searchParams.get('file');
+    if (!/\.mdx?$/.test(fileParam ?? '')) return send(res, 400, { error: 'Invalid request' });
+    const file = path.resolve(ROOT, fileParam);
+    if (!file.startsWith(CONTENT_DIR + path.sep)) return send(res, 400, { error: 'Invalid request' });
+    const source = await fs.readFile(file, 'utf8');
+    const comments = (await readComments())
+      .filter((c) => c.file === fileParam && c.status === 'open')
+      .map((c) => {
+        const start = c.field ? -1 : source.indexOf(c.quote);
+        return { id: c.id, kind: c.kind, comment: c.comment, field: c.field, start, end: start < 0 ? -1 : start + c.quote.length };
+      });
+    return send(res, 200, { comments });
+  }
+
+  if (req.method === 'POST') {
+    const { src, file: fileParam, field, kind, comment, page } = await readJson(req);
+    if (!KINDS.has(kind) || typeof comment !== 'string' || !comment.trim()) {
+      return send(res, 400, { error: 'Pick a kind and write a comment.' });
+    }
+    let rel;
+    let quote;
+    if (field) {
+      const file = parseFieldTarget(fileParam, field);
+      if (!file) return send(res, 400, { error: 'Invalid request' });
+      const found = findField(await fs.readFile(file, 'utf8'), field);
+      if (!found) return send(res, 400, { error: `Can't find the ${field}.` });
+      rel = fileParam;
+      quote = found.value;
+    } else {
+      const target = parseSrc(src);
+      if (!target) return send(res, 400, { error: 'Invalid request' });
+      const source = await fs.readFile(target.file, 'utf8');
+      if (hashOf(source) !== target.version) return send(res, 409, { error: STALE });
+      rel = path.relative(ROOT, target.file).split(path.sep).join('/');
+      quote = source.slice(target.start, target.end);
+    }
+    const entry = {
+      id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
+      createdAt: new Date().toISOString(),
+      file: rel,
+      page: typeof page === 'string' ? page : undefined,
+      field: field || undefined,
+      kind,
+      comment: comment.trim(),
+      quote,
+      status: 'open',
+    };
+    await fs.mkdir(path.dirname(FEEDBACK_FILE), { recursive: true });
+    await fs.appendFile(FEEDBACK_FILE, JSON.stringify(entry) + '\n', 'utf8');
+    return send(res, 200, { ok: true, id: entry.id });
+  }
+
+  // Remove an open comment (for typos or second thoughts).
+  if (req.method === 'DELETE') {
+    const { id } = await readJson(req);
+    const comments = await readComments();
+    const target = comments.find((c) => c.id === id);
+    if (!target) return send(res, 404, { error: 'Comment not found.' });
+    if (target.status !== 'open') return send(res, 400, { error: 'That comment was already processed.' });
+    const rest = comments.filter((c) => c.id !== id);
+    await fs.writeFile(FEEDBACK_FILE, rest.map((c) => JSON.stringify(c) + '\n').join(''), 'utf8');
     return send(res, 200, { ok: true });
   }
 
@@ -255,7 +404,10 @@ export default function liveEditor() {
       'astro:server:setup': ({ server }) => {
         server.middlewares.use(API, route(handle));
         server.middlewares.use(MOVE_API, route(handleMove));
+        server.middlewares.use(DELETE_API, route(handleDelete));
         server.middlewares.use(FIELD_API, route(handleField));
+        server.middlewares.use(UNDO_API, route(handleUndo));
+        server.middlewares.use(COMMENT_API, route(handleComment));
       },
     },
   };

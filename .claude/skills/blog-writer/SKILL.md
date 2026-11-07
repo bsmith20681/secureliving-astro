@@ -8,7 +8,7 @@ description: |
   competitor articles, YouTube transcript, notes in packets/<keyword>), and for rewriting or
   cleaning up articles in src/content/articles.
 metadata:
-  version: 3.1.0
+  version: 3.4.0
 ---
 
 # Blog Writer
@@ -56,27 +56,39 @@ When asked to write a blog post:
 
 When asked to humanize, rewrite, or clean up an existing article, skip steps 1-6. Run the Writing rules process on that article in file mode.
 
-## Three Versions (only when I ask)
+## Multiple Versions (only when I ask)
 
-Write one article by default. Produce three versions only when I ask for them, for example "give me three versions", "write v1, v2 and v3", or "do the three-version comparison". Never do it on your own initiative.
+Write one article by default. Produce multiple versions only when I ask for them, for example "give me three versions", "write v1, v2 and v3", "do the version comparison", or "do the four-version run". Never do it on your own initiative. A request for three versions gets all four below: v4 is always part of the run.
 
 | Version | File | Who writes it |
 | --- | --- | --- |
 | v1 | `<file-name>.mdx` | Hemmingway writes the first draft through the hemmingway-writer skill, then the Fable model fills the gaps and optimizes it. |
 | v2 | `<file-name>-v2.mdx` | The Opus model alone, following this skill. No Hemmingway. |
 | v3 | `<file-name>-v3.mdx` | The Fable model alone, following this skill. No Hemmingway. |
+| v4 | `<file-name>-v4.mdx` | The main session, after v1 to v3 are done. It combines the strongest parts of the three into one final article. |
 
-`<file-name>` is the name v1 would get on its own, for example `adt-alternatives`, which gives `adt-alternatives-v2.mdx` and `adt-alternatives-v3.mdx`.
+`<file-name>` is the name v1 would get on its own, for example `adt-alternatives`, which gives `adt-alternatives-v2.mdx`, `adt-alternatives-v3.mdx`, and `adt-alternatives-v4.mdx`.
 
 How to run it:
 
-1. **Prepare in the main session.** Do step 1 (find the packet and tell me what it has). Settle `<file-name>` and tell me the three file names. Pick three different featured images that no existing article uses, one per version, so the versions don't collide. My request for three versions counts as the go-ahead for the Hemmingway run.
+1. **Prepare in the main session.** Do step 1 (find the packet and tell me what it has). Settle `<file-name>` and tell me the four file names. Pick four different featured images that no existing article uses, one per version, so the versions don't collide. My request for the versions counts as the go-ahead for the Hemmingway run.
 2. **Launch all three at once** with the Agent tool, one subagent per version, all in the same message so none can see another's output. Set the model on each call: `fable` for v1, `opus` for v2, `fable` for v3. Give each one the keyword, the packet path, its file name, its featured image, and these instructions:
    - **v1:** Follow the hemmingway-writer skill (`.claude/skills/hemmingway-writer/SKILL.md`) in its default mode, with gap-filling on. Save Hemmingway's reply as the next free `draft-N.md` in the packet's `hemmingway/` folder. Follow this skill's link rule from step 6 (affiliate links only, no internal links) instead of hemmingway-writer's step for adding internal links. Skip opening the article in Chrome.
    - **v2 and v3:** Follow this skill's steps 2 to 7 and skip step 8. Read every research file in the packet (POP brief, competitor articles, transcript, notes), plus the company `.yaml` files and existing articles as steps 2 to 5 describe. The only things off limits are the other versions' writing: the other versions' `.mdx` files and the packet's `hemmingway/` folder, which holds v1's drafts. Don't open them, even if they appear while you work.
    - **All three:** Report back the file path, the word count and section count against the brief, any POP terms still out of range, and any fact you left out because the sources didn't support it. v1 also reports Hemmingway's token count and cost.
-3. **Check and open all three.** When every subagent has finished, make sure each file exists. Then open all three in Chrome as step 8 describes, one `cmd //c start chrome "<url>"` per version. A file created while the dev server was running can return a 500 (UnknownContentCollectionError) until the server restarts. If any of the three pages does that, restart `npm run dev` and check again before opening them.
-4. **Hand over** a short comparison table: version, model, word count, sections, and POP terms out of range. Add Hemmingway's cost for v1. Don't merge or edit the versions yourself; I compare them and pick.
+3. **Score v1 to v3.** When every subagent has finished, make sure each file exists. Score each version with the article-reviewer skill's rubric (`.claude/skills/article-reviewer/SKILL.md`, Steps 1 to 3), including both of its check scripts. The main session didn't write these versions, so it can score them itself. Keep the scores in the conversation; don't write review reports for v1 to v3 unless I ask. Don't edit v1 to v3: they stay as their writers left them so I can compare.
+4. **Write v4.** Build the final article from the three versions:
+   - **Pick a base.** Start from the version with the best structure and search-intent score, and say which one you picked and why.
+   - **Take the best of the others, section by section.** For each section, use whichever version scored best on it: the strongest opening answer, the most first-hand detail and opinion, the clearest comparison table, the most convincing pitch, the best FAQ answers. A version's passage can replace the base's or be merged into it. Keep only claims that one of the versions got from the packet, the company yaml files, or existing articles; when two versions disagree on a fact, check the source and use the correct one.
+   - **Make it read as one article.** Smooth the joins so the voice, terms, and formatting are consistent, and cut anything two sections now repeat. Use the v4 featured image, and keep the imports to what the body uses.
+   - **Finish it like any article.** Run steps 6 and 7 of Your Task on the combined draft (components, affiliate links but no internal links, then the humanize pass). Run both article-reviewer check scripts and the POP counter, bring the terms into range, and fix every confirmed `MUST` item.
+   - **Score it** with the same rubric. If v4 scores lower than the best of v1 to v3 on any component, fix that section before handing it over.
+5. **Check and open all four side by side.** Build each version's URL and check the dev server as step 8 describes. A file created while the dev server was running can return a 500 (UnknownContentCollectionError) until the server restarts. If any of the four pages does that, restart `npm run dev` and check again before opening them. Then open them as four Chrome windows splitting the screen into equal columns, v1 to v4 from left to right, with the PowerShell tool:
+   ```powershell
+   & ".claude/skills/blog-writer/tile-chrome.ps1" -Urls "<v1 url>","<v2 url>","<v3 url>","<v4 url>"
+   ```
+   The script opens each URL in a new Chrome window and moves whichever window has focus into its column, so run it once with all four URLs and don't open anything else while it runs. Use it in place of step 8's single `start chrome` command.
+6. **Hand over** a short comparison table: version, model, rubric total, word count, sections, and POP terms out of range. Add Hemmingway's cost for v1. Below it, list where each part of v4 came from (for example "intro and pitch from v2, testing details from v1, FAQ from v3") and any must-fix item still open. I compare them and pick which one to publish.
 
 ## Page Optimizer Pro Content Briefs
 
@@ -127,6 +139,18 @@ Templates:
 Don't reuse one template across articles. Before writing a title, read the titles of the other articles of the same type in src/content/articles (for example every `-vs-` comparison) and make the new one clearly different in its structure and hook. Take the angle from what this article actually says, such as its verdict, the price difference, how long I used the systems, or the kind of buyer each system suits. Keep the brand names first ("Cove vs ADT"), but vary the rest. Some titles can ask a question, some can state the verdict, and some can leave the year out.
 
 When rewriting or humanizing an existing article, fix a title that breaks rule 2 even in file mode. Leave the rest of the frontmatter alone.
+
+## Ben's Preferences
+
+Rules learned from my comments on past articles, added by the learn-feedback skill. Follow them in every article and every version. Where one conflicts with a general writing rule below, the preference wins. They never override the rules about facts: don't invent anything to satisfy one.
+
+### Do
+
+(None yet.)
+
+### Don't
+
+(None yet.)
 
 ## PERSONALITY AND SOUL
 
