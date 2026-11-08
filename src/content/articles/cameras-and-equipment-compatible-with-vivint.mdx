@@ -20,7 +20,7 @@ import vivintNestThermostat from "../../assets/vivint/nest-thermostat.png";
 import vivintWirelessSensor from "../../assets/vivint/vivint-wireless-sensor.png";
 import wiredSensor from "../../assets/vivint/wired-sensor.png";
 import vivintApp from "../../assets/vivint/using-vivint-app.png";
-import companyData from "../../content/companies/vivint.yaml";
+import PromoLine from "../../components/companies/PromoLine.astro";
 
 If you're looking at Vivint and wondering whether you can bring your own cameras or smart home devices, the answer depends on what type of equipment you're talking about.
 
@@ -205,7 +205,7 @@ And if you already have Ring or Blink cameras you like, know that they'll keep w
 
 For the full picture on Vivint's system, including pricing, monitoring plans, and my experience after months of daily use, check out my [Vivint home security review](/home-security-systems/vivint-review/).
 
-<strong>> > Vivint Promo:</strong> <a href={companyData.website}>{companyData.promo}</a> or call <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a>
+<PromoLine company="vivint" />
 
 <FAQ
   items={[

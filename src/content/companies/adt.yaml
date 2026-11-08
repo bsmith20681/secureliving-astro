@@ -89,14 +89,14 @@ cameras:
     nightVision: true
     twoWayTalk: true
     liveView: true
-    continuousRecording: false
+    continuousRecording: true # available as a paid upgrade
     aiSearch: false
   videoStorage:
     days: 30
     local: false
     cloud: true
-  recordsWithoutWifi: false
-  proprietaryToService: true # cameras stop working if you cancel
+  recordsWithoutWifi: true # records up to 1 hour without Wi-Fi, then stops
+  proprietaryToService: false # Nest cameras keep working through the Google Home app if you cancel
 
 # ── Home Automation ───────────────────────────────────────
 homeAutomation:

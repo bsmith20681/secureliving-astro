@@ -18,7 +18,7 @@ import vivintRecordings from "../../assets/vivint/smartpanel-viewing-recordings.
 import vivintApp from "../../assets/vivint/using-vivint-app.png";
 import vivintAppRecordings from "../../assets/vivint/vivint-app-recordings.png";
 import backOfPanel from "../../assets/vivint/back-of-vivint-panel.jpeg";
-import companyData from "../../content/companies/vivint.yaml";
+import PromoLine from "../../components/companies/PromoLine.astro";
 
 If your internet goes out, does Vivint still protect your home? The short answer is yes. Your Vivint system will still work without WiFi because the alarm and monitoring run on a cellular connection, not your home internet. But there are a few things you'll lose access to until the WiFi comes back.
 
@@ -163,7 +163,7 @@ If you're on the fence about Vivint because you have unreliable internet, I'd sa
 
 If you want to learn more about the full system, check out my [review](/home-security-systems/vivint-review/) where I cover the cameras, equipment, pricing, and everything else after 6+ months of daily use.
 
-<strong>> > Vivint Promo:</strong> <a href={companyData.website}>{companyData.promo}</a> or call <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a>
+<PromoLine company="vivint" />
 
 <FAQ
   items={[

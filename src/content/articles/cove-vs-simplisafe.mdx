@@ -45,6 +45,7 @@ import simplisafeSensors from "../../assets/simplisafe/sensors-and-components-un
 import simplisafeAppCameras from "../../assets/simplisafe/app-camera-feeds-overview.jpg";
 import coveCompanyData from "../../content/companies/cove.yaml";
 import simplisafeCompanyData from "../../content/companies/simplisafe.yaml";
+import PromoLine from "../../components/companies/PromoLine.astro";
 
 <figure>
   <Image src={coveVsSimpliSafe} alt="Covs vs Simplisafe Picture" />
@@ -277,7 +278,7 @@ Both companies let you build your own system a la carte. SimpliSafe also offers 
 
 At full retail, SimpliSafe is cheaper on sensors and environmental detectors, while Cove is cheaper on cameras. But here's what matters more: both companies run big sales basically all the time. I got Cove at 70% off (paid $250 total) and SimpliSafe at 50% off (paid $519 total). The discounts make a bigger difference than the retail pricing.
 
-<strong>> > Cove Promo:</strong> <a href={coveCompanyData.website}>{coveCompanyData.promo}</a>
+<PromoLine company="cove" />
 
 ## The Apps
 
@@ -335,7 +336,7 @@ If Active Guard is something you want, SimpliSafe is the only game in town. Havi
 
 SimpliSafe also wins if you want a free self-monitoring option, a bigger equipment selection, or a more polished app. The pre-built packages make it easier to buy a system without decision fatigue.
 
-<strong>> > Cove Promo:</strong> <a href={coveCompanyData.website}>{coveCompanyData.promo}</a>
+<PromoLine company="cove" />
 
 ### The Bottom Line
 

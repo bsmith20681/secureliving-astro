@@ -1,0 +1,36 @@
+---
+/**
+ * @component PromoLine
+ * @description One-line call to action that shows a company's current promotion, with its
+ *   affiliate link and, when the company has one, its phone number.
+ * @usage Drop into an article where the reader is ready to buy. All data comes from the
+ *   company's yaml file, so the promo stays current everywhere it's used.
+ * @example <PromoLine company="adt" />
+ * @example <PromoLine company="adt-diy" name="ADT DIY" />
+ * @props
+ *   company: string — slug matching a companies collection entry (e.g. "adt", "cove")
+ *   name: string — optional label override; defaults to the company's yaml `name`
+ */
+import { getEntry } from 'astro:content';
+
+interface Props {
+  company: string;
+  name?: string;
+}
+
+const { company, name } = Astro.props;
+
+const entry = await getEntry('companies', company);
+if (!entry) throw new Error(`Company "${company}" not found in companies collection`);
+
+const data = entry.data;
+const label = name ?? data.name;
+const promo = data.promo || `See ${data.name}'s current deals`;
+const phoneHref = data.phone ? `tel:${data.phoneUnformatted ?? data.phone.replace(/\D/g, '')}` : null;
+---
+
+<p class="promo-line">
+  <strong>&gt; &gt; {label} Promo:</strong> <a href={data.website}>{promo}</a>{phoneHref && (
+    <> or call <a href={phoneHref}>{data.phone}</a></>
+  )}
+</p>

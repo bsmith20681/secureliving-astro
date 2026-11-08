@@ -35,6 +35,7 @@ import ringComponents from "../../assets/ring/ring-alarm-kit-components-close-up
 import coveCompanyData from "../../content/companies/cove.yaml";
 import ringCompanyData from "../../content/companies/ring.yaml";
 import coveVsRing from "../../assets/featured-images/cove-vs-ring.jpg";
+import PromoLine from "../../components/companies/PromoLine.astro";
 
 <figure>
   <Image
@@ -389,7 +390,7 @@ Ring wins on app polish, smart home support, continuous recording, and Virtual G
 
 Either way, you're getting 24/7 professional monitoring, cellular backup, no contracts, and easy DIY installation. You're not making a bad decision with either system.
 
-<strong>>> Cove Promo:</strong> <a href={coveCompanyData.website}>{coveCompanyData.promo}</a>
+<PromoLine company="cove" />
 
 <FAQ
   items={[

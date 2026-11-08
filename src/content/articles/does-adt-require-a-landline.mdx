@@ -17,6 +17,7 @@ import adtPanelTable from "../../assets/adt/adt-command-panel-table.jpg";
 import adtPanelConnected from "../../assets/adt/adt-command-panel-connected.jpg";
 import adtSensors from "../../assets/adt/adt-sensors-with-touchscreen-panel.jpg";
 import companyData from "../../content/companies/adt.yaml";
+import PromoLine from "../../components/companies/PromoLine.astro";
 
 If you're shopping for a home security system and wondering if you need a landline for ADT, the answer is no. **ADT does not require a landline.** Their current system uses a cellular connection to communicate with the monitoring center, and honestly, that's a better setup anyway.
 
@@ -131,7 +132,7 @@ Call ADT at <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}<
 
 The monthly monitoring cost starts at $42.99/month for the base package and goes up to $48.99/month if you add cameras. If you already have ADT equipment in your home, you can save on upfront costs since the sensors and wiring are already in place.
 
-<strong>> > ADT Promo:</strong> <a href={companyData.website}>{companyData.promo}</a> or call <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a>
+<PromoLine company="adt" />
 
 <FAQ
   items={[

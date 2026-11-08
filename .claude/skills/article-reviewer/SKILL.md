@@ -8,7 +8,7 @@ description: |
   score, audit, critique, or give feedback on an article or draft, or to "review and fix"
   one before publishing.
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Article Reviewer
@@ -23,7 +23,7 @@ The review has two modes:
 ## Step 1: Gather the inputs
 
 1. **Article.** Find the `.mdx` file in `src/content/articles/`. If the user didn't name one, use the most recently modified article and say which one you picked.
-2. **Packet.** Take the article's main keyword, turn it into a slug, and look for `packets/<keyword-slug>/` (see blog-writer's "Packets" section for what a packet holds). Read the POP brief PDF, the YouTube transcript, and the notes. Skim the competitor articles for what subtopics they cover. Skip `hemmingway/` except for `terms.json`.
+2. **Packet.** Take the article's main keyword, turn it into a slug, and look for `packets/<keyword-slug>/` (see blog-writer's "Packets" section for what a packet holds). Read `searchers-intent.md`, the POP brief PDF, the YouTube transcript, and the notes. Skim the competitor articles for what subtopics they cover. Skip `hemmingway/` except for `terms.json`.
 3. **Terms.** If `packets/<slug>/hemmingway/terms.json` exists, use it. Otherwise, if there's a POP brief, write the brief's ranges to `packets/<slug>/reviews/terms.json` in the same shape (see the comment at the top of `tools/hemmingway/pop-count.mjs`). Never copy the brief's secret key or content editor URL anywhere.
 4. **Facts.** Read the `.yaml` file in `src/content/companies/` for every brand the article names, and skim the other articles that cover the same brands. The yaml files are the source of truth for prices, contracts, fees, and equipment.
 5. **Writing rules.** Read `.claude/skills/blog-writer/SKILL.md`. Its Headlines rules, POP brief rules, link rule, "Ben's Preferences", and AI patterns (§1 to §29) are the standard this review enforces. Breaking one of Ben's Preferences costs points in the component it belongs to, the same as breaking a rule written into the rubric.
@@ -50,14 +50,14 @@ Read the whole article once as a searcher would, then score each component. Pick
 
 ### 1. Search intent and answer (15)
 
-Does the article give the searcher what they came for, fast?
+Does the article resolve why the searcher is here, fast? Score it against the packet's `searchers-intent.md` and blog-writer's "Writing For The Searcher's Intent" section. List each reason or worry in the intent file, and for each one, quote where the article answers it or note that it doesn't. Without an intent file, infer the intent from the keyword and the brief's related questions, and say in the report that you did.
 
 | Level | Points | Description |
 | --- | --- | --- |
-| Excellent | 13-15 | The first screen answers the query directly (the pick, the price, the yes or no). Title, H1, and subtitle match the intent (review, comparison, best-of, how-to). Every section serves that intent. |
-| Good | 9-12 | Answers the query but takes a few paragraphs to get there, or one section drifts off-topic. |
-| Needs work | 5-8 | The answer is buried past the halfway point, or the article mixes intents (a "best of" that reads like one brand's review). |
-| Failing | 0-4 | Doesn't answer the query, or targets a different keyword than the packet. |
+| Excellent | 13-15 | Every reason in the intent file gets a clear, supported answer. The opening speaks to the reader's situation and gives the short answer for it (the pick, the price, the yes or no). Recommendations are tied to the reason they solve, in second person. Title, H1, and subtitle match the intent (review, comparison, best-of, how-to). No sections spent on background this reader already knows. |
+| Good | 9-12 | Answers the main reason, but one secondary reason is thin or missing, or the answer takes a few paragraphs to arrive, or one section drifts off-topic. |
+| Needs work | 5-8 | Covers the topic without speaking to the reader's situation (a generic roundup), misses a main reason, or buries the answer past the halfway point. |
+| Failing | 0-4 | Doesn't answer the query, addresses a different searcher than the intent file describes, or targets a different keyword than the packet. |
 
 ### 2. Accuracy (15)
 
@@ -170,6 +170,9 @@ Article: src/content/articles/<file>.mdx · Reviewed <date> · Verdict: <verdict
 | Search intent and answer | 12 | 15 |
 | ... | | |
 | **Total** | **81** | **100** |
+
+## Searcher's intent
+Each reason from searchers-intent.md, and the line that answers it (or "not answered").
 
 ## Must fix
 1. Line 42: "$19.99/month" but cove.yaml lists $17.99. Change to $17.99.

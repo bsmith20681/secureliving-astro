@@ -2,11 +2,15 @@
 
 Write a best-of / comparison article for the keyword "adt alternatives".
 
+## Who Is Reading
+
+The reader almost certainly has ADT already and wants to keep having home security, just not with ADT. They are leaving for one of three reasons: the monthly bill is too high, they are fed up with ADT's customer service, or they are unhappy with the equipment. Write to that person in the second person. Someone leaving over price needs the cheaper option with the monthly cost spelled out next to ADT's. Someone leaving over service or equipment needs the system that gives them everything they have with ADT now (cellular monitoring, two-way voice through the panel, remote camera access, smart home control) from a different provider. Tie each recommendation back to the reason it solves. Don't explain what ADT is; this reader knows. Don't list the reasons as "you might be here because..."; let them shape what each section says.
+
 ## Hard Requirements
 
 These are not suggestions. Check each one before you finish.
 
-1. Length: between 1,215 and 1,485 words. Reach it with detail from the transcript, not filler.
+1. Length: between 1,215 and 1,485 words. Reach it with detail from the transcript and company data, not filler.
 2. Start with the title as an H1 line (`# ...`).
 3. End with `## Frequently Asked Questions`, each question as an H3 followed by a two- to four-sentence answer.
 4. Use about 14 sections (H2s and H3s combined, FAQ questions included). Keep sections tight; the word count is short.
@@ -14,22 +18,22 @@ These are not suggestions. Check each one before you finish.
 
 ## Brief
 
-- Title terms (use 2 to 3 total, each at most once): "alternatives to adt home security", "alternatives to adt", "adt alternatives".
-- Use these terms in the headings, spread across them, not one per heading. 5 to 9 uses total: "adt alternatives" (exactly once in a heading), "home" (1 to 3), and at most once each: "home security", "adt competitor", "security", "monitoring", "systems".
-- Work these terms into the body where they read naturally: home security (10-24), security (24-40), home (19-46), monitoring (12-30), systems (9-14), review (11-16), equipment (9-18), smart (9-12), contract (7-13), security systems (6-8), security system (5-7), safety (4-5), diy (4-15), installation (3-12), alarm (2-11), security cameras (2), professional monitoring (1-4), smart home (1-5), contracts (1-2), alarm system (1), alternatives to adt (1), alternative to adt (1-2), adt alternatives (1-2), and at most once each: adt competitors, entry sensors, motion sensors, monitoring costs, storage, comparison. Readable writing comes first; leave a term out rather than force it.
+- Put "adt alternatives" at the start of the title and in exactly one heading.
+- Use these terms in the body where they read naturally: "professional monitoring", "security cameras", "smart home", "alarm system", "DIY installation". Readable writing comes first; leave a term out rather than force it.
 - Include 1 comparison table, at least 5 lists, and an FAQ.
-- Answer these questions in the FAQ: "Is there a better security company than ADT?", "What do police recommend for home security?", "What type of ADT system do I have?", "What is the ADT customer service number that is available 24/7?". If the sources don't support an answer, leave the question out. (The company data lists ADT's phone as (866) 968-7164; no source says it is staffed 24/7, so don't claim that.)
+- Answer these questions in the FAQ: "Is there a better security company than ADT?", "What do police recommend for home security?", "What type of ADT system do I have?", "What is the ADT customer service number that is available 24/7?". If the sources don't support an answer, leave the question out. The company data lists ADT's phone as (866) 968-7164; no source says it is staffed 24/7, so don't claim that.
 - Related keywords to work in where they fit: adt alternatives for home, adt alternatives reviews, adt alternatives cost, SimpliSafe, ADT vs Vivint, Vivint vs ADT pricing, ADT vs Vivint pros and cons.
+- Frontpoint and other brands that appear in the competitor articles: Ben hasn't tested them, so don't rank or describe them.
 
 ## Suggested Outline
 
-- Intro: who this is for (current ADT customers switching, or people shopping ADT), and that I've tested ADT, Vivint, Cove, SimpliSafe, and Ring in my own home.
-- H2: What To Look For In ADT Alternatives: the core features (cellular monitoring, two-way voice through the keypad, remote camera access, smart home control). A list.
-- H2: Quick Comparison: one table, ADT vs Vivint vs Cove (monthly price, installation, contract, touchscreen, two-way voice at the panel, camera recording without Wi-Fi, 24/7 recording option, home automation).
-- H2: Vivint (best overall alternative), with H3s for monitoring and panel, cameras and deter mode, smart home app and automations, pricing and who it suits.
-- H2: Cove (most affordable alternative), with H3s for monitoring and panel, cameras and their limits, pricing and the $5 credit, who it suits.
+- Intro: who this is for (ADT customers switching, or people shopping ADT), that I've tested ADT, Vivint, Cove, SimpliSafe, and Ring in my own home, and the short answer up front: Vivint if you want everything ADT does from a different provider, Cove if the bill is the reason you're leaving.
+- H2: What To Keep When You Leave ADT: the four core features ADT customers are used to (cellular monitoring, two-way voice through the keypad, remote camera access, smart home control). A list.
+- H2: ADT Alternatives Compared: one table, ADT vs Vivint vs Cove (monthly price, installation, contract, touchscreen panel, two-way voice at the panel, camera recording without Wi-Fi, 24/7 recording option, home automation).
+- H2: Vivint, the direct ADT competitor and best overall alternative, with H3s for monitoring and the panel, the cameras and deter mode, the smart home app and automations, and Vivint vs ADT pricing plus who it suits (the reader leaving over service or equipment).
+- H2: Cove, the most affordable alternative, with H3s for monitoring and the panel, the cameras and their limits, and pricing with the $5 credit plus who it suits (the reader leaving over price).
 - H2: Honorable Mentions: Ring and SimpliSafe, and why they didn't make the main list.
-- H2: Which One Should You Pick: short verdict by buyer type, as a list.
+- H2: Which ADT Alternative Should You Pick: short verdict by the reason you're leaving, as a list.
 - H2: Frequently Asked Questions.
 
 You may reorder or merge sections if the article reads better.

@@ -19,7 +19,7 @@ import vivintDoorbellCamera from "../../assets/vivint/vivint-doorbell-camera-ima
 import vivintFloodlight from "../../assets/vivint/vivint-floodlight-at-night.png";
 import vivintAppViewingCameras from "../../assets/vivint/vivint-app-viewing-cameras-4.jpg";
 import vivintDeterNotification from "../../assets/vivint/vivint-deter-notification.jpg";
-import companyData from "../../content/companies/vivint.yaml";
+import PromoLine from "../../components/companies/PromoLine.astro";
 
 If you've been poking around the Vivint app and noticed the word "deter" on the app when viewing your cameras, you're probably wondering what it does. I had the same thought when I first set up my system. Turns out, it's one of Vivint's more interesting and unique features.
 
@@ -207,7 +207,7 @@ This is also why I recommend Vivint over a standalone camera if home security is
 
 If you want to learn more about Vivint you can checkout my [full review](/home-security-systems/vivint-review/) of the system.
 
-<strong>> > Vivint Promo:</strong> <a href={companyData.website}>{companyData.promo}</a> or call <a href={`tel:${companyData.phoneUnformatted}`}>{companyData.phone}</a>
+<PromoLine company="vivint" />
 
 <FAQ
   items={[

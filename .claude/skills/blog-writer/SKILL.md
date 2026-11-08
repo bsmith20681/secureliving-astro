@@ -8,7 +8,7 @@ description: |
   competitor articles, YouTube transcript, notes in packets/<keyword>), and for rewriting or
   cleaning up articles in src/content/articles.
 metadata:
-  version: 3.4.0
+  version: 3.6.0
 ---
 
 # Blog Writer
@@ -19,7 +19,7 @@ You are an seo content writer for secureliving.com. Your job is to take video tr
 
 Each article's research lives in a packet: a folder at `packets/<keyword-slug>/` in the project root, named after the article's main keyword in lowercase with hyphens. The keyword "adt alternative" has its packet at `packets/adt-alternative/`.
 
-A packet can hold up to four things. Ideally all four are there, but none is required:
+A packet can hold up to five things. Ideally all five are there, but none is required:
 
 | Piece | File | What it's for |
 | --- | --- | --- |
@@ -27,6 +27,7 @@ A packet can hold up to four things. Ideally all four are there, but none is req
 | Competitor articles | Up to 3 `.md` files saved by the article-to-markdown skill, named `<site>-<page-slug>.md` | Pages from other sites that currently rank for the keyword. Inspiration for structure, length, topic coverage, and writing style. |
 | YouTube transcript | A `.txt` file, usually with "transcript" in the name | The transcript of a video I recorded on this topic. It has my voice and my opinions, which is what makes the article different from the competitors'. |
 | Additional notes | A `.md` or `.txt` file, usually with "notes" in the name | Extra facts, opinions, and points I want in the article. |
+| Searcher's intent | `searchers-intent.md` | Who is searching this keyword, what situation they're in, and why they're reading: the worries and goals the article has to resolve. |
 
 If a file's name doesn't make its role clear, open it and decide from the content. A competitor article has frontmatter with the source URL, a transcript reads like speech, and notes read like my own list or brain dump.
 
@@ -36,6 +37,7 @@ How to use each piece:
 - **Competitor articles.** Imitate their structure, word count, and writing style, and check which subtopics they all cover. Don't let the opinions or experience of their writers shape mine. Never link to these articles, never cite them, and never copy their sentences, tables, or images.
 - **YouTube transcript.** Treat it as the main source of opinions, verdicts, pricing, pros and cons, and personal experience. Keep my phrasing and reactions where they read well in writing. Do NOT follow the transcript's structure or order.
 - **Additional notes.** Everything in them belongs in the article. Where the notes and the transcript disagree, trust the notes, because they're newer and more deliberate.
+- **Searcher's intent.** It decides what the article is for, so read it before planning anything. Follow "Writing For The Searcher's Intent" below.
 
 Anything I upload or say in the conversation overrides the packet.
 
@@ -43,7 +45,7 @@ Anything I upload or say in the conversation overrides the packet.
 
 When asked to write a blog post:
 
-1. **Find the packet.** Get the main keyword from my request (ask if I didn't give one), turn it into a slug, and look for `packets/<keyword-slug>/`. If no folder matches exactly, list `packets/` and pick a close match such as the singular or plural form, and tell me which one you used. Before writing anything, tell me in a short list which of the four pieces the packet has and which are missing. Then keep going. Missing pieces don't block the article, and neither does a missing packet.
+1. **Find the packet.** Get the main keyword from my request (ask if I didn't give one), turn it into a slug, and look for `packets/<keyword-slug>/`. If no folder matches exactly, list `packets/` and pick a close match such as the singular or plural form, and tell me which one you used. Before writing anything, tell me in a short list which of the five pieces the packet has and which are missing. Then keep going. Missing pieces don't block the article, and neither does a missing packet.
 2. **Read the packet.** Read every file in it. Skip the `hemmingway/` subfolder if there is one; it holds the hemmingway-writer skill's working files, not research. Read the POP brief PDF with the Read tool (pass `pages` if it's longer than 10 pages).
 3. **Settle the keywords.** With a POP brief, take the main keyword, its variations, and the secondary keywords (the important terms and related keywords) from the brief. Without one, ask me for the main keyword and its variations and for the secondary keywords and their variations. The main keyword goes in the H1, and its variations can go throughout the article, including some of the H2s (but not all). The secondary keywords go in the other H2s and throughout the body.
 4. **Gather the facts and opinions.** Pull the facts, opinions, pricing, pros and cons, and personal experience from the transcript, the notes, and anything I upload. When the packet has no transcript and no notes, and I haven't uploaded anything, tell me the article will have less of my voice, then write from the existing content in step 5.
@@ -74,7 +76,7 @@ How to run it:
 1. **Prepare in the main session.** Do step 1 (find the packet and tell me what it has). Settle `<file-name>` and tell me the four file names. Pick four different featured images that no existing article uses, one per version, so the versions don't collide. My request for the versions counts as the go-ahead for the Hemmingway run.
 2. **Launch all three at once** with the Agent tool, one subagent per version, all in the same message so none can see another's output. Set the model on each call: `fable` for v1, `opus` for v2, `fable` for v3. Give each one the keyword, the packet path, its file name, its featured image, and these instructions:
    - **v1:** Follow the hemmingway-writer skill (`.claude/skills/hemmingway-writer/SKILL.md`) in its default mode, with gap-filling on. Save Hemmingway's reply as the next free `draft-N.md` in the packet's `hemmingway/` folder. Follow this skill's link rule from step 6 (affiliate links only, no internal links) instead of hemmingway-writer's step for adding internal links. Skip opening the article in Chrome.
-   - **v2 and v3:** Follow this skill's steps 2 to 7 and skip step 8. Read every research file in the packet (POP brief, competitor articles, transcript, notes), plus the company `.yaml` files and existing articles as steps 2 to 5 describe. The only things off limits are the other versions' writing: the other versions' `.mdx` files and the packet's `hemmingway/` folder, which holds v1's drafts. Don't open them, even if they appear while you work.
+   - **v2 and v3:** Follow this skill's steps 2 to 7 and skip step 8. Read every research file in the packet (POP brief, competitor articles, transcript, notes, searcher's intent), plus the company `.yaml` files and existing articles as steps 2 to 5 describe. The only things off limits are the other versions' writing: the other versions' `.mdx` files and the packet's `hemmingway/` folder, which holds v1's drafts. Don't open them, even if they appear while you work.
    - **All three:** Report back the file path, the word count and section count against the brief, any POP terms still out of range, and any fact you left out because the sources didn't support it. v1 also reports Hemmingway's token count and cost.
 3. **Score v1 to v3.** When every subagent has finished, make sure each file exists. Score each version with the article-reviewer skill's rubric (`.claude/skills/article-reviewer/SKILL.md`, Steps 1 to 3), including both of its check scripts. The main session didn't write these versions, so it can score them itself. Keep the scores in the conversation; don't write review reports for v1 to v3 unless I ask. Don't edit v1 to v3: they stay as their writers left them so I can compare.
 4. **Write v4.** Build the final article from the three versions:
@@ -83,12 +85,26 @@ How to run it:
    - **Make it read as one article.** Smooth the joins so the voice, terms, and formatting are consistent, and cut anything two sections now repeat. Use the v4 featured image, and keep the imports to what the body uses.
    - **Finish it like any article.** Run steps 6 and 7 of Your Task on the combined draft (components, affiliate links but no internal links, then the humanize pass). Run both article-reviewer check scripts and the POP counter, bring the terms into range, and fix every confirmed `MUST` item.
    - **Score it** with the same rubric. If v4 scores lower than the best of v1 to v3 on any component, fix that section before handing it over.
-5. **Check and open all four side by side.** Build each version's URL and check the dev server as step 8 describes. A file created while the dev server was running can return a 500 (UnknownContentCollectionError) until the server restarts. If any of the four pages does that, restart `npm run dev` and check again before opening them. Then open them as four Chrome windows splitting the screen into equal columns, v1 to v4 from left to right, with the PowerShell tool:
-   ```powershell
-   & ".claude/skills/blog-writer/tile-chrome.ps1" -Urls "<v1 url>","<v2 url>","<v3 url>","<v4 url>"
+5. **Check and open all four side by side.** Build each version's URL and check the dev server as step 8 describes. A file created while the dev server was running can return a 500 (UnknownContentCollectionError) until the server restarts. If any of the four pages does that, restart `npm run dev` and check again before opening them. Then open the dev-only review board, which shows every version in one Chrome window as side-by-side iframes, v1 to v4 from left to right:
+   ```bash
+   cmd //c start chrome "http://localhost:4321/_reviews/?slug=<file-name>"
    ```
-   The script opens each URL in a new Chrome window and moves whichever window has focus into its column, so run it once with all four URLs and don't open anything else while it runs. Use it in place of step 8's single `start chrome` command.
+   `<file-name>` is v1's file name without `.mdx`, for example `adt-alternatives`. The board (tools/review-board/integration.mjs) groups `<file-name>.mdx` and its `-v2`, `-v3`, `-v4` files on its own, and the live editor works inside each frame. Check that the board URL returns 200 before opening it. Open only this one window, in place of step 8's single article.
 6. **Hand over** a short comparison table: version, model, rubric total, word count, sections, and POP terms out of range. Add Hemmingway's cost for v1. Below it, list where each part of v4 came from (for example "intro and pitch from v2, testing details from v1, FAQ from v3") and any must-fix item still open. I compare them and pick which one to publish.
+
+## Writing For The Searcher's Intent
+
+Every article is written to one reader: the person `searchers-intent.md` describes. That file says what situation they're in and why they searched, for example "they already have ADT, want to keep home security, and are leaving because of the price, the customer service, or the equipment." The article exists to resolve those reasons.
+
+1. **Plan around the reasons.** List each reason or worry in the file. Each one needs a clear answer in the article: a section, a recommendation, or a comparison that speaks to it. For ADT alternatives, the price reason points to cheaper systems with the monthly cost spelled out, and the service and equipment reasons point to systems with the same feature set from a better provider.
+2. **Answer the main reason first.** The opening tells this reader they're in the right place and gives them the short answer for their situation before any background.
+3. **Talk to the reader.** Write in second person to someone in that situation, and name it: "If ADT's bill is the reason you're leaving..." Tie each recommendation back to the reason it solves ("you keep the same cameras and app features, minus the contract"), so the reader can find the option that fits why they're here.
+4. **Cut what doesn't serve them.** Background the reader already knows (this reader knows what ADT is) or sections that answer a different searcher get cut or shortened, even when a competitor article covers them. The POP brief still sets the length, so spend those words on the reader's reasons.
+5. **Keep it true.** The intent file says what to address, not what's true. Facts still come from the transcript, notes, company yaml files, and existing articles. If a reason in the file has no supported answer, such as no source on a brand's customer service, tell me instead of inventing one.
+
+The intent file never appears in the article as a list of "you might be here because..." reasons. It shapes what each section says.
+
+When the packet has no `searchers-intent.md`, work out the likely intent from the keyword, the POP brief's related questions, and the competitor articles. State it in two or three sentences when you report on the packet in step 1, and write it to `searchers-intent.md` in the packet so I can correct it next time.
 
 ## Page Optimizer Pro Content Briefs
 

@@ -45,6 +45,7 @@ import ProsCons from "../../components/companies/ProsCons.astro";
 import FAQ from "../../components/FAQ.astro";
 import coveCompanyData from "../../content/companies/cove.yaml";
 import vivintCompanyData from "../../content/companies/vivint.yaml";
+import PromoLine from "../../components/companies/PromoLine.astro";
 
 <figure>
   <Image
@@ -353,7 +354,7 @@ With Vivint, it's month-to-month if you pay for the equipment upfront. But if yo
 
 If you ever want to cancel entirely, you pay off the remaining equipment balance and that's it, with no separate cancellation fee on top.
 
-<strong>> > Cove Promo:</strong> <a href={coveCompanyData.website}>{coveCompanyData.promo}</a>
+<PromoLine company="cove" />
 
 ## So Which Security System Should You Get?
 

@@ -92,13 +92,13 @@ cameras:
     nightVision: true
     twoWayTalk: true
     liveView: true
-    continuousRecording: false
+    continuousRecording: true # available as a paid upgrade
     aiSearch: false
   videoStorage:
     days: 30
     local: false
     cloud: true
-  recordsWithoutWifi: false
+  recordsWithoutWifi: true # cameras keep recording and send footage to the panel when Wi-Fi is down
   proprietaryToService: true # cameras stop working if you cancel
 
 # ── Home Automation ───────────────────────────────────────

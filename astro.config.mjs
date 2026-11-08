@@ -7,10 +7,14 @@ import yaml from '@rollup/plugin-yaml';
 import seoGraph from '@jdevalk/astro-seo-graph/integration';
 import remarkGfm from 'remark-gfm';
 
-// Edit articles in place on the rendered page. Loaded only for `astro dev`,
-// so it never touches the production build.
+// Edit articles in place on the rendered page, and compare article versions
+// side by side at /_reviews/. Loaded only for `astro dev`, so neither touches
+// the production build.
 const devIntegrations = process.argv.includes('dev')
-  ? [(await import('./tools/live-editor/integration.mjs')).default()]
+  ? [
+      (await import('./tools/live-editor/integration.mjs')).default(),
+      (await import('./tools/review-board/integration.mjs')).default(),
+    ]
   : [];
 
 // https://astro.build/config

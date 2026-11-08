@@ -63,7 +63,7 @@ monitoring:
     landline: false
   backupBattery: true
   monitoringStations: null
-  twoWayTalk: true
+  twoWayTalk: false # no two-way talk through the panel
 
 # ── Equipment ─────────────────────────────────────────────
 equipment:
