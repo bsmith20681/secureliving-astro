@@ -1,0 +1,2456 @@
+{
+  "reportId": 1998915,
+  "date_done": "2026-11-11 15:32:49",
+  "report": {
+    "aiGenSchemaTypes": [],
+    "cleanedContentBrief": {
+      "approach": "",
+      "dashboardType": "contentBrief",
+      "p": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "smart-home integrations",
+            "type": "lsi",
+            "weight": 1.9996091513982361
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "alternatives to vivint",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 1
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 10,
+            "targetMin": 4
+          },
+          "term": {
+            "phrase": "professional monitoring",
+            "type": "lsi",
+            "weight": 1.9998713034345843
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 4,
+            "targetMin": 4
+          },
+          "term": {
+            "phrase": "security system",
+            "type": "lsi",
+            "weight": 1.9998556916084786
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "diy security",
+            "type": "lsi",
+            "weight": 1.9996435999431985
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "brinks home",
+            "type": "lsi",
+            "weight": 1.9996327969335541
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 3,
+            "targetMin": 3
+          },
+          "term": {
+            "phrase": "google nest",
+            "type": "lsi",
+            "weight": 1.999591728677033
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "monitoring costs",
+            "type": "lsi",
+            "weight": 1.9995192842493115
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "adt security",
+            "type": "lsi",
+            "weight": 1.9974750509758787
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "variation",
+            "weight": 0.448933013064184
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 2
+          },
+          "term": {
+            "phrase": "vivint alternative",
+            "type": "variation",
+            "weight": 0.3093598078385104
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 8,
+            "targetMin": 7
+          },
+          "term": {
+            "phrase": "home security",
+            "type": "lsi",
+            "weight": 0.11184426111995192
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 7,
+            "targetMin": 4
+          },
+          "term": {
+            "phrase": "security systems",
+            "type": "lsi",
+            "weight": 0.08631076605047845
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 25,
+            "targetMin": 20
+          },
+          "term": {
+            "phrase": "security",
+            "type": "lsi",
+            "weight": 1.9988397359754524
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 16,
+            "targetMin": 13
+          },
+          "term": {
+            "phrase": "adt",
+            "type": "lsi",
+            "weight": 1.997431152073309
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 30,
+            "targetMin": 20
+          },
+          "term": {
+            "phrase": "vivint",
+            "type": "variation",
+            "weight": 0.9475326383175694
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 2
+          },
+          "term": {
+            "phrase": "alternatives",
+            "type": "variation",
+            "weight": 0.3911847912982369
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 2
+          },
+          "term": {
+            "phrase": "alternative",
+            "type": "variation",
+            "weight": 0.2588280679808565
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 24,
+            "targetMin": 15
+          },
+          "term": {
+            "phrase": "monitoring",
+            "type": "lsi",
+            "weight": 0.15420746695433116
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 12,
+            "targetMin": 9
+          },
+          "term": {
+            "phrase": "equipment",
+            "type": "lsi",
+            "weight": 0.1336738369792717
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 6,
+            "targetMin": 4
+          },
+          "term": {
+            "phrase": "contract",
+            "type": "lsi",
+            "weight": 0.08133141499720312
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "cove",
+            "type": "lsi",
+            "weight": 0.08017458652388264
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 8,
+            "targetMin": 5
+          },
+          "term": {
+            "phrase": "camera",
+            "type": "lsi",
+            "weight": 0.0758467599704393
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 10,
+            "targetMin": 7
+          },
+          "term": {
+            "phrase": "installation",
+            "type": "lsi",
+            "weight": 0.07534908778081983
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 8,
+            "targetMin": 8
+          },
+          "term": {
+            "phrase": "cameras",
+            "type": "lsi",
+            "weight": 0.03756355964053969
+          }
+        }
+      ],
+      "pTotal": {
+        "current": 0,
+        "max": 191,
+        "min": 115
+      },
+      "pageScore": {
+        "pageScore": 0,
+        "pageScoreValue": ""
+      },
+      "pageTitle": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "alternatives to vivint",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 1
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "variation",
+            "weight": 0.448933013064184
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "vivint",
+            "type": "variation",
+            "weight": 0.9475326383175694
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "alternatives",
+            "type": "variation",
+            "weight": 0.3911847912982369
+          }
+        }
+      ],
+      "pageTitleTotal": {
+        "current": 0,
+        "max": 5,
+        "min": 2
+      },
+      "strategy": "",
+      "subHeadings": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 1
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "professional monitoring",
+            "type": "lsi",
+            "weight": 1.9998713034345843
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "brinks home",
+            "type": "lsi",
+            "weight": 1.9996327969335541
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "variation",
+            "weight": 0.448933013064184
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "vivint alternative",
+            "type": "variation",
+            "weight": 0.3093598078385104
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "home security",
+            "type": "lsi",
+            "weight": 0.11184426111995192
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "adt",
+            "type": "lsi",
+            "weight": 1.997431152073309
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 2
+          },
+          "term": {
+            "phrase": "vivint",
+            "type": "variation",
+            "weight": 0.9475326383175694
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "alternatives",
+            "type": "variation",
+            "weight": 0.3911847912982369
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "alternative",
+            "type": "variation",
+            "weight": 0.2588280679808565
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cove",
+            "type": "lsi",
+            "weight": 0.08017458652388264
+          }
+        }
+      ],
+      "subHeadingsTotal": {
+        "current": 0,
+        "max": 17,
+        "min": 9
+      },
+      "title": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "alternatives to vivint",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 1
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "vivint alternatives",
+            "type": "variation",
+            "weight": 0.448933013064184
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "vivint",
+            "type": "variation",
+            "weight": 0.9475326383175694
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "alternatives",
+            "type": "variation",
+            "weight": 0.3911847912982369
+          }
+        }
+      ],
+      "titleTotal": {
+        "current": 0,
+        "max": 5,
+        "min": 2
+      }
+    },
+    "competitors": [
+      {
+        "createdAt": "2026-11-11 15:32:29",
+        "eatSchemaTypes": {},
+        "h2Texts": [
+          "Comparison of the Best Vivint Alternatives",
+          "Vivint Alternatives",
+          "Which One Is Right for You?",
+          "FAQs About Vivint Alternatives"
+        ],
+        "h3Texts": [
+          "1. ADT",
+          "Product Specs",
+          "2. SimpliSafe",
+          "Product Specs",
+          "3. Cove",
+          "Product Specs",
+          "Company",
+          "Research",
+          "Privacy Rights"
+        ],
+        "headingsTree": [
+          {
+            "children": [
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Comparison of the Best Vivint Alternatives"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "1. ADT"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Product Specs"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "2. SimpliSafe"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Product Specs"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "3. Cove"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Product Specs"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Vivint Alternatives"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Which One Is Right for You?"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Company"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Research"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Privacy Rights"
+                  }
+                ],
+                "tag": "h2",
+                "text": "FAQs About Vivint Alternatives"
+              }
+            ],
+            "tag": "h1",
+            "text": "3 Best Vivint Alternatives in 2026"
+          }
+        ],
+        "id": 19545062,
+        "isFirst": 1,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 1,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 1,
+          "h2": 3,
+          "h2_h3": 3,
+          "h2_h6": 3,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 26,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 1,
+          "json_ld_schema_format": 9,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 3,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 1,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2647
+        },
+        "rawLsiCounts": {
+          "a": 67,
+          "b": 0,
+          "bold": 1,
+          "figure_caption": 3,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 2,
+          "h2_h6": 10,
+          "h3": 2,
+          "h4": 8,
+          "h4_h6": 8,
+          "h5": 0,
+          "h6": 0,
+          "html": 909,
+          "i": 0,
+          "image_file_names": 63,
+          "img_alt": 24,
+          "json_ld_schema_format": 110,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 236,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 1,
+          "title": 1,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2647
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            4,
+            4,
+            4,
+            4,
+            0,
+            4
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            9,
+            9,
+            9,
+            9,
+            0,
+            9
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            9,
+            9,
+            9,
+            9,
+            0,
+            9
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            39,
+            39,
+            39,
+            39,
+            0,
+            39
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            134,
+            134,
+            134,
+            134,
+            0,
+            134
+          ],
+          [
+            "Image File total",
+            "img",
+            26,
+            26,
+            26,
+            26,
+            0,
+            26
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            26,
+            26,
+            26,
+            26,
+            0,
+            26
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            11,
+            11,
+            11,
+            11,
+            0,
+            11
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            9,
+            9,
+            9,
+            9,
+            0,
+            9
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            5,
+            5,
+            5,
+            5,
+            0,
+            5
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            17,
+            17,
+            17,
+            17,
+            0,
+            17
+          ],
+          [
+            "Table Total",
+            "table",
+            7,
+            7,
+            7,
+            7,
+            0,
+            7
+          ],
+          [
+            "Table Items Total",
+            "td",
+            146,
+            146,
+            146,
+            146,
+            0,
+            146
+          ],
+          [
+            "Form Total",
+            "form",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            4,
+            4,
+            4,
+            4,
+            0,
+            4
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            "Table of content",
+            "table of content",
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 12,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 1,
+          "h1": 3,
+          "h2": 9,
+          "h2_h3": 9,
+          "h2_h6": 18,
+          "h3": 0,
+          "h4": 9,
+          "h4_h6": 9,
+          "h5": 0,
+          "h6": 0,
+          "html": 203,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 3,
+          "json_ld_schema_format": 78,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 53,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 3,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2647
+        },
+        "runId": 1998915,
+        "schemaTypes": [
+          {
+            "count": 1,
+            "type": "Webpage"
+          },
+          {
+            "count": 1,
+            "type": "Imageobject"
+          },
+          {
+            "count": 1,
+            "type": "Breadcrumblist"
+          },
+          {
+            "count": 1,
+            "type": "Website"
+          },
+          {
+            "count": 2,
+            "type": "Organization"
+          },
+          {
+            "count": 1,
+            "type": "Article"
+          },
+          {
+            "count": 1,
+            "type": "Itemlist"
+          },
+          {
+            "count": 1,
+            "type": "Hentry"
+          },
+          {
+            "count": 1,
+            "type": "Faqpage"
+          }
+        ],
+        "sourceType": "organic",
+        "title": "3 Best Vivint Alternatives in 2026 | Security.org",
+        "url": "https://www.security.org/home-security-systems/vivint/alternatives/",
+        "urlSourceCode": "",
+        "wordCount": 2647
+      },
+      {
+        "createdAt": "2026-11-11 15:32:34",
+        "eatSchemaTypes": {},
+        "h2Texts": [
+          "ADT: Best Vivint Alternative",
+          "SimpliSafe: Best Budget Vivint Alternative",
+          "Frontpoint: An Excellent Vivint Alternative",
+          "Summary of Vivint Alternatives"
+        ],
+        "h3Texts": [
+          "Similarities Between Vivint and ADT",
+          "Differences Between Vivint and ADT",
+          "Similarities Between Vivint and SimpliSafe",
+          "Differences Between Vivint and SimpliSafe",
+          "Similarities Between Vivint and Frontpoint",
+          "Differences Between Vivint and Frontpoint"
+        ],
+        "headingsTree": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Similarities Between Vivint and ADT"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Differences Between Vivint and ADT"
+                  }
+                ],
+                "tag": "h2",
+                "text": "ADT: Best Vivint Alternative"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Similarities Between Vivint and SimpliSafe"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Differences Between Vivint and SimpliSafe"
+                  }
+                ],
+                "tag": "h2",
+                "text": "SimpliSafe: Best Budget Vivint Alternative"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Similarities Between Vivint and Frontpoint"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Differences Between Vivint and Frontpoint"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Frontpoint: An Excellent Vivint Alternative"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Summary of Vivint Alternatives"
+              }
+            ],
+            "tag": "h1",
+            "text": "The Top Three Alternatives to Vivint in 2026"
+          }
+        ],
+        "id": 19545064,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 1,
+          "h2_h3": 1,
+          "h2_h6": 1,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 2,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 1,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2542
+        },
+        "rawLsiCounts": {
+          "a": 61,
+          "b": 0,
+          "bold": 1,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 1,
+          "h2_h3": 3,
+          "h2_h6": 3,
+          "h3": 2,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 529,
+          "i": 0,
+          "image_file_names": 19,
+          "img_alt": 12,
+          "json_ld_schema_format": 8,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 205,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 1,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2542
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            4,
+            4,
+            4,
+            4,
+            0,
+            4
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            6,
+            6,
+            6,
+            6,
+            0,
+            6
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            4,
+            4,
+            4,
+            4,
+            0,
+            4
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            52,
+            52,
+            52,
+            52,
+            0,
+            52
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            126,
+            126,
+            126,
+            126,
+            0,
+            126
+          ],
+          [
+            "Image File total",
+            "img",
+            19,
+            19,
+            19,
+            19,
+            0,
+            19
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            19,
+            19,
+            19,
+            19,
+            0,
+            19
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            20,
+            20,
+            20,
+            20,
+            0,
+            20
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            10,
+            10,
+            10,
+            10,
+            0,
+            10
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Total",
+            "table",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Table Items Total",
+            "td",
+            30,
+            30,
+            30,
+            30,
+            0,
+            30
+          ],
+          [
+            "Form Total",
+            "form",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 8,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 3,
+          "h2": 12,
+          "h2_h3": 18,
+          "h2_h6": 18,
+          "h3": 6,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 211,
+          "i": 0,
+          "image_file_names": 1,
+          "img_alt": 8,
+          "json_ld_schema_format": 35,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 73,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 3,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2542
+        },
+        "runId": 1998915,
+        "schemaTypes": [
+          {
+            "count": 2,
+            "type": "Webpage"
+          },
+          {
+            "count": 1,
+            "type": "Person"
+          },
+          {
+            "count": 1,
+            "type": "Imageobject"
+          },
+          {
+            "count": 1,
+            "type": "Breadcrumblist"
+          },
+          {
+            "count": 1,
+            "type": "Website"
+          },
+          {
+            "count": 1,
+            "type": "Organization"
+          },
+          {
+            "count": 1,
+            "type": "Article"
+          }
+        ],
+        "sourceType": "organic",
+        "title": "The Top Three Alternatives to Vivint in 2026",
+        "url": "https://www.safehome.org/compare/vivint-alternative/",
+        "urlSourceCode": "",
+        "wordCount": 2542
+      },
+      {
+        "createdAt": "2026-11-11 15:32:38",
+        "eatSchemaTypes": {},
+        "h2Texts": [
+          "Why Guardian Alarm is a Strong Vivint Alternative",
+          "Top Vivint Alternatives",
+          "Vivint Alternatives Comparison",
+          "Choosing the Right Vivint Alternative"
+        ],
+        "h3Texts": [
+          "1. Guardian Alarm , Best Overall Vivint Alternative",
+          "2. ADT , best known national full-service brand",
+          "3. SimpliSafe , best for flexible DIY with professional monitoring",
+          "4. Ring , best for camera-focused smart home security",
+          "5. Abode , best for smart-home enthusiasts",
+          "6. Brinks Home , best for professionally designed systems",
+          "7. Frontpoint , best DIY system with strong customer support",
+          "8. Cove , best for affordable monitored security",
+          "9. Deep Sentinel , best for AI-powered camera monitoring",
+          "Frequently Asked Questions"
+        ],
+        "headingsTree": [
+          {
+            "children": [
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Why Guardian Alarm is a Strong Vivint Alternative"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "1. Guardian Alarm, Best Overall Vivint Alternative"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "2. ADT, best known national full-service brand"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "3. SimpliSafe, best for flexible DIY with professional monitoring"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "4. Ring,best for camera-focused smart home security"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "5. Abode, best for smart-home enthusiasts"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "6. Brinks Home, best for professionally designed systems"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "7. Frontpoint, best DIY system with strong customer support"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "8. Cove, best for affordable monitored security"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "9. Deep Sentinel, best for AI-powered camera monitoring"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Top Vivint Alternatives"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Vivint Alternatives Comparison"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Frequently Asked Questions"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Choosing the Right Vivint Alternative"
+              }
+            ],
+            "tag": "h1",
+            "text": "Top Vivint Alternatives for Home Security"
+          }
+        ],
+        "id": 19545066,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 3,
+          "figure_caption": 0,
+          "h1": 1,
+          "h2": 2,
+          "h2_h3": 2,
+          "h2_h6": 2,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 18,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 4,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 7,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 2,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 3,
+          "title": 1,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2190
+        },
+        "rawLsiCounts": {
+          "a": 28,
+          "b": 0,
+          "bold": 17,
+          "figure_caption": 0,
+          "h1": 2,
+          "h2": 0,
+          "h2_h3": 11,
+          "h2_h6": 11,
+          "h3": 11,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 339,
+          "i": 0,
+          "image_file_names": 3,
+          "img_alt": 0,
+          "json_ld_schema_format": 15,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 37,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 214,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 17,
+          "title": 2,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2190
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            4,
+            4,
+            4,
+            4,
+            0,
+            4
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            10,
+            10,
+            10,
+            10,
+            0,
+            10
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            103,
+            103,
+            103,
+            103,
+            0,
+            103
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            135,
+            135,
+            135,
+            135,
+            0,
+            135
+          ],
+          [
+            "Image File total",
+            "img",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            63,
+            63,
+            63,
+            63,
+            0,
+            63
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            4,
+            4,
+            4,
+            4,
+            0,
+            4
+          ],
+          [
+            "Table Total",
+            "table",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Table Items Total",
+            "td",
+            45,
+            45,
+            45,
+            45,
+            0,
+            45
+          ],
+          [
+            "Form Total",
+            "form",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            3,
+            3,
+            3,
+            3,
+            0,
+            3
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 12,
+          "figure_caption": 0,
+          "h1": 3,
+          "h2": 12,
+          "h2_h3": 15,
+          "h2_h6": 15,
+          "h3": 3,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 138,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 36,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 30,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 31,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 12,
+          "title": 3,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 2190
+        },
+        "runId": 1998915,
+        "schemaTypes": [
+          {
+            "count": 1,
+            "type": "Faqpage"
+          },
+          {
+            "count": 3,
+            "type": "Question"
+          },
+          {
+            "count": 3,
+            "type": "Answer"
+          },
+          {
+            "count": 1,
+            "type": "Article"
+          },
+          {
+            "count": 1,
+            "type": "Blogposting"
+          },
+          {
+            "count": 1,
+            "type": "Webpage"
+          },
+          {
+            "count": 1,
+            "type": "Imageobject"
+          },
+          {
+            "count": 1,
+            "type": "Breadcrumblist"
+          },
+          {
+            "count": 1,
+            "type": "Website"
+          },
+          {
+            "count": 1,
+            "type": "Organization"
+          },
+          {
+            "count": 1,
+            "type": "Person"
+          }
+        ],
+        "sourceType": "organic",
+        "title": "Best Vivint Alternatives for Home Security in 2026",
+        "url": "https://guardianalarm.com/blog/vivint-alternatives/",
+        "urlSourceCode": "",
+        "wordCount": 2190
+      }
+    ],
+    "contentBriefDataFile": {},
+    "createdAt": "2026-11-11 15:32:17",
+    "gCompetitors": [
+      {
+        "competitorSourceType": "organic",
+        "description": "",
+        "highlightedTerms": [],
+        "source": "",
+        "sourceLabel": "Custom",
+        "summary": {},
+        "title": "3 Best Vivint Alternatives in 2026 | Security.org",
+        "url": "https://www.security.org/home-security-systems/vivint/alternatives/",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "",
+        "highlightedTerms": [],
+        "source": "",
+        "sourceLabel": "Custom",
+        "summary": {},
+        "title": "The Top Three Alternatives to Vivint in 2026",
+        "url": "https://www.safehome.org/compare/vivint-alternative/",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "",
+        "highlightedTerms": [],
+        "source": "",
+        "sourceLabel": "Custom",
+        "summary": {},
+        "title": "Best Vivint Alternatives for Home Security in 2026",
+        "url": "https://guardianalarm.com/blog/vivint-alternatives/",
+        "validated": false
+      }
+    ],
+    "googleLocation": "United States",
+    "id": 1998915,
+    "ipAddress": "67.233.160.51",
+    "keyword": "vivint alternatives",
+    "lsaVariations": [
+      {
+        "averageCount": 48,
+        "isSecondaryKeyword": false,
+        "phrase": "vivint",
+        "targetCount": 0,
+        "weight": 0.9475326383175694
+      },
+      {
+        "averageCount": 6,
+        "isSecondaryKeyword": false,
+        "phrase": "vivint alternatives",
+        "targetCount": 0,
+        "weight": 0.448933013064184
+      },
+      {
+        "averageCount": 9,
+        "isSecondaryKeyword": false,
+        "phrase": "alternatives",
+        "targetCount": 0,
+        "weight": 0.3911847912982369
+      },
+      {
+        "averageCount": 5,
+        "isSecondaryKeyword": false,
+        "phrase": "vivint alternative",
+        "targetCount": 0,
+        "weight": 0.3093598078385104
+      },
+      {
+        "averageCount": 7,
+        "isSecondaryKeyword": false,
+        "phrase": "alternative",
+        "targetCount": 0,
+        "weight": 0.2588280679808565
+      },
+      {
+        "averageCount": 2,
+        "isSecondaryKeyword": false,
+        "phrase": "alternatives to vivint",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 1,
+        "isSecondaryKeyword": false,
+        "phrase": "alternative to vivint",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "vivint competitors",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "vivint competitor",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "competitors",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "competitor",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "companies like vivint",
+        "targetCount": 0,
+        "weight": 0.1
+      }
+    ],
+    "relatedQuestions": [
+      {
+        "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJXaGF0J3MgdGhlIGNoZWFwZXN0IFZpdmludCBwbGFuPyIsImxrIjoiR2g5M2FHRjBKM01nZEdobElHTm9aV0Z3WlhOMElIWnBkbWx1ZENCd2JHRnUiLCJicyI6ImMzWE9NUXZDTUJBRllGd3pPWWVDcHdpbGc0cVpoVkJRUnlkcDVyUkdjbUNUa3NTV19udGJwVlNoenUtNzk0NmNDQWd0US13aGFBV0ZWckpTUGtDR05ab0ExVU1henBaMDBVeVllalRrUUtMVUtVaVBWNURtTnB6MzNNdFNjUlpSaWg3a0xiemotamNtZ3V6Nkp3QV9DM25mYnF6WkNEd2phRnQyVEJWUGg2RUYzX3FnU3M3V2REVXdhUEEtelVoR0VxR3gwRVB6eFc1aFA2cWlHM2NTY3RjOXhWbEM0LVliR192UHptY3YiLCJpZCI6ImZjX1dvcjBhcW0tR1pxbGtQSVBsdldfcVF3XzUifQ==",
+        "page_token": "vKqKH3icHdBRbpswAABQ7TL9bCCkTIkUTaUYChomBhsb_1TGJnHBBJa6IeNznztHv3aYHWDn2AEm7R3h_fgwr-f-z6ertnZ6261W8zzfn8bxZNp7OQ4r8fb9LFdSGNMI2e_8z7775Sj34D0Jnr4lASIFqI0yNdUJ6iofr7cYmu2oOmjYAma8aCSJOuAqsFnPIQFVSDywkW701MS8Um7xrsAtV5XWmPGc9_1a4BSg8-OSU8Xo4DgZhX3lwjrrdCbYtDR9YtFghQgNL-MHjb00YwtP4TqNKC6GsoNTFSrRhhEt480GA3vFXTC1ceGo2LkhkvpovX2gz5POwHSoHGv5EnXYgUMeFRw7KgBascZL5ppF9itRQtLbhQCDmmfOmBcV6ja-IqLzDBCvjHlYVidHMe0XNNkwV1Ma8brslCiBPcAuQGq-O8rr3rv7_7l_OQ52N13G0y95aYVt1Yuwv7u_P_k_r0CKlw",
+        "question": "What's the cheapest Vivint plan?",
+        "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=vKqKH3icHdBRbpswAABQ7TL9bCCkTIkUTaUYChomBhsb_1TGJnHBBJa6IeNznztHv3aYHWDn2AEm7R3h_fgwr-f-z6ertnZ6261W8zzfn8bxZNp7OQ4r8fb9LFdSGNMI2e_8z7775Sj34D0Jnr4lASIFqI0yNdUJ6iofr7cYmu2oOmjYAma8aCSJOuAqsFnPIQFVSDywkW701MS8Um7xrsAtV5XWmPGc9_1a4BSg8-OSU8Xo4DgZhX3lwjrrdCbYtDR9YtFghQgNL-MHjb00YwtP4TqNKC6GsoNTFSrRhhEt480GA3vFXTC1ceGo2LkhkvpovX2gz5POwHSoHGv5EnXYgUMeFRw7KgBascZL5ppF9itRQtLbhQCDmmfOmBcV6ja-IqLzDBCvjHlYVidHMe0XNNkwV1Ma8brslCiBPcAuQGq-O8rr3rv7_7l_OQ52N13G0y95aYVt1Yuwv7u_P_k_r0CKlw",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJXaGF0J3MgdGhlIGNoZWFwZXN0IFZpdmludCBwbGFuPyIsImxrIjoiR2g5M2FHRjBKM01nZEdobElHTm9aV0Z3WlhOMElIWnBkbWx1ZENCd2JHRnUiLCJicyI6ImMzWE9NUXZDTUJBRllGd3pPWWVDcHdpbGc0cVpoVkJRUnlkcDVyUkdjbUNUa3NTV19udGJwVlNoenUtNzk0NmNDQWd0US13aGFBV0ZWckpTUGtDR05ab0ExVU1henBaMDBVeVllalRrUUtMVUtVaVBWNURtTnB6MzNNdFNjUlpSaWg3a0xiemotamNtZ3V6Nkp3QV9DM25mYnF6WkNEd2phRnQyVEJWUGg2RUYzX3FnU3M3V2REVXdhUEEtelVoR0VxR3gwRVB6eFc1aFA2cWlHM2NTY3RjOXhWbEM0LVliR192UHptY3YiLCJpZCI6ImZjX1dvcjBhcW0tR1pxbGtQSVBsdldfcVF3XzUifQ%3D%3D",
+        "type": "ai_overview"
+      },
+      {
+        "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJBcmUgQURUIGFuZCBWaXZpbnQgdGhlIHNhbWU/IiwibGsiOiJHaHBwY3lCaFpIUWdZVzVrSUhacGRtbHVkQ0IwYUdVZ2MyRnRaUSIsImJzIjoiYzNYT01RdkNNQkFGWUZ3ek9ZZUNwd2lsZzRxWmhWQlFSeWRwNXJSR2NtQ1Rrc1NXX250YnBWU2h6dS03OTQ2Y0NBZ3RRLXdoYUFXRlZySlNQa0NHTlpvQTFVTWF6cFowMFV5WWVqVGtRS0xVS1VpUFY1RG1OcHozM010U2NSWlJpaDdrTGJ6ai1qY21ndXo2SndBX0MzbmZicXpaQ0R3amFGdDJUQlZQaDZFRjNfcWdTczdXZERVd2FQQS16VWhHRXFHeDBFUHp4VzVoUDZxaUczY1NjdGM5eFZsQzQtWWJHX3ZQem1jdiIsImlkIjoiZmNfV29yMGFxbS1HWnFsa1BJUGx2V19xUXdfNSJ9",
+        "page_token": "P3SzHHicHdBNboJAGIDh9DIuCwNqUxPTZCqgpgzhZ4afjRlnRIRvGKJUqssue46uepgeoOfoAWq6ffOs3vdPOLTNz11W9X13mhnGMAz3e633sLsXWhn8dGmFITjAlotmNn2YoqdSzJ3TgJ_1gEMaOTlIyDOoYmtyKJL1mjodowoufIntXYqu1KyCsOl0pNwsVb5JaghycA83w3ybmFFLSrLAlq8kzq_hmKkKySy0Y_rocbQ3qQNXviQedVYTUbs-Yev8hUHO4NaybpUuqtdkUTR-TTBNWCFTWEhV6BBIFsdoSZtqCJKoYC21uSkmaZKjtNWxi-RZ1LgSqdlHqHvben0YM3ySIEvBXNs7rHHsjIcokV5mrcwg05dUVdNts0K0ZRDGqCFL1y2s3PQ91I5KcZ7bo_9j802p-ll31Psvcdzxfic3vP-ufz-KP2DhgEA",
+        "question": "Are ADT and Vivint the same?",
+        "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=P3SzHHicHdBNboJAGIDh9DIuCwNqUxPTZCqgpgzhZ4afjRlnRIRvGKJUqssue46uepgeoOfoAWq6ffOs3vdPOLTNz11W9X13mhnGMAz3e633sLsXWhn8dGmFITjAlotmNn2YoqdSzJ3TgJ_1gEMaOTlIyDOoYmtyKJL1mjodowoufIntXYqu1KyCsOl0pNwsVb5JaghycA83w3ybmFFLSrLAlq8kzq_hmKkKySy0Y_rocbQ3qQNXviQedVYTUbs-Yev8hUHO4NaybpUuqtdkUTR-TTBNWCFTWEhV6BBIFsdoSZtqCJKoYC21uSkmaZKjtNWxi-RZ1LgSqdlHqHvben0YM3ySIEvBXNs7rHHsjIcokV5mrcwg05dUVdNts0K0ZRDGqCFL1y2s3PQ91I5KcZ7bo_9j802p-ll31Psvcdzxfic3vP-ufz-KP2DhgEA",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJBcmUgQURUIGFuZCBWaXZpbnQgdGhlIHNhbWU%2FIiwibGsiOiJHaHBwY3lCaFpIUWdZVzVrSUhacGRtbHVkQ0IwYUdVZ2MyRnRaUSIsImJzIjoiYzNYT01RdkNNQkFGWUZ3ek9ZZUNwd2lsZzRxWmhWQlFSeWRwNXJSR2NtQ1Rrc1NXX250YnBWU2h6dS03OTQ2Y0NBZ3RRLXdoYUFXRlZySlNQa0NHTlpvQTFVTWF6cFowMFV5WWVqVGtRS0xVS1VpUFY1RG1OcHozM010U2NSWlJpaDdrTGJ6ai1qY21ndXo2SndBX0MzbmZicXpaQ0R3amFGdDJUQlZQaDZFRjNfcWdTczdXZERVd2FQQS16VWhHRXFHeDBFUHp4VzVoUDZxaUczY1NjdGM5eFZsQzQtWWJHX3ZQem1jdiIsImlkIjoiZmNfV29yMGFxbS1HWnFsa1BJUGx2V19xUXdfNSJ9",
+        "type": "ai_overview"
+      },
+      {
+        "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSBiZXN0IG5vbi1XaUZpIGhvbWUgc2VjdXJpdHkgc3lzdGVtPyIsImxrIjoiR2lKaVpYTjBJRzV2YmlCM2FXWnBJR2h2YldVZ2MyVmpkWEpwZEhrZ2MzbHpkR1Z0IiwiYnMiOiJjM1hPTVF2Q01CQUZZRnd6T1llQ3B3aWxnNHFaaFZCUVJ5ZHA1clJHY21DVGtzU1dfbnRicFZTaHp1LTc5NDZjQ0FndFEtd2hhQVdGVnJKU1BrQ0dOWm9BMVVNYXpwWjAwVXlZZWpUa1FLTFVLVWlQVjVEbU5wejMzTXRTY1JaUmloN2tMYnpqLWpjbWd1ejZKd0FfQzNuZmJxelpDRHdqYUZ0MlRCVlBoNkVGM19xZ1NzN1dkRFV3YVBBLXpVaEdFcUd4MEVQenhXNWhQNnFpRzNjU2N0Yzl4VmxDNC1ZYkdfdlB6bWN2IiwiaWQiOiJmY19Xb3IwYXFtLUdacWxrUElQbHZXX3FRd181In0=",
+        "page_token": "3n6DG3icHdBdbpswAABg7TJ9bAAv3RYpmsZiF1ghsoNt8Etl7CQGDGSBhp_HPu4cfephdoCdYweYtO8I3-ubLdv6z4ebGYZLv1mtxnG8P3fd2R7vVdesZD-3aqWktYVU9ebh04P79aS28CX0v_8MfUwJzK22vPLrhNcLaUiUPgqK3fNC3NyRiGFRsVl5gxvvmJEOOpCArgViQDEyUdf3c5v0eXuZtI3HBPgBy-yOVszmrXnZQzIlLvkRe1F1QNilwbd12uCPaSZmAi3fB36dgsTn6LNHmC2LDM0YaBNTAlR9uaU8nHGmaZGJhTpJKqAYKTRlseiSp0l1cHTPLdnR-gtirVj4I1pwK3xodFaAcMwzNDxRLRWfrhRaXAQiywAieupKTM0-hhQQL7qpelo_MQtFFS3YG3rZrN2Eokg4xmgQLhjfndRtC-7-f26fT82wuVy787u6HuVw1M9y-F39_SX-AcMli2U",
+        "question": "What is the best non-WiFi home security system?",
+        "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=3n6DG3icHdBdbpswAABg7TJ9bAAv3RYpmsZiF1ghsoNt8Etl7CQGDGSBhp_HPu4cfephdoCdYweYtO8I3-ubLdv6z4ebGYZLv1mtxnG8P3fd2R7vVdesZD-3aqWktYVU9ebh04P79aS28CX0v_8MfUwJzK22vPLrhNcLaUiUPgqK3fNC3NyRiGFRsVl5gxvvmJEOOpCArgViQDEyUdf3c5v0eXuZtI3HBPgBy-yOVszmrXnZQzIlLvkRe1F1QNilwbd12uCPaSZmAi3fB36dgsTn6LNHmC2LDM0YaBNTAlR9uaU8nHGmaZGJhTpJKqAYKTRlseiSp0l1cHTPLdnR-gtirVj4I1pwK3xodFaAcMwzNDxRLRWfrhRaXAQiywAieupKTM0-hhQQL7qpelo_MQtFFS3YG3rZrN2Eokg4xmgQLhjfndRtC-7-f26fT82wuVy787u6HuVw1M9y-F39_SX-AcMli2U",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSBiZXN0IG5vbi1XaUZpIGhvbWUgc2VjdXJpdHkgc3lzdGVtPyIsImxrIjoiR2lKaVpYTjBJRzV2YmlCM2FXWnBJR2h2YldVZ2MyVmpkWEpwZEhrZ2MzbHpkR1Z0IiwiYnMiOiJjM1hPTVF2Q01CQUZZRnd6T1llQ3B3aWxnNHFaaFZCUVJ5ZHA1clJHY21DVGtzU1dfbnRicFZTaHp1LTc5NDZjQ0FndFEtd2hhQVdGVnJKU1BrQ0dOWm9BMVVNYXpwWjAwVXlZZWpUa1FLTFVLVWlQVjVEbU5wejMzTXRTY1JaUmloN2tMYnpqLWpjbWd1ejZKd0FfQzNuZmJxelpDRHdqYUZ0MlRCVlBoNkVGM19xZ1NzN1dkRFV3YVBBLXpVaEdFcUd4MEVQenhXNWhQNnFpRzNjU2N0Yzl4VmxDNC1ZYkdfdlB6bWN2IiwiaWQiOiJmY19Xb3IwYXFtLUdacWxrUElQbHZXX3FRd181In0%3D",
+        "type": "ai_overview"
+      },
+      {
+        "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJXaGljaCBpcyB0aGUgTm8uIDEgc2VjdXJpdHkgY2FtZXJhIGJyYW5kPyIsImxrIjoiR2lkM2FHbGphQ0JwY3lCMGFHVWdibThnTVNCelpXTjFjbWwwZVNCallXMWxjbUVnWW5KaGJtUSIsImJzIjoiYzNYT01RdkNNQkFGWUZ3ek9ZZUNwd2lsZzRxWmhWQlFSeWRwNXJSR2NtQ1Rrc1NXX250YnBWU2h6dS03OTQ2Y0NBZ3RRLXdoYUFXRlZySlNQa0NHTlpvQTFVTWF6cFowMFV5WWVqVGtRS0xVS1VpUFY1RG1OcHozM010U2NSWlJpaDdrTGJ6ai1qY21ndXo2SndBX0MzbmZicXpaQ0R3amFGdDJUQlZQaDZFRjNfcWdTczdXZERVd2FQQS16VWhHRXFHeDBFUHp4VzVoUDZxaUczY1NjdGM5eFZsQzQtWWJHX3ZQem1jdiIsImlkIjoiZmNfV29yMGFxbS1HWnFsa1BJUGx2V19xUXdfNSJ9",
+        "page_token": "OlCn-XicHdBdbpswAABg7TJ9bDCs6RopmprFNEQ1rY1twC-VsZO42Pw0uCHhsY87x552mB1g5-gBJu07wvfxy7229u-Xk_G-Hxaz2TiO14euO7jdteqamRwurZop6VwllV3Mb-fg-14t4Xuy-vGWrDAjsHTa5ZZvKvstkPQQUsB5xrY1C9EkIdkwIGrEnVWhiRgljxncElWTjFnxri0YssCtSY2-6togCXrGHoaARz1B8cqQgB9z6xoU348y7G7wZNqKimcZ9l3ZkjKH56hsPKEBOInW-SLEIJ0cwcHNnjDAJAQ9z3ubgW1BQtMQePdcNT6lOSG7ddpSCwPZgJxafKHWb1FQXtI1b6HRRRUlY1nE_pFpqfLzkUGHq40oiigm-ty9YmaeEGRRBodJc8cR0G_YmUQG4qSgSJ7iu0mEmvE4nTN8tVenZXT1_3P5sm_8oj92h9_quJN-p1-k_1N__hT_AJsyixA",
+        "question": "Which is the No. 1 security camera brand?",
+        "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=OlCn-XicHdBdbpswAABg7TJ9bDCs6RopmprFNEQ1rY1twC-VsZO42Pw0uCHhsY87x552mB1g5-gBJu07wvfxy7229u-Xk_G-Hxaz2TiO14euO7jdteqamRwurZop6VwllV3Mb-fg-14t4Xuy-vGWrDAjsHTa5ZZvKvstkPQQUsB5xrY1C9EkIdkwIGrEnVWhiRgljxncElWTjFnxri0YssCtSY2-6togCXrGHoaARz1B8cqQgB9z6xoU348y7G7wZNqKimcZ9l3ZkjKH56hsPKEBOInW-SLEIJ0cwcHNnjDAJAQ9z3ubgW1BQtMQePdcNT6lOSG7ddpSCwPZgJxafKHWb1FQXtI1b6HRRRUlY1nE_pFpqfLzkUGHq40oiigm-ty9YmaeEGRRBodJc8cR0G_YmUQG4qSgSJ7iu0mEmvE4nTN8tVenZXT1_3P5sm_8oj92h9_quJN-p1-k_1N__hT_AJsyixA",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk5scHNhbmh4YTNSNVlVcEhhbXRPV1U1Q1VXSmZla3hSUlZWRWFEWktSQzFMTkVzemRVUmhUSEpZWW5BMVYyVmZXVkEyWVhKMVVXOVBlRkJRTjA5NmFqUjJUVTlFYWxKU1ZqRjFMVkF0Tmt0MlRGVnJaVFE0U1hBelFSSVhWMjl5TUdGeGJTMUhXbkZzYTFCSlVHeDJWMTl4VVhjYUlrRklUakJGTjBoM2QzSllZMVpDVTNCQ1ptaEdkaTFKVXpobmNYQlhTWFJWWDBFIiwiZmN2IjoiMyIsImVpIjoiV29yMGFxbS1HWnFsa1BJUGx2V19xUXciLCJxYyI6IkNoTjJhWFpwYm5RZ1lXeDBaWEp1WVhScGRtVnpFQUI5cERidFBnIiwicXVlc3Rpb24iOiJXaGljaCBpcyB0aGUgTm8uIDEgc2VjdXJpdHkgY2FtZXJhIGJyYW5kPyIsImxrIjoiR2lkM2FHbGphQ0JwY3lCMGFHVWdibThnTVNCelpXTjFjbWwwZVNCallXMWxjbUVnWW5KaGJtUSIsImJzIjoiYzNYT01RdkNNQkFGWUZ3ek9ZZUNwd2lsZzRxWmhWQlFSeWRwNXJSR2NtQ1Rrc1NXX250YnBWU2h6dS03OTQ2Y0NBZ3RRLXdoYUFXRlZySlNQa0NHTlpvQTFVTWF6cFowMFV5WWVqVGtRS0xVS1VpUFY1RG1OcHozM010U2NSWlJpaDdrTGJ6ai1qY21ndXo2SndBX0MzbmZicXpaQ0R3amFGdDJUQlZQaDZFRjNfcWdTczdXZERVd2FQQS16VWhHRXFHeDBFUHp4VzVoUDZxaUczY1NjdGM5eFZsQzQtWWJHX3ZQem1jdiIsImlkIjoiZmNfV29yMGFxbS1HWnFsa1BJUGx2V19xUXdfNSJ9",
+        "type": "ai_overview"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=Vivint+alternatives+reddit&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAgzEAE",
+        "query": "Vivint alternatives reddit",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=Vivint+alternatives+reddit"
+      },
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=Best+vivint+alternatives&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAhLEAE",
+        "query": "Best vivint alternatives",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=Best+vivint+alternatives"
+      },
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=Vivint+alternatives+cost&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAhHEAE",
+        "query": "Vivint alternatives cost",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=Vivint+alternatives+cost"
+      },
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=SimpliSafe&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAhEEAE",
+        "query": "SimpliSafe",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=SimpliSafe"
+      },
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=Vivint+alternatives+amazon&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAhAEAE",
+        "query": "Vivint alternatives amazon",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=Vivint+alternatives+amazon"
+      },
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=ADT+vs+Vivint&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAg7EAE",
+        "query": "ADT vs Vivint",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=ADT+vs+Vivint"
+      },
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=Vivint+vs+ADT+pricing&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAg2EAE",
+        "query": "Vivint vs ADT pricing",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=Vivint+vs+ADT+pricing"
+      },
+      {
+        "block_position": 1,
+        "link": "https://www.google.com/search?sca_esv=f091eafeca5423ae&gl=us&sxsrf=AKL5yDjgZjZNUoy_O_uJtycvCMua8AvNUQ:1794411098427&q=ADT+vs+Vivint+reddit&sa=X&ved=2ahUKEwip0-ignoCYAxWaEkQIHZb6L8UQ1QJ6BAg1EAE",
+        "query": "ADT vs Vivint reddit",
+        "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&location=United+States&q=ADT+vs+Vivint+reddit"
+      }
+    ],
+    "schemaTypes": [],
+    "secondaryKeywords": [],
+    "status": "SUCCESS",
+    "subHeadingsCount": 13,
+    "tagCounts": [
+      {
+        "comment": "Use 1 H1 Tag in your page",
+        "max": 1,
+        "mean": 1,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "H1 Tag Total"
+      },
+      {
+        "comment": "Use 4 H2 Tag in your page",
+        "max": 4,
+        "mean": 4,
+        "min": 4,
+        "signalCnt": 0,
+        "tagLabel": "H2 Tag Total"
+      },
+      {
+        "comment": "Use 10 H3 Tag in your page",
+        "max": 10,
+        "mean": 9.5,
+        "min": 9,
+        "signalCnt": 0,
+        "tagLabel": "H3 Tag Total"
+      },
+      {
+        "comment": "Use 6 H4 Tag in your page",
+        "max": 9,
+        "mean": 6.5,
+        "min": 4,
+        "signalCnt": 0,
+        "tagLabel": "H4 Tag Total"
+      },
+      {
+        "comment": "Do not use any H5 Tag in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "H5 Tag Total"
+      },
+      {
+        "comment": "Do not use any H6 Tag in your page",
+        "max": 1,
+        "mean": 0.33,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "H6 Tag Total"
+      },
+      {
+        "comment": "Use 65 Paragraph Text Tag in your page",
+        "max": 103,
+        "mean": 64.67,
+        "min": 39,
+        "signalCnt": 0,
+        "tagLabel": "Paragraph Text Tag Total"
+      },
+      {
+        "comment": "Use 134 Anchor Text Tag in your page",
+        "max": 135,
+        "mean": 134.5,
+        "min": 134,
+        "signalCnt": 0,
+        "tagLabel": "Anchor Text Tag Total"
+      },
+      {
+        "comment": "Use 22 Image File in your page",
+        "max": 26,
+        "mean": 22.5,
+        "min": 19,
+        "signalCnt": 0,
+        "tagLabel": "Image File total"
+      },
+      {
+        "comment": "Use 22 Image Alt Tag in your page",
+        "max": 26,
+        "mean": 22.5,
+        "min": 19,
+        "signalCnt": 0,
+        "tagLabel": "Image Alt Tag Total"
+      },
+      {
+        "comment": "Use 31 Bold Tag in your page",
+        "max": 63,
+        "mean": 31.33,
+        "min": 11,
+        "signalCnt": 0,
+        "tagLabel": "Bold Tag Total"
+      },
+      {
+        "comment": "Use 10 Italic Tag in your page",
+        "max": 10,
+        "mean": 9.5,
+        "min": 9,
+        "signalCnt": 0,
+        "tagLabel": "Italic Tag Total"
+      },
+      {
+        "comment": "Do not use any Video File in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Video File Total"
+      },
+      {
+        "comment": "Do not use any Ordered List in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Ordered List Total"
+      },
+      {
+        "comment": "Do not use any Ordered List Items in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Ordered List Items Total"
+      },
+      {
+        "comment": "Use 3 Unordered List in your page",
+        "max": 5,
+        "mean": 3,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Unordered List Total"
+      },
+      {
+        "comment": "Use 10 Unordered List Items in your page",
+        "max": 17,
+        "mean": 10.5,
+        "min": 4,
+        "signalCnt": 0,
+        "tagLabel": "Unordered List Items Total"
+      },
+      {
+        "comment": "Use 1 Table in your page",
+        "max": 1,
+        "mean": 1,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Table Total"
+      },
+      {
+        "comment": "Use 74 Table Items in your page",
+        "max": 146,
+        "mean": 73.67,
+        "min": 30,
+        "signalCnt": 0,
+        "tagLabel": "Table Items Total"
+      },
+      {
+        "comment": "Use 1 Form in your page",
+        "max": 2,
+        "mean": 1.33,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Form Total"
+      },
+      {
+        "comment": "Use 4 iFrame in your page",
+        "max": 4,
+        "mean": 3.5,
+        "min": 3,
+        "signalCnt": 0,
+        "tagLabel": "iFrame Total"
+      },
+      {
+        "comment": "Add FAQ section to your target page",
+        "max": 1,
+        "mean": 1,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Frequently Asked Questions"
+      },
+      {
+        "comment": "Add Table of content section to your target page",
+        "max": 1,
+        "mean": 1,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Table of content"
+      }
+    ],
+    "url": "https://secureliving.com/",
+    "variations": [
+      "vivint",
+      "vivint alternatives",
+      "vivint alternative",
+      "alternatives to vivint",
+      "alternative to vivint",
+      "alternatives",
+      "alternative",
+      "vivint competitors",
+      "vivint competitor",
+      "competitors",
+      "competitor",
+      "companies like vivint"
+    ],
+    "wordCount": {
+      "current": 0,
+      "target": 2594
+    }
+  },
+  "status": "SUCCESS"
+}

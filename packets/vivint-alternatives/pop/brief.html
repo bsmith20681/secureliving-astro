@@ -1,0 +1,296 @@
+<title>Vivint Alternatives POP Brief</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: SEO-tool workspace. Breadcrumb + tab strip, summary card row, then stacked white section cards with term tables */
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --fg:#0f2d3d; --muted:#6b7c88; --line:#e4e8ec; --row:#f1f4f6;
+  --brand:#ff5a1f; --brand-fg:#ffffff; --link:#2f7fd8;
+  --ok:#22c55e; --under:#f59e0b; --over:#a78bfa; --must:#e5233b;
+  --var-bg:#d6eefc; --var-fg:#2b6d99; --lsi-bg:#e9e4fb; --lsi-fg:#5b49b0;
+  --ring:#0f5b52;
+  --font:"Nunito","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f151b; --card:#172029; --fg:#e3eaf0; --muted:#94a4b1; --line:#27333e; --row:#1c2731;
+  --brand:#ff6e3a; --link:#6aaeff; --var-bg:#173a52; --var-fg:#8fcdf5; --lsi-bg:#2a2450; --lsi-fg:#c2b6ff; --ring:#3fc5b2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151b; --card:#172029; --fg:#e3eaf0; --muted:#94a4b1; --line:#27333e; --row:#1c2731;
+  --brand:#ff6e3a; --link:#6aaeff; --var-bg:#173a52; --var-fg:#8fcdf5; --lsi-bg:#2a2450; --lsi-fg:#c2b6ff; --ring:#3fc5b2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:14px/1.5 var(--font)}
+.wrap{max-width:1200px;margin:0 auto;padding-block:20px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:18px}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--link)}
+.crumb{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.crumb b{color:var(--fg);font-weight:700}
+.tabs{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);margin-top:-4px}
+.tab{font:700 13px var(--font);color:var(--fg);background:none;border:0;padding:8px 10px;border-radius:6px 6px 0 0;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent}
+.tab[aria-selected="true"]{background:color-mix(in srgb,var(--brand) 12%,transparent);border-bottom-color:var(--brand)}
+.tab:focus-visible,.btn:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+h1{font:800 24px/1.2 var(--font);margin:0;display:flex;align-items:center;gap:8px}
+h1 .badge{font-size:11px;background:var(--brand);color:var(--brand-fg);border-radius:6px;padding:2px 7px;font-weight:700}
+h2{font:800 16px/1.2 var(--font);margin:0}
+.info{display:inline-grid;place-items:center;width:14px;height:14px;border-radius:50%;background:var(--fg);color:var(--card);font-size:9px;font-weight:800;vertical-align:1px;margin-left:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px}
+.summary{display:grid;grid-template-columns:minmax(0,2.2fr) repeat(3,minmax(0,1fr));gap:12px}
+.sum-main{padding:16px 18px;display:grid;gap:10px;align-content:space-between}
+.sum-main .kv{display:grid;gap:4px;font-size:12.5px;color:var(--muted)}
+.sum-main .kv b{color:var(--fg);font-weight:700}
+.sum-head{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:700 12.5px var(--font);border-radius:999px;padding:6px 14px;border:1.5px solid var(--fg);background:var(--card);color:var(--fg);cursor:pointer}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:var(--brand-fg)}
+.btn:hover{filter:brightness(.97)}
+.metric{padding:14px 16px;display:grid;gap:8px;align-content:start}
+.metric h3{font:800 13.5px/1.25 var(--font);margin:0}
+.ring{display:flex;align-items:center;gap:12px}
+.ring svg{flex:none}
+.ring b{font:700 22px var(--font)}
+.wcount{display:flex;align-items:baseline;gap:8px;border-bottom:2px solid var(--ring);padding-bottom:6px}
+.wcount b{font:800 26px var(--font)}
+.wcount span{font-size:12px;color:var(--muted)}
+.metric p{margin:0;font-size:12.5px;color:var(--muted)}
+.big-n{font:800 24px var(--font)}
+.toolrow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+select{font:600 12.5px var(--font);color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+.sec{padding:14px 16px 10px;display:grid;gap:8px}
+.sec-top{display:flex;justify-content:space-between;align-items:center;gap:8px 18px;flex-wrap:wrap}
+.sec-top .meta{font-size:12.5px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.sec-top .meta b{color:var(--fg)}
+.more{font-size:12px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
+th{background:var(--row);text-align:left;font-weight:800;padding:8px 10px;font-size:12.5px}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.term label{display:flex;gap:8px;align-items:center;cursor:pointer}
+td.term input{margin:0;accent-color:var(--brand)}
+tr.done td.term span{text-decoration:line-through;color:var(--muted)}
+.col-cur{width:22%}.col-tgt{width:30%}
+.tgt{display:flex;align-items:center;gap:10px}
+.tgt .r{min-width:44px}
+.dot{width:9px;height:9px;border-radius:50%;flex:none;display:inline-block}
+.dot.ok{background:var(--ok)}.dot.under{background:var(--under)}.dot.over{background:var(--over)}
+.pill{font-size:10px;font-weight:800;border-radius:3px;padding:2px 6px;white-space:nowrap}
+.pill.must{background:var(--must);color:#fff}
+.pill.var{background:var(--var-bg);color:var(--var-fg)}
+.pill.lsi{background:var(--lsi-bg);color:var(--lsi-fg)}
+.sec-foot{display:flex;gap:14px;font-size:12px;padding-top:4px}
+.linkbtn{font:600 12px var(--font);color:var(--link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px}
+td.n,th.n{text-align:right}
+tr.none td{color:var(--muted)}
+ul.q{margin:0;padding:0;list-style:none}
+ul.q li{padding:9px 2px;border-bottom:1px solid var(--line)}
+ul.q li:last-child{border-bottom:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px}
+.comps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.comp{padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.comp a{font-weight:800;color:var(--fg);text-decoration:none;overflow-wrap:anywhere}
+.comp a:hover{text-decoration:underline}
+.comp .host{font-size:12px;color:var(--muted)}
+.comp h4{margin:6px 0 0;font:800 11.5px var(--font);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.comp ul{margin:0;padding-left:18px;font-size:13px;display:grid;gap:2px}
+.wcb{height:6px;background:var(--row);border-radius:3px;overflow:hidden}
+.wcb i{display:block;height:100%;background:var(--ring)}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+@media (max-width:860px){.summary{grid-template-columns:repeat(3,minmax(0,1fr))}.sum-main{grid-column:1/-1}}
+@media (max-width:520px){.summary{grid-template-columns:minmax(0,1fr)}}
+</style>
+
+<div class="wrap">
+  <div class="crumb"><span>secureliving.com</span><span>›</span><b id="crumb-kw"></b></div>
+  <div class="tabs" role="tablist" aria-label="Report views">
+    <button class="tab" role="tab" id="tab-brief" data-view="brief" aria-selected="true">Content brief</button>
+    <button class="tab" role="tab" id="tab-structure" data-view="structure" aria-selected="false">Page structure</button>
+    <button class="tab" role="tab" id="tab-questions" data-view="questions" aria-selected="false">Questions &amp; searches</button>
+    <button class="tab" role="tab" id="tab-competitors" data-view="competitors" aria-selected="false">Competitors</button>
+  </div>
+
+  <h1 id="view-title">Content brief <span class="badge">POP</span></h1>
+
+  <div class="summary">
+    <div class="card sum-main">
+      <div class="sum-head"><h2>Summary</h2><span style="font-size:13px">Keyword: <b id="sum-kw"></b></span></div>
+      <div class="kv" id="sum-kv"></div>
+      <div class="btns"><button class="btn primary" id="copy-all">Copy brief as text</button><button class="btn" id="reset-checks">Clear checkmarks</button></div>
+    </div>
+    <div class="card metric">
+      <h3>Content Brief Optimization Score <span class="info">i</span></h3>
+      <div class="ring" id="score"></div>
+    </div>
+    <div class="card metric">
+      <h3>Current Word Count</h3>
+      <div class="wcount"><b class="num" id="wc-cur"></b><span>Target: <b class="num" id="wc-tgt"></b></span></div>
+      <p>Page not built yet, so current counts are 0.</p>
+    </div>
+    <div class="card metric">
+      <h3>Page Sections <span class="info">i</span></h3>
+      <div><span class="big-n num" id="sections-n"></span> <span style="font-size:12.5px;color:var(--muted)">sections recommended</span></div>
+      <p id="sections-note"></p>
+    </div>
+  </div>
+
+  <!-- Content brief view -->
+  <div id="view-brief" style="display:grid;gap:14px">
+    <div class="toolrow">
+      <div class="legend"><span><i class="dot under"></i>Under target</span><span><i class="dot ok"></i>In range</span><span><i class="dot over"></i>Over target</span></div>
+      <label>Sort by: <select id="sort"><option value="imp">Most Important</option><option value="tgt">Highest target</option><option value="az">A–Z</option></select></label>
+    </div>
+    <div id="sections" style="display:grid;gap:14px"></div>
+  </div>
+
+  <!-- Page structure view -->
+  <div id="view-structure" hidden>
+    <div class="card sec">
+      <div class="sec-top"><h2>Page structure</h2><span class="meta">Ranges come from the competitor pages</span></div>
+      <div class="tbl"><table id="tags"><thead><tr><th>Element</th><th class="n">Current</th><th class="n">Competitor range</th><th>Recommendation</th></tr></thead><tbody></tbody></table></div>
+      <p class="note">Anchor, form and iframe counts include the competitors' site navigation and footers, so treat them loosely.</p>
+    </div>
+  </div>
+
+  <!-- Questions view -->
+  <div id="view-questions" class="grid2" hidden>
+    <div class="card sec"><div class="sec-top"><h2>People also ask</h2><span class="meta">FAQ or H2 candidates</span></div><ul class="q" id="paa"></ul></div>
+    <div class="card sec"><div class="sec-top"><h2>Related searches</h2></div><div class="chips" id="rs"></div></div>
+  </div>
+
+  <!-- Competitors view -->
+  <div id="view-competitors" hidden style="display:grid;gap:14px">
+    <div class="toolrow"><span id="comp-avg"></span></div>
+    <div class="comps" id="comps"></div>
+  </div>
+</div>
+
+<script>
+const D = {"keyword":"vivint alternatives","reportId":1998915,"date":"2026-11-11 15:32:49","location":"United States","url":"https://secureliving.com/","wc":2594,"wcCur":0,"score":0,"sectionsRec":13,"sections":[{"name":"Search Engine Title","total":[2,5],"cur":0,"rows":[{"t":"alternatives to vivint","ty":"variation","w":0.1,"cur":0,"min":0,"max":1},{"t":"vivint alternatives","ty":"keyword","w":1,"cur":0,"min":1,"max":1},{"t":"vivint alternatives","ty":"variation","w":0.4489,"cur":0,"min":0,"max":1},{"t":"vivint","ty":"variation","w":0.9475,"cur":0,"min":1,"max":1},{"t":"alternatives","ty":"variation","w":0.3912,"cur":0,"min":1,"max":1}]},{"name":"Page Title","total":[2,5],"cur":0,"rows":[{"t":"alternatives to vivint","ty":"variation","w":0.1,"cur":0,"min":0,"max":1},{"t":"vivint alternatives","ty":"keyword","w":1,"cur":0,"min":1,"max":1},{"t":"vivint alternatives","ty":"variation","w":0.4489,"cur":0,"min":0,"max":1},{"t":"vivint","ty":"variation","w":0.9475,"cur":0,"min":1,"max":1},{"t":"alternatives","ty":"variation","w":0.3912,"cur":0,"min":1,"max":1}]},{"name":"SubHeadings","total":[9,17],"cur":0,"rows":[{"t":"vivint alternatives","ty":"keyword","w":1,"cur":0,"min":1,"max":1},{"t":"professional monitoring","ty":"lsi","w":1.9999,"cur":0,"min":0,"max":1},{"t":"brinks home","ty":"lsi","w":1.9996,"cur":0,"min":0,"max":1},{"t":"vivint alternatives","ty":"variation","w":0.4489,"cur":0,"min":1,"max":2},{"t":"vivint alternative","ty":"variation","w":0.3094,"cur":0,"min":1,"max":2},{"t":"home security","ty":"lsi","w":0.1118,"cur":0,"min":0,"max":1},{"t":"adt","ty":"lsi","w":1.9974,"cur":0,"min":1,"max":2},{"t":"vivint","ty":"variation","w":0.9475,"cur":0,"min":2,"max":2},{"t":"alternatives","ty":"variation","w":0.3912,"cur":0,"min":1,"max":2},{"t":"alternative","ty":"variation","w":0.2588,"cur":0,"min":1,"max":2},{"t":"cove","ty":"lsi","w":0.0802,"cur":0,"min":0,"max":1}]},{"name":"Main Content","total":[115,191],"cur":0,"rows":[{"t":"smart-home integrations","ty":"lsi","w":1.9996,"cur":0,"min":0,"max":1},{"t":"alternatives to vivint","ty":"variation","w":0.1,"cur":0,"min":1,"max":2},{"t":"vivint alternatives","ty":"keyword","w":1,"cur":0,"min":1,"max":1},{"t":"professional monitoring","ty":"lsi","w":1.9999,"cur":0,"min":4,"max":10},{"t":"security system","ty":"lsi","w":1.9999,"cur":0,"min":4,"max":4},{"t":"diy security","ty":"lsi","w":1.9996,"cur":0,"min":1,"max":2},{"t":"brinks home","ty":"lsi","w":1.9996,"cur":0,"min":0,"max":1},{"t":"google nest","ty":"lsi","w":1.9996,"cur":0,"min":3,"max":3},{"t":"monitoring costs","ty":"lsi","w":1.9995,"cur":0,"min":1,"max":2},{"t":"adt security","ty":"lsi","w":1.9975,"cur":0,"min":0,"max":1},{"t":"vivint alternatives","ty":"variation","w":0.4489,"cur":0,"min":1,"max":2},{"t":"vivint alternative","ty":"variation","w":0.3094,"cur":0,"min":2,"max":2},{"t":"home security","ty":"lsi","w":0.1118,"cur":0,"min":7,"max":8},{"t":"security systems","ty":"lsi","w":0.0863,"cur":0,"min":4,"max":7},{"t":"security","ty":"lsi","w":1.9988,"cur":0,"min":20,"max":25},{"t":"adt","ty":"lsi","w":1.9974,"cur":0,"min":13,"max":16},{"t":"vivint","ty":"variation","w":0.9475,"cur":0,"min":20,"max":30},{"t":"alternatives","ty":"variation","w":0.3912,"cur":0,"min":2,"max":2},{"t":"alternative","ty":"variation","w":0.2588,"cur":0,"min":2,"max":2},{"t":"monitoring","ty":"lsi","w":0.1542,"cur":0,"min":15,"max":24},{"t":"equipment","ty":"lsi","w":0.1337,"cur":0,"min":9,"max":12},{"t":"contract","ty":"lsi","w":0.0813,"cur":0,"min":4,"max":6},{"t":"cove","ty":"lsi","w":0.0802,"cur":0,"min":1,"max":2},{"t":"camera","ty":"lsi","w":0.0758,"cur":0,"min":5,"max":8},{"t":"installation","ty":"lsi","w":0.0753,"cur":0,"min":7,"max":10},{"t":"cameras","ty":"lsi","w":0.0376,"cur":0,"min":8,"max":8}]}],"tags":[{"l":"H1 Tag","min":1,"max":1,"mean":1,"cur":0,"c":"Use 1 H1 Tag in your page"},{"l":"H2 Tag","min":4,"max":4,"mean":4,"cur":0,"c":"Use 4 H2 Tag in your page"},{"l":"H3 Tag","min":9,"max":10,"mean":9.5,"cur":0,"c":"Use 10 H3 Tag in your page"},{"l":"H4 Tag","min":4,"max":9,"mean":6.5,"cur":0,"c":"Use 6 H4 Tag in your page"},{"l":"H5 Tag","min":0,"max":0,"mean":0,"cur":0,"c":"Do not use any H5 Tag in your page"},{"l":"H6 Tag","min":0,"max":1,"mean":0.33,"cur":0,"c":"Do not use any H6 Tag in your page"},{"l":"Paragraph Text Tag","min":39,"max":103,"mean":64.67,"cur":0,"c":"Use 65 Paragraph Text Tag in your page"},{"l":"Anchor Text Tag","min":134,"max":135,"mean":134.5,"cur":0,"c":"Use 134 Anchor Text Tag in your page"},{"l":"Image File total","min":19,"max":26,"mean":22.5,"cur":0,"c":"Use 22 Image File in your page"},{"l":"Image Alt Tag","min":19,"max":26,"mean":22.5,"cur":0,"c":"Use 22 Image Alt Tag in your page"},{"l":"Bold Tag","min":11,"max":63,"mean":31.33,"cur":0,"c":"Use 31 Bold Tag in your page"},{"l":"Italic Tag","min":9,"max":10,"mean":9.5,"cur":0,"c":"Use 10 Italic Tag in your page"},{"l":"Video File","min":0,"max":0,"mean":0,"cur":0,"c":"Do not use any Video File in your page"},{"l":"Ordered List","min":0,"max":0,"mean":0,"cur":0,"c":"Do not use any Ordered List in your page"},{"l":"Ordered List Items","min":0,"max":0,"mean":0,"cur":0,"c":"Do not use any Ordered List Items in your page"},{"l":"Unordered List","min":1,"max":5,"mean":3,"cur":0,"c":"Use 3 Unordered List in your page"},{"l":"Unordered List Items","min":4,"max":17,"mean":10.5,"cur":0,"c":"Use 10 Unordered List Items in your page"},{"l":"Table","min":1,"max":1,"mean":1,"cur":0,"c":"Use 1 Table in your page"},{"l":"Table Items","min":30,"max":146,"mean":73.67,"cur":0,"c":"Use 74 Table Items in your page"},{"l":"Form","min":1,"max":2,"mean":1.33,"cur":0,"c":"Use 1 Form in your page"},{"l":"iFrame","min":3,"max":4,"mean":3.5,"cur":0,"c":"Use 4 iFrame in your page"},{"l":"Frequently Asked Questions","min":1,"max":1,"mean":1,"cur":0,"c":"Add FAQ section to your target page"},{"l":"Table of content","min":1,"max":1,"mean":1,"cur":0,"c":"Add Table of content section to your target page"}],"paa":["What's the cheapest Vivint plan?","Are ADT and Vivint the same?","What is the best non-WiFi home security system?","Which is the No. 1 security camera brand?"],"rs":["Vivint alternatives reddit","Best vivint alternatives","Vivint alternatives cost","SimpliSafe","Vivint alternatives amazon","ADT vs Vivint","Vivint vs ADT pricing","ADT vs Vivint reddit"],"comps":[{"title":"3 Best Vivint Alternatives in 2026 | Security.org","url":"https://www.security.org/home-security-systems/vivint/alternatives/","wc":2647,"h2":["Comparison of the Best Vivint Alternatives","Vivint Alternatives","Which One Is Right for You?","FAQs About Vivint Alternatives"],"h3":["1. ADT","Product Specs","2. SimpliSafe","Product Specs","3. Cove","Product Specs","Company","Research","Privacy Rights"]},{"title":"The Top Three Alternatives to Vivint in 2026","url":"https://www.safehome.org/compare/vivint-alternative/","wc":2542,"h2":["ADT: Best Vivint Alternative","SimpliSafe: Best Budget Vivint Alternative","Frontpoint: An Excellent Vivint Alternative","Summary of Vivint Alternatives"],"h3":["Similarities Between Vivint and ADT","Differences Between Vivint and ADT","Similarities Between Vivint and SimpliSafe","Differences Between Vivint and SimpliSafe","Similarities Between Vivint and Frontpoint","Differences Between Vivint and Frontpoint"]},{"title":"Best Vivint Alternatives for Home Security in 2026","url":"https://guardianalarm.com/blog/vivint-alternatives/","wc":2190,"h2":["Why Guardian Alarm is a Strong Vivint Alternative","Top Vivint Alternatives","Vivint Alternatives Comparison","Choosing the Right Vivint Alternative"],"h3":["1. Guardian Alarm , Best Overall Vivint Alternative","2. ADT , best known national full-service brand","3. SimpliSafe , best for flexible DIY with professional monitoring","4. Ring , best for camera-focused smart home security","5. Abode , best for smart-home enthusiasts","6. Brinks Home , best for professionally designed systems","7. Frontpoint , best DIY system with strong customer support","8. Cove , best for affordable monitored security","9. Deep Sentinel , best for AI-powered camera monitoring","Frequently Asked Questions"]}]};
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rng = (a,b) => a+" - "+b;
+const kwTitle = D.keyword.replace(/\b\w/g, c => c.toUpperCase());
+const store = { get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} } };
+const CK = "pop-brief-checks-" + D.reportId;
+let checks = store.get(CK) || {};
+
+$("#crumb-kw").textContent = kwTitle;
+$("#sum-kw").textContent = D.keyword;
+const dt = new Date(D.date.replace(" ","T")+"Z");
+$("#sum-kv").innerHTML = `<span>Slug: <b>not built yet</b> (scored against ${esc(D.url.replace(/^https?:\/\//,""))})</span>
+  <span>Report ID: <b class="num">${D.reportId}</b> &nbsp; Time: <b>${dt.toLocaleString(undefined,{month:"numeric",day:"numeric",year:"numeric",hour:"numeric",minute:"2-digit"})}</b> &nbsp; Location: <b>${esc(D.location)}</b></span>`;
+
+const pct = Math.max(0, Math.min(100, D.score));
+const C = 2*Math.PI*18;
+$("#score").innerHTML = `<svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="var(--line)" stroke-width="5"/><circle cx="24" cy="24" r="18" fill="none" stroke="var(--ring)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${C*pct/100} ${C}" transform="rotate(-90 24 24)"/></svg><b class="num">${D.score.toFixed(1)}</b>`;
+$("#wc-cur").textContent = D.wcCur.toLocaleString();
+$("#wc-tgt").textContent = D.wc.toLocaleString();
+$("#sections-n").textContent = D.sectionsRec;
+$("#sections-note").textContent = `Use around ${D.sectionsRec} subheading sections on this page.`;
+
+function status(r){
+  if (r.cur > r.max) return "over";
+  if (r.cur < r.min || (r.cur === 0 && r.max > 0)) return "under";
+  return "ok";
+}
+const typeRank = {keyword:0, variation:1, lsi:2};
+function sorted(rows, mode){
+  const a = rows.slice();
+  if (mode === "az") return a.sort((x,y) => x.t.localeCompare(y.t));
+  if (mode === "tgt") return a.sort((x,y) => y.max-x.max || y.min-x.min || x.t.localeCompare(y.t));
+  return a.sort((x,y) => typeRank[x.ty]-typeRank[y.ty] || y.w-x.w);
+}
+function pill(r){
+  if (r.ty === "keyword") return `<span class="pill must">Must Use</span>`;
+  if (r.ty === "variation") return `<span class="pill var">Variation</span>`;
+  return `<span class="pill lsi">LSI</span>`;
+}
+function renderSections(){
+  const mode = $("#sort").value;
+  $("#sections").innerHTML = D.sections.map((s,si) => {
+    const totalStatus = status({cur:s.cur, min:s.total[0], max:s.total[1]});
+    const body = sorted(s.rows, mode).map(r => {
+      const id = `c-${si}-${r.t.replace(/[^a-z0-9]+/gi,"-")}`;
+      const key = `${s.name}|${r.t}`;
+      return `<tr class="${checks[key]?"done":""}">
+        <td class="term"><label for="${id}"><input type="checkbox" id="${id}" data-key="${esc(key)}" ${checks[key]?"checked":""}><span>${esc(r.t)}</span></label></td>
+        <td class="num">${r.cur}</td>
+        <td><div class="tgt"><span class="r num">${rng(r.min,r.max)}</span><i class="dot ${status(r)}" title="${status(r)==="under"?"Under target":status(r)==="over"?"Over target":"In range"}"></i>${pill(r)}</div></td>
+      </tr>`;
+    }).join("");
+    return `<div class="card sec">
+      <div class="sec-top">
+        <h2>${s.name}<span class="info">i</span></h2>
+        <div class="meta"><span>Important Terms Range: <b class="num">(${rng(...s.total)})</b></span><span>Current Count: <b class="num">${s.cur}</b> <i class="dot ${totalStatus}"></i></span><span>${s.rows.length} terms</span></div>
+      </div>
+      <div class="tbl"><table>
+        <thead><tr><th>Important Term</th><th class="col-cur">Current Usage</th><th class="col-tgt">Target Range</th></tr></thead>
+        <tbody>${body}</tbody>
+      </table></div>
+      <div class="sec-foot"><button class="linkbtn" data-copy="${si}">Copy as text</button></div>
+    </div>`;
+  }).join("");
+}
+$("#sort").addEventListener("change", () => { renderSections(); store.set("pop-brief-sort", $("#sort").value); });
+const savedSort = store.get("pop-brief-sort"); if (savedSort) $("#sort").value = savedSort;
+renderSections();
+
+$("#sections").addEventListener("change", e => {
+  const cb = e.target.closest("input[type=checkbox]"); if (!cb) return;
+  if (cb.checked) checks[cb.dataset.key] = 1; else delete checks[cb.dataset.key];
+  cb.closest("tr").classList.toggle("done", cb.checked);
+  store.set(CK, checks);
+});
+$("#reset-checks").addEventListener("click", () => { checks = {}; store.set(CK, checks); renderSections(); });
+
+function sectionText(s){
+  return [`${s.name} (important terms range ${rng(...s.total)})`, ...sorted(s.rows,"imp").map(r => `  ${r.t}: ${rng(r.min,r.max)}${r.ty==="keyword"?" (must use)":r.ty==="variation"?" (variation)":""}`)].join("\n");
+}
+async function copyText(text, btn, label){
+  try { await navigator.clipboard.writeText(text); btn.textContent = "Copied"; }
+  catch(e){
+    const ta = document.createElement("textarea"); ta.value = text; ta.style.cssText = "position:fixed;opacity:0"; document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); btn.textContent = "Copied"; } catch(_) { btn.textContent = "Copy failed"; }
+    ta.remove();
+  }
+  setTimeout(() => btn.textContent = label, 1600);
+}
+$("#sections").addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]"); if (!b) return;
+  copyText(sectionText(D.sections[+b.dataset.copy]), b, "Copy as text");
+});
+$("#copy-all").addEventListener("click", e => {
+  const text = [`POP brief: ${D.keyword} (report ${D.reportId})`, `Target word count: ${D.wc}`, `Sections recommended: ${D.sectionsRec}`, "",
+    ...D.sections.map(s => sectionText(s) + "\n"), "People also ask", ...D.paa.map(q => "  " + q)].join("\n");
+  copyText(text, e.currentTarget, "Copy brief as text");
+});
+
+$("#tags tbody").innerHTML = D.tags.map(t => `<tr class="${t.max===0?"none":""}"><td>${esc(t.l)}</td><td class="n num">${t.cur}</td><td class="n num">${rng(t.min,t.max)}</td><td>${esc(t.c)}</td></tr>`).join("");
+$("#paa").innerHTML = D.paa.map(q => `<li>${esc(q)}</li>`).join("");
+$("#rs").innerHTML = D.rs.map(q => `<span>${esc(q)}</span>`).join("");
+const maxWc = Math.max(...D.comps.map(c => c.wc));
+const avg = Math.round(D.comps.reduce((a,c) => a+c.wc, 0) / D.comps.length);
+$("#comp-avg").innerHTML = `${D.comps.length} competitors · average <b class="num">${avg.toLocaleString()}</b> words`;
+$("#comps").innerHTML = D.comps.map(c => `<article class="card comp">
+  <span class="host">${esc(new URL(c.url).hostname.replace(/^www\./,""))}</span>
+  <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title.replace(/\s*\|.*$/,""))}</a>
+  <span style="font-size:12.5px"><b class="num">${c.wc.toLocaleString()}</b> words</span>
+  <div class="wcb"><i style="width:${c.wc/maxWc*100}%"></i></div>
+  ${c.h2.length ? `<h4>H2s</h4><ul>${c.h2.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
+  ${c.h3.length ? `<h4>H3s</h4><ul>${c.h3.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
+</article>`).join("");
+
+const views = ["brief","structure","questions","competitors"];
+const titles = {brief:"Content brief", structure:"Page structure", questions:"Questions & searches", competitors:"Competitors"};
+function show(v){
+  if (!views.includes(v)) v = "brief";
+  views.forEach(x => { $("#view-"+x).hidden = x !== v; $("#tab-"+x).setAttribute("aria-selected", String(x===v)); });
+  $("#view-title").innerHTML = `${esc(titles[v])} <span class="badge">POP</span>`;
+}
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => { location.hash = t.dataset.view; show(t.dataset.view); }));
+window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+show(location.hash.slice(1));
+</script>

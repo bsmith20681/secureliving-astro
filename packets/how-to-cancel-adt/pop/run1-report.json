@@ -1,0 +1,4331 @@
+{
+  "reportId": 1998155,
+  "date_done": "2026-11-10 15:38:49",
+  "report": {
+    "aiGenSchemaTypes": [],
+    "cleanedContentBrief": {
+      "approach": "",
+      "dashboardType": "contentBrief",
+      "p": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 0
+          },
+          "term": {
+            "phrase": "how to cancel adt",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel my adt",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "account number",
+            "type": "lsi",
+            "weight": 1.9988321106029447
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "contract adt",
+            "type": "lsi",
+            "weight": 1.9983605851879078
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "registered mail",
+            "type": "lsi",
+            "weight": 1.9980642198822278
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "contract information",
+            "type": "lsi",
+            "weight": 1.997299829535159
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "myadt billing",
+            "type": "lsi",
+            "weight": 1.9966578712806275
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancellation request",
+            "type": "lsi",
+            "weight": 1.9960376794996182
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "phone number",
+            "type": "lsi",
+            "weight": 1.9956242508713322
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "contract end",
+            "type": "lsi",
+            "weight": 1.99462800228437
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "security contract",
+            "type": "lsi",
+            "weight": 1.994357434608635
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "existing customers",
+            "type": "lsi",
+            "weight": 1.9924708237384166
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 13,
+            "targetMin": 4
+          },
+          "term": {
+            "phrase": "adt",
+            "type": "variation",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "contract",
+            "type": "lsi",
+            "weight": 0.1926528030623096
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 3,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "home",
+            "type": "lsi",
+            "weight": 0.13939129276527149
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 2,
+            "targetMin": 1
+          },
+          "term": {
+            "phrase": "system",
+            "type": "lsi",
+            "weight": 0.08214150841619698
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 4,
+            "targetMin": 2
+          },
+          "term": {
+            "phrase": "security",
+            "type": "lsi",
+            "weight": 0.06961760611968959
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "equipment",
+            "type": "lsi",
+            "weight": 0.06596753871489418
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "alarm",
+            "type": "lsi",
+            "weight": 0.06250734288125338
+          }
+        }
+      ],
+      "pTotal": {
+        "current": 0,
+        "max": 37,
+        "min": 22
+      },
+      "pageScore": {
+        "pageScore": 4.21,
+        "pageScoreValue": ""
+      },
+      "pageTitle": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 1
+          },
+          "term": {
+            "phrase": "how to cancel adt",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "how to cancel adt",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel my adt",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel adt",
+            "type": "variation",
+            "weight": 0.11474486389819585
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "adt",
+            "type": "variation",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel",
+            "type": "variation",
+            "weight": 0.16757227752036044
+          }
+        }
+      ],
+      "pageTitleTotal": {
+        "current": 0,
+        "max": 6,
+        "min": 3
+      },
+      "strategy": "",
+      "subHeadings": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 0
+          },
+          "term": {
+            "phrase": "how to cancel adt",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "how to cancel adt",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "registered mail",
+            "type": "lsi",
+            "weight": 1.9980642198822278
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel adt",
+            "type": "variation",
+            "weight": 0.11474486389819585
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel",
+            "type": "variation",
+            "weight": 0.16757227752036044
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancellation",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "contract",
+            "type": "lsi",
+            "weight": 0.1926528030623096
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "equipment",
+            "type": "lsi",
+            "weight": 0.06596753871489418
+          }
+        }
+      ],
+      "subHeadingsTotal": {
+        "current": 0,
+        "max": 7,
+        "min": 4
+      },
+      "title": [
+        {
+          "contentBrief": {
+            "current": 0,
+            "target": 1
+          },
+          "term": {
+            "phrase": "how to cancel adt",
+            "type": "keyword",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "how to cancel adt",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel my adt",
+            "type": "variation",
+            "weight": 0.1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel adt",
+            "type": "variation",
+            "weight": 0.11474486389819585
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "adt",
+            "type": "variation",
+            "weight": 1
+          }
+        },
+        {
+          "contentBrief": {
+            "current": 0,
+            "targetMax": 1,
+            "targetMin": 0
+          },
+          "term": {
+            "phrase": "cancel",
+            "type": "variation",
+            "weight": 0.16757227752036044
+          }
+        }
+      ],
+      "titleTotal": {
+        "current": 0,
+        "max": 6,
+        "min": 3
+      }
+    },
+    "competitors": [
+      {
+        "createdAt": "2026-11-10 15:38:39",
+        "eatSchemaTypes": {},
+        "h2Texts": [
+          "Do You Need to Sign an ADT Contract?",
+          "How Much Does an ADT Contract Cost?",
+          "ADT Contract Length",
+          "Drawbacks of ADT’s Contract",
+          "Benefits of ADT’s Contract",
+          "Avoid Fees When Moving With ADT",
+          "Final Thoughts: Is Signing Up with ADT Worth It?",
+          "FAQs"
+        ],
+        "h3Texts": [
+          "Fees for Early Termination With ADT",
+          "Penalties for Missed Payments or Breach of Contract",
+          "Options if ADT Increases Their Pricing",
+          "Taking Ownership of Your ADT Equipment",
+          "Theft Protection Guarantee",
+          "ADT Warranties"
+        ],
+        "headingsTree": [
+          {
+            "children": [
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Do You Need to Sign an ADT Contract?"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "How Much Does an ADT Contract Cost?"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "ADT Contract Length"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Fees for Early Termination With ADT"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Penalties for Missed Payments or Breach of Contract"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Drawbacks of ADT’s Contract"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Options if ADT Increases Their Pricing"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Taking Ownership of Your ADT Equipment"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Theft Protection Guarantee"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "ADT Warranties"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Benefits of ADT’s Contract"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Avoid Fees When Moving With ADT"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Final Thoughts: Is Signing Up with ADT Worth It?"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "FAQs"
+              }
+            ],
+            "tag": "h1",
+            "text": "ADT Home Security System Contracts in 2026"
+          }
+        ],
+        "id": 19525415,
+        "isFirst": 1,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 0,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 3063
+        },
+        "rawLsiCounts": {
+          "a": 64,
+          "b": 0,
+          "bold": 1,
+          "figure_caption": 0,
+          "h1": 3,
+          "h2": 8,
+          "h2_h3": 10,
+          "h2_h6": 10,
+          "h3": 2,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 534,
+          "i": 0,
+          "image_file_names": 17,
+          "img_alt": 2,
+          "json_ld_schema_format": 87,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 236,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 1,
+          "title": 2,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 3063
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            8,
+            8,
+            8,
+            8,
+            0,
+            8
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            6,
+            6,
+            6,
+            6,
+            0,
+            6
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            6,
+            6,
+            6,
+            6,
+            0,
+            6
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            66,
+            66,
+            66,
+            66,
+            0,
+            66
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            113,
+            113,
+            113,
+            113,
+            0,
+            113
+          ],
+          [
+            "Image File total",
+            "img",
+            13,
+            13,
+            13,
+            13,
+            0,
+            13
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            13,
+            13,
+            13,
+            13,
+            0,
+            13
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            11,
+            11,
+            11,
+            11,
+            0,
+            11
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            9,
+            9,
+            9,
+            9,
+            0,
+            9
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            8,
+            8,
+            8,
+            8,
+            0,
+            8
+          ],
+          [
+            "Table Total",
+            "table",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Table Items Total",
+            "td",
+            12,
+            12,
+            12,
+            12,
+            0,
+            12
+          ],
+          [
+            "Form Total",
+            "form",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 14,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 1,
+          "h2": 7,
+          "h2_h3": 11,
+          "h2_h6": 12,
+          "h3": 4,
+          "h4": 1,
+          "h4_h6": 1,
+          "h5": 0,
+          "h6": 0,
+          "html": 295,
+          "i": 0,
+          "image_file_names": 7,
+          "img_alt": 11,
+          "json_ld_schema_format": 43,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 90,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 1,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 3063
+        },
+        "runId": 1998155,
+        "schemaTypes": [
+          {
+            "count": 2,
+            "type": "Article"
+          },
+          {
+            "count": 2,
+            "type": "Webpage"
+          },
+          {
+            "count": 1,
+            "type": "Person"
+          },
+          {
+            "count": 1,
+            "type": "Imageobject"
+          },
+          {
+            "count": 1,
+            "type": "Breadcrumblist"
+          },
+          {
+            "count": 1,
+            "type": "Website"
+          },
+          {
+            "count": 1,
+            "type": "Organization"
+          },
+          {
+            "count": 1,
+            "type": "Faqpage"
+          }
+        ],
+        "sourceType": "organic",
+        "title": "ADT Contract Length, Cancellaton Policy, Terms & Renewals",
+        "url": "https://www.safehome.org/security-systems/adt/contract/",
+        "urlSourceCode": "",
+        "wordCount": 3063
+      },
+      {
+        "createdAt": "2026-11-10 15:38:39",
+        "eatSchemaTypes": {},
+        "h2Texts": [
+          "Official contact details of ADT Security",
+          "Cancellation letter template for ADT Security",
+          "How to cancel ADT step by step"
+        ],
+        "h3Texts": [
+          "Electronic Registered Mail (LegallyMail)",
+          "Postal Mail",
+          "Classic Email",
+          "Online Account",
+          "Want to ensure your cancellation is legally processed?",
+          "Verify contract terms",
+          "Complete the template",
+          "Send via LegallyMail",
+          "Wait for confirmation",
+          "Cancel bank mandates"
+        ],
+        "headingsTree": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Electronic Registered Mail (LegallyMail)"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Postal Mail"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Classic Email"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Online Account"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Want to ensure your cancellation is legally processed?"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Official contact details of ADT Security"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Cancellation letter template for ADT Security"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Verify contract terms"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Complete the template"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Send via LegallyMail"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Wait for confirmation"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Cancel bank mandates"
+                  }
+                ],
+                "tag": "h2",
+                "text": "How to cancel ADT step by step"
+              }
+            ],
+            "tag": "h1",
+            "text": "How to cancel yourADT Securitycontract 2026"
+          }
+        ],
+        "id": 19525416,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 1,
+          "h2_h3": 1,
+          "h2_h6": 1,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 4,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 1,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 606
+        },
+        "rawLsiCounts": {
+          "a": 4,
+          "b": 0,
+          "bold": 6,
+          "figure_caption": 0,
+          "h1": 3,
+          "h2": 2,
+          "h2_h3": 4,
+          "h2_h6": 4,
+          "h3": 2,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 53,
+          "i": 1,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 22,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 6,
+          "title": 3,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 606
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            3,
+            3,
+            3,
+            3,
+            0,
+            3
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            10,
+            10,
+            10,
+            10,
+            0,
+            10
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            3,
+            3,
+            3,
+            3,
+            0,
+            3
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            26,
+            26,
+            26,
+            26,
+            0,
+            26
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            62,
+            62,
+            62,
+            62,
+            0,
+            62
+          ],
+          [
+            "Image File total",
+            "img",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            7,
+            7,
+            7,
+            7,
+            0,
+            7
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            46,
+            46,
+            46,
+            46,
+            0,
+            46
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Total",
+            "table",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Items Total",
+            "td",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Form Total",
+            "form",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 9,
+          "b": 0,
+          "bold": 2,
+          "figure_caption": 0,
+          "h1": 2,
+          "h2": 7,
+          "h2_h3": 9,
+          "h2_h6": 9,
+          "h3": 2,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 76,
+          "i": 1,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 16,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 2,
+          "title": 4,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 606
+        },
+        "runId": 1998155,
+        "schemaTypes": [],
+        "sourceType": "organic",
+        "title": "How to cancel ADT Security Contract 2026 | Steps and Letter Template",
+        "url": "https://legallymail.com/en/cancellation-alarms/adt.html",
+        "urlSourceCode": "",
+        "wordCount": 606
+      },
+      {
+        "createdAt": "2026-11-10 15:38:39",
+        "eatSchemaTypes": {},
+        "h2Texts": [],
+        "h3Texts": [
+          "Product Categories",
+          "About Us",
+          "Dealer & Service",
+          "Customer Service",
+          "Follow Us"
+        ],
+        "headingsTree": [
+          {
+            "children": [],
+            "tag": "h1",
+            "text": "ADT Home Security Support Center"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "tag": "h3",
+                "text": "Product Categories"
+              },
+              {
+                "children": [],
+                "tag": "h3",
+                "text": "About Us"
+              },
+              {
+                "children": [],
+                "tag": "h3",
+                "text": "Dealer & Service"
+              },
+              {
+                "children": [],
+                "tag": "h3",
+                "text": "Customer Service"
+              },
+              {
+                "children": [],
+                "tag": "h3",
+                "text": "Follow Us"
+              }
+            ],
+            "tag": "h1",
+            "text": ""
+          }
+        ],
+        "id": 19525418,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 0,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 208
+        },
+        "rawLsiCounts": {
+          "a": 8,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 2,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 45,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 8,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 208
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            5,
+            5,
+            5,
+            5,
+            0,
+            5
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            36,
+            36,
+            36,
+            36,
+            0,
+            36
+          ],
+          [
+            "Image File total",
+            "img",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Total",
+            "table",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Items Total",
+            "td",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Form Total",
+            "form",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 4,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 1,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 164,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 5,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 208
+        },
+        "runId": 1998155,
+        "schemaTypes": [],
+        "sourceType": "organic",
+        "title": "Knowledge Detail",
+        "url": "https://help.adt.com/article/ADT-Self-Setup-Account-Creation-FAQs",
+        "urlSourceCode": "",
+        "wordCount": 208
+      },
+      {
+        "createdAt": "2026-11-10 15:38:40",
+        "eatSchemaTypes": {},
+        "h2Texts": [
+          "Choose the option that fits you:",
+          "Popular Support Topics",
+          "More Resources",
+          "Need help with your order? Get support from one of our experts 24/7!"
+        ],
+        "h3Texts": [
+          "New customers",
+          "Existing customers",
+          "Billing & Account",
+          "Troubleshooting",
+          "Getting Started",
+          "Replacement Batteries",
+          "New customers",
+          "Existing customers"
+        ],
+        "headingsTree": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "New customers"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Existing customers"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Choose the option that fits you:"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Billing & Account"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Troubleshooting"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Getting Started"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Replacement Batteries"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Popular Support Topics"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "New customers"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Existing customers"
+                  }
+                ],
+                "tag": "h2",
+                "text": "More Resources"
+              },
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "Need help with your order?Get support from one of our experts 24/7!"
+              }
+            ],
+            "tag": "h1",
+            "text": "How can we help?"
+          }
+        ],
+        "id": 19525419,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 0,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 433
+        },
+        "rawLsiCounts": {
+          "a": 11,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 2,
+          "h2_h6": 2,
+          "h3": 2,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 125,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 21,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 433
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            4,
+            4,
+            4,
+            4,
+            0,
+            4
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            8,
+            8,
+            8,
+            8,
+            0,
+            8
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            21,
+            21,
+            21,
+            21,
+            0,
+            21
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            56,
+            56,
+            56,
+            56,
+            0,
+            56
+          ],
+          [
+            "Image File total",
+            "img",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            15,
+            15,
+            15,
+            15,
+            0,
+            15
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            10,
+            10,
+            10,
+            10,
+            0,
+            10
+          ],
+          [
+            "Table Total",
+            "table",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Items Total",
+            "td",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Form Total",
+            "form",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 13,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 152,
+          "i": 0,
+          "image_file_names": 1,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 22,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 2,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 433
+        },
+        "runId": 1998155,
+        "schemaTypes": [],
+        "sourceType": "organic",
+        "title": "ADT Customer Service | Contact ADT",
+        "url": "https://www.adt.com/cf/mono/bps/contact-us/",
+        "urlSourceCode": "",
+        "wordCount": 433
+      },
+      {
+        "createdAt": "2026-11-10 15:38:40",
+        "eatSchemaTypes": {},
+        "h2Texts": [],
+        "h3Texts": [],
+        "headingsTree": [
+          {
+            "children": [],
+            "tag": "h1",
+            "text": "How Do I Cancel My ADT Alarm System?"
+          }
+        ],
+        "id": 19525420,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 0,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 533
+        },
+        "rawLsiCounts": {
+          "a": 16,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 2,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 2,
+          "h3": 0,
+          "h4": 2,
+          "h4_h6": 2,
+          "h5": 0,
+          "h6": 0,
+          "html": 217,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 10,
+          "json_ld_schema_format": 29,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 42,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 4,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 533
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            7,
+            7,
+            7,
+            7,
+            0,
+            7
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            3,
+            3,
+            3,
+            3,
+            0,
+            3
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            8,
+            8,
+            8,
+            8,
+            0,
+            8
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            54,
+            54,
+            54,
+            54,
+            0,
+            54
+          ],
+          [
+            "Image File total",
+            "img",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Total",
+            "table",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Items Total",
+            "td",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Form Total",
+            "form",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 3,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 142,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 29,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 44,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 3,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 533
+        },
+        "runId": 1998155,
+        "schemaTypes": [
+          {
+            "count": 1,
+            "type": "Corporation"
+          },
+          {
+            "count": 1,
+            "type": "Organization"
+          },
+          {
+            "count": 1,
+            "type": "Website"
+          },
+          {
+            "count": 1,
+            "type": "Webpage"
+          },
+          {
+            "count": 1,
+            "type": "Person"
+          },
+          {
+            "count": 1,
+            "type": "Article"
+          }
+        ],
+        "sourceType": "organic",
+        "title": "How Do I Cancel My ADT Alarm System? | ThinkPro Home Security",
+        "url": "https://thinkprotection.com/blog/how-do-i-cancel-my-adt-alarm-system/",
+        "urlSourceCode": "",
+        "wordCount": 533
+      },
+      {
+        "createdAt": "2026-11-10 15:38:40",
+        "eatSchemaTypes": {},
+        "h2Texts": [
+          "View Your Contract",
+          "Related Topics"
+        ],
+        "h3Texts": [
+          "Product Categories",
+          "About Us",
+          "Dealer & Service",
+          "Customer Service",
+          "Follow Us"
+        ],
+        "headingsTree": [
+          {
+            "children": [],
+            "tag": "h1",
+            "text": "ADT Home Security Support Center"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "tag": "h2",
+                "text": "View Your Contract"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Product Categories"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "About Us"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Dealer & Service"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Customer Service"
+                  },
+                  {
+                    "children": [],
+                    "tag": "h3",
+                    "text": "Follow Us"
+                  }
+                ],
+                "tag": "h2",
+                "text": "Related Topics"
+              }
+            ],
+            "tag": "h1",
+            "text": "Contract Information"
+          }
+        ],
+        "id": 19525421,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 0,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 450
+        },
+        "rawLsiCounts": {
+          "a": 16,
+          "b": 0,
+          "bold": 2,
+          "figure_caption": 0,
+          "h1": 4,
+          "h2": 1,
+          "h2_h3": 1,
+          "h2_h6": 1,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 74,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 25,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 2,
+          "title": 2,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 450
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            5,
+            5,
+            5,
+            5,
+            0,
+            5
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            13,
+            13,
+            13,
+            13,
+            0,
+            13
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            49,
+            49,
+            49,
+            49,
+            0,
+            49
+          ],
+          [
+            "Image File total",
+            "img",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            8,
+            8,
+            8,
+            8,
+            0,
+            8
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            3,
+            3,
+            3,
+            3,
+            0,
+            3
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            8,
+            8,
+            8,
+            8,
+            0,
+            8
+          ],
+          [
+            "Table Total",
+            "table",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Items Total",
+            "td",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Form Total",
+            "form",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 6,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 1,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 168,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 9,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 450
+        },
+        "runId": 1998155,
+        "schemaTypes": [],
+        "sourceType": "organic",
+        "title": "Contract Information",
+        "url": "https://help.adt.com/article/Contract-Information",
+        "urlSourceCode": "",
+        "wordCount": 450
+      },
+      {
+        "createdAt": "2026-11-10 15:38:40",
+        "eatSchemaTypes": {},
+        "h2Texts": [],
+        "h3Texts": [],
+        "headingsTree": [],
+        "id": 19525422,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 6,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 3,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 136
+        },
+        "rawLsiCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 6,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 1,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 136
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            34,
+            34,
+            34,
+            34,
+            0,
+            34
+          ],
+          [
+            "Image File total",
+            "img",
+            3,
+            3,
+            3,
+            3,
+            0,
+            3
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Total",
+            "table",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Items Total",
+            "td",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Form Total",
+            "form",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 468,
+          "i": 0,
+          "image_file_names": 4,
+          "img_alt": 0,
+          "json_ld_schema_format": 97,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 136
+        },
+        "runId": 1998155,
+        "schemaTypes": [
+          {
+            "count": 1,
+            "type": "Organization"
+          },
+          {
+            "count": 1,
+            "type": "Website"
+          },
+          {
+            "count": 1,
+            "type": "Webpage"
+          },
+          {
+            "count": 1,
+            "type": "Breadcrumblist"
+          },
+          {
+            "count": 1,
+            "type": "Article"
+          },
+          {
+            "count": 1,
+            "type": "Howto"
+          },
+          {
+            "count": 1,
+            "type": "Faqpage"
+          },
+          {
+            "count": 1,
+            "type": "Service"
+          }
+        ],
+        "sourceType": "organic",
+        "title": "Subdelete - Subscription Management",
+        "url": "https://www.subdelete.com/cancel-subscription/adt/",
+        "urlSourceCode": "",
+        "wordCount": 136
+      },
+      {
+        "createdAt": "2026-11-10 15:38:40",
+        "eatSchemaTypes": {},
+        "h2Texts": [],
+        "h3Texts": [],
+        "headingsTree": [],
+        "id": 19525423,
+        "isFirst": 0,
+        "isFocus": 0,
+        "isValid": 1,
+        "name": null,
+        "nlpSchemaData": {},
+        "pageScore": null,
+        "rawKeywordCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 0,
+          "i": 0,
+          "image_file_names": 0,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 137
+        },
+        "rawLsiCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 145,
+          "i": 0,
+          "image_file_names": 2,
+          "img_alt": 0,
+          "json_ld_schema_format": 0,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 137
+        },
+        "rawTagCounts": [
+          [
+            "H1 Tag Total",
+            "h1",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H2 Tag Total",
+            "h2",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H3 Tag Total",
+            "h3",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H4 Tag Total",
+            "h4",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H5 Tag Total",
+            "h5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "H6 Tag Total",
+            "h6",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Paragraph Text Tag Total",
+            "p",
+            2,
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          [
+            "Anchor Text Tag Total",
+            "a",
+            34,
+            34,
+            34,
+            34,
+            0,
+            34
+          ],
+          [
+            "Image File total",
+            "img",
+            3,
+            3,
+            3,
+            3,
+            0,
+            3
+          ],
+          [
+            "Image Alt Tag Total",
+            "img_alt",
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            "Bold Tag Total",
+            "bold",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Italic Tag Total",
+            "i",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Video File Total",
+            "video",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Total",
+            "ol",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Ordered List Items Total",
+            "oli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Total",
+            "ul",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Unordered List Items Total",
+            "uli",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Total",
+            "table",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table Items Total",
+            "td",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Form Total",
+            "form",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "iFrame Total",
+            "iframe",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Frequently Asked Questions",
+            "faq",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "Table of content",
+            "table of content",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "rawVariationsCounts": {
+          "a": 0,
+          "b": 0,
+          "bold": 0,
+          "figure_caption": 0,
+          "h1": 0,
+          "h2": 0,
+          "h2_h3": 0,
+          "h2_h6": 0,
+          "h3": 0,
+          "h4": 0,
+          "h4_h6": 0,
+          "h5": 0,
+          "h6": 0,
+          "html": 294,
+          "i": 0,
+          "image_file_names": 4,
+          "img_alt": 0,
+          "json_ld_schema_format": 6,
+          "meta_description": 0,
+          "meta_keywords": 0,
+          "microdata_schema_format": 0,
+          "open_graph_description": 0,
+          "open_graph_title": 0,
+          "p": 0,
+          "plain_text": 0,
+          "rdf_schema_format": 0,
+          "source_code_urls": 0,
+          "strong": 0,
+          "title": 0,
+          "twitter_card_description": 0,
+          "twitter_card_title": 0,
+          "word_count": 137
+        },
+        "runId": 1998155,
+        "schemaTypes": [
+          {
+            "count": 1,
+            "type": "Organization"
+          },
+          {
+            "count": 1,
+            "type": "Website"
+          },
+          {
+            "count": 1,
+            "type": "Webpage"
+          }
+        ],
+        "sourceType": "organic",
+        "title": "Subdelete - Subscription Management",
+        "url": "https://www.subdelete.com/en/es/cancel-subscription/adt-security/",
+        "urlSourceCode": "",
+        "wordCount": 137
+      }
+    ],
+    "contentBriefDataFile": {},
+    "createdAt": "2026-11-10 15:38:34",
+    "gCompetitors": [
+      {
+        "competitorSourceType": "organic",
+        "description": "If you've completed your initial contract period and are now on a monthly renewal plan, you can cancel at any time with no termination fee. Just give ADT 30 ... Read more",
+        "highlightedTerms": [
+          "cancel",
+          "ADT"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "ADT Contract Length, Cancellaton Policy, Terms & Renewals",
+        "url": "https://www.safehome.org/security-systems/adt/contract/",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Apr 8, 2023 — How can I cancel my ADT Security service without incurring a penalty?",
+        "highlightedTerms": [],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "How to Cancel ADT Contract Without Penalty: Expert Q&A",
+        "url": "https://www.justanswer.com/real-estate-law/lokkf-cancel-adt-security-without-penalty.html",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Find the physical address, official email, legal notice periods, and a free cancellation template. ADT contracts are typically 36 months. Email adtcares@adt. ...",
+        "highlightedTerms": [
+          "ADT",
+          "adt"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "How to cancel your ADT Security contract 2026",
+        "url": "https://legallymail.com/en/cancellation-alarms/adt.html",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Go to Settings. Go to My Profile. Tap App Account. Tap Delete App Account. If you wish to cancel your monitoring services, please contact (800) ADT-ASAP ((800) ...",
+        "highlightedTerms": [
+          "Go to Settings"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "ADT Self Setup- Account Creation & Deletion FAQs",
+        "url": "https://help.adt.com/article/ADT-Self-Setup-Account-Creation-FAQs",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Contact ADT customer service. Call 855-756-3163 … issues with step-by-step instructions. Get support from one of our experts 24/7! Call 855-756-3163",
+        "highlightedTerms": [
+          "Call 855-756-3163"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "ADT Customer Service | Contact ADT",
+        "url": "https://www.adt.com/cf/mono/bps/contact-us/",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Apr 20, 2018 — First you need to call ADT. The phone number is 1-800-ADT-ASAP (1-800-238-2727). Be prepared to wait on hold for awhile. ADT does not make ... Read more",
+        "highlightedTerms": [
+          "ADT-ASAP"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "How Do I Cancel My ADT Alarm System?",
+        "url": "https://thinkprotection.com/blog/how-do-i-cancel-my-adt-alarm-system/",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Contact ADT customer service directly via phone or online portal to request cancellation. Keep your account information handy to verify identity. Note that some ... Read more",
+        "highlightedTerms": [
+          "Contact ADT customer service directly via phone or online portal"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "How to Cancel Your ADT System: Quick Guide",
+        "url": "https://www.justanswer.com/home-security-systems/rd5wn-cancel-adt-system-don-t-know-that.html",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Information about how to log in to MyADT and locate the date that your ADT contract ends. MyADT Billing Management. Login to make one time payments, manage your ... Read more",
+        "highlightedTerms": [
+          "MyADT Billing Management"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "Contract Information",
+        "url": "https://help.adt.com/article/Contract-Information",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "Log in, open Account > Membership, and click Cancel. Save a screenshot of the confirmation page and the cancellation email ADT sends. Before you cancel ADT: 5 ... Read more",
+        "highlightedTerms": [
+          "Log in, open Account > Membership, and click Cancel"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "How to Cancel ADT Subscription in 2026 ...",
+        "url": "https://www.subdelete.com/cancel-subscription/adt/",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "The fastest way to cancel your ADT Security subscription is through Subdelete. Fill out the form on this page with your name, email, and billing info. Subdelete ... Read more",
+        "highlightedTerms": [
+          "Subdelete"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "How to Cancel ADT Security Subscription in 2026 ...",
+        "url": "https://www.subdelete.com/en/es/cancel-subscription/adt-security/",
+        "validated": false
+      },
+      {
+        "competitorSourceType": "organic",
+        "description": "To cancel your ADT service, contact customer support directly via phone or online portal. Have your account number ready for verification. Review your contract ... Read more",
+        "highlightedTerms": [
+          "contact customer support directly via phone or online portal"
+        ],
+        "source": "",
+        "sourceLabel": "Google Search",
+        "summary": {},
+        "title": "Cancel ADT Service: Expert Q&A on Cancellation Issues",
+        "url": "https://www.justanswer.com/home-security-systems/sth7i-adt-security-service-cancellation-process.html",
+        "validated": false
+      }
+    ],
+    "googleLocation": "United States",
+    "id": 1998155,
+    "ipAddress": "67.233.160.51",
+    "keyword": "how to cancel adt",
+    "lsaVariations": [
+      {
+        "averageCount": 21,
+        "isSecondaryKeyword": false,
+        "phrase": "adt",
+        "targetCount": 0,
+        "weight": 1
+      },
+      {
+        "averageCount": 3,
+        "isSecondaryKeyword": false,
+        "phrase": "cancel",
+        "targetCount": 0,
+        "weight": 0.16757227752036044
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "cancel adt",
+        "targetCount": 0,
+        "weight": 0.11474486389819585
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "how to cancel adt",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "how to cancel adt service",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "cancel adt service",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "cancel my adt",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "adt cancellation",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "adt cancelation",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "canceling adt",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "cancelling adt",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 2,
+        "isSecondaryKeyword": false,
+        "phrase": "cancellation",
+        "targetCount": 0,
+        "weight": 0.1
+      },
+      {
+        "averageCount": 0,
+        "isSecondaryKeyword": false,
+        "phrase": "canceling",
+        "targetCount": 0,
+        "weight": 0.1
+      }
+    ],
+    "relatedQuestions": [
+      {
+        "question": "How do I call ADT to cancel my service?",
+        "snippet": "",
+        "title": "How do I call ADT to cancel my service?"
+      },
+      {
+        "question": "What happens to ADT equipment when you cancel?",
+        "snippet": "",
+        "title": "What happens to ADT equipment when you cancel?"
+      },
+      {
+        "question": "What is the standard length of an ADT contract?",
+        "snippet": "",
+        "title": "What is the standard length of an ADT contract?"
+      },
+      {
+        "question": "How do I deactivate my ADT alarm?",
+        "snippet": "",
+        "title": "How do I deactivate my ADT alarm?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "link": "https://www.google.com/search?q=How+to+cancel+adt+online",
+        "query": "How to cancel adt online"
+      },
+      {
+        "link": "https://www.google.com/search?q=How+to+cancel+adt+reddit",
+        "query": "How to cancel adt reddit"
+      },
+      {
+        "link": "https://www.google.com/search?q=How+to+cancel+ADT+without+calling",
+        "query": "How to cancel ADT without calling"
+      },
+      {
+        "link": "https://www.google.com/search?q=How+to+cancel+ADT+without+penalty",
+        "query": "How to cancel ADT without penalty"
+      },
+      {
+        "link": "https://www.google.com/search?q=ADT+login",
+        "query": "ADT login"
+      },
+      {
+        "link": "https://www.google.com/search?q=What+happens+when+you+cancel+ADT",
+        "query": "What happens when you cancel ADT"
+      },
+      {
+        "link": "https://www.google.com/search?q=ADT+cancellation+number",
+        "query": "ADT cancellation number"
+      },
+      {
+        "link": "https://www.google.com/search?q=My+ADT",
+        "query": "My ADT"
+      }
+    ],
+    "schemaTypes": [],
+    "secondaryKeywords": [],
+    "status": "SUCCESS",
+    "subHeadingsCount": 5,
+    "tagCounts": [
+      {
+        "comment": "Use 1 H1 Tag in your page",
+        "max": 2,
+        "mean": 1.33,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "H1 Tag Total"
+      },
+      {
+        "comment": "Do not use any H2 Tag in your page",
+        "max": 2,
+        "mean": 0.4,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "H2 Tag Total"
+      },
+      {
+        "comment": "Use 7 H3 Tag in your page",
+        "max": 10,
+        "mean": 6.8,
+        "min": 5,
+        "signalCnt": 0,
+        "tagLabel": "H3 Tag Total"
+      },
+      {
+        "comment": "Do not use any H4 Tag in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "H4 Tag Total"
+      },
+      {
+        "comment": "Do not use any H5 Tag in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "H5 Tag Total"
+      },
+      {
+        "comment": "Do not use any H6 Tag in your page",
+        "max": 1,
+        "mean": 0.25,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "H6 Tag Total"
+      },
+      {
+        "comment": "Use 17 Paragraph Text Tag in your page",
+        "max": 26,
+        "mean": 17,
+        "min": 8,
+        "signalCnt": 0,
+        "tagLabel": "Paragraph Text Tag Total"
+      },
+      {
+        "comment": "Use 51 Anchor Text Tag in your page",
+        "max": 62,
+        "mean": 51.4,
+        "min": 36,
+        "signalCnt": 0,
+        "tagLabel": "Anchor Text Tag Total"
+      },
+      {
+        "comment": "Use 2 Image File in your page",
+        "max": 3,
+        "mean": 2.4,
+        "min": 2,
+        "signalCnt": 0,
+        "tagLabel": "Image File total"
+      },
+      {
+        "comment": "Use 2 Image Alt Tag in your page",
+        "max": 2,
+        "mean": 1.6,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Image Alt Tag Total"
+      },
+      {
+        "comment": "Use 4 Bold Tag in your page",
+        "max": 7,
+        "mean": 4,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Bold Tag Total"
+      },
+      {
+        "comment": "Do not use any Italic Tag in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Italic Tag Total"
+      },
+      {
+        "comment": "Do not use any Video File in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Video File Total"
+      },
+      {
+        "comment": "Do not use any Ordered List in your page",
+        "max": 1,
+        "mean": 0.12,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Ordered List Total"
+      },
+      {
+        "comment": "Do not use any Ordered List Items in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Ordered List Items Total"
+      },
+      {
+        "comment": "Do not use any Unordered List in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Unordered List Total"
+      },
+      {
+        "comment": "Do not use any Unordered List Items in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Unordered List Items Total"
+      },
+      {
+        "comment": "Do not use any Table in your page",
+        "max": 1,
+        "mean": 0.12,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Table Total"
+      },
+      {
+        "comment": "Do not use any Table Items in your page",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Table Items Total"
+      },
+      {
+        "comment": "Do not use any Form in your page",
+        "max": 1,
+        "mean": 0.12,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Form Total"
+      },
+      {
+        "comment": "Do not use any iFrame in your page",
+        "max": 1,
+        "mean": 0.38,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "iFrame Total"
+      },
+      {
+        "comment": "Add FAQ section to your target page",
+        "max": 1,
+        "mean": 1,
+        "min": 1,
+        "signalCnt": 0,
+        "tagLabel": "Frequently Asked Questions"
+      },
+      {
+        "comment": "Leave As Is",
+        "max": 0,
+        "mean": 0,
+        "min": 0,
+        "signalCnt": 0,
+        "tagLabel": "Table of content"
+      }
+    ],
+    "url": "https://secureliving.com/",
+    "variations": [
+      "how to cancel adt",
+      "how to cancel adt service",
+      "cancel adt service",
+      "cancel adt",
+      "cancel my adt",
+      "adt cancellation",
+      "adt cancelation",
+      "canceling adt",
+      "cancelling adt",
+      "cancellation",
+      "canceling",
+      "cancel",
+      "adt"
+    ],
+    "wordCount": {
+      "current": 0,
+      "target": 446
+    }
+  },
+  "status": "SUCCESS"
+}

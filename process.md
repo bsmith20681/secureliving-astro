@@ -8,7 +8,7 @@
 ## 2. Set Up Page Optimizer Pro (POP)
 - Create a new page in Page Optimizer Pro.
 - Select **POP Custom**.
-- Generate the content brief PDF.
+- Enter primary keyword and have local claude skill give you the secondary keyword recomendations. 
 
 ## 3. Prepare AI Reference Packet
 Gather the following materials:

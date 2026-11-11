@@ -1,0 +1,124 @@
+{
+  "request": {
+    "keyword": "how to cancel adt",
+    "locationName": "United States",
+    "targetLanguage": "english",
+    "targetUrl": "https://secureliving.com/"
+  },
+  "taskId": "f4eaf944-0298-45c8-8b5f-366a4225f743",
+  "date_done": "2026-11-10 15:38:24",
+  "lsaPhrases": [
+    {
+      "averageCount": 11,
+      "phrase": "contract",
+      "targetCount": 2,
+      "weight": 0.1926528030623096
+    },
+    {
+      "averageCount": 7,
+      "phrase": "home",
+      "targetCount": 6,
+      "weight": 0.13939129276527149
+    },
+    {
+      "averageCount": 2,
+      "phrase": "month",
+      "targetCount": 0,
+      "weight": 0.13256914876248085
+    },
+    {
+      "averageCount": 2,
+      "phrase": "cancellation",
+      "targetCount": 1,
+      "weight": 0.10188631268016583
+    },
+    {
+      "averageCount": 2,
+      "phrase": "business",
+      "targetCount": 2,
+      "weight": 0.09198152247369226
+    },
+    {
+      "averageCount": 5,
+      "phrase": "system",
+      "targetCount": 1,
+      "weight": 0.08214150841619698
+    },
+    {
+      "averageCount": 10,
+      "phrase": "security",
+      "targetCount": 6,
+      "weight": 0.06961760611968959
+    },
+    {
+      "averageCount": 3,
+      "phrase": "systems",
+      "targetCount": 3,
+      "weight": 0.06680863441121108
+    },
+    {
+      "averageCount": 4,
+      "phrase": "equipment",
+      "targetCount": 1,
+      "weight": 0.06596753871489418
+    },
+    {
+      "averageCount": 3,
+      "phrase": "protection",
+      "targetCount": 0,
+      "weight": 0.06484033659177314
+    },
+    {
+      "averageCount": 2,
+      "phrase": "alarm",
+      "targetCount": 0,
+      "weight": 0.06250734288125338
+    },
+    {
+      "averageCount": 2,
+      "phrase": "adt contract",
+      "targetCount": 1,
+      "weight": 0.06162413357104106
+    },
+    {
+      "averageCount": 2,
+      "phrase": "adt security",
+      "targetCount": 0,
+      "weight": 0.06098800913559434
+    },
+    {
+      "averageCount": 2,
+      "phrase": "sign",
+      "targetCount": 0,
+      "weight": 0.058665449988816086
+    },
+    {
+      "averageCount": 2,
+      "phrase": "monitoring",
+      "targetCount": 0,
+      "weight": 0.056601135457796624
+    },
+    {
+      "averageCount": 2,
+      "phrase": "monthly",
+      "targetCount": 0,
+      "weight": 0.05314369514224872
+    }
+  ],
+  "prepareId": 72466,
+  "status": "SUCCESS",
+  "variations": [
+    "open account > membership",
+    "and click cancel",
+    "online portal",
+    "cancel",
+    "go to settings",
+    "myadt billing management",
+    "log in",
+    "adt-asap",
+    "subdelete",
+    "contact customer support directly via phone",
+    "contact adt customer service directly via phone",
+    "adt"
+  ]
+}

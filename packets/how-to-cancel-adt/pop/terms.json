@@ -1,0 +1,189 @@
+{
+  "request": {
+    "keyword": "how to cancel adt",
+    "locationName": "United States",
+    "targetLanguage": "english",
+    "targetUrl": "https://secureliving.com/",
+    "isCustomRun": true
+  },
+  "taskId": "fddb5207-4bf2-45e0-aa3e-c32a85c9d290",
+  "customCompetitors": [
+    {
+      "competitorSourceType": "organic",
+      "description": "",
+      "highlightedTerms": [],
+      "source": "",
+      "sourceLabel": "Custom",
+      "summary": {},
+      "title": "https://help.adt.com/cancel-your-account",
+      "url": "https://help.adt.com/cancel-your-account",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "",
+      "highlightedTerms": [],
+      "source": "",
+      "sourceLabel": "Custom",
+      "summary": {},
+      "title": "How to Cancel Your ADT Contract in 2026 | SafeWise",
+      "url": "https://www.safewise.com/home-security-systems/adt/cancellation/",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "",
+      "highlightedTerms": [],
+      "source": "",
+      "sourceLabel": "Custom",
+      "summary": {},
+      "title": "https://alarmrelay.com/adt-cancellation/",
+      "url": "https://alarmrelay.com/adt-cancellation/",
+      "validated": false
+    }
+  ],
+  "date_done": "2026-11-10 15:44:27",
+  "lsaPhrases": [
+    {
+      "averageCount": 21,
+      "phrase": "contract",
+      "targetCount": 2,
+      "weight": 0.20639622417169978
+    },
+    {
+      "averageCount": 9,
+      "phrase": "review",
+      "targetCount": 1,
+      "weight": 0.17438041922974437
+    },
+    {
+      "averageCount": 15,
+      "phrase": "safety",
+      "targetCount": 1,
+      "weight": 0.1413366296442081
+    },
+    {
+      "averageCount": 11,
+      "phrase": "equipment",
+      "targetCount": 1,
+      "weight": 0.11245348076222711
+    },
+    {
+      "averageCount": 12,
+      "phrase": "month",
+      "targetCount": 0,
+      "weight": 0.09704754360703179
+    },
+    {
+      "averageCount": 12,
+      "phrase": "monitoring",
+      "targetCount": 0,
+      "weight": 0.09620578947819038
+    },
+    {
+      "averageCount": 13,
+      "phrase": "system",
+      "targetCount": 1,
+      "weight": 0.09532071252474894
+    },
+    {
+      "averageCount": 10,
+      "phrase": "months",
+      "targetCount": 0,
+      "weight": 0.09488774944602395
+    },
+    {
+      "averageCount": 6,
+      "phrase": "cancel adt",
+      "targetCount": 1,
+      "weight": 0.09238632869007568
+    },
+    {
+      "averageCount": 9,
+      "phrase": "cancellation",
+      "targetCount": 1,
+      "weight": 0.08074323530843036
+    },
+    {
+      "averageCount": 8,
+      "phrase": "alarm",
+      "targetCount": 0,
+      "weight": 0.08035172792861017
+    },
+    {
+      "averageCount": 8,
+      "phrase": "early",
+      "targetCount": 0,
+      "weight": 0.07407028302645684
+    },
+    {
+      "averageCount": 7,
+      "phrase": "systems",
+      "targetCount": 3,
+      "weight": 0.06920634717913038
+    },
+    {
+      "averageCount": 5,
+      "phrase": "medical",
+      "targetCount": 0,
+      "weight": 0.06313181744533254
+    },
+    {
+      "averageCount": 6,
+      "phrase": "canceling",
+      "targetCount": 0,
+      "weight": 0.031857303365049
+    },
+    {
+      "averageCount": 6,
+      "phrase": "guarantee",
+      "targetCount": 0,
+      "weight": 0.030007800881965647
+    },
+    {
+      "averageCount": 6,
+      "phrase": "termination",
+      "targetCount": 1,
+      "weight": 0.030007800881965647
+    },
+    {
+      "averageCount": 6,
+      "phrase": "fee",
+      "targetCount": 1,
+      "weight": 0.02991257655727141
+    },
+    {
+      "averageCount": 6,
+      "phrase": "required",
+      "targetCount": 0,
+      "weight": 0.029035437478076846
+    },
+    {
+      "averageCount": 6,
+      "phrase": "call",
+      "targetCount": 0,
+      "weight": 0.027967849749493807
+    },
+    {
+      "averageCount": 7,
+      "phrase": "fees",
+      "targetCount": 0,
+      "weight": 0.027281159319687737
+    }
+  ],
+  "prepareId": 72468,
+  "status": "SUCCESS",
+  "variations": [
+    "adt",
+    "contact adt customer service directly via phone",
+    "cancel",
+    "online portal",
+    "adt-asap",
+    "contact adt",
+    "contact customer support directly via phone",
+    "adt home security support center",
+    "live chat option",
+    "contact our support team",
+    "go to settings"
+  ]
+}

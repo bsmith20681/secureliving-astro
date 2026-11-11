@@ -8,7 +8,7 @@ description: |
   competitor articles, YouTube transcript, notes in packets/<keyword>), and for rewriting or
   cleaning up articles in src/content/articles.
 metadata:
-  version: 3.6.0
+  version: 3.7.0
 ---
 
 # Blog Writer
@@ -50,7 +50,7 @@ When asked to write a blog post:
 3. **Settle the keywords.** With a POP brief, take the main keyword, its variations, and the secondary keywords (the important terms and related keywords) from the brief. Without one, ask me for the main keyword and its variations and for the secondary keywords and their variations. The main keyword goes in the H1, and its variations can go throughout the article, including some of the H2s (but not all). The secondary keywords go in the other H2s and throughout the body.
 4. **Gather the facts and opinions.** Pull the facts, opinions, pricing, pros and cons, and personal experience from the transcript, the notes, and anything I upload. When the packet has no transcript and no notes, and I haven't uploaded anything, tell me the article will have less of my voice, then write from the existing content in step 5.
 5. **Examine existing content** - Read the .yaml files in src/content/companies and the articles in src/content/articles. Use them for facts about the companies, pricing, and equipment, and for my opinions on brands I've covered before. The .yaml files in companies are the most reliable source of company data. Keep what you say consistent with what other articles already say. When the packet has no POP brief and no competitor articles, match the length and structure of my existing articles of the same type.
-6. **Write the content** - Write the article based on all the information following the writing style below. Insert images from the assets directory with captions where appropriate. Also insert components into the article where appropriate. Examine the components directory first to see which components would be a good fit for the article. You don't need to include very component. Never put the ArticlePromoBox component in the article content. Don't import it and don't use it in the MDX body. The article layout already adds a promo box on its own. Also, be sure to capitalize the first letter of each word in a heading tag. Don't add an "On this page" section or any other list of quick links to the article's own headings, even when a POP brief recommends a table of contents. For the featured image (the `image` field in the frontmatter), pick an image that no other article uses as its featured image. Check the `image` field of every article in src/content/articles first. The same image can still appear inside other articles' body content. If every fitting image is already taken, tell me so I can add a new one.
+6. **Write the content** - Write the article based on all the information following the writing style below. Insert images from the assets directory with captions where appropriate. Also insert components into the article where appropriate. Examine the components directory first to see which components would be a good fit for the article. You don't need to include very component. Never put the ArticlePromoBox component in the article content. Don't import it and don't use it in the MDX body. The article layout already adds a promo box on its own. Also, be sure to capitalize the first letter of each word in a heading tag. Don't write subheadings as a noun followed by a colon ("ADT: A Near One For One Alternative"); write them as a phrase instead ("Why ADT Is A Near One For One Alternative"). See pattern 20. Don't add an "On this page" section or any other list of quick links to the article's own headings, even when a POP brief recommends a table of contents. For the featured image (the `image` field in the frontmatter), pick an image that no other article uses as its featured image. Check the `image` field of every article in src/content/articles first. The same image can still appear inside other articles' body content. If every fitting image is already taken, tell me so I can add a new one.
 
    **Links in the first draft:** add affiliate links but no internal links. For each recommended brand, import its company data (`import coveCompanyData from "../../content/companies/cove.yaml";`) and link to it with `<a href={coveCompanyData.website}>...</a>` where the article tells readers to buy or check a deal, as existing articles do. Don't link to other SecureLiving articles, even where the text names a review or comparison. Internal links are added in a later pass. Mentioning that a review exists is fine; just leave it as plain text.
 7. **Humanize the draft** - Before handing the article over, run the "How to work" process under Writing rules on the full draft and fix every AI pattern you find. Write only the final article to the file.
@@ -60,37 +60,30 @@ When asked to humanize, rewrite, or clean up an existing article, skip steps 1-6
 
 ## Multiple Versions (only when I ask)
 
-Write one article by default. Produce multiple versions only when I ask for them, for example "give me three versions", "write v1, v2 and v3", "do the version comparison", or "do the four-version run". Never do it on your own initiative. A request for three versions gets all four below: v4 is always part of the run.
+Write one article by default. Produce multiple versions only when I ask for them, for example "give me three versions", "write v1, v2 and v3", or "do the version comparison". Never do it on your own initiative. The run produces exactly the three versions below. Don't write a fourth, combined version.
 
 | Version | File | Who writes it |
 | --- | --- | --- |
 | v1 | `<file-name>.mdx` | Hemmingway writes the first draft through the hemmingway-writer skill, then the Fable model fills the gaps and optimizes it. |
 | v2 | `<file-name>-v2.mdx` | The Opus model alone, following this skill. No Hemmingway. |
 | v3 | `<file-name>-v3.mdx` | The Fable model alone, following this skill. No Hemmingway. |
-| v4 | `<file-name>-v4.mdx` | The main session, after v1 to v3 are done. It combines the strongest parts of the three into one final article. |
 
-`<file-name>` is the name v1 would get on its own, for example `adt-alternatives`, which gives `adt-alternatives-v2.mdx`, `adt-alternatives-v3.mdx`, and `adt-alternatives-v4.mdx`.
+`<file-name>` is the name v1 would get on its own, for example `adt-alternatives`, which gives `adt-alternatives-v2.mdx` and `adt-alternatives-v3.mdx`.
 
 How to run it:
 
-1. **Prepare in the main session.** Do step 1 (find the packet and tell me what it has). Settle `<file-name>` and tell me the four file names. Pick four different featured images that no existing article uses, one per version, so the versions don't collide. My request for the versions counts as the go-ahead for the Hemmingway run.
+1. **Prepare in the main session.** Do step 1 (find the packet and tell me what it has). Settle `<file-name>` and tell me the three file names. Pick three different featured images that no existing article uses, one per version, so the versions don't collide. My request for the versions counts as the go-ahead for the Hemmingway run.
 2. **Launch all three at once** with the Agent tool, one subagent per version, all in the same message so none can see another's output. Set the model on each call: `fable` for v1, `opus` for v2, `fable` for v3. Give each one the keyword, the packet path, its file name, its featured image, and these instructions:
    - **v1:** Follow the hemmingway-writer skill (`.claude/skills/hemmingway-writer/SKILL.md`) in its default mode, with gap-filling on. Save Hemmingway's reply as the next free `draft-N.md` in the packet's `hemmingway/` folder. Follow this skill's link rule from step 6 (affiliate links only, no internal links) instead of hemmingway-writer's step for adding internal links. Skip opening the article in Chrome.
    - **v2 and v3:** Follow this skill's steps 2 to 7 and skip step 8. Read every research file in the packet (POP brief, competitor articles, transcript, notes, searcher's intent), plus the company `.yaml` files and existing articles as steps 2 to 5 describe. The only things off limits are the other versions' writing: the other versions' `.mdx` files and the packet's `hemmingway/` folder, which holds v1's drafts. Don't open them, even if they appear while you work.
    - **All three:** Report back the file path, the word count and section count against the brief, any POP terms still out of range, and any fact you left out because the sources didn't support it. v1 also reports Hemmingway's token count and cost.
 3. **Score v1 to v3.** When every subagent has finished, make sure each file exists. Score each version with the article-reviewer skill's rubric (`.claude/skills/article-reviewer/SKILL.md`, Steps 1 to 3), including both of its check scripts. The main session didn't write these versions, so it can score them itself. Keep the scores in the conversation; don't write review reports for v1 to v3 unless I ask. Don't edit v1 to v3: they stay as their writers left them so I can compare.
-4. **Write v4.** Build the final article from the three versions:
-   - **Pick a base.** Start from the version with the best structure and search-intent score, and say which one you picked and why.
-   - **Take the best of the others, section by section.** For each section, use whichever version scored best on it: the strongest opening answer, the most first-hand detail and opinion, the clearest comparison table, the most convincing pitch, the best FAQ answers. A version's passage can replace the base's or be merged into it. Keep only claims that one of the versions got from the packet, the company yaml files, or existing articles; when two versions disagree on a fact, check the source and use the correct one.
-   - **Make it read as one article.** Smooth the joins so the voice, terms, and formatting are consistent, and cut anything two sections now repeat. Use the v4 featured image, and keep the imports to what the body uses.
-   - **Finish it like any article.** Run steps 6 and 7 of Your Task on the combined draft (components, affiliate links but no internal links, then the humanize pass). Run both article-reviewer check scripts and the POP counter, bring the terms into range, and fix every confirmed `MUST` item.
-   - **Score it** with the same rubric. If v4 scores lower than the best of v1 to v3 on any component, fix that section before handing it over.
-5. **Check and open all four side by side.** Build each version's URL and check the dev server as step 8 describes. A file created while the dev server was running can return a 500 (UnknownContentCollectionError) until the server restarts. If any of the four pages does that, restart `npm run dev` and check again before opening them. Then open the dev-only review board, which shows every version in one Chrome window as side-by-side iframes, v1 to v4 from left to right:
+4. **Check and open all three side by side.** Build each version's URL and check the dev server as step 8 describes. A file created while the dev server was running can return a 500 (UnknownContentCollectionError) until the server restarts. If any of the three pages does that, restart `npm run dev` and check again before opening them. Then open the dev-only review board, which shows every version in one Chrome window as side-by-side iframes, v1 to v3 from left to right:
    ```bash
    cmd //c start chrome "http://localhost:4321/_reviews/?slug=<file-name>"
    ```
-   `<file-name>` is v1's file name without `.mdx`, for example `adt-alternatives`. The board (tools/review-board/integration.mjs) groups `<file-name>.mdx` and its `-v2`, `-v3`, `-v4` files on its own, and the live editor works inside each frame. Check that the board URL returns 200 before opening it. Open only this one window, in place of step 8's single article.
-6. **Hand over** a short comparison table: version, model, rubric total, word count, sections, and POP terms out of range. Add Hemmingway's cost for v1. Below it, list where each part of v4 came from (for example "intro and pitch from v2, testing details from v1, FAQ from v3") and any must-fix item still open. I compare them and pick which one to publish.
+   `<file-name>` is v1's file name without `.mdx`, for example `adt-alternatives`. The board (tools/review-board/integration.mjs) groups `<file-name>.mdx` and its `-v2` and `-v3` files on its own, and the live editor works inside each frame. Check that the board URL returns 200 before opening it. Open only this one window, in place of step 8's single article.
+5. **Hand over** a short comparison table: version, model, rubric total, word count, sections, and POP terms out of range. Add Hemmingway's cost for v1. Below it, list any must-fix item still open in each version. I compare them and pick which one to publish.
 
 ## Writing For The Searcher's Intent
 
@@ -492,10 +485,18 @@ Templates and visual editors also produce clean formatting. The tell is decorati
 ### 20. Decorative headings
 
 **Problem:** Headings capitalize every main word, and headings or list items carry emojis or arrows (→) as decoration. A horizontal rule sits between every section, or the document opens with a top-level heading that repeats its own title. A heading written for effect ("The decision, on one screen") should name what the section holds ("How the six options compare"). Remove the decoration and the rules, and let the title stand once. On SecureLiving articles, keep title case in headings (step 6 asks for it); the rest of this pattern still applies.
+
+**No "Noun: Description" subheadings.** Never write an H2 or H3 as a name or noun followed by a colon and a description. Turn it into one phrase that reads as a sentence fragment, usually by starting with "Why", "How", "What", or "When", or by working the name into the description. This applies to every subheading in a SecureLiving article, including brand-by-brand sections in alternatives and comparison articles.
 **Before:**
 > ## Strategic Negotiations And Global Partnerships
 **After:**
 > ## Strategic negotiations and global partnerships
+**Before (noun and colon):**
+> ## ADT: A Near One For One Alternative
+> ## Cove: Best For Renters
+**After:**
+> ## Why ADT Is A Near One For One Alternative
+> ## Cove Is The Best Pick For Renters
 **Before (emojis):**
 > 🚀 **Launch Phase:** The product launches in Q3
 > 💡 **Key Insight:** Users prefer simplicity

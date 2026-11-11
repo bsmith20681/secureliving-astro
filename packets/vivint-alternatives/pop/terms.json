@@ -1,0 +1,209 @@
+{
+  "request": {
+    "keyword": "vivint alternatives",
+    "locationName": "United States",
+    "targetLanguage": "english",
+    "targetUrl": "https://secureliving.com/",
+    "isCustomRun": true
+  },
+  "taskId": "93872c2c-8542-46bf-b1b0-b10ffd2da175",
+  "customCompetitors": [
+    {
+      "competitorSourceType": "organic",
+      "description": "",
+      "highlightedTerms": [],
+      "source": "",
+      "sourceLabel": "Custom",
+      "summary": {},
+      "title": "3 Best Vivint Alternatives in 2026 | Security.org",
+      "url": "https://www.security.org/home-security-systems/vivint/alternatives/",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "",
+      "highlightedTerms": [],
+      "source": "",
+      "sourceLabel": "Custom",
+      "summary": {},
+      "title": "The Top Three Alternatives to Vivint in 2026",
+      "url": "https://www.safehome.org/compare/vivint-alternative/",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "",
+      "highlightedTerms": [],
+      "source": "",
+      "sourceLabel": "Custom",
+      "summary": {},
+      "title": "Best Vivint Alternatives for Home Security in 2026",
+      "url": "https://guardianalarm.com/blog/vivint-alternatives/",
+      "validated": false
+    }
+  ],
+  "date_done": "2026-11-11 15:32:10",
+  "lsaPhrases": [
+    {
+      "averageCount": 50,
+      "phrase": "security",
+      "targetCount": 6,
+      "weight": 0.26861933285225487
+    },
+    {
+      "averageCount": 53,
+      "phrase": "duration",
+      "targetCount": 0,
+      "weight": 0.26080867608868546
+    },
+    {
+      "averageCount": 53,
+      "phrase": "maximum storage",
+      "targetCount": 0,
+      "weight": 0.26080867608868546
+    },
+    {
+      "averageCount": 53,
+      "phrase": "maximum storage duration",
+      "targetCount": 0,
+      "weight": 0.26080867608868546
+    },
+    {
+      "averageCount": 53,
+      "phrase": "storage duration",
+      "targetCount": 0,
+      "weight": 0.26080867608868546
+    },
+    {
+      "averageCount": 37,
+      "phrase": "home",
+      "targetCount": 6,
+      "weight": 0.18082456051620266
+    },
+    {
+      "averageCount": 34,
+      "phrase": "monitoring",
+      "targetCount": 0,
+      "weight": 0.15420746695433116
+    },
+    {
+      "averageCount": 13,
+      "phrase": "review",
+      "targetCount": 1,
+      "weight": 0.1406807721035492
+    },
+    {
+      "averageCount": 17,
+      "phrase": "equipment",
+      "targetCount": 1,
+      "weight": 0.1336738369792717
+    },
+    {
+      "averageCount": 21,
+      "phrase": "systems",
+      "targetCount": 3,
+      "weight": 0.12923092743040965
+    },
+    {
+      "averageCount": 25,
+      "phrase": "local",
+      "targetCount": 0,
+      "weight": 0.12225406691657131
+    },
+    {
+      "averageCount": 31,
+      "phrase": "user",
+      "targetCount": 0,
+      "weight": 0.11442388506287476
+    },
+    {
+      "averageCount": 18,
+      "phrase": "home security",
+      "targetCount": 4,
+      "weight": 0.11184426111995192
+    },
+    {
+      "averageCount": 21,
+      "phrase": "system",
+      "targetCount": 1,
+      "weight": 0.11086877819008012
+    },
+    {
+      "averageCount": 13,
+      "phrase": "month",
+      "targetCount": 0,
+      "weight": 0.10370091607738245
+    },
+    {
+      "averageCount": 20,
+      "phrase": "professional",
+      "targetCount": 1,
+      "weight": 0.09390063926394218
+    },
+    {
+      "averageCount": 11,
+      "phrase": "security systems",
+      "targetCount": 3,
+      "weight": 0.08631076605047845
+    },
+    {
+      "averageCount": 9,
+      "phrase": "frontpoint",
+      "targetCount": 0,
+      "weight": 0.08392946380620585
+    },
+    {
+      "averageCount": 7,
+      "phrase": "contract",
+      "targetCount": 2,
+      "weight": 0.08133141499720312
+    },
+    {
+      "averageCount": 11,
+      "phrase": "cove",
+      "targetCount": 1,
+      "weight": 0.08017458652388264
+    },
+    {
+      "averageCount": 11,
+      "phrase": "camera",
+      "targetCount": 0,
+      "weight": 0.0758467599704393
+    },
+    {
+      "averageCount": 15,
+      "phrase": "installation",
+      "targetCount": 0,
+      "weight": 0.07534908778081983
+    },
+    {
+      "averageCount": 5,
+      "phrase": "pricing",
+      "targetCount": 2,
+      "weight": 0.04642439329729237
+    },
+    {
+      "averageCount": 4,
+      "phrase": "security cameras",
+      "targetCount": 0,
+      "weight": 0.04116044397929847
+    },
+    {
+      "averageCount": 14,
+      "phrase": "cameras",
+      "targetCount": 0,
+      "weight": 0.03756355964053969
+    }
+  ],
+  "prepareId": 72808,
+  "status": "SUCCESS",
+  "variations": [
+    "vivint",
+    "alternatives",
+    "made our list",
+    "mitipi",
+    "simplisafe",
+    "adt",
+    "alternative"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "request": {
+    "keyword": "vivint alternatives",
+    "locationName": "United States",
+    "targetLanguage": "english",
+    "targetUrl": "https://secureliving.com/",
+    "isCustomRun": true
+  },
+  "taskId": "6f2d1838-e7ab-4534-b3c9-aea297526e44",
+  "competitors": [
+    {
+      "competitorSourceType": "organic",
+      "description": "SimpliSafe is a top DIY home security choice over ADT for affordability, while Vivint excels in advanced equipment.",
+      "highlightedTerms": [
+        "Vivint"
+      ],
+      "source": "",
+      "sourceLabel": "Google Search",
+      "summary": {},
+      "title": "Best Alternatives to ADT Home Security Systems in 2026",
+      "url": "https://www.safehome.org/compare/adt-alternative/",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "Vivint and ADT both made our list of the 10 best home security systems, chosen by our in-house research and hands-on testing. How Do Vivint and ADT Compare?",
+      "highlightedTerms": [
+        "Vivint and ADT both made our list of the 10 best home security systems"
+      ],
+      "source": "",
+      "sourceLabel": "Google Search",
+      "summary": {},
+      "title": "Vivint vs. ADT | Home Security Systems Reviewed (2026)",
+      "url": "https://realestate.usnews.com/home-services/home-security-systems/vivint-vs-adt",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "We recommend checking out DIY alternatives such as SimpliSafe or even ADT's own DIY line, ADT Blu. ADT has the edge over Vivint",
+      "highlightedTerms": [
+        "alternatives",
+        "Vivint"
+      ],
+      "source": "",
+      "sourceLabel": "Google Search",
+      "summary": {},
+      "title": "Vivint vs ADT Home Security Comparison 2026",
+      "url": "https://www.security.org/home-security-systems/vivint-vs-adt/",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "The alternative model is a licensed local integrator: the same professionally installed smart-security outcome, built on open platforms (Qolsys ...",
+      "highlightedTerms": [
+        "alternative"
+      ],
+      "source": "",
+      "sourceLabel": "Google Search",
+      "summary": {},
+      "title": "Vivint Alternative in Los Angeles: Local Smart Security",
+      "url": "https://innov8av.com/vivint-alternative-los-angeles",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "Vivint wins for premium home security with advanced smart home integration and professional installation, while SimpliSafe offers more affordable DIY ...",
+      "highlightedTerms": [
+        "SimpliSafe"
+      ],
+      "source": "",
+      "sourceLabel": "Google Search",
+      "summary": {},
+      "title": "SimpliSafe vs Vivint | Which Security System is Better?",
+      "url": "https://www.security.org/home-security-systems/simplisafe-vs-vivint/",
+      "validated": false
+    },
+    {
+      "competitorSourceType": "organic",
+      "description": "Top 10 Vivint competitors · Mitipi · Verisure · SimpliSafe · Brilliant · tado · Shipeshape · ecobee · Protect America · AMP Smart · ADT Security Services ...",
+      "highlightedTerms": [
+        "Mitipi"
+      ],
+      "source": "",
+      "sourceLabel": "Google Search",
+      "summary": {},
+      "title": "Top Vivint Alternatives, Competitors",
+      "url": "https://www.cbinsights.com/company/vivint/alternatives-competitors",
+      "validated": false
+    }
+  ],
+  "date_done": "2026-11-11 15:31:44",
+  "prepareId": 72808,
+  "status": "SUCCESS"
+}
