@@ -1,0 +1,211 @@
+---
+title: "Does SimpliSafe Work Without WiFi? Yes, With One Catch"
+subtitle: "SimpliSafe works without Wi-Fi because of its cellular backup, but the cameras don't. Here's what keeps running, what stops, and what happens when the power goes out too."
+metaDescription: "Does SimpliSafe work without WiFi? Yes, the alarm works, but other parts of the system lose funcionality. Here is a complete guide as to what features go offline without wifi."
+category: "Home Security Systems"
+pubDate: 2026-11-12
+updatedDate: 2026-11-12
+author: "ben-smith"
+image: "../../assets/simplisafe/base-station-and-indoor-camera.jpg"
+company: "simplisafe"
+pageType: supporting
+---
+
+import { Image } from "astro:assets";
+import baseStationCamera from "../../assets/simplisafe/base-station-and-indoor-camera.jpg";
+import keypadHome from "../../assets/simplisafe/keypad-home-mode-display.jpg";
+import appCameraFeeds from "../../assets/simplisafe/app-camera-feeds-overview.jpg";
+import appBaseUpdate from "../../assets/simplisafe/app-preparing-base-station-update.jpg";
+import simplisafeCompanyData from "../../content/companies/simplisafe.yaml";
+import Admonition from "../../components/Admonition.astro";
+import CompanyCard from "../../components/companies/CompanyCard.astro";
+import PromoLine from "../../components/companies/PromoLine.astro";
+import FAQ from "../../components/FAQ.astro";
+
+When you don't have WiFi (or never did), does the SimpliSafe alarm system still protect your house?
+
+Yes, it does. Even if your WiFi is down, the alarm and professional monitoring will continue to work. That's because the system has a built-in cellular backup that kicks in when it can't connect to the internet.
+
+Now the cameras on the other hand, that's a different story.
+
+I've done a full review on SimpliSafe and testing what works and what doesn't without WiFi was apart of that testing. I've outlined everything in detail below.
+
+<Admonition>
+  **tl;dr** The alarm, sensors, siren, and professional monitoring all keep
+  working without WiFi since it has a cellular backup. The cameras can't stream
+  or record until the WiFi is back, and you need WiFi to set the system up.
+</Admonition>
+
+<CompanyCard company="simplisafe" />
+
+## How SimpliSafe Works Without WiFi
+
+The SimpliSafe system uses your WiFi connection to communicate with SimpliSafe's monitoring center. But it also has a cellular backup.
+
+If your internet goes down, the base station will switch to the cellular backup. This allows the system to continue to function and communicate with the monitoring center.
+
+The base station is the piece doing all of this. Every sensor reports to it, the siren is built into it, and it's the part that contacts the monitoring center when the alarm trips. The signal that goes out over cellular gets the same response as one sent over WiFi, so the monitoring center can still dispatch police, fire, or medical help.
+
+<figure>
+  <Image
+    src={baseStationCamera}
+    alt="SimpliSafe base station sitting next to the indoor camera"
+  />
+  <figcaption>
+    The base station has the cellular backup and a battery inside it. The camera
+    next to it depends on your WiFi.
+  </figcaption>
+</figure>
+
+## What Still Works When You Don't Have WiFi
+
+When your WiFi is down, you'll lose some functionality. But the core parts of the system such as sensors, base station, and siren will keep working.
+
+Here's a list of what still works and what doesn't:
+
+- Arm and disarm from the keypad
+- Sensors (door/window, motion, etc)
+- Siren sounds when alarm is triggered
+- Professional monitoring
+- Cameras won't record or stream video
+
+| Part Of The System                             | Works Without WiFi?                 |
+| ---------------------------------------------- | ----------------------------------- |
+| Professional monitoring and emergency dispatch | Yes, on a plan with cellular backup |
+| Door, window, motion, and glass break sensors  | Yes                                 |
+| Base station siren                             | Yes                                 |
+| Arming and disarming at the keypad             | Yes                                 |
+| Live camera video on your phone                | No                                  |
+| Camera recordings                              | No                                  |
+| Setting up a new system                        | No                                  |
+
+The keypad earns its keep during an outage. It's a basic push-button keypad with no touchscreen, and normally that's one of my complaints about SimpliSafe. But you can arm and disarm the system from it, enter your PIN codes, and hit the panic button, all while the internet is down.
+
+<figure>
+  <Image src={keypadHome} alt="SimpliSafe keypad showing home mode" />
+  <figcaption>
+    You can still arm and disarm at the keypad when the WiFi is out.
+  </figcaption>
+</figure>
+
+## Do SimpliSafe Cameras Work Without WiFi?
+
+No, the SimpliSafe cameras require a WiFi connection. Without WiFi you won't be able to view live video from your phone or record any footage.
+
+SimpliSafe only offers cloud storage for video footage. So the cameras have to upload the footage to the cloud when it's recorded.
+
+There's no local storage option on any of them, so nothing saves to the camera for you to pull up later. If a camera can't reach the cloud while something is happening, you won't have a clip of it.
+
+The cameras do have a backup battery in them, so they stay on when the electricity goes out. But that doesn't help much since, a power outage usually takes your router down with it. The camera has power but no WiFi, so it still can't stream or record.
+
+This also affects the paid features that rely on the cameras. On the Core plan and above, SimpliSafe's monitoring team looks at your camera feeds when an alarm triggers to confirm it's real. Active Guard on the Pro plans has a live agent watching through the outdoor camera. Both need the cameras streaming. During an internet outage you still get the alarm and the dispatch, but nobody at the monitoring center can see video.
+
+<figure>
+  <Image
+    src={appCameraFeeds}
+    alt="SimpliSafe app showing an overview of the camera feeds"
+  />
+  <figcaption>
+    The camera feeds in the app only load while the cameras have WiFi.
+  </figcaption>
+</figure>
+
+If cameras are the main reason you want a security system and your internet drops a lot, think about that before you order. Vivint's cameras, for comparison, keep recording to the panel when the WiFi is out.
+
+If that's a dealbreaker, I've tested a few [SimpliSafe alternatives with cameras that record without WiFi](/home-security-systems/simplisafe-alternatives/).
+
+## Can You Set Up SimpliSafe Without WiFi?
+
+No, you need WiFi to set the system up. You need to use the app to set up the system. And you have to connect the base station to your WiFi network before you can start adding sensors and cameras.
+
+The setup goes like this: you plug in the base station, download the app, and connect the two. Then you sync each sensor and camera through the app one at a time and set your PIN codes for the keypad. My base station also ran a firmware update partway through. The whole install took me about an hour and a half to two hours.
+
+<figure>
+  <Image
+    src={appBaseUpdate}
+    alt="SimpliSafe app preparing a base station update during setup"
+  />
+  <figcaption>
+    The base station updated itself during my setup, which happens through the
+    app.
+  </figcaption>
+</figure>
+
+So WiFi is required on day one, even though the alarm can run without it afterward. If your internet is spotty, do the install while the connection is up.
+
+## What Happens During A Power Outage?
+
+SimpliSafe's base station comes with a 24-hour battery backup. So if you have a power outage and your WiFi router shuts down, the system will continue to operate.
+
+It'll use the backup battery to stay powered and the cellular connection to communicate with the monitoring center.
+
+You don't have to do anything when this happens. The base station handles the switch on its own, and it goes back to wall power and WiFi when they return. The battery is rated for 24 hours, so an outage that runs longer than a day will outlast it. For an outage of a few hours, you have plenty of room.
+
+The cameras are the weak spot here too. Their backup batteries keep them on, but with the router off they have no WiFi to send video over.
+
+## What Monitoring Plan Do You Need For Cellular Backup?
+
+If you want cellular backup, you're going to need a professional monitoring plan. You get that with the Standard Monitoring plan and higher.
+
+SimpliSafe does have a free monitoring plan. But with this plan you won't have access to professional monitoring or cellular backup.
+
+Keep that in mind if you were planning to run SimpliSafe for free. The free plan lets you arm and disarm from the app and pull up live camera views, and both of those depend on your internet. With no cellular backup behind it, a WiFi outage leaves you with a siren and no one being notified.
+
+The plan I recommend for most people is Core at **$32.99 per month**. It has 24/7 professional monitoring with cellular backup, plus cloud storage for the cameras and video verification. SimpliSafe is month to month with no contract and no cancellation fee, so you aren't stuck if it doesn't work out. You can <a href={simplisafeCompanyData.website}>check SimpliSafe's current deal here</a>.
+
+<PromoLine company="simplisafe" />
+
+## Is SimpliSafe A Good System If Your Internet Is Unreliable?
+
+If you want a professionally monitored alarm system and you don't have reliable internet service, I definitely think SimpliSafe is worth considering.
+
+The only drawback is that you won't be able to use the security cameras.
+
+How much that drawback matters depends on what you want the system for:
+
+- If you want an alarm that gets help sent when a door opens or a motion sensor trips, unreliable internet shouldn't stop you from buying. The monitoring runs over cellular and the base station has its own battery.
+- If you mostly want to check on the house from your phone, you'll only have video while the WiFi is up, and nothing is recorded during an outage.
+
+SimpliSafe also has a 60-day trial on equipment you buy directly from them. If your connection turns out to be too shaky for the cameras, you can return the system for a full refund. After the trial, [canceling SimpliSafe](/home-security-systems/how-to-cancel-simplisafe/) is a phone call with no fee. <a href={simplisafeCompanyData.website}>See SimpliSafe's packages</a> if a monitored alarm is what you're after.
+
+## Frequently Asked Questions
+
+<FAQ
+  items={[
+    {
+      question: "Does SimpliSafe work without WiFi?",
+      answer:
+        "The alarm and monitoring side of SimpliSafe works without WiFi. It has a cellular backup connection that automatically takes over when your internet service goes out. But the SimpliSafe cameras do not work without WiFi.",
+    },
+    {
+      question: "Does SimpliSafe have cellular backup?",
+      answer:
+        "Yes, as long as you have a monitoring plan that includes a cellular connection (Standard Monitoring and above). The base station switches to it on its own when the WiFi drops. The free plan doesn't include it.",
+    },
+    {
+      question: "Does SimpliSafe work without internet?",
+      answer:
+        "Yes. You can arm and disarm the system from the keypad, the siren sounds, and SimpliSafe's monitoring center is alerted when the alarm triggers. You just won't be able to use the cameras.",
+    },
+    {
+      question: "Do SimpliSafe cameras work without WiFi?",
+      answer:
+        "No. All SimpliSafe cameras require a WiFi connection to stream or record video. They have a backup battery, so they stay on during a power outage, but they can't send video until the WiFi is back.",
+    },
+    {
+      question: "Can you set up SimpliSafe without WiFi?",
+      answer:
+        "No, you have to have WiFi to set up the system. The base station has to be connected to your WiFi first, and then you use the app to add each sensor and camera.",
+    },
+    {
+      question: "How reliable is SimpliSafe during power outages?",
+      answer:
+        "The base station has a 24-hour battery backup and cellular connection. So even if the power and the internet go out at the same time, your system will stay active.",
+    },
+    {
+      question: "Does SimpliSafe work without power?",
+      answer:
+        "Yes, as long as you have a monitoring plan with a cellular connection. The system has a 24-hour battery backup. The cameras have their own backup battery too, though they can't stream or record if the outage also knocks out your WiFi.",
+    },
+  ]}
+/>
